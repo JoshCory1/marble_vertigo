@@ -1,0 +1,11 @@
+EverCrazy
+
+Usage of:
+	8x8 Platformer Tilepallet.png
+	
+
+Licenses:
+	https://creativecommons.org/publicdomain/zero/1.0/
+
+Website:
+	https://opengameart.org/content/evercrazy-8x8-tile-palette

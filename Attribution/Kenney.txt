@@ -1,0 +1,17 @@
+Kenney Vleugels
+
+Usage of:
+	(modified) bg.png
+	(modified) cloudLayer1.png
+	(modified) groundLayer2.png
+	(modified) hills.png
+	(modified) ball_blue_large_alt.png
+	(modified) shattered_ball.png
+	(modified) impactGlass_light_003.ogg
+	(modified) impactGlass_medium_003.ogg
+
+Licenses:
+	
+
+Website:
+	https://www.kenney.nl/

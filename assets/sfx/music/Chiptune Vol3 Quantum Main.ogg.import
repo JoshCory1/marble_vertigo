@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://daotv3edmgbt2"
+path="res://.godot/imported/Chiptune Vol3 Quantum Main.ogg-5c866af55355d0cc446caa1a677f9ddb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg"
+dest_files=["res://.godot/imported/Chiptune Vol3 Quantum Main.ogg-5c866af55355d0cc446caa1a677f9ddb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
