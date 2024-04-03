@@ -1,0 +1,21 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3fjwvcoo4xpv"]
+
+[ext_resource type="Script" path="res://scripts/audio_player.gd" id="1_iybdo"]
+[ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_b4k87"]
+[ext_resource type="AudioStream" uid="uid://bm7kikdygalj6" path="res://assets/sfx/soundFx/impactGlass_medium_003.ogg" id="2_lf2q0"]
+[ext_resource type="AudioStream" uid="uid://dwy7eaqrd0wtf" path="res://assets/sfx/soundFx/impactGlass_light_003.ogg" id="3_oaqpo"]
+[ext_resource type="AudioStream" uid="uid://co345ca128wr" path="res://assets/sfx/soundFx/Casual Glass.ogg" id="4_qs1m0"]
+[ext_resource type="AudioStream" uid="uid://doq4b5a6tvehe" path="res://assets/sfx/soundFx/stone_door.ogg" id="5_b7lhh"]
+[ext_resource type="AudioStream" uid="uid://qd4gkvf40wgw" path="res://assets/sfx/soundFx/teleport.ogg" id="6_v53e4"]
+
+[node name="AudioPlayer" type="Node"]
+script = ExtResource("1_iybdo")
+bounce_sfx_1 = ExtResource("2_lf2q0")
+bounce_sfx_2 = ExtResource("3_oaqpo")
+shatter_sfx = ExtResource("4_qs1m0")
+pillar_move_sfx = ExtResource("5_b7lhh")
+portal_sfx = ExtResource("6_v53e4")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_b4k87")
+volume_db = -10.0
