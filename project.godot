@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="Marble Vertigo"
+run/main_scene="res://scenes/player.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://assets/ball/ball_blue_large_alt.png"
 
 [autoload]
 
 AudioPlayer="*res://scenes/audio_player.tscn"
+GameController="*res://scenes/game_controller.tscn"
 
 [display]
 

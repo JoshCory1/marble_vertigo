@@ -5,16 +5,14 @@ extends Area2D
 
 
 func _on_body_entered(body):
-#	if ScoreBoard.current_lvl <= current_lvl:
-#		ScoreBoard.current_lvl = ScoreBoard.current_lvl + 1
+	if GameController.current_lvl <= current_lvl:
+		GameController.current_lvl = GameController.current_lvl + 1
 
 	AudioPlayer.play_sfx("portal_sfx")
 
 	body.stop_velocity = true
 	body.velocity = Vector2(0,0)
 	body.sprite.visible = false
-	#if GameController.current_lvl <= current_lvl:
-		#GameController.current_lvl = GameController.current_lvl +1
 	await get_tree().create_timer(time_till_exit).timeout
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	print("Player entered")
