@@ -14,6 +14,10 @@ config/name="Marble Vertigo"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://assets/ball/ball_blue_large_alt.png"
 
+[autoload]
+
+AudioPlayer="*res://scenes/audio_player.tscn"
+
 [display]
 
 window/size/viewport_width=960

@@ -69,19 +69,19 @@ func _physics_process(_delta):
 
 func bounce_up():
 	if debug == false:
-		#AudioPlayer.play_sfx("bounce_sfx_1")
+		AudioPlayer.play_sfx("bounce_sfx_1")
 		velocity.y = -random_bounce(bounce_force_min, bounce_force_max)
 
 func bounce_down():
-	#AudioPlayer.play_sfx("bounce_sfx_1")
+	AudioPlayer.play_sfx("bounce_sfx_1")
 	velocity.y = random_bounce(bounce_force_min, bounce_force_max)
 
 func bounce_left():
-	#AudioPlayer.play_sfx("bounce_sfx_2")
+	AudioPlayer.play_sfx("bounce_sfx_2")
 	velocity.x = -random_bounce(bounce_force_min, bounce_force_max)
 
 func bounce_right():
-	#AudioPlayer.play_sfx("bounce_sfx_2")
+	AudioPlayer.play_sfx("bounce_sfx_2")
 	velocity.x = random_bounce(bounce_force_min, bounce_force_max)
 
 func random_bounce(min_boune: int, max_boune: int):
@@ -98,7 +98,7 @@ func _on_area_2d_body_entered(_body):
 
 func die():
 	if debug == false:
-		#AudioPlayer.play_sfx("shatter_sfx")
+		AudioPlayer.play_sfx("shatter_sfx")
 		death_particles.emitting = true
 		get_tree().paused = true
 		sprite.visible = false
