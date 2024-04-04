@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://baqelgx82272q"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
+[ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="1_opivx"]
+[ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_5bn02"]
+[ext_resource type="Texture2D" uid="uid://cqh402wxwmiq4" path="res://assets/ball/ball_blue_large_alt.png" id="2_dax72"]
+[ext_resource type="Texture2D" uid="uid://coca365g1i45y" path="res://assets/ball/shattered_ball.png" id="3_lfw8e"]
+[ext_resource type="Texture2D" uid="uid://uijnvnrgxi88" path="res://assets/ball/BubbleSimple_v1.png" id="4_wiijs"]
+[ext_resource type="Texture2D" uid="uid://byoncwrexv1fd" path="res://assets/pillar/pillar_ui_v2.1_ai.png" id="5_pj5dd"]
+[ext_resource type="Script" path="res://scripts/MenuLevelButton_01.gd" id="5_s7i4j"]
+[ext_resource type="Script" path="res://scripts/UIMenuCamera.gd" id="7_tggy7"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_egfi4")
+music_track = ExtResource("2_5bn02")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0.470588, 0.858824, 1, 1)
+scale = Vector2(3.74609, 2.12109)
+texture = ExtResource("1_opivx")
+centered = false
+
+[node name="MenuLevelButton_01" type="TextureButton" parent="." groups=["LevelButtons"]]
+offset_left = 207.0
+offset_top = 177.0
+offset_right = 271.0
+offset_bottom = 241.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+current_level = 1
+
+[node name="Label" type="Label" parent="MenuLevelButton_01"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_01"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
+[node name="UIMenuCamera" type="Camera2D" parent="."]
+script = ExtResource("7_tggy7")
+
+[node name="PositiveMarker" type="Marker2D" parent="."]
+z_index = 50
+position = Vector2(937, 521)
+
+[node name="NegativeMarker" type="Marker2D" parent="."]
+z_index = 50
+position = Vector2(39, 81)
+
+[node name="BlackCanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+visible = false
+
+[node name="ColorRectBlack" type="ColorRect" parent="BlackCanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="MenuLevelButton_01" to="MenuLevelButton_01" method="_on_pressed"]
