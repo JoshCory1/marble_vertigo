@@ -11,7 +11,7 @@ Usage of:
 	(modified) impactGlass_medium_003.ogg
 
 Licenses:
-	
+	https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Licenses/License.txt
 
 Website:
 	https://www.kenney.nl/

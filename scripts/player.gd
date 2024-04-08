@@ -102,7 +102,7 @@ func die():
 		AudioPlayer.play_sfx("shatter_sfx")
 		death_particles.emitting = true
 		sprite.visible = false
-		print("dead")
+		GameController.log_msg("Died!!")
 		await get_tree().create_timer(0.5).timeout
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

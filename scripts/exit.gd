@@ -15,4 +15,4 @@ func _on_body_entered(body):
 	body.sprite.visible = false
 	await get_tree().create_timer(time_till_exit).timeout
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-	print("Player entered")
+	GameController.log_msg("Player enterd")

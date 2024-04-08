@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs2pl0fvgcnin"]
+
+[ext_resource type="Texture2D" uid="uid://dgcp435elyuoh" path="res://assets/UI/UIpackSheet_transparent.png" id="1_n0lq8"]
+
+[node name="UIButtons" type="Sprite2D"]
+texture = ExtResource("1_n0lq8")
+region_enabled = true
+region_rect = Rect2(91, 91, 14, 14)
+region_filter_clip_enabled = true
