@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://x7qy3if6q7m4"]
+
+[ext_resource type="Texture2D" uid="uid://5thnvs6itmm2" path="res://assets/obstacles/rock_1.1_alt.png" id="1_llb7t"]
+[ext_resource type="Script" path="res://scripts/moving_hazard.gd" id="1_no8pm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7880p"]
+size = Vector2(41.6667, 416.667)
+
+[node name="MovingHazard" type="AnimatableBody2D"]
+collision_layer = 2
+script = ExtResource("1_no8pm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_llb7t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.12, 0.12)
+polygon = PackedVector2Array(112, -134.7, 112, -133.7, 193, -117.6, 193, -115, 194.7, -105, 195.4, -105, 198.4, -97, 201.8, -97, 205, -93.8, 205, -90, 209, -90, 212, -86, 223, -86, 223, -84, 228, -80, 228, -47, 235, -47, 235, -44.4, 236.7, -36, 240.8, -36, 244, -32.8, 244, -19.2, 248, -17.2, 248, 56, 245.5, 56, 243, 57.3, 243, 75, 240.5, 75, 238, 76.3, 236.6, 82, 232, 82, 232, 93, 230, 93, 224, 101, 219, 101, 219, 102.8, 215.8, 106, 208, 106, 208, 113.5, 201, 115.5, 201, 129.8, 197.8, 133, 194.4, 133, 192.4, 138, 186, 138, 186, 140.8, 182.8, 144, 178, 144, 178, 146.8, 174.8, 150, 170, 150, 170, 170.6, 162, 172.5, 162, 175.8, 158.8, 179, 155, 179, 155, 183.5, 148, 185.5, 148, 188.3, 146.4, 193, 140, 193, 140, 197.8, 136.8, 201, 127.1, 201, 114.9, 201.9, 111.8, 205, 94, 205, 94, 205.8, 90.8, 209, 61.2, 209, 45, 210.8, 45, 211.8, 41.8, 215, -43, 215, -43, 214, -104, 213, -104, 211.8, -122, 209.8, -122, 207.8, -122.8, 207, -138, 207, -138, 204.5, -139.3, 202, -154, 202, -154, 199.7, -155.1, 198, -178, 198, -178, 195.9, -183.7, 191, -190, 191, -190, 188.5, -191.4, 185, -193.8, 185, -197, 181.8, -197, 177, -202.8, 177, -206, 173.8, -206, 170, -214, 170, -214, 167, -215.5, 161, -221.8, 161, -225, 157.8, -225, 150, -232.4, 150, -234.4, 144, -240.8, 144, -244, 140.8, -244, 134, -246.8, 134, -250, 130.8, -250, -111, -247.4, -111, -244, -112.4, -244, -113.2, -241.6, -123, -238.6, -123, -196.6, -153, -194.5, -153, -183, -159.2, -183, -161.8, -179.8, -165, -172.6, -165, -169.3, -163.7, -166, -168, -158.8, -168, -156, -167.5, -156, -170.2, -154, -171.2, -154, -173.3)
+
+[node name="AreaBounceUp" type="Area2D" parent="."]
+position = Vector2(7, -21)
+rotation = 1.5708
+scale = Vector2(0.12, 0.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp"]
+position = Vector2(-8.33334, 66.6667)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7880p")
+
+[node name="AreaBounceDown" type="Area2D" parent="AreaBounceUp"]
+position = Vector2(383.333, 8.33331)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp/AreaBounceDown"]
+position = Vector2(8.33337, 58.3333)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7880p")
+
+[node name="AreaBounceLeft" type="Area2D" parent="."]
+position = Vector2(-31, -2)
+scale = Vector2(0.12, 0.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceLeft"]
+position = Vector2(11.6667, 37.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7880p")
+
+[node name="AreaBounceRight" type="Area2D" parent="."]
+position = Vector2(27, -2)
+scale = Vector2(0.12, 0.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceRight"]
+position = Vector2(11.6667, 50)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7880p")
+
+[connection signal="body_entered" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_entered"]
+[connection signal="body_entered" from="AreaBounceUp/AreaBounceDown" to="." method="_on_area_bounce_down_body_entered"]
+[connection signal="body_entered" from="AreaBounceLeft" to="." method="_on_area_bounce_left_body_entered"]
+[connection signal="body_entered" from="AreaBounceRight" to="." method="_on_area_bounce_right_body_entered"]
