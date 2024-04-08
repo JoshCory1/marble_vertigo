@@ -98,12 +98,12 @@ func _on_area_2d_body_entered(_body):
 
 func die():
 	if debug == false:
+		get_tree().paused = true
 		AudioPlayer.play_sfx("shatter_sfx")
 		death_particles.emitting = true
-		get_tree().paused = true
 		sprite.visible = false
 		print("dead")
 		await get_tree().create_timer(0.5).timeout
-		
+		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 

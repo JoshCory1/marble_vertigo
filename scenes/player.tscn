@@ -10,20 +10,18 @@ radius = 32.1403
 [sub_resource type="CircleShape2D" id="CircleShape2D_ia64i"]
 radius = 35.1283
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 14
 script = ExtResource("1_l3r4b")
 debug_mode = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_uuxkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_pqvro")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -47,5 +45,9 @@ angular_velocity_min = -720.0
 angular_velocity_max = -174.55
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 530
+limit_smoothed = true
+drag_vertical_enabled = true
+drag_top_margin = 1.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

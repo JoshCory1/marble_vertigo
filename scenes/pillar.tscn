@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlls7frqqf2de"]
+
+[ext_resource type="Texture2D" uid="uid://dp1vfqd2vas3p" path="res://assets/pillar/image _8_gimp_1.0.png" id="1_qhk2e"]
+[ext_resource type="Script" path="res://scripts/pillar.gd" id="1_unbsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ltfh"]
+size = Vector2(195.455, 398.693)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2dre"]
+size = Vector2(390.909, 52.2876)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spktx"]
+size = Vector2(72.7273, 405.229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfhwn"]
+size = Vector2(350, 500)
+
+[node name="Pillar" type="CharacterBody2D"]
+z_index = 2
+scale = Vector2(0.22, 0.306)
+collision_layer = 2
+script = ExtResource("1_unbsr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qhk2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.81818, -6.53595)
+shape = SubResource("RectangleShape2D_1ltfh")
+
+[node name="AreaBounceUp" type="Area2D" parent="."]
+position = Vector2(0, -245.098)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp"]
+shape = SubResource("RectangleShape2D_w2dre")
+
+[node name="AreaBounceDown" type="Area2D" parent="."]
+position = Vector2(0, 235.294)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceDown"]
+shape = SubResource("RectangleShape2D_w2dre")
+
+[node name="AreaBounceLeft" type="Area2D" parent="."]
+position = Vector2(-136.364, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceLeft"]
+position = Vector2(-27.2727, -1.63399)
+shape = SubResource("RectangleShape2D_spktx")
+
+[node name="AreaBounceRight" type="Area2D" parent="."]
+position = Vector2(168.182, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceRight"]
+position = Vector2(-27.2727, -6.53595)
+shape = SubResource("RectangleShape2D_spktx")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+shape = SubResource("RectangleShape2D_hfhwn")
+
+[connection signal="body_entered" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_entered"]
+[connection signal="body_entered" from="AreaBounceDown" to="." method="_on_area_bounce_down_body_entered"]
+[connection signal="body_entered" from="AreaBounceLeft" to="." method="_on_area_bounce_left_body_entered"]
+[connection signal="body_entered" from="AreaBounceRight" to="." method="_on_area_bounce_right_body_entered"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]

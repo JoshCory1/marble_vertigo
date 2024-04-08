@@ -25,16 +25,13 @@ scale = Vector2(0.12, 0.12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp"]
 position = Vector2(-8.33334, 66.6667)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7880p")
 
 [node name="AreaBounceDown" type="Area2D" parent="AreaBounceUp"]
 position = Vector2(383.333, 8.33331)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp/AreaBounceDown"]
 position = Vector2(8.33337, 58.3333)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7880p")
 
 [node name="AreaBounceLeft" type="Area2D" parent="."]
@@ -43,7 +40,6 @@ scale = Vector2(0.12, 0.12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceLeft"]
 position = Vector2(11.6667, 37.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7880p")
 
 [node name="AreaBounceRight" type="Area2D" parent="."]
@@ -52,7 +48,6 @@ scale = Vector2(0.12, 0.12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceRight"]
 position = Vector2(11.6667, 50)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7880p")
 
 [connection signal="body_entered" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_entered"]

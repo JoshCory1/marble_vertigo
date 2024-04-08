@@ -1,0 +1,11 @@
+Aloknarula
+
+Usage of:
+	(modified) modified BubbleSimple_v1.png
+	(modified) BubbleSimple_v1_piece.png
+
+Licenses:
+	https://creativecommons.org/publicdomain/zero/1.0/
+
+Website:
+	https://opengameart.org/content/transparent-bubble
