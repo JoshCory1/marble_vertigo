@@ -8,10 +8,12 @@ extends Node2D
 @onready var parallax2 = $ParallaxBackground/ParallaxLayer2
 @onready var black_canvas = $BlackCanvasLayer
 @onready var black_screen = $BlackCanvasLayer/ColorRect
+@onready var bg = $CanvasLayer/Sprite2D
 
 var viewport_size: Vector2
 
 func _ready():
+	set_bg_size_scale()
 	black_canvas.visible = true
 	if music_track != null:
 		AudioPlayer.m_player.stream = music_track
@@ -40,5 +42,11 @@ func get_parallax_sprite_scale(parallax_sprite: Sprite2D):
 func  setup_parallax_layer(parallax_layer: ParallaxLayer):
 	var parallax_sprite = parallax_layer.find_child("Sprite2D")
 	parallax_sprite.scale = get_parallax_sprite_scale(parallax_sprite)
+	parallax_sprite.scale.x += get_viewport_rect().size.x / 800
 	var mx = parallax_sprite.scale.x * parallax_sprite.get_texture().get_width()
 	parallax_layer.motion_mirroring.x = mx
+func set_bg_size_scale():
+	pass
+	bg.position = get_viewport_rect().size / 2
+	bg.scale = get_viewport_rect().size
+	

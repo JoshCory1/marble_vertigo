@@ -48,6 +48,6 @@ angular_velocity_max = -174.55
 limit_bottom = 530
 limit_smoothed = true
 drag_vertical_enabled = true
-drag_top_margin = 1.0
+drag_top_margin = 0.4
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -30,12 +30,14 @@ shape = SubResource("RectangleShape2D_1ltfh")
 
 [node name="AreaBounceUp" type="Area2D" parent="."]
 position = Vector2(0, -245.098)
+scale = Vector2(0.636363, 0.607844)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp"]
 shape = SubResource("RectangleShape2D_w2dre")
 
 [node name="AreaBounceDown" type="Area2D" parent="."]
-position = Vector2(0, 235.294)
+position = Vector2(0, 245.098)
+scale = Vector2(0.636363, 0.607841)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceDown"]
 shape = SubResource("RectangleShape2D_w2dre")

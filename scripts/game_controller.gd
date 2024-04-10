@@ -3,13 +3,17 @@ extends Node
 var current_lvl: int = 1
 var current_play_through_count: int = 5
 var old_current_play_through_count: int = 0
-
+var current_log: String
+var old_log
 
 
 func _process(_delta):
 	if current_play_through_count != old_current_play_through_count:
 		old_current_play_through_count = current_play_through_count
-		log_msg("Plays left: " + str(current_play_through_count))
+		my_log("Plays left: " + str(current_play_through_count))
+	if current_log != old_log:
+		old_log = current_log
+		log_msg(current_log)
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("Reset"):
@@ -22,10 +26,13 @@ func log_msg(log_str: String):
 	if console:
 		var log_lable = console.find_child("LogLabel")
 		if log_lable:
-			if !log_lable.text.is_empty():
-				log_lable.text += "\n"
 			log_lable.text += log_str
 			print(log_str)
 
+func my_log(string: String):
+	if !current_log.is_empty():
+		current_log += "\n"
+	current_log += string
+	
 
 
