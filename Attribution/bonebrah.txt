@@ -1,10 +1,10 @@
-Bonebrah
+control_v11f1p_sd15_depth.pth lllyasviel
 
 Usage of:
-	stone_door.ogg
+	
 
 Licenses:
-	https://creativecommons.org/publicdomain/zero/1.0/
+	https://huggingface.co/blog/open_rail
 	
 Website:
-	https://opengameart.org/content/stone-door
+	https://huggingface.co/lllyasviel/ControlNet-v1-1/blob/main/control_v11f1p_sd15_depth.pth

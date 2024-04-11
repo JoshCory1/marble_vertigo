@@ -1,15 +1,11 @@
-CyberRealistic
-
-Objects below drawn by Developer but modified with CyberRealistic
+Aloknarula
 
 Usage of:
-	(modified) image _8_gimp_1.0.png
-	(modified) pillar_ui_v2.1_ai.png
-	(modified) rock_1.1_alt.png
+	(modified) modified BubbleSimple_v1.png
+	(modified) BubbleSimple_v1_piece.png
 
 Licenses:
-	https://huggingface.co/spaces/CompVis/stable-diffusion-license
+	https://creativecommons.org/publicdomain/zero/1.0/
 
 Website:
-	https://civitai.com/models/15003?modelVersionId=89680
-	
+	https://opengameart.org/content/transparent-bubble

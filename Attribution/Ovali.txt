@@ -5,10 +5,10 @@ Usage of:
 	(modified) Chiptune Vol3 Cherries Main.oog
 	(modified) Chiptune Vol3 Quantum Main.oog
 	(modified) Chiptune Vol3 Ricochet Cut 30.oog
-	Casual Glass.ogg
+	Casual Glass
 
 Licenses:
-	https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Licenses/Royalty-Free%20License%20%26%20Terms%20of%20Service.pdf
+	https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Licenses/ovali
 	
 Website:
 	https://ovanisound.com/

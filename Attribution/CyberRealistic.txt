@@ -1,11 +1,38 @@
-Aloknarula
+CyberRealistic
+
+Objects below drawn by Developer but modified with CyberRealistic
 
 Usage of:
-	(modified) modified BubbleSimple_v1.png
-	(modified) BubbleSimple_v1_piece.png
+	(modified) image _8_gimp_1.0.png
+	(modified) pillar_ui_v2.1_ai.png
+	(modified) rock_1.1_alt.png
 
+Objects below drawn by Kenny but modified with CyberRealistic
+	see: https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Licenses/License.txt and https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Kenney.txt
+	(modified) marble_v2.png
+	(modified) marble_v3.png
+	(modified) marble_v4.png
+	(modified) marble_v5.png
+	(modified) marble_v6.png
+	(modified) marble_v7.png
+	(modified) marble_v8.png
+	(modified) marble_v9.png
+	(modified) marble_v10.png
+	(modified) marble_v11.png
+	(modified) marble_v12.png
+	(modified) marble_v13.png
+	(modified) marble_v14.png
+	(modified) marble_v15.png 
+	(modified) marble_v16.png
+	(modified) marble_v17.png 
+	(modified) marble_v18.png
+	(modified) marble_v19.png 
+	(modified) marble_v20.png
+	(modified) marble_v22.png 
+	
 Licenses:
-	https://creativecommons.org/publicdomain/zero/1.0/
+	https://huggingface.co/spaces/CompVis/stable-diffusion-license
 
 Website:
-	https://opengameart.org/content/transparent-bubble
+	https://civitai.com/models/15003?modelVersionId=89680
+	

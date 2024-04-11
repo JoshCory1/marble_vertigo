@@ -1,17 +1,18 @@
 Kenney Vleugels
 
 Usage of:
-	(modified) bg.png
-	(modified) cloudLayer1.png
-	(modified) groundLayer2.png
-	(modified) hills.png
-	(modified) ball_blue_large_alt.png
-	(modified) shattered_ball.png
-	(modified) impactGlass_light_003.ogg
-	(modified) impactGlass_medium_003.ogg
+	(modified) bg.png: Background Elements Redux
+	(modified) cloudLayer1.png: Background Elements Redux
+	(modified) groundLayer2.png: Background Elements Redux
+	(modified) hills.png: Background Elements Redux
+	(modified) ball_blue_large_alt.png: Rolling Ball Assets
+	(modified) shattered_ball.png: from ball_blue_large_alt.png : Rolling Ball Assets
+	(modified) impactGlass_light_003.ogg: Impact Sounds (1.0)
+	(modified) impactGlass_medium_003.ogg: Impact Sounds (1.0)
+	mapPack_tilesheet: Map Pack
 
 Licenses:
-	https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Licenses/License.txt
+	https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Licenses/Kenny
 
 Website:
 	https://www.kenney.nl/

@@ -18,4 +18,3 @@ portal_sfx = ExtResource("6_v53e4")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b4k87")
-volume_db = -10.0

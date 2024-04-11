@@ -11,6 +11,7 @@ extends CharacterBody2D
 
 @onready var death_particles = $CPUParticles2D
 @onready var sprite = $Sprite2D
+@onready var animation_player = $AnimationPlayer
 
 var stop_velocity: bool = false 
 var debug: bool = false
@@ -18,6 +19,7 @@ var accelerometer_speed: float = 130.0
 var use_accelerometer: bool = false
 var speed: float = 0.0
 var is_bounceing: bool = false
+
 
 func _ready():
 	var os_name = OS.get_name()
@@ -106,4 +108,26 @@ func die():
 		await get_tree().create_timer(0.5).timeout
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		
+	# Skins
 
+func use_default_skin():
+	if animation_player.current_animation != "default":
+		animation_player.play("default")
+	
+	if sprite:
+		sprite.texture = preload("res://assets/ball/ball_blue_large_alt.png")
+
+func use_cube_skin():
+	if animation_player.current_animation != "cube":
+		animation_player.play("cube")
+	
+	if sprite:
+		sprite.texture = preload("res://assets/ball/marble_v3.png")
+
+func use_spin_skin():
+	if animation_player.current_animation != "spin":
+		animation_player.play("spin")
+
+	if sprite:
+		sprite.texture = preload("res://assets/ball/marble_v19.png")

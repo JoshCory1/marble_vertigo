@@ -9,10 +9,15 @@ extends Node2D
 @onready var black_canvas = $BlackCanvasLayer
 @onready var black_screen = $BlackCanvasLayer/ColorRect
 @onready var bg = $CanvasLayer/Sprite2D
+@onready var player = $Player
 
 var viewport_size: Vector2
+var default_skin_unlocked: bool = true
+var cube_skin_unlocked: bool = true
+var spin_skin_unlocked: bool = true
 
 func _ready():
+	use_selected_skin()
 	set_bg_size_scale()
 	black_canvas.visible = true
 	if music_track != null:
@@ -50,3 +55,10 @@ func set_bg_size_scale():
 	bg.position = get_viewport_rect().size / 2
 	bg.scale = get_viewport_rect().size
 	
+func use_selected_skin():
+	if default_skin_unlocked == true:
+		player.use_default_skin()
+	elif cube_skin_unlocked == true:
+		player.use_cube_skin()
+	elif spin_skin_unlocked == true:
+		player.use_spin_skin()
