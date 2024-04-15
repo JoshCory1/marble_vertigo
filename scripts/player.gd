@@ -131,3 +131,8 @@ func use_spin_skin():
 
 	if sprite:
 		sprite.texture = preload("res://assets/ball/marble_v19.png")
+
+
+
+# skin call methods
+

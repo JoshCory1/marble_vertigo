@@ -21,8 +21,9 @@ func _ready():
 
 func _on_pressed():
 	if level != null:
-		if GameController.current_play_through_count > 0:
-			GameController.current_play_through_count -= 1
+		if GameController.current_play_through_count > 0 || GameController.premium == true:
+			if GameController.premium == false:
+				GameController.current_play_through_count -= 1
 			set_pressed_no_signal(true)
 			camera_scroll_off.emit()
 			canvas.visible = true

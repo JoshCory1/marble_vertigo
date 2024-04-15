@@ -9,6 +9,7 @@ Usage of:
 	(modified) shattered_ball.png: from ball_blue_large_alt.png : Rolling Ball Assets
 	(modified) impactGlass_light_003.ogg: Impact Sounds (1.0)
 	(modified) impactGlass_medium_003.ogg: Impact Sounds (1.0)
+	UIpackSheet_transparent.png: Pixel UI pack
 	mapPack_tilesheet: Map Pack
 
 Licenses:

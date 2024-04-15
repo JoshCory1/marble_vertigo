@@ -6,6 +6,7 @@ extends Camera2D
 @onready var n_marker = $"../NegativeMarker"
 @onready var p_marker = $"../PositiveMarker"
 @onready var buttons = get_tree().get_nodes_in_group("LevelButtons")
+@onready var main = $".."
 
 var touchpos = Vector2(0,0)
 var deltax: float
@@ -21,6 +22,8 @@ var stop_camera: bool = false
 func _ready():
 	for button in buttons:
 		button.camera_scroll_off.connect(_on_buttons_camera_scroll_off)
+	main.freeze_camera.connect(_on_freeze_camera)
+	main.unfreeze_camera.connect(_on_unfreeze_camera)
 
 func _input(event):
 	if stop_camera == false:
@@ -46,3 +49,8 @@ func _physics_process(delta):
 func _on_buttons_camera_scroll_off():
 	stop_camera = true
 		
+func _on_freeze_camera():
+	stop_camera = true
+	
+func _on_unfreeze_camera():
+	stop_camera = false

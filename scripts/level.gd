@@ -12,9 +12,7 @@ extends Node2D
 @onready var player = $Player
 
 var viewport_size: Vector2
-var default_skin_unlocked: bool = true
-var cube_skin_unlocked: bool = true
-var spin_skin_unlocked: bool = true
+
 
 func _ready():
 	use_selected_skin()
@@ -33,6 +31,9 @@ func _ready():
 	await get_tree().create_timer(0.2).timeout
 	if get_tree().paused == true:
 		get_tree().paused = false
+
+func _process(_delta):
+	use_selected_skin()
 
 func get_parallax_sprite_scale(parallax_sprite: Sprite2D):
 	var parallax_texure = parallax_sprite.get_texture()
@@ -56,9 +57,12 @@ func set_bg_size_scale():
 	bg.scale = get_viewport_rect().size
 	
 func use_selected_skin():
-	if default_skin_unlocked == true:
+	if GameController.skins[0] == true && GameController.default_skin_unlocked == true:
 		player.use_default_skin()
-	elif cube_skin_unlocked == true:
+	elif GameController.skins[1] == true && GameController.cube_skin_unlocked == true:
 		player.use_cube_skin()
-	elif spin_skin_unlocked == true:
+	elif GameController.skins[2] && GameController.spin_skin_unlocked == true:
 		player.use_spin_skin()
+	else:
+		player.use_default_skin()
+	

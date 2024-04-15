@@ -8,6 +8,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_wxi5x"]
 
 [node name="DebugScreen" type="CanvasLayer"]
+process_mode = 3
 layer = 128
 script = ExtResource("1_7q3rp")
 
@@ -23,6 +24,15 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="ConsoleLog" type="Control" parent="Debug" groups=["debug_console"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Debug/ConsoleLog"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -30,14 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Debug/ConsoleLog"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.666667)
 
 [node name="BuildNumber" type="Label" parent="Debug/ConsoleLog"]
@@ -54,6 +57,7 @@ text = "Build 0.1.0"
 label_settings = SubResource("LabelSettings_nfcgt")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Debug/ConsoleLog"]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,16 +70,30 @@ offset_right = 467.0
 offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Debug/ConsoleLog/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="LogLabel" type="Label" parent="Debug/ConsoleLog/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 label_settings = SubResource("LabelSettings_wxi5x")
 autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="Debug/ConsoleLog/ScrollContainer/VBoxContainer/LogLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.403922)
 
 [node name="ToggleConsole" type="TextureButton" parent="Debug"]
 layout_mode = 1

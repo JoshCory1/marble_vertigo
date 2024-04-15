@@ -47,7 +47,6 @@ shape = SubResource("RectangleShape2D_w2dre")
 
 [node name="AreaBounceLeft" type="Area2D" parent="."]
 position = Vector2(-136.364, 0)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceLeft"]
 position = Vector2(-27.2727, 3.81344)
@@ -56,7 +55,6 @@ shape = SubResource("RectangleShape2D_spktx")
 
 [node name="AreaBounceRight" type="Area2D" parent="."]
 position = Vector2(168.182, 0)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceRight"]
 position = Vector2(-27.2727, -10.095)

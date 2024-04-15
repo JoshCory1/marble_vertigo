@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtxikyw3nal8l"]
+
+[ext_resource type="Texture2D" uid="uid://dgcp435elyuoh" path="res://assets/UI/UIpackSheet_transparent.png" id="1_hh5je"]
+
+[node name="CloseButton" type="TextureButton"]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+
+[node name="CloseSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_hh5je")
+centered = false
+region_enabled = true
+region_rect = Rect2(55, 109, 14, 14)
