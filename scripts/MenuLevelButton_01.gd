@@ -14,6 +14,7 @@ signal camera_scroll_off
 var current_active: bool = true
 
 func _ready():
+	disabled = true
 	if GameController.current_lvl >= current_level:
 		disabled = false
 	if disabled:
@@ -24,6 +25,7 @@ func _on_pressed():
 		if GameController.current_play_through_count > 0 || GameController.premium == true:
 			if GameController.premium == false:
 				GameController.current_play_through_count -= 1
+				GameController.save_game()
 			set_pressed_no_signal(true)
 			camera_scroll_off.emit()
 			canvas.visible = true

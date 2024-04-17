@@ -7,6 +7,7 @@ extends Area2D
 func _on_body_entered(body):
 	if GameController.current_lvl <= current_lvl:
 		GameController.current_lvl = GameController.current_lvl + 1
+		GameController.save_game()
 
 	AudioPlayer.play_sfx("portal_sfx")
 

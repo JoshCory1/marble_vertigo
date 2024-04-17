@@ -42,16 +42,19 @@ func _physics_process(_delta):
 		if use_accelerometer == true:
 			var mobile_input = Input.get_accelerometer()
 			if mobile_input.x > 0:
-				speed += speed_var / 10
+				speed += speed_var / 5
 			if mobile_input.x < 0:
-				speed -= speed_var / 10
+				speed -= speed_var / 5
+			GameController.my_log(str(speed))
 		else:
 			if Input.is_action_pressed("move_left"):
 				speed -= speed_var
 			if Input.is_action_pressed("move_right"):
 				speed += speed_var
+				GameController.my_log(str(speed))
 		if is_bounceing == false:
 				velocity.x = speed
+			
 
 		velocity.y += gravity
 		if velocity.y > max_fall_velocity:

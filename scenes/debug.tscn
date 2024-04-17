@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://5lnt60tn5fv8"]
+[gd_scene load_steps=6 format=3 uid="uid://5lnt60tn5fv8"]
 
 [ext_resource type="Script" path="res://scripts/debug.gd" id="1_7q3rp"]
 [ext_resource type="PackedScene" uid="uid://cs2pl0fvgcnin" path="res://scenes/ui_buttons.tscn" id="1_qerh4"]
+[ext_resource type="Script" path="res://scripts/ScrollContainer.gd" id="2_upwck"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfcgt"]
 
@@ -71,12 +72,14 @@ offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("2_upwck")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Debug/ConsoleLog/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
+alignment = 2
 
 [node name="LogLabel" type="Label" parent="Debug/ConsoleLog/ScrollContainer/VBoxContainer"]
 layout_mode = 2

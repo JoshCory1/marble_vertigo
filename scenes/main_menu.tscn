@@ -237,6 +237,34 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
+[node name="MenuLevelButton_02" type="TextureButton" parent="." groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 321.0
+offset_top = 144.0
+offset_right = 385.0
+offset_bottom = 208.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("8_yu0sh")
+current_level = 2
+
+[node name="Label" type="Label" parent="MenuLevelButton_02"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_02"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
 [node name="UIMenuCamera" type="Camera2D" parent="."]
 script = ExtResource("7_tggy7")
 
@@ -313,4 +341,5 @@ text = "Shop"
 label_settings = SubResource("LabelSettings_v52m2")
 
 [connection signal="pressed" from="MenuLevelButton_01" to="MenuLevelButton_01" method="_on_pressed"]
+[connection signal="pressed" from="MenuLevelButton_02" to="MenuLevelButton_02" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]
