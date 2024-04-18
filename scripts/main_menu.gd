@@ -7,6 +7,7 @@ extends Node2D
 @onready var bg = $CanvasLayer/Sprite2D
 @onready var shop = $CanvasLayer2/ShopScreen
 @onready var terrain = $UITerrain
+@onready var black_can = $BlackCanvasLayer
 
 var current_button_array_number = 0
 
