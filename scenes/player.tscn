@@ -193,7 +193,6 @@ angular_velocity_min = -720.0
 angular_velocity_max = -174.55
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_bottom = 530
 limit_smoothed = true
 drag_vertical_enabled = true
 drag_top_margin = 0.4

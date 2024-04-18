@@ -19,6 +19,7 @@ config/icon="res://assets/ball/ball_blue_large_alt.png"
 
 AudioPlayer="*res://scenes/audio_player.tscn"
 GameController="*res://scenes/game_controller.tscn"
+IapManager="*res://scenes/iap_manager.tscn"
 
 [display]
 

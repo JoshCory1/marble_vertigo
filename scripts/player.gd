@@ -46,7 +46,6 @@ func _physics_process(_delta):
 				velocity.x = direction * speed_var
 			else:
 				velocity.x = move_toward(velocity.x, 0, speed_var / 100)
-			
 
 		velocity.y += gravity
 		if velocity.y > max_fall_velocity:
@@ -54,13 +53,13 @@ func _physics_process(_delta):
 	else:
 		velocity = Vector2(0,0)
 		if Input.is_action_pressed("move_up"):
-			velocity.y = -speed_var * 300
+			velocity.y = -speed_var * 10
 		if Input.is_action_pressed("move_down"):
-			velocity.y = speed_var * 300
+			velocity.y = speed_var * 10
 		if Input.is_action_pressed("move_left"):
-			velocity.x = -speed_var * 300
+			velocity.x = -speed_var * 10
 		if Input.is_action_pressed("move_right"):
-			velocity.x = speed_var * 300
+			velocity.x = speed_var * 10
 	move_and_slide()
 
 

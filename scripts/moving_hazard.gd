@@ -26,22 +26,22 @@ func _ready() -> void:
 func _on_area_bounce_up_body_entered(body):
 	if body != null:
 		body.bounce_up()
-		body.is_bounceing = true
+		
 
 
 func _on_area_bounce_down_body_entered(body):
 	if body != null:
 		body.bounce_down()
-		body.is_bounceing = true
+		
 
 
 func _on_area_bounce_left_body_entered(body):
 	if body != null:
 		body.bounce_left()
-		body.is_bounceing = true
+		
 
 
 func _on_area_bounce_right_body_entered(body):
 	if body != null:
 		body.bounce_right()
-		body.is_bounceing = true
+		

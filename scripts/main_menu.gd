@@ -18,6 +18,10 @@ signal unfreeze_camera
 
 func _ready():
 	black_can.visible = true
+	if !GameController.is_reloaded:
+		GameController.is_reloaded = true
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://scenes/start.tscn")
 	set_bg_size_scale()
 	set_shop_size_scale()
 	shop.visible = false

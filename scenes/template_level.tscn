@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3gourlssuhc4"]
+[gd_scene load_steps=13 format=3 uid="uid://b3gourlssuhc4"]
 
 [ext_resource type="Texture2D" uid="uid://buqgwu6q2lr72" path="res://assets/backgrounds/cloudLayer1.png" id="1_3jfqd"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6oils"]
@@ -10,45 +10,56 @@
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="6_bkn5x"]
 [ext_resource type="PackedScene" uid="uid://cadhecjoq0rfb" path="res://scenes/terrrain.tscn" id="7_l5enr"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="10_u3lr3"]
+[ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_6eqc3"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_rv3lo"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_6oils")
 music_track = ExtResource("2_7477w")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Exit" parent="." instance=ExtResource("6_bkn5x")]
+position = Vector2(869, 308)
 
-[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Terrrain" parent="." instance=ExtResource("7_l5enr")]
+
+[node name="Player" parent="." instance=ExtResource("3_f05t8")]
+position = Vector2(387, 163)
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Environment"]
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 z_index = -100
 motion_scale = Vector2(0.1, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+[node name="Sprite2D" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer1"]
 modulate = Color(0.811765, 1, 1, 1)
 texture = ExtResource("1_3jfqd")
 centered = false
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 z_index = -99
 motion_scale = Vector2(0.5, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Sprite2D" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer2"]
 modulate = Color(0.235294, 0.584314, 0.490196, 0.988235)
 position = Vector2(479, 419)
 texture = ExtResource("4_1vnus")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="Environment"]
 layer = -105
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="Environment/CanvasLayer"]
 modulate = Color(0.643137, 0.858824, 1, 1)
 scale = Vector2(3.74609, 2.10547)
 texture = ExtResource("2_h78o5")
 
-[node name="BlackCanvasLayer" type="CanvasLayer" parent="."]
+[node name="BlackCanvasLayer" type="CanvasLayer" parent="Environment"]
 layer = 101
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="BlackCanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Environment/BlackCanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -56,21 +67,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Player" parent="." instance=ExtResource("3_f05t8")]
-position = Vector2(387, 163)
+[node name="DebugScreen" parent="Environment" instance=ExtResource("10_u3lr3")]
 
 [node name="Pillars" type="Node" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(381, 375)
 
-[node name="Exit" parent="." instance=ExtResource("6_bkn5x")]
-position = Vector2(869, 308)
+[node name="Portals" type="Node" parent="."]
 
-[node name="Terrrain" parent="." instance=ExtResource("7_l5enr")]
+[node name="Portal" parent="Portals" instance=ExtResource("11_6eqc3")]
 
-[node name="DebugScreen" parent="." instance=ExtResource("10_u3lr3")]
+[node name="Hazards" type="Node" parent="."]
 
-[node name="MovingHazard" parent="." instance=ExtResource("11_rv3lo")]
+[node name="MovingHazard" parent="Hazards" instance=ExtResource("11_rv3lo")]
 position = Vector2(763, -15)
 destination = Vector2(100, 0)
