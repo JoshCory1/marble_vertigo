@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed_var: float = 10.0
+@export var speed_var: float = 300
 @export var bounce_force_min: int = 300
 @export var bounce_force_max: int = 450
 @export var gravity: float = 8.0
@@ -18,7 +18,7 @@ var debug: bool = false
 var accelerometer_speed: float = 130.0
 var use_accelerometer: bool = false
 var speed: float = 0.0
-var is_bounceing: bool = false
+
 
 
 func _ready():
@@ -31,29 +31,21 @@ func _input(_event):
 		if Input.is_action_just_pressed("debug"):
 			debug = !debug
 
-func _process(_delta):
-	if is_bounceing == true:
-		await get_tree().create_timer(bounceing_time_delay).timeout
-		is_bounceing = false
-
-
 func _physics_process(_delta):
 	if debug == false && stop_velocity == false:
 		if use_accelerometer == true:
 			var mobile_input = Input.get_accelerometer()
-			if mobile_input.x > 0:
-				speed += speed_var / 5
-			if mobile_input.x < 0:
-				speed -= speed_var / 5
-			GameController.my_log(str(speed))
+			var direction = mobile_input.x
+			if direction:
+				velocity.x = direction * accelerometer_speed
+			else:
+				velocity.x = move_toward(velocity.x, 0, accelerometer_speed / 200)
 		else:
-			if Input.is_action_pressed("move_left"):
-				speed -= speed_var
-			if Input.is_action_pressed("move_right"):
-				speed += speed_var
-				GameController.my_log(str(speed))
-		if is_bounceing == false:
-				velocity.x = speed
+			var direction = Input.get_axis("move_left", "move_right")
+			if direction:
+				velocity.x = direction * speed_var
+			else:
+				velocity.x = move_toward(velocity.x, 0, speed_var / 100)
 			
 
 		velocity.y += gravity
@@ -84,10 +76,12 @@ func bounce_down():
 func bounce_left():
 	AudioPlayer.play_sfx("bounce_sfx_2")
 	velocity.x = -random_bounce(bounce_force_min, bounce_force_max)
+	
 
 func bounce_right():
 	AudioPlayer.play_sfx("bounce_sfx_2")
 	velocity.x = random_bounce(bounce_force_min, bounce_force_max)
+	
 
 func random_bounce(min_boune: int, max_boune: int):
 	var new_bounce_velocity
@@ -110,7 +104,7 @@ func die():
 		GameController.my_log("Died!!")
 		await get_tree().create_timer(0.5).timeout
 		get_tree().paused = false
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/start.tscn")
 		
 	# Skins
 

@@ -15,5 +15,5 @@ func _on_body_entered(body):
 	body.velocity = Vector2(0,0)
 	body.sprite.visible = false
 	await get_tree().create_timer(time_till_exit).timeout
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	GameController.my_log("Player enterd")
+	get_tree().change_scene_to_file("res://scenes/start.tscn")

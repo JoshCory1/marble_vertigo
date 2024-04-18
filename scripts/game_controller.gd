@@ -1,6 +1,4 @@
 extends Node
-#Start
-var reload:bool = false
 
 #Level
 var current_lvl: int = 1
