@@ -4,3 +4,6 @@
 
 [node name="GameController" type="Node"]
 script = ExtResource("1_bs3fw")
+debug = true
+debug_visible = true
+premium = true

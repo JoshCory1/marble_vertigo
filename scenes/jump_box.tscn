@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://77ef0thgbp7d"]
+
+[ext_resource type="Script" path="res://scripts/jump_box.gd" id="1_1n6tu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xq8i"]
+size = Vector2(232, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60reo"]
+size = Vector2(260, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4flom"]
+size = Vector2(260, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02c6t"]
+size = Vector2(12, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6twit"]
+size = Vector2(12, 26)
+
+[node name="JumpBox" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_1n6tu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1xq8i")
+
+[node name="Top" type="Area2D" parent="."]
+position = Vector2(0, -20)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+shape = SubResource("RectangleShape2D_60reo")
+
+[node name="Bottom" type="Area2D" parent="."]
+position = Vector2(0, 20)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+shape = SubResource("RectangleShape2D_4flom")
+
+[node name="Right" type="Area2D" parent="."]
+position = Vector2(125, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+shape = SubResource("RectangleShape2D_02c6t")
+
+[node name="Left" type="Area2D" parent="."]
+position = Vector2(-125, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+shape = SubResource("RectangleShape2D_6twit")
+
+[connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
+[connection signal="body_entered" from="Bottom" to="." method="_on_bottom_body_entered"]
+[connection signal="body_entered" from="Right" to="." method="_on_right_body_entered"]
+[connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]

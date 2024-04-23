@@ -10,6 +10,7 @@ extends Node2D
 @onready var black_screen = $Environment/BlackCanvasLayer/ColorRect
 @onready var bg = $Environment/CanvasLayer/Sprite2D
 @onready var player = $Player
+@onready var debug_menu = $Environment/DebugScreen
 
 var viewport_size: Vector2
 

@@ -8,7 +8,6 @@ radius = 55.0
 height = 202.0
 
 [node name="Portal" type="Area2D"]
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_3ouf8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

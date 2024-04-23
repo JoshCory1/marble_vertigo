@@ -7,12 +7,12 @@ extends CharacterBody2D
 @export var gravity: float = 8.0
 @export var max_fall_velocity: float = 300.0
 @export var bounceing_time_delay: float = 0.5
-@export var debug_mode = false
 
 @onready var death_particles = $CPUParticles2D
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
+var debug_mode = false
 var stop_velocity: bool = false 
 var debug: bool = false
 var accelerometer_speed: float = 130.0
@@ -30,6 +30,12 @@ func _input(_event):
 	if debug_mode == true:
 		if Input.is_action_just_pressed("debug"):
 			debug = !debug
+			
+func _process(_delta):
+	if GameController.debug:
+		debug_mode = true
+	else:
+		debug_mode = false
 
 func _physics_process(_delta):
 	if debug == false && stop_velocity == false:
@@ -42,10 +48,13 @@ func _physics_process(_delta):
 				velocity.x = move_toward(velocity.x, 0, accelerometer_speed / 200)
 		else:
 			var direction = Input.get_axis("move_left", "move_right")
-			if direction:
-				velocity.x = direction * speed_var
-			else:
-				velocity.x = move_toward(velocity.x, 0, speed_var / 100)
+			if direction > 0:
+				speed += speed_var
+				velocity.x = speed / 100
+			elif direction < 0:
+				speed -= speed_var
+				velocity.x = speed / 100
+			
 
 		velocity.y += gravity
 		if velocity.y > max_fall_velocity:
@@ -53,13 +62,13 @@ func _physics_process(_delta):
 	else:
 		velocity = Vector2(0,0)
 		if Input.is_action_pressed("move_up"):
-			velocity.y = -speed_var * 10
+			velocity.y -= speed_var * 10
 		if Input.is_action_pressed("move_down"):
-			velocity.y = speed_var * 10
+			velocity.y += speed_var * 10
 		if Input.is_action_pressed("move_left"):
-			velocity.x = -speed_var * 10
+			velocity.x -= speed_var * 10
 		if Input.is_action_pressed("move_right"):
-			velocity.x = speed_var * 10
+			velocity.x += speed_var * 10
 	move_and_slide()
 
 

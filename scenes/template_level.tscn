@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="2_h78o5"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="3_f05t8"]
 [ext_resource type="Texture2D" uid="uid://cbmf7i1jc5ua2" path="res://assets/backgrounds/hills.png" id="4_1vnus"]
+[ext_resource type="PackedScene" uid="uid://djov3uvcs70tb" path="res://scenes/ground.tscn" id="4_wrw7n"]
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="5_vcihk"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="6_bkn5x"]
-[ext_resource type="PackedScene" uid="uid://cadhecjoq0rfb" path="res://scenes/terrrain.tscn" id="7_l5enr"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="10_u3lr3"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_6eqc3"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_rv3lo"]
@@ -20,7 +20,7 @@ music_track = ExtResource("2_7477w")
 [node name="Exit" parent="." instance=ExtResource("6_bkn5x")]
 position = Vector2(869, 308)
 
-[node name="Terrrain" parent="." instance=ExtResource("7_l5enr")]
+[node name="Ground" parent="." instance=ExtResource("4_wrw7n")]
 
 [node name="Player" parent="." instance=ExtResource("3_f05t8")]
 position = Vector2(387, 163)

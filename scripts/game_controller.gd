@@ -1,27 +1,40 @@
 extends Node
+#Debug
+## Debug contorls if player can hit Q(debug key) to by pass game for testing purpose
+@export var debug: bool = false
+## Debug toglles debug menu
+@export var debug_visible: bool = false
 
 # Start
 var is_reloaded: bool = false
+
 #Level
 var current_lvl: int = 1
 var current_play_through_count: int = 5
-var premium: bool = true
+## premium controls if game has limited plays before needing to watch adds
+@export var premium: bool = false
+
 # Save game
 var save_file_path = "user://vertigo_save.save"
 
 # Log
 var current_log: String
 var old_log
+
 #Skins bools
+
 #default
 var default_0_skin_unlocked: bool = true
 var default_0_skin_use: bool = false
+
 #cube
 var cube_1_skin_unlocked: bool = false
 var cube_1_skin_use: bool = false
+
 #spin
 var spin_2_skin_unlocked: bool = false
 var spin_2_skin_use: bool = false
+
 #skins array
 var skins = []
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfcy0hnl86squ"]
+[gd_scene load_steps=8 format=3 uid="uid://bfcy0hnl86squ"]
 
 [ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_4xgp3"]
 [ext_resource type="Texture2D" uid="uid://6cnj04ds7j82" path="res://assets/shop/ShopBox.png" id="2_gh6sk"]
 [ext_resource type="PackedScene" uid="uid://dtxikyw3nal8l" path="res://scenes/close_button.tscn" id="3_js1kb"]
 [ext_resource type="Texture2D" uid="uid://cqh402wxwmiq4" path="res://assets/ball/ball_blue_large_alt.png" id="4_jggn5"]
+[ext_resource type="Texture2D" uid="uid://cxwrbuxn06n3u" path="res://assets/ball/marble_v3.png" id="4_quguk"]
+[ext_resource type="Texture2D" uid="uid://d5g4r4ijimkk" path="res://assets/ball/marble_v19.png" id="5_oeu3k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_26ct4"]
 font_size = 65
@@ -77,7 +79,7 @@ grow_vertical = 2
 layout_mode = 2
 texture_normal = ExtResource("4_jggn5")
 
-[node name="Label" type="Label" parent="Box/ColorRect/VBoxContainer/DefaultButton"]
+[node name="LabelPayment" type="Label" parent="Box/ColorRect/VBoxContainer/DefaultButton"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -92,7 +94,7 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Dfault"
 
-[node name="ColorRect" type="ColorRect" parent="Box/ColorRect/VBoxContainer/DefaultButton/Label"]
+[node name="ColorRect" type="ColorRect" parent="Box/ColorRect/VBoxContainer/DefaultButton/LabelPayment"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -109,9 +111,9 @@ color = Color(0, 0.0588235, 0.443137, 0.298039)
 
 [node name="CubeButton" type="TextureButton" parent="Box/ColorRect/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_jggn5")
+texture_normal = ExtResource("4_quguk")
 
-[node name="Label" type="Label" parent="Box/ColorRect/VBoxContainer/CubeButton"]
+[node name="LabelPayment" type="Label" parent="Box/ColorRect/VBoxContainer/CubeButton"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -126,7 +128,7 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Cube"
 
-[node name="ColorRect" type="ColorRect" parent="Box/ColorRect/VBoxContainer/CubeButton/Label"]
+[node name="ColorRect" type="ColorRect" parent="Box/ColorRect/VBoxContainer/CubeButton/LabelPayment"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -143,9 +145,9 @@ color = Color(0, 0.0588235, 0.443137, 0.298039)
 
 [node name="SpinButton" type="TextureButton" parent="Box/ColorRect/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_jggn5")
+texture_normal = ExtResource("5_oeu3k")
 
-[node name="Label" type="Label" parent="Box/ColorRect/VBoxContainer/SpinButton"]
+[node name="LabelPayment" type="Label" parent="Box/ColorRect/VBoxContainer/SpinButton"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -160,7 +162,7 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Spinning"
 
-[node name="ColorRect" type="ColorRect" parent="Box/ColorRect/VBoxContainer/SpinButton/Label"]
+[node name="ColorRect" type="ColorRect" parent="Box/ColorRect/VBoxContainer/SpinButton/LabelPayment"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=23 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="1_opivx"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dnr1q3qcava4x" path="res://scenes/ui_terrain.tscn" id="12_auuac"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="12_gh0hx"]
 [ext_resource type="PackedScene" uid="uid://bfcy0hnl86squ" path="res://scenes/shop_screen.tscn" id="13_47q5w"]
+[ext_resource type="PackedScene" uid="uid://5r0aor4wsqe7" path="res://scenes/level_5.tscn" id="13_evimt"]
+[ext_resource type="PackedScene" uid="uid://dvig3dqm6mlyy" path="res://scenes/level_6.tscn" id="14_6hm62"]
 [ext_resource type="Texture2D" uid="uid://syysxg3mjbay" path="res://assets/shop/shop_button.png" id="14_da51e"]
 [ext_resource type="PackedScene" uid="uid://2kxbgbevh4sq" path="res://scenes/iap_manager.tscn" id="17_dbfbd"]
 
@@ -150,6 +152,62 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
+[node name="MenuLevelButton_05" type="TextureButton" parent="." groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 824.0
+offset_top = 45.0
+offset_right = 888.0
+offset_bottom = 109.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("13_evimt")
+current_level = 5
+
+[node name="Label" type="Label" parent="MenuLevelButton_05"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_05"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
+[node name="MenuLevelButton_06" type="TextureButton" parent="." groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 1082.0
+offset_top = 12.0
+offset_right = 1146.0
+offset_bottom = 76.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("14_6hm62")
+current_level = 6
+
+[node name="Label" type="Label" parent="MenuLevelButton_06"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_06"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
 [node name="UIMenuCamera" type="Camera2D" parent="."]
 script = ExtResource("7_tggy7")
 
@@ -228,4 +286,6 @@ label_settings = SubResource("LabelSettings_v52m2")
 [connection signal="pressed" from="MenuLevelButton_02" to="MenuLevelButton_02" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_03" to="MenuLevelButton_03" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_04" to="MenuLevelButton_04" method="_on_pressed"]
+[connection signal="pressed" from="MenuLevelButton_05" to="MenuLevelButton_05" method="_on_pressed"]
+[connection signal="pressed" from="MenuLevelButton_06" to="MenuLevelButton_06" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]
