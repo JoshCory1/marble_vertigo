@@ -80,6 +80,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_8jm5m")
 
 [node name="Label" type="Label" parent="Sprite2D" groups=["TimedPlatformLables"]]
+visible = false
 offset_left = -139.166
 offset_top = -25.0
 offset_right = -97.1668
@@ -88,11 +89,8 @@ text = "9"
 label_settings = SubResource("LabelSettings_ne5ne")
 metadata/_edit_use_anchors_ = true
 
-[node name="ActiveFireWave" parent="Sprite2D/Label" instance=ExtResource("3_sx45p")]
-show_behind_parent = true
-position = Vector2(10, 23.3333)
-
 [node name="Label2" type="Label" parent="Sprite2D" groups=["TimedPlatformLables"]]
+visible = false
 offset_left = -80.0
 offset_top = -25.0
 offset_right = -38.0
@@ -101,11 +99,8 @@ text = "9"
 label_settings = SubResource("LabelSettings_ne5ne")
 metadata/_edit_use_anchors_ = true
 
-[node name="ActiveFireWave2" parent="Sprite2D/Label2" instance=ExtResource("3_sx45p")]
-show_behind_parent = true
-position = Vector2(11.6666, 23.3333)
-
 [node name="Label3" type="Label" parent="Sprite2D" groups=["TimedPlatformLables"]]
+visible = false
 offset_left = -17.5001
 offset_top = -25.0
 offset_right = 24.4999
@@ -114,11 +109,8 @@ text = "9"
 label_settings = SubResource("LabelSettings_ne5ne")
 metadata/_edit_use_anchors_ = true
 
-[node name="ActiveFireWave2" parent="Sprite2D/Label3" instance=ExtResource("3_sx45p")]
-show_behind_parent = true
-position = Vector2(10.8334, 30)
-
 [node name="Label4" type="Label" parent="Sprite2D" groups=["TimedPlatformLables"]]
+visible = false
 offset_left = 42.4999
 offset_top = -25.0
 offset_right = 84.4999
@@ -127,11 +119,8 @@ text = "9"
 label_settings = SubResource("LabelSettings_ne5ne")
 metadata/_edit_use_anchors_ = true
 
-[node name="ActiveFireWave2" parent="Sprite2D/Label4" instance=ExtResource("3_sx45p")]
-show_behind_parent = true
-position = Vector2(10.8334, 23.3333)
-
 [node name="Label5" type="Label" parent="Sprite2D" groups=["TimedPlatformLables"]]
+visible = false
 offset_left = 103.334
 offset_top = -25.0
 offset_right = 145.334
@@ -140,9 +129,25 @@ text = "9"
 label_settings = SubResource("LabelSettings_ne5ne")
 metadata/_edit_use_anchors_ = true
 
-[node name="ActiveFireWave2" parent="Sprite2D/Label5" instance=ExtResource("3_sx45p")]
+[node name="ActiveFireWave" parent="Sprite2D" instance=ExtResource("3_sx45p")]
 show_behind_parent = true
-position = Vector2(9.99969, 26.6667)
+position = Vector2(-129.166, -1.6667)
+
+[node name="ActiveFireWave2" parent="Sprite2D" instance=ExtResource("3_sx45p")]
+show_behind_parent = true
+position = Vector2(-68.3334, -1.6667)
+
+[node name="ActiveFireWave3" parent="Sprite2D" instance=ExtResource("3_sx45p")]
+show_behind_parent = true
+position = Vector2(-6.6667, 5)
+
+[node name="ActiveFireWave4" parent="Sprite2D" instance=ExtResource("3_sx45p")]
+show_behind_parent = true
+position = Vector2(53.3333, -1.6667)
+
+[node name="ActiveFireWave5" parent="Sprite2D" instance=ExtResource("3_sx45p")]
+show_behind_parent = true
+position = Vector2(113.334, 1.6667)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

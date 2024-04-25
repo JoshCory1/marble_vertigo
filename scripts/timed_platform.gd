@@ -20,21 +20,21 @@ func _ready():
 	
 
 func _process(_delta):
-	$Sprite2D/Label.text = str(snappedi(timer.time_left, 0))
-	$Sprite2D/Label2.text = str(snappedi(timer.time_left, 0))
-	$Sprite2D/Label3.text = str(snappedi(timer.time_left, 0))
-	$Sprite2D/Label4.text = str(snappedi(timer.time_left, 0))
-	$Sprite2D/Label5.text = str(snappedi(timer.time_left, 0))
+#	$Sprite2D/Label.text = str(snappedi(timer.time_left, 0))
+#	$Sprite2D/Label2.text = str(snappedi(timer.time_left, 0))
+#	$Sprite2D/Label3.text = str(snappedi(timer.time_left, 0))
+#	$Sprite2D/Label4.text = str(snappedi(timer.time_left, 0))
+#	$Sprite2D/Label5.text = str(snappedi(timer.time_left, 0))
 	SetActive()
 	
 
 func SetActive():
 	if timer.time_left <= 0:
-		$Sprite2D/Label/ActiveFireWave.emitting = true
-		$Sprite2D/Label2/ActiveFireWave2.emitting = true
-		$Sprite2D/Label3/ActiveFireWave2.emitting = true
-		$Sprite2D/Label4/ActiveFireWave2.emitting = true
-		$Sprite2D/Label5/ActiveFireWave2.emitting = true
+		$Sprite2D/ActiveFireWave.emitting = true
+		$Sprite2D/ActiveFireWave2.emitting = true
+		$Sprite2D/ActiveFireWave3.emitting = true
+		$Sprite2D/ActiveFireWave4.emitting = true
+		$Sprite2D/ActiveFireWave5.emitting = true
 		if animation_player.current_animation != "RedActive":
 			animation_player.play("RedActive")
 		set_collision_layer_value(3, true)
@@ -43,11 +43,11 @@ func SetActive():
 		SetNotActive()
 
 func SetNotActive():
-	$Sprite2D/Label/ActiveFireWave.emitting = false
-	$Sprite2D/Label2/ActiveFireWave2.emitting = false
-	$Sprite2D/Label3/ActiveFireWave2.emitting = false
-	$Sprite2D/Label4/ActiveFireWave2.emitting = false
-	$Sprite2D/Label5/ActiveFireWave2.emitting = false
+	$Sprite2D/ActiveFireWave.emitting = false
+	$Sprite2D/ActiveFireWave2.emitting = false
+	$Sprite2D/ActiveFireWave3.emitting = false
+	$Sprite2D/ActiveFireWave4.emitting = false
+	$Sprite2D/ActiveFireWave5.emitting = false
 	timer.start()
 	if animation_player.current_animation != "Default":
 		animation_player.play("Default")
