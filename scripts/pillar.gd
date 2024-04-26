@@ -52,6 +52,7 @@ func _on_touch_screen_button_released():
 
 func _on_area_bounce_up_body_entered(body):
 	if body != null:
+		body.no_bounce = true
 		body.bounce_up()
 		
 		
@@ -59,16 +60,39 @@ func _on_area_bounce_up_body_entered(body):
 
 func _on_area_bounce_down_body_entered(body):
 	if body != null:
+		body.no_bounce = true
 		body.bounce_down()
 		
 
 
 func _on_area_bounce_left_body_entered(body):
 	if body != null:
+		body.no_bounce = true
 		body.bounce_left()
 		
 
 func _on_area_bounce_right_body_entered(body):
 	if body != null:
+		body.no_bounce = true
 		body.bounce_right()
 		
+
+
+func _on_area_bounce_up_body_exited(body):
+	if body != null:
+		body.no_bounce = false
+
+
+func _on_area_bounce_down_body_exited(body):
+	if body != null:
+		body.no_bounce = false
+
+
+func _on_area_bounce_left_body_exited(body):
+	if body != null:
+		body.no_bounce = false
+
+
+func _on_area_bounce_right_body_exited(body):
+	if body != null:
+		body.no_bounce = false

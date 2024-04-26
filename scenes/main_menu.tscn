@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=26 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="1_opivx"]
@@ -10,17 +10,18 @@
 [ext_resource type="Script" path="res://scripts/MenuLevelButton_01.gd" id="5_s7i4j"]
 [ext_resource type="Script" path="res://scripts/UIMenuCamera.gd" id="7_tggy7"]
 [ext_resource type="PackedScene" uid="uid://7d3eky6wq7g1" path="res://scenes/level_1.tscn" id="8_gmgai"]
-[ext_resource type="PackedScene" uid="uid://d3uvt5umhyfrj" path="res://scenes/level_2_1.tscn" id="10_5ti34"]
-[ext_resource type="PackedScene" uid="uid://b4x2t0boktqe3" path="res://scenes/level_2.tscn" id="10_yy7ui"]
-[ext_resource type="PackedScene" uid="uid://cu36smmnc7bty" path="res://scenes/level_4.tscn" id="11_kqy7b"]
-[ext_resource type="PackedScene" uid="uid://wgsudtqymav1" path="res://scenes/level_3.tscn" id="11_mjm1m"]
+[ext_resource type="PackedScene" uid="uid://d3uvt5umhyfrj" path="res://scenes/level_2.tscn" id="10_yy7ui"]
+[ext_resource type="PackedScene" uid="uid://wgsudtqymav1" path="res://scenes/level_4.tscn" id="11_kqy7b"]
+[ext_resource type="PackedScene" uid="uid://b4x2t0boktqe3" path="res://scenes/level_3.tscn" id="11_mjm1m"]
 [ext_resource type="PackedScene" uid="uid://dnr1q3qcava4x" path="res://scenes/ui_terrain.tscn" id="12_auuac"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="12_gh0hx"]
 [ext_resource type="PackedScene" uid="uid://bfcy0hnl86squ" path="res://scenes/shop_screen.tscn" id="13_47q5w"]
-[ext_resource type="PackedScene" uid="uid://5r0aor4wsqe7" path="res://scenes/level_5.tscn" id="13_evimt"]
-[ext_resource type="PackedScene" uid="uid://dvig3dqm6mlyy" path="res://scenes/level_6.tscn" id="14_6hm62"]
+[ext_resource type="PackedScene" uid="uid://bbymuv1obodtd" path="res://scenes/level_5.tscn" id="13_evimt"]
+[ext_resource type="PackedScene" uid="uid://cu36smmnc7bty" path="res://scenes/level_6.tscn" id="14_6hm62"]
 [ext_resource type="Texture2D" uid="uid://syysxg3mjbay" path="res://assets/shop/shop_button.png" id="14_da51e"]
-[ext_resource type="PackedScene" uid="uid://bdxjygba2lbwy" path="res://scenes/level_7.tscn" id="15_51ok2"]
+[ext_resource type="PackedScene" uid="uid://5r0aor4wsqe7" path="res://scenes/level_7.tscn" id="15_51ok2"]
+[ext_resource type="PackedScene" uid="uid://bdxjygba2lbwy" path="res://scenes/level_9.tscn" id="16_0gksa"]
+[ext_resource type="PackedScene" uid="uid://dvig3dqm6mlyy" path="res://scenes/level_8.tscn" id="16_cycyr"]
 [ext_resource type="PackedScene" uid="uid://2kxbgbevh4sq" path="res://scenes/iap_manager.tscn" id="17_dbfbd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
@@ -28,6 +29,7 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_v52m2"]
 font_size = 36
+font_color = Color(0.0941176, 0.85098, 0.180392, 1)
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
@@ -80,7 +82,7 @@ texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
-level = ExtResource("10_5ti34")
+level = ExtResource("10_yy7ui")
 current_level = 2
 
 [node name="Label" type="Label" parent="MenuLevelButton_08"]
@@ -100,16 +102,16 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_02" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 321.0
-offset_top = 144.0
-offset_right = 385.0
-offset_bottom = 208.0
+offset_left = 257.0
+offset_top = 123.0
+offset_right = 321.0
+offset_bottom = 187.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
-level = ExtResource("10_yy7ui")
-current_level = 2
+level = ExtResource("11_mjm1m")
+current_level = 3
 
 [node name="Label" type="Label" parent="MenuLevelButton_02"]
 layout_mode = 0
@@ -126,18 +128,46 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
-[node name="MenuLevelButton_03" type="TextureButton" parent="." groups=["LevelButtons"]]
+[node name="MenuLevelButton_09" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 537.0
-offset_top = 68.0
-offset_right = 601.0
-offset_bottom = 132.0
+offset_left = 632.0
+offset_top = 3.0
+offset_right = 696.0
+offset_bottom = 67.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
-level = ExtResource("11_mjm1m")
-current_level = 3
+level = ExtResource("11_kqy7b")
+current_level = 4
+
+[node name="Label" type="Label" parent="MenuLevelButton_09"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_09"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
+[node name="MenuLevelButton_03" type="TextureButton" parent="." groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 711.0
+offset_top = -184.0
+offset_right = 775.0
+offset_bottom = -120.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("13_evimt")
+current_level = 5
 
 [node name="Label" type="Label" parent="MenuLevelButton_03"]
 layout_mode = 0
@@ -156,16 +186,16 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_04" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 730.0
-offset_top = -161.0
-offset_right = 794.0
-offset_bottom = -97.0
+offset_left = 804.0
+offset_top = -32.0
+offset_right = 868.0
+offset_bottom = 32.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
-level = ExtResource("11_kqy7b")
-current_level = 4
+level = ExtResource("14_6hm62")
+current_level = 6
 
 [node name="Label" type="Label" parent="MenuLevelButton_04"]
 layout_mode = 0
@@ -184,16 +214,16 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_05" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 824.0
-offset_top = 45.0
-offset_right = 888.0
-offset_bottom = 109.0
+offset_left = 1012.0
+offset_top = 66.0
+offset_right = 1076.0
+offset_bottom = 130.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
-level = ExtResource("13_evimt")
-current_level = 5
+level = ExtResource("15_51ok2")
+current_level = 7
 
 [node name="Label" type="Label" parent="MenuLevelButton_05"]
 layout_mode = 0
@@ -212,16 +242,16 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_06" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 1082.0
-offset_top = 12.0
-offset_right = 1146.0
-offset_bottom = 76.0
+offset_left = 1264.0
+offset_top = 90.0
+offset_right = 1328.0
+offset_bottom = 154.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
-level = ExtResource("14_6hm62")
-current_level = 6
+level = ExtResource("16_cycyr")
+current_level = 8
 
 [node name="Label" type="Label" parent="MenuLevelButton_06"]
 layout_mode = 0
@@ -240,16 +270,16 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_07" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 1292.0
-offset_top = 111.0
-offset_right = 1356.0
-offset_bottom = 175.0
+offset_left = 658.0
+offset_top = 357.0
+offset_right = 722.0
+offset_bottom = 421.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
-level = ExtResource("15_51ok2")
-current_level = 7
+level = ExtResource("16_0gksa")
+current_level = 9
 
 [node name="Label" type="Label" parent="MenuLevelButton_07"]
 layout_mode = 0
@@ -292,6 +322,7 @@ color = Color(0, 0, 0, 1)
 [node name="DebugScreen" parent="." instance=ExtResource("12_gh0hx")]
 
 [node name="UITerrain" parent="." instance=ExtResource("12_auuac")]
+layer_0/tile_data = PackedInt32Array(131072, 393218, 1, 196608, 393218, 1, 196609, 393218, 1, 262145, 393218, 1, 262146, 393218, 1, 262147, 393218, 1, 262148, 393218, 1, 262149, 393218, 1, 327685, 393218, 2, 327686, 393218, 2, 327687, 393218, 2, 327688, 589826, 0, 262151, 393218, 1, 262150, 393218, 1, 196613, 393218, 1, 196612, 393218, 1, 196611, 393218, 1, 196610, 393218, 1, 131073, 393218, 1, 131074, 393218, 1, 196614, 524290, 1, 262152, 393218, 1, 327684, 393218, 2, 327682, 393218, 2, 327683, 393218, 2, 262144, 589826, 0, 262143, 327682, 1, 327681, 393218, 2, 327680, 327682, 2, 327679, 327682, 2, 196607, 327682, 1, 131075, 393218, 1, 131076, 393218, 1, 131077, 393218, 1, 131078, 458754, 1, 131080, 327682, 1, 131081, 393218, 1, 196617, 524290, 0, 196618, 458754, 2, 262155, 327682, 0, 327691, 589826, 1, 327690, 393218, 0, 393226, 393218, 1, 393225, 393218, 1, 327689, 524290, 1, 393224, 327682, 1, 131082, 524290, 0, 131083, 393218, 2, 65544, 327682, 0, 65542, 458754, 1, 196616, 589826, 1, 6, 458754, 0, 65541, 589826, 1, 5, 327682, 0, 65540, 393218, 0, 65539, 393218, 0, 65538, 524290, 1, 2, 458754, 1, -65534, 458754, 1, -131070, 458754, 1, 65537, 393218, 1, 1, 393218, 1, -65535, 393218, 1, -131071, 589826, 1, 65536, 393218, 1, 0, 393218, 1, -65536, 393218, 1, -131072, 393218, 0, 131071, 327682, 1, 65535, 327682, 1, -1, 327682, 1, -65537, 327682, 0, -196607, 327682, 0, -196606, 458754, 0, 196620, 327682, 1, 131084, 589826, 0, 196621, 393218, 1, 262157, 393218, 1, 262156, 589826, 1, 327692, 393218, 1, 393228, 393218, 1, 393227, 393218, 1, 458763, 393218, 1, 131085, 393218, 1, 196622, 393218, 1, 262158, 524290, 0, 327693, 524290, 0, 393229, 458754, 1, 131086, 393218, 1, 458762, 393218, 1, 458764, 393218, 1, 458765, 524290, 1, 196615, 393218, 0, 327694, 458754, 2, 524296, 393218, 2, 524297, 393218, 2, 524298, 393218, 2, 524299, 393218, 2, 524300, 393218, 2, 262159, 393218, 2, 262160, 393218, 2, 196624, 393218, 1, 196623, 393218, 1, 196625, 524290, 0, 262161, 458754, 2, 458760, 589826, 1, 458761, 393218, 1, 524295, 327682, 2, 458759, 327682, 0, 262153, 458754, 1, 65547, 393218, 1, 65548, 524290, 1, 65549, 393218, 0, 65550, 393218, 0, 65551, 393218, 0, 65552, 393218, 0, 65553, 393218, 0, 65554, 458754, 0, 131090, 524290, 1, 131091, 393218, 0, 196627, 589826, 0, 196626, 393218, 2, 196628, 524290, 1, 262163, 327682, 2, 262164, 393218, 2, 262165, 458754, 2, 196629, 458754, 0, 131089, 393218, 1, 131088, 393218, 1, 131087, 393218, 1, 131092, 458754, 0, 65546, 393218, 1, 65545, 589826, 1, 9, 327682, 0, 10, 589826, 1, -65526, 327682, 0, -65525, 589826, 1, -65524, 524290, 0, 12, 458754, 1, 11, 393218, 1, -131061, 327682, 0, -131060, 393218, 0, -65523, 393218, 2, -131059, 393218, 0, -131058, 458754, 0, -65522, 458754, 2, 524301, 393218, 2, 524302, 393218, 2, 524303, 393218, 2, 458767, 393218, 0, 458766, 393218, 0, 458768, 393218, 0, 524304, 393218, 2, 458769, 393218, 0, 458770, 589826, 1, 524306, 589826, 0, 524305, 393218, 2, 458771, 393218, 1, 524307, 393218, 1, 524308, 393218, 1, 589844, 393218, 2, 458772, 524290, 1, 393236, 458754, 0, 589843, 393218, 2, 393234, 327682, 0, 393235, 393218, 0, 589842, 327682, 2, 524309, 524290, 0, 458773, 393218, 0, 458784, 393218, 0, 458783, 393218, 0, 458782, 524290, 1, 458781, 393218, 1, 458780, 393218, 1, 458779, 393218, 1, 458778, 393218, 1, 458777, 589826, 1, 458776, 393218, 0, 458775, 393218, 0, 458774, 393218, 0, 524320, 524290, 0, 524319, 589826, 0, 524318, 393218, 2, 524317, 393218, 2, 524316, 524290, 0, 524315, 393218, 1, 524314, 393218, 1, 524313, 589826, 0, 524312, 393218, 2, 524311, 393218, 2, 524310, 393218, 2, 589845, 458754, 2, 589852, 458754, 1, 589851, 393218, 1, 589850, 393218, 1, 589849, 327682, 1, 655385, 327682, 2, 655386, 589826, 0, 655387, 393218, 1, 655388, 458754, 1, 720924, 458754, 2, 720923, 393218, 2, 720922, 327682, 2, 393241, 327682, 0, 393242, 393218, 0, 393243, 393218, 0, 393244, 393218, 0, 393245, 393218, 0, 393246, 458754, 0, 524321, 393218, 2, 589856, 458754, 2, 589855, 327682, 2, 458785, 589826, 1, 458786, 393218, 1, 393250, 393218, 0, 393251, 589826, 1, 393249, 327682, 0, 458787, 393218, 1, 524323, 393218, 2, 524322, 393218, 2, 524324, 589826, 0, 458788, 393218, 1, 393252, 393218, 1, 393253, 458754, 1, 327717, 458754, 1, 327716, 393218, 1, 458789, 524290, 1, 524325, 393218, 1, 524326, 393218, 1, 458790, 393218, 0, 393256, 327682, 1, 393257, 393218, 1, 458793, 393218, 1, 524329, 589826, 0, 524328, 393218, 2, 524327, 524290, 0, 458791, 393218, 0, 327720, 327682, 1, 327721, 393218, 1, 393258, 393218, 1, 458794, 393218, 1, 524330, 393218, 1, 458792, 589826, 1, 262183, 393218, 2, 262184, 589826, 0, 524334, 458754, 2, 458798, 458754, 1, 393262, 458754, 0, 196654, 458754, 2, 131118, 458754, 0, 524333, 327682, 2, 458797, 589826, 0, 393261, 393218, 0, 262189, 458754, 2, 196653, 524290, 0, 131117, 393218, 0, 458796, 393218, 2, 393260, 393218, 0, 262188, 393218, 2, 196652, 393218, 1, 131116, 393218, 0, 589867, 458754, 2, 524331, 458754, 1, 458795, 524290, 0, 393259, 524290, 1, 327723, 458754, 1, 262187, 524290, 0, 196651, 393218, 1, 131115, 393218, 0, 589866, 393218, 2, 327722, 393218, 1, 262186, 393218, 1, 196650, 393218, 1, 131114, 393218, 0, 589865, 327682, 2, 262185, 393218, 1, 196649, 393218, 1, 131113, 393218, 0, 196648, 589826, 1, 131112, 327682, 0, 589863, 458754, 2, 196647, 393218, 0, 589862, 393218, 2, 262182, 393218, 2, 196646, 393218, 0, 589861, 393218, 2, 262181, 524290, 0, 196645, 393218, 0, 589860, 327682, 2, 262180, 589826, 1, 196644, 327682, 0, 327715, 327682, 1, 262179, 327682, 0)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 99
@@ -304,7 +335,6 @@ size_flags_horizontal = 4
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
 [node name="ShopButton" type="TextureButton" parent="CanvasLayer3"]
-modulate = Color(0.258824, 0.988235, 1, 1)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -343,6 +373,7 @@ label_settings = SubResource("LabelSettings_v52m2")
 [connection signal="pressed" from="MenuLevelButton_01" to="MenuLevelButton_01" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_08" to="MenuLevelButton_08" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_02" to="MenuLevelButton_02" method="_on_pressed"]
+[connection signal="pressed" from="MenuLevelButton_09" to="MenuLevelButton_09" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_03" to="MenuLevelButton_03" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_04" to="MenuLevelButton_04" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_05" to="MenuLevelButton_05" method="_on_pressed"]

@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
+var no_bounce: bool = false
 var debug_mode = false
 var stop_velocity: bool = false 
 var debug: bool = false
@@ -32,6 +33,7 @@ func _input(_event):
 			debug = !debug
 			
 func _process(_delta):
+	_on_no_bounce()
 	if GameController.debug:
 		debug_mode = true
 	else:
@@ -53,11 +55,13 @@ func _physics_process(_delta):
 		else:
 			var direction = Input.get_axis("move_left", "move_right")
 			if direction > 0:
-				speed += speed_var
-				velocity.x = speed / 100
+				speed = speed_var
+				velocity.x = speed / 2
 			elif direction < 0:
-				speed -= speed_var
-				velocity.x = speed / 100
+				speed = -speed_var
+				velocity.x = speed / 2
+			elif Input.is_action_just_pressed("stop_move"):
+				velocity.x = 0 
 			
 
 		velocity.y += gravity
@@ -108,6 +112,7 @@ func _on_area_2d_body_entered(_body):
 	die()
 
 func die():
+	no_bounce = false
 	if debug == false:
 		get_tree().paused = true
 		AudioPlayer.play_sfx("shatter_sfx")
@@ -117,6 +122,14 @@ func die():
 		await get_tree().create_timer(0.5).timeout
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/start.tscn")
+		
+func _on_no_bounce():
+	if no_bounce == true:
+		await get_tree().create_timer(.2).timeout
+		if no_bounce == true:
+			die()
+	else:
+		pass
 		
 	# Skins
 
