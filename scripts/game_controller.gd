@@ -8,6 +8,9 @@ extends Node
 # Start
 var is_reloaded: bool = false
 
+#Time
+var old_time: float = 0.0
+var ver_time: float = 0.0
 #Level
 var current_lvl: int = 1
 var current_play_through_count: int = 5
@@ -43,6 +46,12 @@ func _ready():
 	skins = [default_0_skin_use, cube_1_skin_use, spin_2_skin_use]
 
 func _process(_delta):
+	var time = Time.get_unix_time_from_system()
+	if time > old_time:
+		if time > old_time + 10:
+			ver_time += 1
+			print("my time is: " + str(ver_time))
+			old_time = time
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("Reset"):
