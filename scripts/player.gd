@@ -2,15 +2,14 @@ extends CharacterBody2D
 
 
 @export var speed_var: float = 300
-@export var bounce_force_min: int = 300
-@export var bounce_force_max: int = 450
+
 @export var gravity: float = 8.0
 @export var max_fall_velocity: float = 300.0
 @export var bounceing_time_delay: float = 0.5
 
-@onready var death_particles = $CPUParticles2D
+@onready var death_particles = $PlayerParticles2D
 @onready var sprite = $Sprite2D
-@onready var animation_player = $AnimationPlayer
+@onready var animation_player = $PlayerAnimationPlayer
 
 var no_bounce: bool = false
 var debug_mode = false
@@ -80,23 +79,23 @@ func _physics_process(_delta):
 	move_and_slide()
 
 
-func bounce_up():
+func bounce_up(min_b: int, max_b: int):
 	if debug == false:
 		AudioPlayer.play_sfx("bounce_sfx_1")
-		velocity.y = -random_bounce(bounce_force_min, bounce_force_max)
+		velocity.y = -random_bounce(min_b, max_b)
 
-func bounce_down():
+func bounce_down(min_b: int, max_b: int):
 	AudioPlayer.play_sfx("bounce_sfx_1")
-	velocity.y = random_bounce(bounce_force_min, bounce_force_max)
+	velocity.y = random_bounce(min_b, max_b)
 
-func bounce_left():
+func bounce_left(min_b: int, max_b: int):
 	AudioPlayer.play_sfx("bounce_sfx_2")
-	velocity.x = -random_bounce(bounce_force_min, bounce_force_max)
+	velocity.x = -random_bounce(min_b, max_b)
 	
 
-func bounce_right():
+func bounce_right(min_b: int, max_b: int):
 	AudioPlayer.play_sfx("bounce_sfx_2")
-	velocity.x = random_bounce(bounce_force_min, bounce_force_max)
+	velocity.x = random_bounce(min_b, max_b)
 	
 
 func random_bounce(min_boune: int, max_boune: int):
@@ -154,7 +153,4 @@ func use_spin_skin():
 	if sprite:
 		sprite.texture = preload("res://assets/ball/marble_v19.png")
 
-
-
-# skin call methods
 

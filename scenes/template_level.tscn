@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3gourlssuhc4"]
+[gd_scene load_steps=14 format=3 uid="uid://b3gourlssuhc4"]
 
 [ext_resource type="Texture2D" uid="uid://buqgwu6q2lr72" path="res://assets/backgrounds/cloudLayer1.png" id="1_3jfqd"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6oils"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="10_u3lr3"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_6eqc3"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_rv3lo"]
+[ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="13_6lcl4"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_6oils")
@@ -83,3 +84,5 @@ position = Vector2(381, 375)
 [node name="MovingHazard" parent="Hazards" instance=ExtResource("11_rv3lo")]
 position = Vector2(763, -15)
 destination = Vector2(100, 0)
+
+[node name="SkinHandler" parent="." instance=ExtResource("13_6lcl4")]

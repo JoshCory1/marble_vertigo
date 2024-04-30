@@ -1,27 +1,32 @@
 extends StaticBody2D
 
+## minimum bounce velocity of player
+@export var bounce_force_min: int = 300
+## maximum bounce velocity of player
+@export var bounce_force_max: int = 450
+
 func _on_top_body_entered(body):
 	if body != null:
 		body.no_bounce = true
-		body.bounce_up()
+		body.bounce_up(bounce_force_min, bounce_force_max)
 
 
 func _on_bottom_body_entered(body):
 	if body != null:
 		body.no_bounce = true
-		body.bounce_down()
+		body.bounce_down(bounce_force_min, bounce_force_max)
 
 
 func _on_right_body_entered(body):
 	if body != null:
 		body.no_bounce = true
-		body.bounce_right()
+		body.bounce_right(bounce_force_min, bounce_force_max)
 
 
 func _on_left_body_entered(body):
 	if body != null:
 		body.no_bounce = true
-		body.bounce_left()
+		body.bounce_left(bounce_force_min, bounce_force_max)
 
 
 func _on_top_body_exited(body):

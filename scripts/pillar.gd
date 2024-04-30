@@ -9,6 +9,8 @@ var newdeltay: float
 var startpos: Vector2 = Vector2(0, 0)
 var dragging = false
 
+@export var bounce_force_min: int = 300
+@export var bounce_force_max: int = 450
 @export var reternSpeed: float = 300
 @export var movetospeed: float = 600
 @export var screenClamp: Vector2 = Vector2(600, 0)
@@ -53,7 +55,7 @@ func _on_touch_screen_button_released():
 func _on_area_bounce_up_body_entered(body):
 	if body != null:
 		body.no_bounce = true
-		body.bounce_up()
+		body.bounce_up(bounce_force_min, bounce_force_max)
 		
 		
 
@@ -61,20 +63,20 @@ func _on_area_bounce_up_body_entered(body):
 func _on_area_bounce_down_body_entered(body):
 	if body != null:
 		body.no_bounce = true
-		body.bounce_down()
+		body.bounce_down(bounce_force_min, bounce_force_max)
 		
 
 
 func _on_area_bounce_left_body_entered(body):
 	if body != null:
 		body.no_bounce = true
-		body.bounce_left()
+		body.bounce_left(bounce_force_min, bounce_force_max)
 		
 
 func _on_area_bounce_right_body_entered(body):
 	if body != null:
 		body.no_bounce = true
-		body.bounce_right()
+		body.bounce_right(bounce_force_min, bounce_force_max)
 		
 
 

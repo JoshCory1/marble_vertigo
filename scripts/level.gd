@@ -16,7 +16,6 @@ var viewport_size: Vector2
 
 
 func _ready():
-	use_selected_skin()
 	set_bg_size_scale()
 	if black_canvas:
 		black_canvas.visible = true
@@ -34,8 +33,7 @@ func _ready():
 	if get_tree().paused == true:
 		get_tree().paused = false
 
-func _process(_delta):
-	use_selected_skin()
+
 
 func get_parallax_sprite_scale(parallax_sprite: Sprite2D):
 	var parallax_texure = parallax_sprite.get_texture()
@@ -61,13 +59,5 @@ func set_bg_size_scale():
 		bg.position = get_viewport_rect().size / 2
 		bg.scale = get_viewport_rect().size
 	
-func use_selected_skin():
-	if GameController.skins[0] == true && GameController.default_0_skin_unlocked == true:
-		player.use_default_skin()
-	elif GameController.skins[1] == true && GameController.cube_1_skin_unlocked == true:
-		player.use_cube_skin()
-	elif GameController.skins[2] && GameController.spin_2_skin_unlocked == true:
-		player.use_spin_skin()
-	else:
-		player.use_default_skin()
+
 	

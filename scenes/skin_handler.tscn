@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://baimc1vvdontw"]
+
+[ext_resource type="Script" path="res://scripts/skin_handler.gd" id="1_lg0d0"]
+
+[node name="SkinHandler" type="Node"]
+script = ExtResource("1_lg0d0")
