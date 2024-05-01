@@ -11,7 +11,7 @@ var moving: bool = false
 var stop_velocity: bool = false
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if !stop_velocity:
 		if !moving:
 			velocity.y = speed

@@ -356,17 +356,19 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_12" type="TextureButton" parent="." groups=["LevelButtons"]]
+modulate = Color(0.168627, 0.168627, 0.168627, 1)
 z_index = 1001
 offset_left = 2663.0
 offset_top = 246.0
 offset_right = 2727.0
 offset_bottom = 310.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
 level = ExtResource("20_y4bia")
-current_level = 1
+current_level = 12
 
 [node name="Label" type="Label" parent="MenuLevelButton_12"]
 layout_mode = 0
@@ -379,8 +381,8 @@ horizontal_alignment = 1
 
 [node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_12"]
 z_index = -1
-position = Vector2(33, 97)
-scale = Vector2(0.2, 0.2)
+position = Vector2(33, 82.6666)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_pj5dd")
 
 [node name="UIMenuCamera" type="Camera2D" parent="."]

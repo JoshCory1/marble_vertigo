@@ -8,6 +8,7 @@ extends Node2D
 @export var music_volume: float = -10
 
 # Canvas
+@onready var bg = $CanvasLayer/Sprite2D
 @onready var black_canvas = $BlackCanvas
 @onready var black_screen = $BlackCanvas/ColorRect
 ## Sets the fade in duration
@@ -56,7 +57,11 @@ func set_up_bars():
 	deathzone.scale.x = screen_size.x
 	deathzone.position.x = screen_size.x / 2
 	deathzone.position.y = screen_size.y
-	player_pillar.position.y = screen_size.y - 10
-	enamy_pillar.position.y = 10
+	player_pillar.position.y = screen_size.y - 30
+	player_pillar.position.x = screen_size.x / 2
+	enamy_pillar.position.y = 30
+	enamy_pillar.position.x = screen_size.x /2
 	player.position = screen_size / 2
-	
+	bg.position = screen_size / 2
+	bg.scale.x = screen_size.x / 960
+	bg.scale.y = screen_size.y / 540

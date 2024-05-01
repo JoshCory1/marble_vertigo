@@ -11,9 +11,9 @@ extends AnimatableBody2D
 ## waite time at end point
 @export var wait_time_2: float = 0.0
 ## minimum bounce velocity of player
-@export var bounce_force_min: int = 300
+@export var bounce_force_min: float = 300
 ## maximum bounce velocity of player
-@export var bounce_force_max: int = 450
+@export var bounce_force_max: float = 450
 
 
 func _ready() -> void:
@@ -30,8 +30,8 @@ func _ready() -> void:
 func _on_area_bounce_up_body_entered(body):
 	if body != null:
 		if destination.y < 0:
-			bounce_force_min = bounce_force_min / 2
-			bounce_force_max = bounce_force_max / 2
+			bounce_force_min = bounce_force_min / 1.5
+			bounce_force_max = bounce_force_max / 1.5
 		body.bounce_up(bounce_force_min, bounce_force_max)
 		
 

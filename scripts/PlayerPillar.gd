@@ -11,19 +11,21 @@ var deltay: float
 var move_velocity: Vector2 = Vector2()
 
 
-@export var bounce_force_min: int = 300
-@export var bounce_force_max: int = 450
+@export var bounce_force_min: int = 500
+@export var bounce_force_max: int = 650
 @export var reternSpeed: float = 300
 @export var movetospeed: float = 600
-@export var screenClamp: Vector2 = Vector2(600, 0)
+@export var screen_clamp: Vector2 = Vector2(600, 0)
 
 func _ready():
-	startpos=self.global_position
+	startpos.x = get_viewport_rect().size.x / 2
+	startpos.y = get_viewport_rect().size.y - 30
+	screen_clamp.x = (get_viewport_rect().size.x / 2) - 190
 
 func _input(event):
 		if area_ent == true:
 			if event is InputEventScreenTouch and event.is_pressed():
-				AudioPlayer.play_sfx("pillar_move_sfx")
+				#AudioPlayer.play_sfx("pillar_move_sfx")
 				touchpos = get_global_mouse_position()
 				deltax = touchpos.x - position.x
 				deltay = touchpos.y - position.y
@@ -38,12 +40,11 @@ func _physics_process(delta):
 	if dragging == true:
 		move_velocity.x = current_x + 22
 		global_position = global_position.move_toward(Vector2(newdeltax,newdeltay), delta * movetospeed)
-		global_position = global_position.clamp(startpos - screenClamp, startpos + screenClamp)
+		global_position = global_position.clamp(startpos - screen_clamp, startpos + screen_clamp)
 	if area_ent == false:
 		dragging=false
 		position = position.move_toward(Vector2(startpos.x, startpos.y), delta * reternSpeed)
 		move_velocity.x = 0
-	print(move_velocity.x)
 
 func random_speed(min_val, max_val):
 	var n = randf_range(min_val, max_val)
@@ -62,8 +63,9 @@ func _on_touch_screen_button_released():
 
 
 func _on_area_2d_body_entered(body):
+	AudioPlayer.play_sfx("bounce_sfx_1")
 	if !body.moving:
 		body.moving = true
-	body.velocity.x = move_velocity.x * 2 + random_x_range(-50, 50)
+	body.velocity.x = move_velocity.x * 2 + random_x_range(-75, 75)
 	body.velocity.y = random_speed(-bounce_force_min, -bounce_force_max)
 	
