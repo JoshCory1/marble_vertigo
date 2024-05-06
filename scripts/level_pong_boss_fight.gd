@@ -47,7 +47,7 @@ func set_up_bars():
 	var screen_size = get_viewport_rect().size
 	var side_bars = [rigt_bar, left_bar]
 	for bar in side_bars:
-		bar.scale.y = screen_size.y
+		bar.scale.y = screen_size.y + 300
 	rigt_bar.position.x = screen_size.x - 10
 	left_bar.position.x = 10
 	exit.scale.x = screen_size.x
@@ -56,7 +56,7 @@ func set_up_bars():
 	deathzone.scale.x = screen_size.x
 	deathzone.scale.x = screen_size.x
 	deathzone.position.x = screen_size.x / 2
-	deathzone.position.y = screen_size.y
+	deathzone.position.y = screen_size.y + 100
 	player_pillar.position.y = screen_size.y - 30
 	player_pillar.position.x = screen_size.x / 2
 	enamy_pillar.position.y = 30

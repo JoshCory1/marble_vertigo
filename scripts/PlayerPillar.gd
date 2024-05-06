@@ -9,10 +9,11 @@ var dragging = false
 var deltax: float
 var deltay: float
 var move_velocity: Vector2 = Vector2()
+var current_vel: float = 0
 
 
-@export var bounce_force_min: int = 500
-@export var bounce_force_max: int = 650
+@export var bounce_force_min: int = 100
+@export var bounce_force_max: int = 500
 @export var reternSpeed: float = 300
 @export var movetospeed: float = 600
 @export var screen_clamp: Vector2 = Vector2(600, 0)
@@ -21,6 +22,15 @@ func _ready():
 	startpos.x = get_viewport_rect().size.x / 2
 	startpos.y = get_viewport_rect().size.y - 30
 	screen_clamp.x = (get_viewport_rect().size.x / 2) - 190
+
+func _process(delta):
+	var old_x: float = 0
+	if global_position.x != old_x:
+		current_vel = global_position.x - old_x
+		old_x = global_position.x
+#	if old_x == global_position.x:
+#		current_vel = 0
+	print("pillar x velocity is : " + str(current_vel))
 
 func _input(event):
 		if area_ent == true:
@@ -35,6 +45,7 @@ func _input(event):
 				newdeltax = touchpos.x - deltax
 				newdeltay = touchpos.y - deltay
 				dragging = true
+
 func _physics_process(delta):
 	var current_x = global_position.x - get_viewport_rect().size.x / 2
 	if dragging == true:
@@ -44,15 +55,16 @@ func _physics_process(delta):
 	if area_ent == false:
 		dragging=false
 		position = position.move_toward(Vector2(startpos.x, startpos.y), delta * reternSpeed)
-		move_velocity.x = 0
+		#move_velocity.x = 0
+	
 
-func random_speed(min_val, max_val):
-	var n = randf_range(min_val, max_val)
-	return n
-
-func random_x_range(min_val, max_val):
-	var x = randf_range(min_val, max_val)
-	return x
+#func random_speed(min_val, max_val):
+#	var n = randf_range(min_val, max_val)
+#	return n
+#
+#func random_x_range(min_val, max_val):
+#	var x = randf_range(min_val, max_val)
+#	return x
 
 func _on_touch_screen_button_pressed():
 	area_ent = true
@@ -66,6 +78,7 @@ func _on_area_2d_body_entered(body):
 	AudioPlayer.play_sfx("bounce_sfx_1")
 	if !body.moving:
 		body.moving = true
-	body.velocity.x = move_velocity.x * 2 + random_x_range(-75, 75)
-	body.velocity.y = random_speed(-bounce_force_min, -bounce_force_max)
+	
+#	body.velocity.x = move_velocity.x * 2 + random_x_range(-75, 75)
+#	body.velocity.y -= 300
 	

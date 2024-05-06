@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bxai5wn7frshm"]
+[gd_scene load_steps=32 format=3 uid="uid://bxai5wn7frshm"]
 
 [ext_resource type="Script" path="res://scripts/level_pong_boss_fight.gd" id="1_j2o2v"]
 [ext_resource type="AudioStream" uid="uid://hvhadxxlg4f1" path="res://assets/sfx/music/Chiptune Vol3 Cherries Main.ogg" id="2_7grul"]
@@ -16,24 +16,31 @@
 [ext_resource type="Script" path="res://scripts/EnemyPillar.gd" id="13_220px"]
 [ext_resource type="Texture2D" uid="uid://5thnvs6itmm2" path="res://assets/obstacles/rock_1.1_alt.png" id="15_4en25"]
 [ext_resource type="Texture2D" uid="uid://b56k3w74fm87w" path="res://assets/backgrounds/wall_marble_vertigo.png" id="16_j4mkl"]
+[ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="17_2cp2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hj1l7"]
 size = Vector2(827, 38.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apdki"]
-size = Vector2(50, 178)
+size = Vector2(54, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vweco"]
-size = Vector2(18, 179)
+size = Vector2(26, 179)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgyqw"]
-size = Vector2(18, 180)
+size = Vector2(25, 180)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j3v7"]
 radius = 29.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b5ws8"]
-radius = 33.0151
+radius = 36.0139
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f486u"]
+radius = 37.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ecn81"]
+radius = 39.2046
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7ndl"]
 size = Vector2(797, 20)
@@ -66,11 +73,12 @@ shape = SubResource("RectangleShape2D_hj1l7")
 
 [node name="RightBar" type="StaticBody2D" parent="."]
 position = Vector2(927, 260)
-collision_layer = 2
+collision_layer = 16
 script = ExtResource("3_mt6gh")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RightBar"]
 z_index = 20
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_apdki")
 
 [node name="Sprite2D" type="Sprite2D" parent="RightBar"]
@@ -81,12 +89,12 @@ region_rect = Rect2(262, 11, 51, 179)
 [node name="Area2D" type="Area2D" parent="RightBar"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBar/Area2D"]
-position = Vector2(-24, -0.5)
+position = Vector2(-28, -0.5)
 shape = SubResource("RectangleShape2D_vweco")
 
 [node name="LeftBar" type="StaticBody2D" parent="."]
 position = Vector2(32, 254)
-collision_layer = 2
+collision_layer = 16
 script = ExtResource("5_vkmdh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBar"]
@@ -101,12 +109,12 @@ region_rect = Rect2(262, 11, 51, 179)
 [node name="Area2D" type="Area2D" parent="LeftBar"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBar/Area2D"]
-position = Vector2(24, 0)
+position = Vector2(27.5, 0)
 shape = SubResource("RectangleShape2D_mgyqw")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(458, 266)
-collision_mask = 15
+collision_mask = 31
 script = ExtResource("3_jnkh3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -126,6 +134,18 @@ shape = SubResource("CircleShape2D_b5ws8")
 
 [node name="PlayerParticles2D" parent="Player" instance=ExtResource("8_npjv0")]
 position = Vector2(-39, -9)
+
+[node name="Area2D2" type="Area2D" parent="Player"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D2"]
+shape = SubResource("CircleShape2D_f486u")
+
+[node name="Area2D3" type="Area2D" parent="Player"]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D3"]
+shape = SubResource("CircleShape2D_ecn81")
 
 [node name="Exit" parent="." instance=ExtResource("4_ps8nb")]
 position = Vector2(458, -34)
@@ -202,9 +222,13 @@ layer = -10
 texture = ExtResource("16_j4mkl")
 region_rect = Rect2(0, 0, 960, 240)
 
+[node name="DebugScreen" parent="." instance=ExtResource("17_2cp2g")]
+
 [connection signal="body_entered" from="RightBar/Area2D" to="RightBar" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="LeftBar/Area2D" to="LeftBar" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Player/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Player/Area2D3" to="Player" method="_on_area_2d_3_body_entered"]
 [connection signal="body_entered" from="PlayerPillar/Area2D" to="PlayerPillar" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="PlayerPillar/TouchScreenButton" to="PlayerPillar" method="_on_touch_screen_button_pressed"]
 [connection signal="released" from="PlayerPillar/TouchScreenButton" to="PlayerPillar" method="_on_touch_screen_button_released"]
