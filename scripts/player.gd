@@ -124,7 +124,7 @@ func die():
 		
 func _on_no_bounce():
 	if no_bounce == true:
-		await get_tree().create_timer(.2).timeout
+		await get_tree().create_timer(.5).timeout
 		if no_bounce == true:
 			die()
 	else:

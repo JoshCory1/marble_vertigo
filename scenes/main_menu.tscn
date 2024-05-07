@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=32 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="1_opivx"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://ddadfss4auwp8" path="res://assets/ball/ui_black_bal.png" id="20_0p5i3"]
 [ext_resource type="PackedScene" uid="uid://bx3nsmuk7a74i" path="res://scenes/level_12.tscn" id="20_2caci"]
 [ext_resource type="PackedScene" uid="uid://bxai5wn7frshm" path="res://scenes/level_pong_boss_fight.tscn" id="20_y4bia"]
+[ext_resource type="PackedScene" uid="uid://cyblvmqq1jruk" path="res://scenes/level_13.tscn" id="21_f2i67"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
 font_color = Color(0, 0, 0, 1)
@@ -357,7 +358,7 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
-[node name="MenuLevelButton_13" type="TextureButton" parent="." groups=["LevelButtons"]]
+[node name="MenuLevelButton_12" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
 offset_left = 1516.0
 offset_top = 368.0
@@ -369,6 +370,34 @@ texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
 level = ExtResource("20_2caci")
 current_level = 12
+
+[node name="Label" type="Label" parent="MenuLevelButton_12"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_12"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
+[node name="MenuLevelButton_13" type="TextureButton" parent="." groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 1731.0
+offset_top = 494.0
+offset_right = 1795.0
+offset_bottom = 558.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("21_f2i67")
+current_level = 13
 
 [node name="Label" type="Label" parent="MenuLevelButton_13"]
 layout_mode = 0
@@ -385,7 +414,7 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
-[node name="MenuLevelButton_12" type="TextureButton" parent="." groups=["LevelButtons"]]
+[node name="MenuLevelButton_Boss_1" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
 offset_left = 657.0
 offset_top = 1591.0
@@ -394,9 +423,9 @@ offset_bottom = 1719.0
 texture_normal = ExtResource("20_0p5i3")
 script = ExtResource("5_s7i4j")
 level = ExtResource("20_y4bia")
-current_level = 12
+current_level = 99
 
-[node name="Label" type="Label" parent="MenuLevelButton_12"]
+[node name="Label" type="Label" parent="MenuLevelButton_Boss_1"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 13.0
@@ -405,7 +434,7 @@ offset_bottom = 66.0
 label_settings = SubResource("LabelSettings_o0hso")
 horizontal_alignment = 1
 
-[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_12"]
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_Boss_1"]
 z_index = -1
 position = Vector2(63, 165)
 scale = Vector2(0.2, 0.2)
@@ -496,6 +525,7 @@ label_settings = SubResource("LabelSettings_v52m2")
 [connection signal="pressed" from="MenuLevelButton_07" to="MenuLevelButton_07" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_11" to="MenuLevelButton_11" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_10" to="MenuLevelButton_10" method="_on_pressed"]
-[connection signal="pressed" from="MenuLevelButton_13" to="MenuLevelButton_13" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_12" to="MenuLevelButton_12" method="_on_pressed"]
+[connection signal="pressed" from="MenuLevelButton_13" to="MenuLevelButton_13" method="_on_pressed"]
+[connection signal="pressed" from="MenuLevelButton_Boss_1" to="MenuLevelButton_Boss_1" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]
