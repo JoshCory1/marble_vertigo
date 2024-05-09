@@ -16,7 +16,7 @@ var current_vel: float = 0
 func _ready():
 	startpos = position
 
-func _process(delta):
+func _process(_delta):
 	var old_x: float = 0
 	if global_position.x != old_x:
 		current_vel = global_position.x - old_x

@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var button_array = get_tree().get_nodes_in_group("LevelButtons")
 @onready var menu_camera = $UIMenuCamera
-@onready var bg = $CanvasLayer/Sprite2D
+@onready var bg = $ParallaxBackground/ParallaxLayer/Sprite2D
 @onready var shop = $CanvasLayer2/ShopScreen
 @onready var terrain = $UITerrain
 @onready var black_can = $BlackCanvasLayer
@@ -23,7 +23,7 @@ func _ready():
 		GameController.is_reloaded = true
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://scenes/start.tscn")
-	set_bg_size_scale()
+	setup_parallax_layer($ParallaxBackground/ParallaxLayer)
 	set_shop_size_scale()
 	shop.visible = false
 	shop.close_shop.connect(_on_close_shop)
@@ -45,9 +45,24 @@ func _ready():
 		get_tree().paused = false
 	black_can.visible = false
 
-func set_bg_size_scale():
-	bg.position = get_viewport_rect().size / 2
-	bg.scale = get_viewport_rect().size
+func get_parallax_sprite_scale(parallax_sprite: Sprite2D):
+	var parallax_texure = parallax_sprite.get_texture()
+	var paralax_texture_height = parallax_texure.get_height()
+	var paralax_texture_width = parallax_texure.get_width()
+	var viewport_size = get_viewport_rect().size
+	var _scale_y = viewport_size.y / paralax_texture_height
+	var _scale_x = viewport_size.x / paralax_texture_width
+	var result = Vector2(_scale_x,_scale_y)
+	return result
+
+func  setup_parallax_layer(parallax_layer: ParallaxLayer):
+	if parallax_layer:
+		var parallax_sprite = parallax_layer.find_child("Sprite2D")
+		parallax_sprite.scale = get_parallax_sprite_scale(parallax_sprite)
+		parallax_sprite.scale.x = get_viewport_rect().size.x / 960
+		parallax_sprite.scale.y = get_viewport_rect().size.y / 540
+		var mx = parallax_sprite.scale.x * parallax_sprite.get_texture().get_width()
+		parallax_layer.motion_mirroring.x = mx
 	
 	
 func set_shop_size_scale():

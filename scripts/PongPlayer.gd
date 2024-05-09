@@ -14,7 +14,6 @@ var center: Vector2 = Vector2()
 var use_accelerometer: bool = false
 var accelerometer_speed: float = 130.0
 var my_velocity: Vector2 = Vector2()
-var collision_info
 
 func _ready():
 	center = get_viewport_rect().size / 2
@@ -63,7 +62,7 @@ func _on_area_2d_2_body_entered(body):
 		velocity.y = 200
 
 
-func _on_area_2d_3_body_entered(body):
+func _on_area_2d_3_body_entered(_body):
 	if global_position.x > center.x:
 		velocity.x -= 50
 	if global_position.x < center.x:

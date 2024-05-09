@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyblvmqq1jruk"]
+[gd_scene load_steps=14 format=3 uid="uid://cyblvmqq1jruk"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_kmk1a"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_wnarp"]
@@ -6,10 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cem5hy52p2bc5" path="res://scenes/bar.tscn" id="4_36a4g"]
 [ext_resource type="PackedScene" uid="uid://djov3uvcs70tb" path="res://scenes/ground.tscn" id="4_c6s52"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="5_6twax"]
-[ext_resource type="Texture2D" uid="uid://buqgwu6q2lr72" path="res://assets/backgrounds/cloudLayer1.png" id="6_i63tb"]
-[ext_resource type="Texture2D" uid="uid://cbmf7i1jc5ua2" path="res://assets/backgrounds/hills.png" id="7_am7e3"]
-[ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="8_a11bq"]
-[ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="9_gx1oy"]
+[ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="7_40ksj"]
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="10_r56my"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_pnd7j"]
 [ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="11_savf0"]
@@ -34,76 +31,7 @@ layer_0/tile_data = PackedInt32Array(3801098, 1507337, 0, 3735562, 851977, 0, 36
 [node name="Player" parent="." instance=ExtResource("5_6twax")]
 position = Vector2(699, 163)
 
-[node name="Environment" type="Node" parent="."]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Environment"]
-
-[node name="ParallaxLayer1" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
-z_index = -100
-motion_scale = Vector2(0.1, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer1"]
-modulate = Color(0.811765, 1, 1, 1)
-texture = ExtResource("6_i63tb")
-centered = false
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
-z_index = -99
-motion_scale = Vector2(0.5, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer2"]
-modulate = Color(0.235294, 0.584314, 0.490196, 0.988235)
-position = Vector2(479, 419)
-texture = ExtResource("7_am7e3")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Environment"]
-layer = -105
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/CanvasLayer"]
-modulate = Color(0.643137, 0.858824, 1, 1)
-scale = Vector2(3.74609, 2.10547)
-texture = ExtResource("8_a11bq")
-
-[node name="BlackCanvasLayer" type="CanvasLayer" parent="Environment"]
-layer = 101
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Environment/BlackCanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="DebugScreen" parent="Environment" instance=ExtResource("9_gx1oy")]
-
-[node name="JumpBox" parent="Environment" instance=ExtResource("11_savf0")]
-position = Vector2(30971, -5796)
-
-[node name="JumpBox2" parent="Environment" instance=ExtResource("11_savf0")]
-position = Vector2(31430, -5666)
-
-[node name="JumpBox3" parent="Environment" instance=ExtResource("11_savf0")]
-position = Vector2(31869, -5541)
-
-[node name="JumpBox4" parent="Environment" instance=ExtResource("11_savf0")]
-position = Vector2(32260, -5411)
-
-[node name="JumpBox5" parent="Environment" instance=ExtResource("11_savf0")]
-position = Vector2(32653, -5348)
-
-[node name="JumpBox6" parent="Environment" instance=ExtResource("11_savf0")]
-position = Vector2(33083, -5219)
-
-[node name="JumpBox7" parent="Environment" instance=ExtResource("11_savf0")]
-position = Vector2(33479, -5089)
-
-[node name="JumpBox8" parent="Environment" instance=ExtResource("11_savf0")]
-position = Vector2(33928, -4964)
-
-[node name="JumpBox9" parent="Environment" instance=ExtResource("11_savf0")]
-position = Vector2(34429, -4773)
+[node name="Environment" parent="." instance=ExtResource("7_40ksj")]
 
 [node name="Pillars" type="Node" parent="."]
 

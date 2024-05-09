@@ -1,9 +1,9 @@
 [gd_scene load_steps=33 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
-[ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="1_opivx"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_5bn02"]
 [ext_resource type="Texture2D" uid="uid://cqh402wxwmiq4" path="res://assets/ball/ball_blue_large_alt.png" id="2_dax72"]
+[ext_resource type="Texture2D" uid="uid://dtnbrbt3071l8" path="res://assets/backgrounds/water_looping.png" id="3_7qf3e"]
 [ext_resource type="Texture2D" uid="uid://coca365g1i45y" path="res://assets/ball/shattered_ball.png" id="3_lfw8e"]
 [ext_resource type="Texture2D" uid="uid://uijnvnrgxi88" path="res://assets/ball/BubbleSimple_v1.png" id="4_wiijs"]
 [ext_resource type="Texture2D" uid="uid://byoncwrexv1fd" path="res://assets/pillar/pillar_ui_v2.1_ai.png" id="5_pj5dd"]
@@ -43,13 +43,19 @@ process_mode = 3
 script = ExtResource("1_egfi4")
 music_track = ExtResource("2_5bn02")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -100
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-modulate = Color(0.360784, 0.541176, 1, 0.862745)
-scale = Vector2(3.74609, 2.12109)
-texture = ExtResource("1_opivx")
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(960, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.27, 0.866167, 1, 1)
+texture_repeat = 2
+texture = ExtResource("3_7qf3e")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 540)
 
 [node name="MenuLevelButton_01" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001

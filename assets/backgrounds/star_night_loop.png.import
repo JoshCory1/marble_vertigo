@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lvuorijnpgo0"
-path="res://.godot/imported/logo.png-eb549ef9a93915e2523568429f9c0ec5.ctex"
+uid="uid://bnycuc6uw6b1o"
+path="res://.godot/imported/star_night_loop.png-c54abf508cdbdb0aa918a23788d03f5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Logo/logo.png"
-dest_files=["res://.godot/imported/logo.png-eb549ef9a93915e2523568429f9c0ec5.ctex"]
+source_file="res://assets/backgrounds/star_night_loop.png"
+dest_files=["res://.godot/imported/star_night_loop.png-c54abf508cdbdb0aa918a23788d03f5e.ctex"]
 
 [params]
 

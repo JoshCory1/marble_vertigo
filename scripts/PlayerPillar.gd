@@ -23,7 +23,7 @@ func _ready():
 	startpos.y = get_viewport_rect().size.y - 30
 	screen_clamp.x = (get_viewport_rect().size.x / 2) - 190
 
-func _process(delta):
+func _process(_delta):
 	var old_x: float = 0
 	if global_position.x != old_x:
 		current_vel = global_position.x - old_x

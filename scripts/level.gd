@@ -4,8 +4,8 @@ extends Node2D
 @export var music_volume: float = -10
 @export var fade_duration: float = 0.5
 
-@onready var parallax1 = $Environment/ParallaxBackground/ParallaxLayer1
-@onready var parallax2 = $Environment/ParallaxBackground/ParallaxLayer2
+@onready var parallax1 = $Environment/ParallaxBG/ParallaxLayer1
+@onready var parallax2 = $Environment/ParallaxBG/ParallaxLayer2
 @onready var black_canvas = $Environment/BlackCanvasLayer
 @onready var black_screen = $Environment/BlackCanvasLayer/ColorRect
 @onready var bg = $Environment/CanvasLayer/Sprite2D
@@ -39,7 +39,6 @@ func get_parallax_sprite_scale(parallax_sprite: Sprite2D):
 	var parallax_texure = parallax_sprite.get_texture()
 	var paralax_texture_height = parallax_texure.get_height()
 	var paralax_texture_width = parallax_texure.get_width()
-	
 	var _scale_y = viewport_size.y / paralax_texture_height
 	var _scale_x = viewport_size.x / paralax_texture_width
 	var result = Vector2(_scale_x,_scale_y)
@@ -49,7 +48,8 @@ func  setup_parallax_layer(parallax_layer: ParallaxLayer):
 	if parallax_layer:
 		var parallax_sprite = parallax_layer.find_child("Sprite2D")
 		parallax_sprite.scale = get_parallax_sprite_scale(parallax_sprite)
-		parallax_sprite.scale.x += get_viewport_rect().size.x / 800
+		parallax_sprite.scale.x = get_viewport_rect().size.x / 960
+		parallax_sprite.scale.y = get_viewport_rect().size.y / 540
 		var mx = parallax_sprite.scale.x * parallax_sprite.get_texture().get_width()
 		parallax_layer.motion_mirroring.x = mx
 

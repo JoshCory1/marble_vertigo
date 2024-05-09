@@ -1,14 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://bx3nsmuk7a74i"]
+[gd_scene load_steps=12 format=3 uid="uid://bx3nsmuk7a74i"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_g2p8r"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_f3nb8"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="3_drpe1"]
 [ext_resource type="PackedScene" uid="uid://djov3uvcs70tb" path="res://scenes/ground.tscn" id="4_5jbmu"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="5_3308i"]
-[ext_resource type="Texture2D" uid="uid://buqgwu6q2lr72" path="res://assets/backgrounds/cloudLayer1.png" id="6_kv3eb"]
-[ext_resource type="Texture2D" uid="uid://cbmf7i1jc5ua2" path="res://assets/backgrounds/hills.png" id="7_gpyj4"]
-[ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="8_6o5ve"]
-[ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="9_wkcdm"]
+[ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="6_7kl6o"]
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="10_2p5kj"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_nu1xy"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="12_143b0"]
@@ -29,49 +26,7 @@ layer_0/tile_data = PackedInt32Array(1703931, 851977, 0, 1703932, 983049, 0, 176
 [node name="Player" parent="." instance=ExtResource("5_3308i")]
 position = Vector2(387, 163)
 
-[node name="Environment" type="Node" parent="."]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Environment"]
-
-[node name="ParallaxLayer1" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
-z_index = -100
-motion_scale = Vector2(0.1, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer1"]
-modulate = Color(0.811765, 1, 1, 1)
-texture = ExtResource("6_kv3eb")
-centered = false
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
-z_index = -99
-motion_scale = Vector2(0.5, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer2"]
-modulate = Color(0.235294, 0.584314, 0.490196, 0.988235)
-position = Vector2(479, 419)
-texture = ExtResource("7_gpyj4")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Environment"]
-layer = -105
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/CanvasLayer"]
-modulate = Color(0.643137, 0.858824, 1, 1)
-scale = Vector2(3.74609, 2.10547)
-texture = ExtResource("8_6o5ve")
-
-[node name="BlackCanvasLayer" type="CanvasLayer" parent="Environment"]
-layer = 101
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Environment/BlackCanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="DebugScreen" parent="Environment" instance=ExtResource("9_wkcdm")]
+[node name="Environment" parent="." instance=ExtResource("6_7kl6o")]
 
 [node name="Pillars" type="Node" parent="."]
 
@@ -114,7 +69,11 @@ position = Vector2(7561, 183)
 screenClamp = Vector2(450, 0)
 
 [node name="Pillar11" parent="Pillars" instance=ExtResource("10_2p5kj")]
-position = Vector2(8459, 179)
+position = Vector2(8319, 184)
+screenClamp = Vector2(450, 0)
+
+[node name="Pillar15" parent="Pillars" instance=ExtResource("10_2p5kj")]
+position = Vector2(8945, 184)
 screenClamp = Vector2(450, 0)
 
 [node name="Pillar12" parent="Pillars" instance=ExtResource("10_2p5kj")]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lvuorijnpgo0"
-path="res://.godot/imported/logo.png-eb549ef9a93915e2523568429f9c0ec5.ctex"
+uid="uid://dtnbrbt3071l8"
+path="res://.godot/imported/water_looping.png-d658b5be72d940115c587af88d36cc58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Logo/logo.png"
-dest_files=["res://.godot/imported/logo.png-eb549ef9a93915e2523568429f9c0ec5.ctex"]
+source_file="res://assets/backgrounds/water_looping.png"
+dest_files=["res://.godot/imported/water_looping.png-d658b5be72d940115c587af88d36cc58.ctex"]
 
 [params]
 
