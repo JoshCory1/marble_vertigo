@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://332xn2heh5k5"
-path="res://.godot/imported/clouds_loop.png-293f2b123aab1ff54f58449bcb317302.ctex"
+uid="uid://bt0qdv3rdjfln"
+path="res://.godot/imported/clouds_loop-sheet.png-dc2e6c2ed784b0e1c6d740c839c4b33b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/clouds_loop.png"
-dest_files=["res://.godot/imported/clouds_loop.png-293f2b123aab1ff54f58449bcb317302.ctex"]
+source_file="res://assets/backgrounds/clouds_loop-sheet.png"
+dest_files=["res://.godot/imported/clouds_loop-sheet.png-dc2e6c2ed784b0e1c6d740c839c4b33b.ctex"]
 
 [params]
 

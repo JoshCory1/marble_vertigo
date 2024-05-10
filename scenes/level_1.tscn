@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7d3eky6wq7g1"]
+[gd_scene load_steps=11 format=3 uid="uid://7d3eky6wq7g1"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6oils"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_7477w"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="5_vcihk"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="6_bkn5x"]
 [ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="6_qmkek"]
+[ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="9_ti7py"]
 [ext_resource type="Texture2D" uid="uid://dw2wkm0jph2so" path="res://assets/directions/marble_vertigo_directions_1.png" id="11_hhobp"]
 [ext_resource type="PackedScene" uid="uid://djov3uvcs70tb" path="res://scenes/ground.tscn" id="11_inbuy"]
 
@@ -69,3 +70,5 @@ text = "Tilt your Phone to move marble"
 label_settings = SubResource("LabelSettings_i1cjg")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="UI" parent="." instance=ExtResource("9_ti7py")]

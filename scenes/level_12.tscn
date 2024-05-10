@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bx3nsmuk7a74i"]
+[gd_scene load_steps=13 format=3 uid="uid://bx3nsmuk7a74i"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_g2p8r"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_f3nb8"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="10_2p5kj"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_nu1xy"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="12_143b0"]
+[ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_jkgi6"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="13_5kwco"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="13_5yrnf"]
 
@@ -330,3 +331,5 @@ position = Vector2(19584, 220)
 time_till_start = 4.0
 
 [node name="SkinHandler" parent="." instance=ExtResource("13_5yrnf")]
+
+[node name="UI" parent="." instance=ExtResource("12_jkgi6")]

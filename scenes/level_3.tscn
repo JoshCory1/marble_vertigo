@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4x2t0boktqe3"]
+[gd_scene load_steps=10 format=3 uid="uid://b4x2t0boktqe3"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xyr8r"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_6dmty"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="6_8vxgi"]
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="7_lqgls"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="8_7onbu"]
+[ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="9_hvi66"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_qve7p"]
 
 [node name="TemplateLevel" type="Node2D"]
@@ -63,3 +64,5 @@ destination = Vector2(100, 100)
 [node name="MovingHazard3" parent="Hazards" instance=ExtResource("11_qve7p")]
 position = Vector2(2489, 121)
 destination = Vector2(100, 50)
+
+[node name="UI" parent="." instance=ExtResource("9_hvi66")]

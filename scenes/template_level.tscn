@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3gourlssuhc4"]
+[gd_scene load_steps=12 format=3 uid="uid://b3gourlssuhc4"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6oils"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_7477w"]
@@ -8,12 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="5_vcihk"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="6_bkn5x"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_6eqc3"]
+[ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="11_dplmk"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_rv3lo"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="13_6lcl4"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_6oils")
 music_track = ExtResource("2_7477w")
+
+[node name="UI" parent="." instance=ExtResource("11_dplmk")]
 
 [node name="Exit" parent="." instance=ExtResource("6_bkn5x")]
 position = Vector2(869, 308)

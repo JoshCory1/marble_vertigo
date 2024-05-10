@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5r0aor4wsqe7"]
+[gd_scene load_steps=14 format=3 uid="uid://5r0aor4wsqe7"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_jrj44"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_m5ulv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="10_xv11r"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_jyokt"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="12_8racb"]
+[ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_fmj8d"]
 [ext_resource type="PackedScene" uid="uid://cem5hy52p2bc5" path="res://scenes/bar.tscn" id="13_2ebxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5t2v"]
@@ -303,3 +304,5 @@ shape = SubResource("RectangleShape2D_l5t2v")
 [node name="JumpBox2" parent="." instance=ExtResource("6_cvrj5")]
 position = Vector2(6592.83, -480.958)
 scale = Vector2(5.32001, 1)
+
+[node name="UI" parent="." instance=ExtResource("12_fmj8d")]

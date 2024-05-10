@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdxjygba2lbwy"]
+[gd_scene load_steps=13 format=3 uid="uid://bdxjygba2lbwy"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_s2jwa"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_t3hti"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="7_nd6dc"]
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="10_nki5f"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_ycru2"]
+[ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_fsknl"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="12_opn4k"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="13_g1e6p"]
 
@@ -284,3 +285,5 @@ position = Vector2(10140, 427)
 [node name="TimedPlatform30" parent="Hazards" instance=ExtResource("13_g1e6p")]
 position = Vector2(10346, 427)
 time_till_start = 4.0
+
+[node name="UI" parent="." instance=ExtResource("12_fsknl")]
