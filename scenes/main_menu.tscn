@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=35 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_5bn02"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://cyblvmqq1jruk" path="res://scenes/level_13.tscn" id="21_f2i67"]
 [ext_resource type="PackedScene" uid="uid://bj2bln0uoe522" path="res://scenes/level_14.tscn" id="22_xscfa"]
 [ext_resource type="PackedScene" uid="uid://25gplpydn7qi" path="res://scenes/level_15.tscn" id="23_ct0do"]
+[ext_resource type="PackedScene" uid="uid://ogatfisubquo" path="res://scenes/level_16.tscn" id="24_8xrvb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
 font_color = Color(0, 0, 0, 1)
@@ -478,6 +479,34 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
+[node name="MenuLevelButton_16" type="TextureButton" parent="." groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 2206.0
+offset_top = 293.0
+offset_right = 2270.0
+offset_bottom = 357.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("24_8xrvb")
+current_level = 16
+
+[node name="Label" type="Label" parent="MenuLevelButton_16"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_16"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
 [node name="MenuLevelButton_Boss_1" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
 offset_left = 2865.0
@@ -593,5 +622,6 @@ label_settings = SubResource("LabelSettings_v52m2")
 [connection signal="pressed" from="MenuLevelButton_13" to="MenuLevelButton_13" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_14" to="MenuLevelButton_14" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_15" to="MenuLevelButton_15" method="_on_pressed"]
+[connection signal="pressed" from="MenuLevelButton_16" to="MenuLevelButton_16" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_Boss_1" to="MenuLevelButton_Boss_1" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]
