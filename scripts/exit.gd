@@ -2,12 +2,13 @@ extends Area2D
 
 @export var time_till_exit = 0.8
 @export var current_lvl = 1
-
+@onready var level = $".."
 
 func _on_body_entered(body):
 	if GameController.current_lvl <= current_lvl:
 		GameController.current_lvl = GameController.current_lvl + 1
-		GameController.save_game()
+	GameController.coins += level.coins_this_level
+	GameController.save_game()
 
 	AudioPlayer.play_sfx("portal_sfx")
 

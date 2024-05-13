@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3uvt5umhyfrj"]
+[gd_scene load_steps=10 format=3 uid="uid://d3uvt5umhyfrj"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bvmn6"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_pd522"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djov3uvcs70tb" path="res://scenes/ground.tscn" id="4_sugcd"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="5_b3qg5"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="8_xowtw"]
+[ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="9_t4iyr"]
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="10_e43q8"]
 
 [node name="TemplateLevel" type="Node2D"]
@@ -82,3 +83,5 @@ screenClamp = Vector2(0, 400)
 [node name="Hazards" type="Node" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("8_xowtw")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("9_t4iyr")]

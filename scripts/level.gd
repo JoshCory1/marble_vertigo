@@ -11,7 +11,9 @@ extends Node2D
 @onready var bg = $Environment/CanvasLayer/Sprite2D
 @onready var player = $Player
 @onready var debug_menu = $Environment/DebugScreen
+@onready var coins_in_level = get_tree().get_nodes_in_group("Coins") 
 
+var coins_this_level: int = 0
 var viewport_size: Vector2
 
 
@@ -26,6 +28,8 @@ func _ready():
 	viewport_size = get_viewport_rect().size
 	setup_parallax_layer(parallax1)
 	setup_parallax_layer(parallax2)
+	for coin in coins_in_level:
+		coin.coin_pickup.connect(_on_coin_pickup)
 	var tween = create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(black_screen,"modulate:a", 0.0, fade_duration)
@@ -58,6 +62,10 @@ func set_bg_size_scale():
 		bg.visible = true
 		bg.position = get_viewport_rect().size / 2
 		bg.scale = get_viewport_rect().size
+		
+
+func _on_coin_pickup():
+	coins_this_level +=1
 	
 
 	

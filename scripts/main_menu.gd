@@ -36,7 +36,7 @@ func _ready():
 			current_button_array_number += 1
 		if number_of_buttons.current_active == true and number_of_buttons.current_level == current_button_array_number:
 			menu_camera.global_position = number_of_buttons.global_position
-	GameController.my_log("Plays left: " + str(GameController.current_play_through_count))
+	GameController.my_log("Plays left: " + str(GameController.current_play_through_count)+ "\n" + " coins: " + str(GameController.coins))
 	var tween = create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(black_rect,"modulate:a", 0.0, fade_duration)

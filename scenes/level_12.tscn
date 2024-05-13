@@ -18,7 +18,7 @@ script = ExtResource("1_g2p8r")
 music_track = ExtResource("2_f3nb8")
 
 [node name="Exit" parent="." instance=ExtResource("3_drpe1")]
-position = Vector2(22213, -4211)
+position = Vector2(22213, -3979)
 current_lvl = 12
 
 [node name="Ground" parent="." instance=ExtResource("4_5jbmu")]
@@ -44,6 +44,10 @@ screenClamp = Vector2(450, 0)
 [node name="Pillar4" parent="Pillars" instance=ExtResource("10_2p5kj")]
 position = Vector2(4539, 236)
 screenClamp = Vector2(450, 0)
+
+[node name="Pillar16" parent="Pillars" instance=ExtResource("10_2p5kj")]
+position = Vector2(4189, 246)
+screenClamp = Vector2(200, 0)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("10_2p5kj")]
 position = Vector2(5226, 236)

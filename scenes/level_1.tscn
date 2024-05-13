@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7d3eky6wq7g1"]
+[gd_scene load_steps=13 format=3 uid="uid://7d3eky6wq7g1"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6oils"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_7477w"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="6_bkn5x"]
 [ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="6_qmkek"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="9_ti7py"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="10_hwqpq"]
+[ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="11_23yea"]
 [ext_resource type="Texture2D" uid="uid://dw2wkm0jph2so" path="res://assets/directions/marble_vertigo_directions_1.png" id="11_hhobp"]
 [ext_resource type="PackedScene" uid="uid://djov3uvcs70tb" path="res://scenes/ground.tscn" id="11_inbuy"]
 
@@ -56,6 +58,9 @@ position = Vector2(2924, 342)
 
 [node name="Hazards" type="Node" parent="."]
 
+[node name="coin" parent="Hazards" instance=ExtResource("10_hwqpq")]
+position = Vector2(993, 176)
+
 [node name="Directions1" type="Sprite2D" parent="."]
 position = Vector2(385, 34)
 scale = Vector2(0.5, 0.5)
@@ -72,3 +77,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UI" parent="." instance=ExtResource("9_ti7py")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("11_23yea")]
