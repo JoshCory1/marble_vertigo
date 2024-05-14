@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cs2pl0fvgcnin" path="res://scenes/ui_buttons.tscn" id="1_qerh4"]
 [ext_resource type="Script" path="res://scripts/ScrollContainer.gd" id="2_upwck"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_nfcgt"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_wxi5x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_epwfb"]
 
 [node name="DebugScreen" type="CanvasLayer"]
 process_mode = 3
@@ -43,19 +43,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.666667)
-
-[node name="BuildNumber" type="Label" parent="Debug/ConsoleLog"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -466.0
-offset_top = 13.0
-offset_right = 466.0
-offset_bottom = 39.0
-grow_horizontal = 2
-text = "Build 0.1.0"
-label_settings = SubResource("LabelSettings_nfcgt")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Debug/ConsoleLog"]
 process_mode = 3
@@ -114,5 +101,22 @@ scale = Vector2(1.6, 1.6)
 [node name="UIButtons" parent="Debug/ToggleConsole" instance=ExtResource("1_qerh4")]
 scale = Vector2(2.5, 2.5)
 centered = false
+
+[node name="BuildNumber" type="Label" parent="Debug"]
+z_index = 1001
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 383.0
+offset_top = 16.0
+offset_right = 464.0
+offset_bottom = 42.0
+grow_horizontal = 2
+scale = Vector2(0.928644, 0.837728)
+text = "Build 0.1.0"
+label_settings = SubResource("LabelSettings_epwfb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Debug/ToggleConsole" to="." method="_on_toggle_console_pressed"]

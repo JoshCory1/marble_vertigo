@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cyblvmqq1jruk"]
+[gd_scene load_steps=16 format=3 uid="uid://cyblvmqq1jruk"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_kmk1a"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_wnarp"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="13_c5lb2"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="14_5bs6n"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="14_cmin5"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="15_4o0ub"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_kmk1a")
@@ -32,7 +33,22 @@ layer_0/tile_data = PackedInt32Array(3801098, 1507337, 0, 3735562, 851977, 0, 36
 [node name="Player" parent="." instance=ExtResource("5_6twax")]
 position = Vector2(699, 163)
 
+[node name="UI" parent="." instance=ExtResource("14_cmin5")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("14_5bs6n")]
+
 [node name="Environment" parent="." instance=ExtResource("7_40ksj")]
+
+[node name="JumpBoxs" type="Node" parent="."]
+
+[node name="JumpBox" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(33995, -4064)
+
+[node name="JumpBox2" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(33533, -3485)
+
+[node name="JumpBox3" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(33981, -2976)
 
 [node name="Pillars" type="Node" parent="."]
 
@@ -205,15 +221,6 @@ wait_time_2 = 1.0
 bounce_force_min = 10.0
 bounce_force_max = 50.0
 
-[node name="JumpBox2" parent="Hazards" instance=ExtResource("11_savf0")]
-position = Vector2(33533, -3485)
-
-[node name="JumpBox" parent="Hazards" instance=ExtResource("11_savf0")]
-position = Vector2(33995, -4064)
-
-[node name="JumpBox3" parent="Hazards" instance=ExtResource("11_savf0")]
-position = Vector2(33981, -2976)
-
 [node name="MovingHazard9" parent="Hazards" instance=ExtResource("12_i4pcu")]
 position = Vector2(34056, -4766)
 destination = Vector2(0, 800)
@@ -358,51 +365,78 @@ wait_time_2 = 1.0
 bounce_force_min = 10.0
 bounce_force_max = 10.0
 
-[node name="TimedPlatform" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatforms" type="Node" parent="."]
+
+[node name="TimedPlatform" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(7895, 1538)
 
-[node name="TimedPlatform2" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(8078, 1538)
 time_till_start = 4.0
 
-[node name="TimedPlatform3" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(8259, 1538)
 
-[node name="TimedPlatform4" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(8442, 1538)
 time_till_start = 4.0
 
-[node name="TimedPlatform5" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(8628, 1538)
 
-[node name="TimedPlatform6" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(8811, 1538)
 time_till_start = 4.0
 
-[node name="TimedPlatform7" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(8992, 1538)
 
-[node name="TimedPlatform8" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(9175, 1538)
 time_till_start = 4.0
 
-[node name="TimedPlatform9" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform9" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(9355, 1538)
 
-[node name="TimedPlatform10" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform10" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(9538, 1538)
 time_till_start = 4.0
 
-[node name="TimedPlatform11" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform11" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(9719, 1538)
 
-[node name="TimedPlatform13" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform13" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(10083, 1538)
 
-[node name="TimedPlatform12" parent="Hazards" instance=ExtResource("13_c5lb2")]
+[node name="TimedPlatform12" parent="TimedPlatforms" instance=ExtResource("13_c5lb2")]
 position = Vector2(9902, 1538)
 time_till_start = 4.0
 
-[node name="SkinHandler" parent="." instance=ExtResource("14_5bs6n")]
+[node name="Coins" type="Node" parent="."]
 
-[node name="UI" parent="." instance=ExtResource("14_cmin5")]
+[node name="coin" parent="Coins" instance=ExtResource("15_4o0ub")]
+position = Vector2(8807.64, 1440.48)
+
+[node name="coin2" parent="Coins" instance=ExtResource("15_4o0ub")]
+position = Vector2(4051.62, 1199.99)
+
+[node name="coin3" parent="Coins" instance=ExtResource("15_4o0ub")]
+position = Vector2(10012.3, 1291.63)
+
+[node name="coin4" parent="Coins" instance=ExtResource("15_4o0ub")]
+position = Vector2(14237.3, 880.806)
+
+[node name="coin5" parent="Coins" instance=ExtResource("15_4o0ub")]
+position = Vector2(18136, 732.016)
+
+[node name="coin6" parent="Coins" instance=ExtResource("15_4o0ub")]
+position = Vector2(31401.4, -5836.4)
+
+[node name="coin7" parent="Coins" instance=ExtResource("15_4o0ub")]
+position = Vector2(33988.3, -4179.51)
+
+[node name="coin8" parent="Coins" instance=ExtResource("15_4o0ub")]
+position = Vector2(33528.2, -3574.89)
+
+[node name="coin9" parent="Coins" instance=ExtResource("15_4o0ub")]
+position = Vector2(33981, -3089)

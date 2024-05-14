@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://hgy4pkwna054"]
+
+[ext_resource type="Texture2D" uid="uid://cha34ojr2h46y" path="res://assets/shop/coin_marbel_vertigo.png" id="1_pm6qp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jun8x"]
+atlas = ExtResource("1_pm6qp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n05h4"]
+atlas = ExtResource("1_pm6qp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o84sf"]
+atlas = ExtResource("1_pm6qp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_minii"]
+atlas = ExtResource("1_pm6qp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd33i"]
+atlas = ExtResource("1_pm6qp")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fepgy"]
+atlas = ExtResource("1_pm6qp")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72arv"]
+atlas = ExtResource("1_pm6qp")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7v3y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jun8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n05h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o84sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_minii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd33i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fepgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72arv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CoinSprite" type="AnimatedSprite2D"]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_p7v3y")
+autoplay = "default"
+frame_progress = 0.534876

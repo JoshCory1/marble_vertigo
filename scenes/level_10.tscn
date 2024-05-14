@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dh1jhenl0m2fb"]
+[gd_scene load_steps=16 format=3 uid="uid://dh1jhenl0m2fb"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_qjlan"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_enhyr"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="13_aj04t"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="13_fc3ar"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="14_wmwtd"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="15_6o2t4"]
 [ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="15_mdndh"]
 
 [node name="TemplateLevel" type="Node2D"]
@@ -32,7 +33,25 @@ layer_0/tile_data = PackedInt32Array(-458770, 196617, 0, -393234, 196617, 0, -32
 [node name="Player" parent="." instance=ExtResource("5_hi8h5")]
 position = Vector2(387, 163)
 
+[node name="UI" parent="." instance=ExtResource("13_aj04t")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("14_wmwtd")]
+
 [node name="Environment" parent="." instance=ExtResource("3_xj3fw")]
+
+[node name="JumpBoxs" type="Node" parent="."]
+
+[node name="JumpBox" parent="JumpBoxs" instance=ExtResource("15_mdndh")]
+position = Vector2(5343, 97)
+scale = Vector2(1.16004, 1)
+
+[node name="JumpBox3" parent="JumpBoxs" instance=ExtResource("15_mdndh")]
+position = Vector2(13094, -2077)
+scale = Vector2(1.6, 1)
+
+[node name="JumpBox2" parent="JumpBoxs" instance=ExtResource("15_mdndh")]
+position = Vector2(7849, -1952.22)
+scale = Vector2(1.6, 1)
 
 [node name="Pillars" type="Node" parent="."]
 
@@ -266,217 +285,226 @@ destination = Vector2(0, -200)
 position = Vector2(19834, 725)
 destination = Vector2(0, -200)
 
-[node name="TimedPlatform" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatforms" type="Node" parent="."]
+
+[node name="TimedPlatform" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(5613, 104)
 
-[node name="TimedPlatform2" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(5825, 104)
 time_till_start = 4.0
 
-[node name="TimedPlatform3" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(6029, 104)
 
-[node name="TimedPlatform4" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(6241, 104)
 time_till_start = 4.0
 
-[node name="TimedPlatform5" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(6445, 104)
 
-[node name="TimedPlatform6" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(6657, 104)
 time_till_start = 4.0
 
-[node name="TimedPlatform7" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(6861, 104)
 
-[node name="TimedPlatform8" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(7073, 104)
 time_till_start = 4.0
 
-[node name="TimedPlatform9" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform9" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(8177, -1923)
 
-[node name="TimedPlatform10" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform10" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(8380, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform11" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform11" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(8581, -1923)
 
-[node name="TimedPlatform12" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform12" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(8778, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform13" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform13" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(8970, -1923)
 
-[node name="TimedPlatform14" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform14" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(9166, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform15" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform15" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(9367, -1923)
 
-[node name="TimedPlatform16" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform16" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(9555, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform17" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform17" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(9745, -1923)
 
-[node name="TimedPlatform18" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform18" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(9948, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform19" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform19" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(10149, -1923)
 
-[node name="TimedPlatform20" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform20" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(10346, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform21" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform21" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(10538, -1923)
 
-[node name="TimedPlatform22" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform22" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(10734, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform23" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform23" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(10935, -1923)
 
-[node name="TimedPlatform24" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform24" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(11123, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform25" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform25" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(11313, -1923)
 
-[node name="TimedPlatform26" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform26" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(11516, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform27" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform27" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(11717, -1923)
 
-[node name="TimedPlatform28" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform28" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(11914, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform29" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform29" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(12106, -1923)
 
-[node name="TimedPlatform30" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform30" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(12302, -1923)
 time_till_start = 4.0
 
-[node name="TimedPlatform33" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform33" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(13404, -2051)
 
-[node name="TimedPlatform34" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform34" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(13592, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform35" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform35" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(13780, -2051)
 
-[node name="TimedPlatform36" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform36" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(13968, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform37" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform37" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(14152, -2051)
 
-[node name="TimedPlatform38" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform38" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(14340, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform39" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform39" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(14528, -2051)
 
-[node name="TimedPlatform40" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform40" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(14716, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform41" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform41" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(14908, -2051)
 
-[node name="TimedPlatform42" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform42" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(15096, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform43" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform43" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(15284, -2051)
 
-[node name="TimedPlatform44" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform44" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(15472, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform45" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform45" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(15656, -2051)
 
-[node name="TimedPlatform46" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform46" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(15844, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform47" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform47" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(16032, -2051)
 
-[node name="TimedPlatform48" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform48" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(16220, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform49" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform49" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(16404, -2051)
 
-[node name="TimedPlatform50" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform50" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(16592, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform51" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform51" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(16780, -2051)
 
-[node name="TimedPlatform52" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform52" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(16968, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform53" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform53" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(17152, -2051)
 
-[node name="TimedPlatform54" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform54" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(17340, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform55" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform55" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(17528, -2051)
 
-[node name="TimedPlatform56" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform56" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(17716, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform57" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform57" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(17908, -2051)
 
-[node name="TimedPlatform58" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform58" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(18096, -2051)
 time_till_start = 4.0
 
-[node name="TimedPlatform59" parent="Hazards" instance=ExtResource("13_fc3ar")]
+[node name="TimedPlatform59" parent="TimedPlatforms" instance=ExtResource("13_fc3ar")]
 position = Vector2(18284, -2051)
 
-[node name="JumpBox" parent="." instance=ExtResource("15_mdndh")]
-position = Vector2(5343, 97)
-scale = Vector2(1.16004, 1)
+[node name="Coins" type="Node" parent="."]
 
-[node name="JumpBox3" parent="." instance=ExtResource("15_mdndh")]
-position = Vector2(13094, -2077)
-scale = Vector2(1.6, 1)
+[node name="coin" parent="Coins" instance=ExtResource("15_6o2t4")]
+position = Vector2(2087, 4)
 
-[node name="JumpBox2" parent="." instance=ExtResource("15_mdndh")]
-position = Vector2(7849, -1952.22)
-scale = Vector2(1.6, 1)
+[node name="coin2" parent="Coins" instance=ExtResource("15_6o2t4")]
+position = Vector2(3852, 0)
 
-[node name="UI" parent="." instance=ExtResource("13_aj04t")]
+[node name="coin3" parent="Coins" instance=ExtResource("15_6o2t4")]
+position = Vector2(6422, -128)
 
-[node name="SkinHandler" parent="." instance=ExtResource("14_wmwtd")]
+[node name="coin4" parent="Coins" instance=ExtResource("15_6o2t4")]
+position = Vector2(11136, 420)
+
+[node name="coin5" parent="Coins" instance=ExtResource("15_6o2t4")]
+position = Vector2(9745, -2070)
+
+[node name="coin6" parent="Coins" instance=ExtResource("15_6o2t4")]
+position = Vector2(14923, -2217)
+
+[node name="coin7" parent="Coins" instance=ExtResource("15_6o2t4")]
+position = Vector2(17839, 523)

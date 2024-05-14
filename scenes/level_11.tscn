@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvcspdr0ukw7w"]
+[gd_scene load_steps=15 format=3 uid="uid://cvcspdr0ukw7w"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_hfkw5"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_pvxum"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="12_3f0p3"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_6ovym"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="13_yihde"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="14_xxo7r"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="15_mu04b"]
 
 [node name="TemplateLevel" type="Node2D"]
@@ -30,6 +31,10 @@ layer_0/tile_data = PackedInt32Array(1179621, 851977, 0, 1179622, 851977, 0, 124
 
 [node name="Player" parent="." instance=ExtResource("5_3mwf8")]
 position = Vector2(387, 163)
+
+[node name="UI" parent="." instance=ExtResource("12_6ovym")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("13_yihde")]
 
 [node name="Environment" parent="." instance=ExtResource("7_mddoj")]
 
@@ -200,34 +205,52 @@ duration = 4.0
 wait_time_1 = 1.0
 wait_time_2 = 1.0
 
-[node name="TimedPlatform" parent="Hazards" instance=ExtResource("15_mu04b")]
+[node name="TimedPlatforms" type="Node" parent="."]
+
+[node name="TimedPlatform" parent="TimedPlatforms" instance=ExtResource("15_mu04b")]
 position = Vector2(2724, -673)
 
-[node name="TimedPlatform2" parent="Hazards" instance=ExtResource("15_mu04b")]
+[node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("15_mu04b")]
 position = Vector2(2916, -673)
 time_till_start = 4.0
 
-[node name="TimedPlatform3" parent="Hazards" instance=ExtResource("15_mu04b")]
+[node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("15_mu04b")]
 position = Vector2(3108, -673)
 
-[node name="TimedPlatform4" parent="Hazards" instance=ExtResource("15_mu04b")]
+[node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("15_mu04b")]
 position = Vector2(3300, -673)
 time_till_start = 4.0
 
-[node name="TimedPlatform5" parent="Hazards" instance=ExtResource("15_mu04b")]
+[node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("15_mu04b")]
 position = Vector2(3500, -673)
 
-[node name="TimedPlatform6" parent="Hazards" instance=ExtResource("15_mu04b")]
+[node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("15_mu04b")]
 position = Vector2(3692, -673)
 time_till_start = 4.0
 
-[node name="TimedPlatform7" parent="Hazards" instance=ExtResource("15_mu04b")]
+[node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("15_mu04b")]
 position = Vector2(3884, -673)
 
-[node name="TimedPlatform8" parent="Hazards" instance=ExtResource("15_mu04b")]
+[node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("15_mu04b")]
 position = Vector2(4076, -673)
 time_till_start = 4.0
 
-[node name="UI" parent="." instance=ExtResource("12_6ovym")]
+[node name="Coins" type="Node" parent="."]
 
-[node name="SkinHandler" parent="." instance=ExtResource("13_yihde")]
+[node name="coin" parent="Coins" instance=ExtResource("14_xxo7r")]
+position = Vector2(2144, 8)
+
+[node name="coin2" parent="Coins" instance=ExtResource("14_xxo7r")]
+position = Vector2(3298, -780)
+
+[node name="coin3" parent="Coins" instance=ExtResource("14_xxo7r")]
+position = Vector2(5783, -1890)
+
+[node name="coin4" parent="Coins" instance=ExtResource("14_xxo7r")]
+position = Vector2(5783, -1890)
+
+[node name="coin5" parent="Coins" instance=ExtResource("14_xxo7r")]
+position = Vector2(8852, -1890)
+
+[node name="coin6" parent="Coins" instance=ExtResource("14_xxo7r")]
+position = Vector2(13155, -2761)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbymuv1obodtd"]
+[gd_scene load_steps=12 format=3 uid="uid://bbymuv1obodtd"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_w7kmb"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_6e2ee"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="8_eo7en"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="9_3xn1r"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="10_872sq"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="11_n8ukl"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="12_y1w1n"]
 
 [node name="TemplateLevel" type="Node2D"]
@@ -26,6 +27,10 @@ layer_0/tile_data = PackedInt32Array(2883703, 1507337, 0, 2818167, 851977, 0, 27
 
 [node name="Player" parent="." instance=ExtResource("6_o6nrx")]
 position = Vector2(387, 163)
+
+[node name="UI" parent="." instance=ExtResource("9_3xn1r")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("10_872sq")]
 
 [node name="Pillars" type="Node" parent="."]
 
@@ -77,8 +82,6 @@ position = Vector2(12000, -91)
 [node name="Pillar11" parent="Pillars" instance=ExtResource("7_0y4ry")]
 position = Vector2(13337, 1)
 screenClamp = Vector2(300, 0)
-
-[node name="Portals" type="Node" parent="."]
 
 [node name="Hazards" type="Node" parent="."]
 
@@ -256,6 +259,13 @@ destination = Vector2(-500, 0)
 duration = 2.0
 wait_time_2 = 0.5
 
-[node name="UI" parent="." instance=ExtResource("9_3xn1r")]
+[node name="Coins" type="Node" parent="."]
 
-[node name="SkinHandler" parent="." instance=ExtResource("10_872sq")]
+[node name="coin" parent="Coins" instance=ExtResource("11_n8ukl")]
+position = Vector2(4949, -122)
+
+[node name="coin2" parent="Coins" instance=ExtResource("11_n8ukl")]
+position = Vector2(7052, -203)
+
+[node name="coin3" parent="Coins" instance=ExtResource("11_n8ukl")]
+position = Vector2(11252, -141)

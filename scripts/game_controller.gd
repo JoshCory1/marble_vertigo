@@ -44,13 +44,11 @@ var spin_2_skin_unlocked: bool = false
 var spin_2_skin_use: bool = false
 
 #skins array
-var skins = []
-var skins_unlocked = []
+@onready var skins = [default_0_skin_use, cube_1_skin_use, spin_2_skin_use]
+@onready var skins_unlocked = [default_0_skin_unlocked, cube_1_skin_unlocked, spin_2_skin_unlocked]
 
 func _ready():
 	load_game()
-	skins = [default_0_skin_use, cube_1_skin_use, spin_2_skin_use]
-	skins_unlocked = [default_0_skin_unlocked, cube_1_skin_unlocked, spin_2_skin_unlocked]
 
 func _process(_delta):
 	var time = Time.get_unix_time_from_system()

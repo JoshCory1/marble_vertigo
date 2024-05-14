@@ -1,15 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfcy0hnl86squ"]
+[gd_scene load_steps=19 format=3 uid="uid://bfcy0hnl86squ"]
 
 [ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_4xgp3"]
 [ext_resource type="Texture2D" uid="uid://6cnj04ds7j82" path="res://assets/shop/ShopBox.png" id="2_gh6sk"]
 [ext_resource type="PackedScene" uid="uid://dtxikyw3nal8l" path="res://scenes/close_button.tscn" id="3_js1kb"]
+[ext_resource type="Texture2D" uid="uid://c3ywusev30qif" path="res://assets/shop/no_adds.png" id="3_xbxfg"]
 [ext_resource type="Texture2D" uid="uid://cqh402wxwmiq4" path="res://assets/ball/ball_blue_large_alt.png" id="4_jggn5"]
 [ext_resource type="Texture2D" uid="uid://cxwrbuxn06n3u" path="res://assets/ball/marble_v3.png" id="4_quguk"]
 [ext_resource type="Texture2D" uid="uid://d5g4r4ijimkk" path="res://assets/ball/marble_v19.png" id="5_oeu3k"]
+[ext_resource type="PackedScene" uid="uid://hgy4pkwna054" path="res://scenes/coin_sprite.tscn" id="6_ucq4n"]
+[ext_resource type="Texture2D" uid="uid://boi831dcjyk6a" path="res://assets/ball/marble_v22.png" id="8_dyhbb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_26ct4"]
 font_size = 65
 font_color = Color(0.160784, 1, 0.231373, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00m1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1ov4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dwxbe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sblpy"]
+
+[sub_resource type="Theme" id="Theme_wkkm2"]
+VScrollBar/styles/grabber = null
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_00m1x")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_h1ov4")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_dwxbe")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_sblpy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_iceoc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wevwm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7o3s"]
+font_size = 45
 
 [node name="ShopScreen" type="Control"]
 layout_mode = 3
@@ -67,115 +92,172 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.721569)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Box/ColorRect"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Box/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_wkkm2")
 
-[node name="DefaultButton" type="TextureButton" parent="Box/ColorRect/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/ColorRect/ScrollContainer"]
+layout_mode = 2
+
+[node name="Premium" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_xbxfg")
+
+[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Premium"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = -18.0
+offset_right = 237.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Premium
+No Adds Unlimted plays"
+label_settings = SubResource("LabelSettings_iceoc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Premium"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 498.0
+offset_top = 14.0
+offset_right = 539.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "$9.99"
+label_settings = SubResource("LabelSettings_wevwm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefaultButton2" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_jggn5")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/VBoxContainer/DefaultButton"]
+[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -479.0
-offset_top = -13.0
-offset_right = -431.0
-offset_bottom = 13.0
+offset_left = 86.0
+offset_top = -9.0
+offset_right = 134.0
+offset_bottom = 17.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Dfault"
 
-[node name="ColorRect" type="ColorRect" parent="Box/ColorRect/VBoxContainer/DefaultButton/LabelPayment"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -16.0
-offset_right = -78.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(4.76, 2.32)
-color = Color(0, 0.0588235, 0.443137, 0.298039)
+[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2"]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 23.0
+offset_right = 602.0
+offset_bottom = 49.0
+text = "Free"
 
-[node name="CubeButton" type="TextureButton" parent="Box/ColorRect/VBoxContainer"]
+[node name="CubeButton" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_quguk")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/VBoxContainer/CubeButton"]
+[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -479.0
-offset_top = -13.0
-offset_right = -431.0
-offset_bottom = 13.0
+offset_left = 89.0
+offset_top = -12.0
+offset_right = 137.0
+offset_bottom = 14.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Cube"
 
-[node name="ColorRect" type="ColorRect" parent="Box/ColorRect/VBoxContainer/CubeButton/LabelPayment"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -16.0
-offset_right = -78.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(4.76, 2.32)
-color = Color(0, 0.0588235, 0.443137, 0.298039)
+[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton" instance=ExtResource("6_ucq4n")]
+position = Vector2(562, 22)
 
-[node name="SpinButton" type="TextureButton" parent="Box/ColorRect/VBoxContainer"]
+[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton/CoinSprite"]
+offset_left = 39.0001
+offset_top = -31.0
+offset_right = 79.0001
+offset_bottom = -5.0
+text = "100"
+label_settings = SubResource("LabelSettings_v7o3s")
+
+[node name="SpinButton" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_oeu3k")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/VBoxContainer/SpinButton"]
+[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -479.0
-offset_top = -13.0
-offset_right = -431.0
-offset_bottom = 13.0
+offset_left = 83.0
+offset_top = -16.0
+offset_right = 151.0
+offset_bottom = 10.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Spinning"
 
-[node name="ColorRect" type="ColorRect" parent="Box/ColorRect/VBoxContainer/SpinButton/LabelPayment"]
-show_behind_parent = true
+[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton" instance=ExtResource("6_ucq4n")]
+position = Vector2(562, 16)
+
+[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton/CoinSprite"]
+offset_left = 39.0001
+offset_top = -31.0
+offset_right = 79.0001
+offset_bottom = -5.0
+text = "500"
+label_settings = SubResource("LabelSettings_v7o3s")
+
+[node name="New" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_dyhbb")
+
+[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/New"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -57.0
+anchor_bottom = 0.5
+offset_left = 83.0
 offset_top = -16.0
-offset_right = -77.0
-offset_bottom = -16.0
-grow_horizontal = 2
+offset_right = 199.0
+offset_bottom = 10.0
+grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(4.76, 2.32)
-color = Color(0, 0.0588235, 0.443137, 0.298039)
+text = "Comming soon"
+
+[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/New" instance=ExtResource("6_ucq4n")]
+position = Vector2(562, 16)
+
+[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/New/CoinSprite"]
+offset_left = 39.0001
+offset_top = -31.0
+offset_right = 79.0001
+offset_bottom = -5.0
+text = "1000"
+label_settings = SubResource("LabelSettings_v7o3s")
 
 [node name="CloseButton" parent="Box" instance=ExtResource("3_js1kb")]
 layout_mode = 0
@@ -185,7 +267,8 @@ offset_right = 752.0
 offset_bottom = 20.0
 scale = Vector2(2, 2)
 
-[connection signal="pressed" from="Box/ColorRect/VBoxContainer/DefaultButton" to="." method="_on_default_button_pressed"]
-[connection signal="pressed" from="Box/ColorRect/VBoxContainer/CubeButton" to="." method="_on_cube_button_pressed"]
-[connection signal="pressed" from="Box/ColorRect/VBoxContainer/SpinButton" to="." method="_on_spin_button_pressed"]
+[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/Premium" to="." method="_on_premium_pressed"]
+[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2" to="." method="_on_default_button_pressed"]
+[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton" to="." method="_on_cube_button_pressed"]
+[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton" to="." method="_on_spin_button_pressed"]
 [connection signal="pressed" from="Box/CloseButton" to="." method="_on_close_button_pressed"]

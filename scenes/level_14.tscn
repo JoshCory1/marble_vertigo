@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bj2bln0uoe522"]
+[gd_scene load_steps=14 format=3 uid="uid://bj2bln0uoe522"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_vfc2u"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_turft"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_dntnl"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="13_ck74q"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="13_vvi3t"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="13_w17to"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_vfc2u")
@@ -26,6 +27,10 @@ layer_0/tile_data = PackedInt32Array(3407856, 196617, 0, 3342320, 983049, 0, 327
 
 [node name="Player" parent="." instance=ExtResource("5_oim4w")]
 position = Vector2(387, 163)
+
+[node name="UI" parent="." instance=ExtResource("12_dntnl")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("13_vvi3t")]
 
 [node name="Environment" parent="." instance=ExtResource("6_h0wl7")]
 
@@ -237,34 +242,55 @@ position = Vector2(7699, 1685)
 destination = Vector2(0, 200)
 duration = 2.0
 
-[node name="TimedPlatform" parent="Hazards" instance=ExtResource("13_ck74q")]
+[node name="TimedPlatforms" type="Node" parent="."]
+
+[node name="TimedPlatform" parent="TimedPlatforms" instance=ExtResource("13_ck74q")]
 position = Vector2(4116.15, 242.706)
 
-[node name="TimedPlatform2" parent="Hazards" instance=ExtResource("13_ck74q")]
+[node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("13_ck74q")]
 position = Vector2(4300.15, 242.706)
 time_till_start = 4.0
 
-[node name="TimedPlatform3" parent="Hazards" instance=ExtResource("13_ck74q")]
+[node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("13_ck74q")]
 position = Vector2(4483.15, 242.706)
 
-[node name="TimedPlatform4" parent="Hazards" instance=ExtResource("13_ck74q")]
+[node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("13_ck74q")]
 position = Vector2(4667.15, 242.706)
 time_till_start = 4.0
 
-[node name="TimedPlatform5" parent="Hazards" instance=ExtResource("13_ck74q")]
+[node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("13_ck74q")]
 position = Vector2(4852.15, 242.706)
 
-[node name="TimedPlatform6" parent="Hazards" instance=ExtResource("13_ck74q")]
+[node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("13_ck74q")]
 position = Vector2(5036.15, 242.706)
 time_till_start = 4.0
 
-[node name="TimedPlatform7" parent="Hazards" instance=ExtResource("13_ck74q")]
+[node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("13_ck74q")]
 position = Vector2(5219.15, 242.706)
 
-[node name="TimedPlatform8" parent="Hazards" instance=ExtResource("13_ck74q")]
+[node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("13_ck74q")]
 position = Vector2(5403.15, 242.706)
 time_till_start = 4.0
 
-[node name="SkinHandler" parent="." instance=ExtResource("13_vvi3t")]
+[node name="Coins" type="Node" parent="."]
 
-[node name="UI" parent="." instance=ExtResource("12_dntnl")]
+[node name="coin" parent="Coins" instance=ExtResource("13_w17to")]
+position = Vector2(1681.21, 160.9)
+
+[node name="coin2" parent="Coins" instance=ExtResource("13_w17to")]
+position = Vector2(6701, 118)
+
+[node name="coin3" parent="Coins" instance=ExtResource("13_w17to")]
+position = Vector2(720, 1914)
+
+[node name="coin4" parent="Coins" instance=ExtResource("13_w17to")]
+position = Vector2(1447, 1899)
+
+[node name="coin5" parent="Coins" instance=ExtResource("13_w17to")]
+position = Vector2(2589, 1899)
+
+[node name="coin6" parent="Coins" instance=ExtResource("13_w17to")]
+position = Vector2(4309, 1899)
+
+[node name="coin7" parent="Coins" instance=ExtResource("13_w17to")]
+position = Vector2(6507, 1899)

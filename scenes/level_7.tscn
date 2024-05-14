@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://5r0aor4wsqe7"]
+[gd_scene load_steps=16 format=3 uid="uid://5r0aor4wsqe7"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_jrj44"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_m5ulv"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_fmj8d"]
 [ext_resource type="PackedScene" uid="uid://cem5hy52p2bc5" path="res://scenes/bar.tscn" id="13_2ebxu"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="13_msafl"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="14_qsgra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5t2v"]
 size = Vector2(66, 2976)
@@ -20,8 +21,6 @@ size = Vector2(66, 2976)
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_jrj44")
 music_track = ExtResource("2_m5ulv")
-
-[node name="Environment" parent="." instance=ExtResource("3_eqstr")]
 
 [node name="Exit" parent="." instance=ExtResource("3_wlbm5")]
 position = Vector2(7773, -314)
@@ -35,6 +34,63 @@ layer_0/tile_data = PackedInt32Array(262109, 1048585, 0, 196573, 1048585, 0, 131
 
 [node name="Player" parent="." instance=ExtResource("5_cwsjj")]
 position = Vector2(427, -43)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(11485, -2455)
+scale = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_l5t2v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(11938, -2455)
+scale = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_l5t2v")
+
+[node name="UI" parent="." instance=ExtResource("12_fmj8d")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("13_msafl")]
+
+[node name="Environment" parent="." instance=ExtResource("3_eqstr")]
+
+[node name="JumpBoxs" type="Node" parent="."]
+
+[node name="JumpBox" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(5565, 413.103)
+scale = Vector2(17.8823, 1.27824)
+
+[node name="JumpBox2" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(6592.83, -480.958)
+scale = Vector2(5.32001, 1)
+
+[node name="JumpBox4" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(11714.4, -3172.68)
+scale = Vector2(1.44002, 1)
+
+[node name="JumpBox5" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(11714, -2213)
+scale = Vector2(1.44002, 1)
+
+[node name="JumpBox6" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(14428, -545)
+scale = Vector2(4.56, 1)
+
+[node name="JumpBox7" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(17147, -548)
+scale = Vector2(11.24, 1)
+
+[node name="JumpBox8" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(20515, -546)
+scale = Vector2(7.08004, 1)
+
+[node name="JumpBox9" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(21404.8, -750.273)
+rotation = 1.5708
+
+[node name="JumpBox10" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(13795, -756)
+rotation = 1.5708
 
 [node name="Pillars" type="Node" parent="."]
 
@@ -257,55 +313,16 @@ collision_layer = 4
 destination = Vector2(0, -300)
 wait_time_2 = 2.0
 
-[node name="JumpBox" parent="." instance=ExtResource("6_cvrj5")]
-position = Vector2(5565, 413.103)
-scale = Vector2(17.8823, 1.27824)
+[node name="Coins" type="Node" parent="."]
 
-[node name="JumpBox4" parent="." instance=ExtResource("6_cvrj5")]
-position = Vector2(11714.4, -3172.68)
-scale = Vector2(1.44002, 1)
+[node name="coin" parent="Coins" instance=ExtResource("14_qsgra")]
+position = Vector2(2744, -221)
 
-[node name="JumpBox5" parent="." instance=ExtResource("6_cvrj5")]
-position = Vector2(11714, -2213)
-scale = Vector2(1.44002, 1)
+[node name="coin2" parent="Coins" instance=ExtResource("14_qsgra")]
+position = Vector2(6528, -651)
 
-[node name="JumpBox6" parent="." instance=ExtResource("6_cvrj5")]
-position = Vector2(14428, -545)
-scale = Vector2(4.56, 1)
+[node name="coin3" parent="Coins" instance=ExtResource("14_qsgra")]
+position = Vector2(6528, -651)
 
-[node name="JumpBox7" parent="." instance=ExtResource("6_cvrj5")]
-position = Vector2(17147, -548)
-scale = Vector2(11.24, 1)
-
-[node name="JumpBox8" parent="." instance=ExtResource("6_cvrj5")]
-position = Vector2(20515, -546)
-scale = Vector2(7.08004, 1)
-
-[node name="JumpBox9" parent="." instance=ExtResource("6_cvrj5")]
-position = Vector2(21404.8, -750.273)
-rotation = 1.5708
-
-[node name="JumpBox10" parent="." instance=ExtResource("6_cvrj5")]
-position = Vector2(13795, -756)
-rotation = 1.5708
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(11485, -2455)
-scale = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_l5t2v")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(11938, -2455)
-scale = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_l5t2v")
-
-[node name="JumpBox2" parent="." instance=ExtResource("6_cvrj5")]
-position = Vector2(6592.83, -480.958)
-scale = Vector2(5.32001, 1)
-
-[node name="UI" parent="." instance=ExtResource("12_fmj8d")]
-
-[node name="SkinHandler" parent="." instance=ExtResource("13_msafl")]
+[node name="coin4" parent="Coins" instance=ExtResource("14_qsgra")]
+position = Vector2(7609, 260)

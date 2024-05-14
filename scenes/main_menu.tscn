@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=38 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_5bn02"]
@@ -33,9 +33,16 @@
 [ext_resource type="PackedScene" uid="uid://25gplpydn7qi" path="res://scenes/level_15.tscn" id="23_ct0do"]
 [ext_resource type="PackedScene" uid="uid://ogatfisubquo" path="res://scenes/level_16.tscn" id="24_8xrvb"]
 [ext_resource type="PackedScene" uid="uid://ld2de8goi01v" path="res://scenes/level_17.tscn" id="25_j12yy"]
+[ext_resource type="PackedScene" uid="uid://hgy4pkwna054" path="res://scenes/coin_sprite.tscn" id="32_23juq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rp1uo"]
+font_size = 45
+font_color = Color(0.431373, 1, 0.827451, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_v52m2"]
 font_size = 36
@@ -597,6 +604,17 @@ layer = 99
 visible = false
 z_index = 4096
 size_flags_horizontal = 4
+
+[node name="CoinSprite" parent="CanvasLayer2" instance=ExtResource("32_23juq")]
+position = Vector2(39, 31)
+
+[node name="Label" type="Label" parent="CanvasLayer2/CoinSprite"]
+offset_left = 32.5
+offset_top = -32.5
+offset_right = 188.5
+offset_bottom = 33.5
+text = "999999"
+label_settings = SubResource("LabelSettings_rp1uo")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 

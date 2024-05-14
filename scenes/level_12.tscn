@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bx3nsmuk7a74i"]
+[gd_scene load_steps=14 format=3 uid="uid://bx3nsmuk7a74i"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_g2p8r"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_f3nb8"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_jkgi6"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="13_5kwco"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="13_5yrnf"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="13_7bc4x"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_g2p8r")
@@ -26,6 +27,10 @@ layer_0/tile_data = PackedInt32Array(1703931, 851977, 0, 1703932, 983049, 0, 176
 
 [node name="Player" parent="." instance=ExtResource("5_3308i")]
 position = Vector2(387, 163)
+
+[node name="UI" parent="." instance=ExtResource("12_jkgi6")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("13_5yrnf")]
 
 [node name="Environment" parent="." instance=ExtResource("6_7kl6o")]
 
@@ -145,195 +150,219 @@ position = Vector2(3887, 218)
 [node name="MovingHazard5" parent="Hazards" instance=ExtResource("12_143b0")]
 position = Vector2(3951, 218)
 
-[node name="TimedPlatform" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatforms" type="Node" parent="."]
+
+[node name="TimedPlatform" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(2836, 315)
 
-[node name="TimedPlatform2" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(3019, 315)
 time_till_start = 4.0
 
-[node name="TimedPlatform3" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(3199, 315)
 
-[node name="TimedPlatform4" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(3382, 315)
 time_till_start = 4.0
 
-[node name="TimedPlatform5" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(3563, 315)
 
-[node name="TimedPlatform6" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(3746, 315)
 time_till_start = 4.0
 
-[node name="TimedPlatform7" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(11144, 220)
 
-[node name="TimedPlatform8" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(11327, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform9" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform9" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(11507, 220)
 
-[node name="TimedPlatform10" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform10" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(11690, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform11" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform11" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(11871, 220)
 
-[node name="TimedPlatform12" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform12" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(12054, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform13" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform13" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(12208, 220)
 
-[node name="TimedPlatform14" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform14" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(12391, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform15" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform15" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(12571, 220)
 
-[node name="TimedPlatform16" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform16" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(12754, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform17" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform17" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(12935, 220)
 
-[node name="TimedPlatform18" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform18" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(13118, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform19" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform19" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(13300, 220)
 
-[node name="TimedPlatform20" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform20" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(13483, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform21" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform21" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(13663, 220)
 
-[node name="TimedPlatform22" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform22" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(13846, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform23" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform23" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(14027, 220)
 
-[node name="TimedPlatform24" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform24" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(14210, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform25" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform25" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(14364, 220)
 
-[node name="TimedPlatform26" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform26" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(14547, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform27" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform27" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(14727, 220)
 
-[node name="TimedPlatform28" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform28" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(14910, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform29" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform29" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(15091, 220)
 
-[node name="TimedPlatform30" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform30" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(15274, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform31" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform31" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(15454, 220)
 
-[node name="TimedPlatform32" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform32" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(15637, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform33" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform33" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(15817, 220)
 
-[node name="TimedPlatform34" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform34" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(16000, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform35" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform35" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(16181, 220)
 
-[node name="TimedPlatform36" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform36" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(16364, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform37" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform37" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(16518, 220)
 
-[node name="TimedPlatform38" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform38" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(16701, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform39" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform39" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(16881, 220)
 
-[node name="TimedPlatform40" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform40" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(17064, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform41" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform41" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(17245, 220)
 
-[node name="TimedPlatform42" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform42" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(17428, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform43" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform43" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(17610, 220)
 
-[node name="TimedPlatform44" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform44" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(17793, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform45" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform45" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(17973, 220)
 
-[node name="TimedPlatform46" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform46" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(18156, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform47" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform47" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(18337, 220)
 
-[node name="TimedPlatform48" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform48" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(18520, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform49" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform49" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(18674, 220)
 
-[node name="TimedPlatform50" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform50" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(18857, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform51" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform51" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(19037, 220)
 
-[node name="TimedPlatform52" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform52" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(19220, 220)
 time_till_start = 4.0
 
-[node name="TimedPlatform53" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform53" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(19401, 220)
 
-[node name="TimedPlatform54" parent="Hazards" instance=ExtResource("13_5kwco")]
+[node name="TimedPlatform54" parent="TimedPlatforms" instance=ExtResource("13_5kwco")]
 position = Vector2(19584, 220)
 time_till_start = 4.0
 
-[node name="SkinHandler" parent="." instance=ExtResource("13_5yrnf")]
+[node name="Coins" type="Node" parent="."]
 
-[node name="UI" parent="." instance=ExtResource("12_jkgi6")]
+[node name="coin" parent="Coins" instance=ExtResource("13_7bc4x")]
+position = Vector2(3302, 4)
+
+[node name="coin2" parent="Coins" instance=ExtResource("13_7bc4x")]
+position = Vector2(6773, -1)
+
+[node name="coin3" parent="Coins" instance=ExtResource("13_7bc4x")]
+position = Vector2(11871, 66)
+
+[node name="coin4" parent="Coins" instance=ExtResource("13_7bc4x")]
+position = Vector2(13118, 66)
+
+[node name="coin5" parent="Coins" instance=ExtResource("13_7bc4x")]
+position = Vector2(14027, 66)
+
+[node name="coin6" parent="Coins" instance=ExtResource("13_7bc4x")]
+position = Vector2(15289, 66)
+
+[node name="coin7" parent="Coins" instance=ExtResource("13_7bc4x")]
+position = Vector2(16379, 71)
+
+[node name="coin8" parent="Coins" instance=ExtResource("13_7bc4x")]
+position = Vector2(17428, 71)

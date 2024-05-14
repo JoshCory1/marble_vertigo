@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4x2t0boktqe3"]
+[gd_scene load_steps=12 format=3 uid="uid://b4x2t0boktqe3"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xyr8r"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_6dmty"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="8_7onbu"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="9_hvi66"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="10_8li5i"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="11_cn4m0"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_qve7p"]
 
 [node name="TemplateLevel" type="Node2D"]
@@ -26,6 +27,10 @@ current_lvl = 3
 
 [node name="Player" parent="." instance=ExtResource("6_8vxgi")]
 position = Vector2(122, 163)
+
+[node name="UI" parent="." instance=ExtResource("9_hvi66")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("10_8li5i")]
 
 [node name="Pillars" type="Node" parent="."]
 
@@ -50,8 +55,6 @@ screenClamp = Vector2(300, 0)
 position = Vector2(2503, 377)
 screenClamp = Vector2(300, 0)
 
-[node name="Portals" type="Node" parent="."]
-
 [node name="Hazards" type="Node" parent="."]
 
 [node name="MovingHazard" parent="Hazards" instance=ExtResource("11_qve7p")]
@@ -66,6 +69,7 @@ destination = Vector2(100, 100)
 position = Vector2(2489, 121)
 destination = Vector2(100, 50)
 
-[node name="UI" parent="." instance=ExtResource("9_hvi66")]
+[node name="Coins" type="Node" parent="."]
 
-[node name="SkinHandler" parent="." instance=ExtResource("10_8li5i")]
+[node name="coin" parent="Coins" instance=ExtResource("11_cn4m0")]
+position = Vector2(1451, 20)

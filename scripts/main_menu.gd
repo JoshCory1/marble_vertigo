@@ -11,6 +11,7 @@ extends Node2D
 @onready var black_rect = $BlackCanvasLayer/ColorRectBlack
 @onready var fade_duration: float = 0.5
 @onready var debug_menu = $DebugScreen
+@onready  var coin_count = $CanvasLayer2/CoinSprite/Label
 
 var current_button_array_number = 0
 
@@ -27,6 +28,7 @@ func _ready():
 	set_shop_size_scale()
 	shop.visible = false
 	shop.close_shop.connect(_on_close_shop)
+	coin_count.text = str(GameController.coins)
 	if music_track != null && GameController.is_reloaded:
 		AudioPlayer.m_player.stream = music_track
 		AudioPlayer.m_player.volume_db = -10.0
