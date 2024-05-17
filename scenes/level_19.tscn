@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bc5orhqpvy5vo"]
+[gd_scene load_steps=16 format=3 uid="uid://bc5orhqpvy5vo"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_043w4"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_78bcm"]
@@ -14,27 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="12_vjsdu"]
 [ext_resource type="PackedScene" uid="uid://cem5hy52p2bc5" path="res://scenes/bar.tscn" id="13_53ygr"]
 [ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="14_skkrr"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_q7376"]
-font_size = 55
-
-[sub_resource type="LabelSettings" id="LabelSettings_v35cq"]
-font_size = 55
-
-[sub_resource type="LabelSettings" id="LabelSettings_q8dyt"]
-font_size = 55
-
-[sub_resource type="LabelSettings" id="LabelSettings_vw628"]
-font_size = 55
-
-[sub_resource type="LabelSettings" id="LabelSettings_ts0jw"]
-font_size = 55
-
-[sub_resource type="LabelSettings" id="LabelSettings_5l3dw"]
-font_size = 55
-
-[sub_resource type="LabelSettings" id="LabelSettings_oswci"]
-font_size = 55
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="15_7si4m"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_043w4")
@@ -469,68 +449,6 @@ wait_time_2 = 0.5
 bounce_force_min = 20.0
 bounce_force_max = 25.0
 
-[node name="Label" type="Label" parent="."]
-offset_left = 4180.83
-offset_top = 190.473
-offset_right = 4406.83
-offset_bottom = 269.473
-text = "left here"
-label_settings = SubResource("LabelSettings_q7376")
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 7662.9
-offset_top = -67.2346
-offset_right = 7702.9
-offset_bottom = -44.2346
-text = "vert left here
-"
-label_settings = SubResource("LabelSettings_v35cq")
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 2265.89
-offset_top = 263.238
-offset_right = 2305.89
-offset_bottom = 286.238
-text = "poprt here
-"
-label_settings = SubResource("LabelSettings_q8dyt")
-
-[node name="Label4" type="Label" parent="."]
-offset_left = 15192.1
-offset_top = -1504.44
-offset_right = 15232.1
-offset_bottom = -1481.44
-text = "Drop with moveing platform here and timed platforn under
-"
-label_settings = SubResource("LabelSettings_vw628")
-
-[node name="Label5" type="Label" parent="."]
-offset_left = 20345.7
-offset_top = -313.138
-offset_right = 20385.7
-offset_bottom = -290.138
-text = "port here
-"
-label_settings = SubResource("LabelSettings_ts0jw")
-
-[node name="Label6" type="Label" parent="."]
-offset_left = 22014.6
-offset_top = -3261.96
-offset_right = 22054.6
-offset_bottom = -3238.96
-text = "pillars
-"
-label_settings = SubResource("LabelSettings_5l3dw")
-
-[node name="Label7" type="Label" parent="."]
-offset_left = 29414.6
-offset_top = -3058.08
-offset_right = 29454.6
-offset_bottom = -3035.08
-text = "exit
-"
-label_settings = SubResource("LabelSettings_oswci")
-
 [node name="TimedPlatforms" type="Node" parent="."]
 
 [node name="TimedPlatform" parent="TimedPlatforms" instance=ExtResource("12_vjsdu")]
@@ -842,3 +760,26 @@ scale = Vector2(0.428682, 1)
 [node name="JumpBox26" parent="JumpBoxs" instance=ExtResource("14_skkrr")]
 position = Vector2(18270.4, -97.1296)
 scale = Vector2(0.688724, 0.840185)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("15_7si4m")]
+position = Vector2(4176, 680)
+
+[node name="coin2" parent="Coins" instance=ExtResource("15_7si4m")]
+position = Vector2(7548, -359)
+
+[node name="coin3" parent="Coins" instance=ExtResource("15_7si4m")]
+position = Vector2(12728, -1543)
+
+[node name="coin4" parent="Coins" instance=ExtResource("15_7si4m")]
+position = Vector2(18270, -182)
+
+[node name="coin6" parent="Coins" instance=ExtResource("15_7si4m")]
+position = Vector2(23237, -2666)
+
+[node name="coin7" parent="Coins" instance=ExtResource("15_7si4m")]
+position = Vector2(10368, -1726)
+
+[node name="coin5" parent="Coins" instance=ExtResource("15_7si4m")]
+position = Vector2(15519, -167)
