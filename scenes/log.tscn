@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvilpffa1lme2"]
+
+[ext_resource type="Script" path="res://scripts/pillar.gd" id="1_vx2xg"]
+[ext_resource type="Texture2D" uid="uid://ouc8ccinnrfo" path="res://assets/pillar/log.png" id="2_eulm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ltfh"]
+size = Vector2(195.455, 540.462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2dre"]
+size = Vector2(400, 127.131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spktx"]
+size = Vector2(72.7273, 411.348)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfhwn"]
+size = Vector2(350, 500)
+
+[node name="Log" type="CharacterBody2D"]
+z_index = 2
+scale = Vector2(0.22, 0.306)
+collision_layer = 2
+script = ExtResource("1_vx2xg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5.68182, 2.88501)
+texture = ExtResource("2_eulm2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.81818, 4.90194)
+scale = Vector2(1.54546, 1.13072)
+shape = SubResource("RectangleShape2D_1ltfh")
+
+[node name="AreaBounceUp" type="Area2D" parent="."]
+position = Vector2(0, -245.098)
+scale = Vector2(0.818182, 0.607844)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp"]
+position = Vector2(0, -110.215)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_w2dre")
+
+[node name="AreaBounceDown" type="Area2D" parent="."]
+position = Vector2(0, 245.098)
+scale = Vector2(0.817229, 0.576786)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceDown"]
+position = Vector2(0, 118.983)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_w2dre")
+
+[node name="AreaBounceLeft" type="Area2D" parent="."]
+position = Vector2(-136.364, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceLeft"]
+position = Vector2(-27.2727, -1.63399)
+scale = Vector2(0.95, 1.517)
+shape = SubResource("RectangleShape2D_spktx")
+
+[node name="AreaBounceRight" type="Area2D" parent="."]
+position = Vector2(168.182, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceRight"]
+position = Vector2(-27.2727, 0.231673)
+scale = Vector2(0.927, 1.534)
+shape = SubResource("RectangleShape2D_spktx")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+scale = Vector2(1.36364, 1.6536)
+shape = SubResource("RectangleShape2D_hfhwn")
+
+[connection signal="body_entered" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_entered"]
+[connection signal="body_exited" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_exited"]
+[connection signal="body_entered" from="AreaBounceDown" to="." method="_on_area_bounce_down_body_entered"]
+[connection signal="body_exited" from="AreaBounceDown" to="." method="_on_area_bounce_down_body_exited"]
+[connection signal="body_entered" from="AreaBounceLeft" to="." method="_on_area_bounce_left_body_entered"]
+[connection signal="body_exited" from="AreaBounceLeft" to="." method="_on_area_bounce_left_body_exited"]
+[connection signal="body_entered" from="AreaBounceRight" to="." method="_on_area_bounce_right_body_entered"]
+[connection signal="body_exited" from="AreaBounceRight" to="." method="_on_area_bounce_right_body_exited"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]
