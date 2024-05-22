@@ -4,8 +4,9 @@ extends Node2D
 @export var scroll_speed = Vector2(0,0)
 
 @onready var sprite = $ParallaxBG/ParallaxLayer2/Sprite2D
-@onready var parallax1 = $ParallaxBG/ParallaxLayer1
-@onready var parallax2 = $ParallaxBG/ParallaxLayer2
+@export var parallax1: ParallaxLayer
+@export var parallax2: ParallaxLayer
+@export var parallax3: ParallaxLayer
 @onready var black_canvas = $BlackCanvasLayer
 @onready var black_screen = $BlackCanvasLayer/ColorRect
 @onready var bg = $CanvasLayer/Sprite2D

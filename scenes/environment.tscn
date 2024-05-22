@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="3_joeyc"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="4_o2hnm"]
 
-[node name="Environment" type="Node2D"]
+[node name="Environment" type="Node2D" node_paths=PackedStringArray("parallax1", "parallax2")]
 script = ExtResource("1_0s0xi")
+parallax1 = NodePath("ParallaxBG/ParallaxLayer1")
+parallax2 = NodePath("ParallaxBG/ParallaxLayer2")
 
 [node name="ParallaxBG" type="ParallaxBackground" parent="."]
 

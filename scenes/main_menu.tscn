@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=42 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_5bn02"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://c6rpwhgrs4t6s" path="res://scenes/level_18.tscn" id="26_md70x"]
 [ext_resource type="PackedScene" uid="uid://bc5orhqpvy5vo" path="res://scenes/level_19.tscn" id="27_thw34"]
 [ext_resource type="PackedScene" uid="uid://dh015pgtpx26y" path="res://scenes/level_20.tscn" id="28_b3ths"]
+[ext_resource type="PackedScene" uid="uid://yn8v4q16klw3" path="res://scenes/level_21_fall.tscn" id="29_3vqjx"]
 [ext_resource type="PackedScene" uid="uid://hgy4pkwna054" path="res://scenes/coin_sprite.tscn" id="32_23juq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
@@ -604,10 +605,10 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_20" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 2692.0
-offset_top = 77.0
-offset_right = 2756.0
-offset_bottom = 141.0
+offset_left = 2911.0
+offset_top = -4.0
+offset_right = 2975.0
+offset_bottom = 60.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
@@ -630,12 +631,40 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
+[node name="MenuLevelButton_21" type="TextureButton" parent="." groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 3022.0
+offset_top = 119.0
+offset_right = 3086.0
+offset_bottom = 183.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("29_3vqjx")
+current_level = 21
+
+[node name="Label" type="Label" parent="MenuLevelButton_21"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_21"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
 [node name="MenuLevelButton_Boss_1" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 2865.0
-offset_top = -5.0
-offset_right = 2993.0
-offset_bottom = 123.0
+offset_left = 3611.0
+offset_top = 252.0
+offset_right = 3739.0
+offset_bottom = 380.0
 texture_normal = ExtResource("20_0p5i3")
 script = ExtResource("5_s7i4j")
 level = ExtResource("20_y4bia")
@@ -761,5 +790,6 @@ label_settings = SubResource("LabelSettings_v52m2")
 [connection signal="pressed" from="MenuLevelButton_18" to="MenuLevelButton_18" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_19" to="MenuLevelButton_19" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_20" to="MenuLevelButton_20" method="_on_pressed"]
+[connection signal="pressed" from="MenuLevelButton_21" to="MenuLevelButton_21" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_Boss_1" to="MenuLevelButton_Boss_1" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]

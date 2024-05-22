@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv21juxsplkpx"]
+[gd_scene load_steps=7 format=3 uid="uid://cv21juxsplkpx"]
 
 [ext_resource type="Script" path="res://scripts/environment.gd" id="1_pwrgr"]
 [ext_resource type="Texture2D" uid="uid://brqlpnn2mhqty" path="res://assets/backgrounds/sky_bg.png" id="2_ym3yr"]
 [ext_resource type="Texture2D" uid="uid://m3t7r0vi8ief" path="res://assets/backgrounds/leaf.png" id="3_u0pi4"]
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="4_45how"]
+[ext_resource type="Texture2D" uid="uid://d4cbv215s18ht" path="res://assets/backgrounds/tree.png" id="4_bjkvu"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="5_rdc8f"]
 
-[node name="EnvironmentFall" type="Node2D"]
+[node name="EnvironmentFall" type="Node2D" node_paths=PackedStringArray("parallax1", "parallax2", "parallax3")]
 script = ExtResource("1_pwrgr")
 scroll_speed = Vector2(10, -15)
+parallax1 = NodePath("ParallaxBG/ParallaxLayer1")
+parallax2 = NodePath("ParallaxBG/ParallaxLayer2")
+parallax3 = NodePath("ParallaxBG/ParallaxLayer3")
 
 [node name="ParallaxBG" type="ParallaxBackground" parent="."]
 
@@ -32,6 +36,16 @@ motion_mirroring = Vector2(960, 540)
 modulate = Color(1, 1, 1, 0.733333)
 texture_repeat = 2
 texture = ExtResource("3_u0pi4")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 540)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBG"]
+z_index = -99
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer3"]
+texture = ExtResource("4_bjkvu")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
