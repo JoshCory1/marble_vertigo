@@ -22,9 +22,9 @@ func _on_default_button_pressed():
 
 func _on_cube_button_pressed():
 	AudioPlayer.play_sfx("bounce_sfx_1")
-	if GameController.skins_unlocked[1] == false && GameController.coins >= 2:
+	if GameController.skins_unlocked[1] == false && GameController.coins >= 500:
 		GameController.skins_unlocked[1] = true
-		GameController.coins -= 2
+		GameController.coins -= 500
 	if GameController.skins_unlocked[1] == true:
 		GameController.use_skin(1)
 	else:
@@ -36,9 +36,9 @@ func _on_cube_button_pressed():
 
 func _on_spin_button_pressed():
 	AudioPlayer.play_sfx("bounce_sfx_1")
-	if GameController.skins_unlocked[2] == false && GameController.coins >= 10:
+	if GameController.skins_unlocked[2] == false && GameController.coins >= 1000:
 		GameController.skins_unlocked[2] = true
-		GameController.coins -= 10
+		GameController.coins -= 1000
 	if GameController.skins_unlocked[2] == true:
 		GameController.use_skin(2)
 	else:
