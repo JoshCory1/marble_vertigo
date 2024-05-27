@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dl5in6lwrtjhn"]
+[gd_scene load_steps=18 format=3 uid="uid://dl5in6lwrtjhn"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_1wogg"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_vgewl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="4_ct1rd"]
 [ext_resource type="PackedScene" uid="uid://djov3uvcs70tb" path="res://scenes/ground.tscn" id="5_6dg1x"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="6_efrlx"]
+[ext_resource type="PackedScene" uid="uid://wiywj84wa50y" path="res://scenes/sticky_platform.tscn" id="6_k6t3v"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="7_omnwv"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="8_fb8ce"]
 [ext_resource type="PackedScene" uid="uid://bvilpffa1lme2" path="res://scenes/log.tscn" id="9_w6bhh"]
@@ -113,10 +114,24 @@ position = Vector2(24567, -5466)
 [node name="Log23" parent="Logs" instance=ExtResource("9_w6bhh")]
 position = Vector2(25208, -5466)
 
+[node name="StickyPlatform2" parent="Logs" instance=ExtResource("6_k6t3v")]
+position = Vector2(27512, -5507)
+destination = Vector2(0, -250)
+duration = 2.0
+wait_time_1 = 0.5
+wait_time_2 = 0.5
+
+[node name="StickyPlatform3" parent="Logs" instance=ExtResource("6_k6t3v")]
+position = Vector2(25606, -5482)
+destination = Vector2(1400, 0)
+duration = 12.0
+wait_time_1 = 0.5
+wait_time_2 = 0.5
+
 [node name="Portals" type="Node" parent="."]
 
 [node name="Portal" parent="Portals" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_hxf8s")]
-position = Vector2(805, 334)
+position = Vector2(608, 226)
 exit_point = NodePath("../Portal2")
 
 [node name="Portal2" parent="Portals" instance=ExtResource("10_hxf8s")]
@@ -183,70 +198,6 @@ destination = Vector2(-300, 0)
 [node name="MovingHazard16" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
 position = Vector2(24042, -5747)
 destination = Vector2(-300, 0)
-
-[node name="MovingHazard19" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
-position = Vector2(25493, -5480)
-destination = Vector2(1400, 0)
-duration = 12.0
-wait_time_1 = 0.5
-wait_time_2 = 0.5
-
-[node name="MovingHazard20" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
-position = Vector2(25551, -5480)
-destination = Vector2(1400, 0)
-duration = 12.0
-wait_time_1 = 0.5
-wait_time_2 = 0.5
-
-[node name="MovingHazard21" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
-position = Vector2(25613, -5480)
-destination = Vector2(1400, 0)
-duration = 12.0
-wait_time_1 = 0.5
-wait_time_2 = 0.5
-
-[node name="MovingHazard22" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
-position = Vector2(25671, -5480)
-destination = Vector2(1400, 0)
-duration = 12.0
-wait_time_1 = 0.5
-wait_time_2 = 0.5
-
-[node name="MovingHazard23" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
-position = Vector2(27445, -5488)
-destination = Vector2(0, -250)
-duration = 2.0
-wait_time_1 = 0.5
-wait_time_2 = 0.5
-bounce_force_min = 25.0
-bounce_force_max = 30.0
-
-[node name="MovingHazard24" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
-position = Vector2(27503, -5488)
-destination = Vector2(0, -250)
-duration = 2.0
-wait_time_1 = 0.5
-wait_time_2 = 0.5
-bounce_force_min = 25.0
-bounce_force_max = 30.0
-
-[node name="MovingHazard25" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
-position = Vector2(27565, -5488)
-destination = Vector2(0, -250)
-duration = 2.0
-wait_time_1 = 0.5
-wait_time_2 = 0.5
-bounce_force_min = 25.0
-bounce_force_max = 30.0
-
-[node name="MovingHazard26" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
-position = Vector2(27623, -5488)
-destination = Vector2(0, -250)
-duration = 2.0
-wait_time_1 = 0.5
-wait_time_2 = 0.5
-bounce_force_min = 25.0
-bounce_force_max = 30.0
 
 [node name="MovingHazard17" parent="MovingHazards" instance=ExtResource("11_7xkxd")]
 position = Vector2(25622, -5747)

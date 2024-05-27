@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @onready var animation_player = $PlayerAnimationPlayer
 
+#var up_bounce:bool = false
 var no_bounce: bool = false
 var debug_mode = false
 var stop_velocity: bool = false 
@@ -22,6 +23,9 @@ var speed: float = 0.0
 
 
 func _ready():
+#	var stickys = get_tree().get_nodes_in_group("sticky")
+#	for sticky in stickys:
+#		sticky.sticky_bounce.connect(_on_sticky)
 	var os_name = OS.get_name()
 	if os_name == "Android" || os_name == "iOS":
 		use_accelerometer = true
