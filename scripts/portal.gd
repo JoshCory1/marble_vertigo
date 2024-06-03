@@ -22,4 +22,5 @@ func _on_body_entered(body):
 			body.global_position = exit_point.global_position
 			await get_tree().create_timer(.02).timeout
 			body.stop_velocity = false
+			body.velocity = Vector2(0,0)
 			body.sprite.visible = true

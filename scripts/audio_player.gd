@@ -4,6 +4,8 @@ extends Node
 @export var shatter_sfx: AudioStream = null
 @export var pillar_move_sfx: AudioStream = null
 @export var portal_sfx: AudioStream = null
+@export var coin_sfx: AudioStream = null
+
 @export var volume_sfx = 1
 
 @onready var m_player = $MusicPlayer
@@ -21,6 +23,8 @@ func play_sfx(sfx_name: String):
 		stream = pillar_move_sfx
 	elif sfx_name == "portal_sfx":
 		stream = portal_sfx
+	elif sfx_name == "coin_sfx":
+		stream = coin_sfx
 	else :
 		print("Invalid sfx name")
 		return

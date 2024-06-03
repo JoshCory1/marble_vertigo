@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cd47ifin0yd58"
+path="res://.godot/imported/Signal Positive Bells B_coin.ogg-ddc9d283bf31693b9c4386c4443f712b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/soundFx/Signal Positive Bells B_coin.ogg"
+dest_files=["res://.godot/imported/Signal Positive Bells B_coin.ogg-ddc9d283bf31693b9c4386c4443f712b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

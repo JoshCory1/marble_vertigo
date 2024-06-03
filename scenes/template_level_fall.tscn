@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1uw41xb7fy0g"]
+[gd_scene load_steps=12 format=3 uid="uid://cd0y3ksdmjpbp"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_ts7i5"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_vmlxq"]

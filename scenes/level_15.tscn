@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://25gplpydn7qi"]
+[gd_scene load_steps=17 format=3 uid="uid://25gplpydn7qi"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xslxq"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_q36pn"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="13_db2kp"]
 [ext_resource type="PackedScene" uid="uid://cem5hy52p2bc5" path="res://scenes/bar.tscn" id="14_fi3kx"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="15_cpt6d"]
+[ext_resource type="PackedScene" uid="uid://wiywj84wa50y" path="res://scenes/sticky_platform.tscn" id="16_65ioe"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_xslxq")
@@ -143,48 +144,6 @@ position = Vector2(8682, 2634)
 destination = Vector2(600, 0)
 duration = 4.0
 
-[node name="MovingHazard3" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(13168, 4451)
-destination = Vector2(0, -1000)
-duration = 4.0
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-
-[node name="MovingHazard4" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(13216, 4452)
-destination = Vector2(0, -1000)
-duration = 4.0
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-
-[node name="MovingHazard5" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(13271, 4452)
-destination = Vector2(0, -1000)
-duration = 4.0
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-
-[node name="MovingHazard6" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(13319, 4452)
-destination = Vector2(0, -1000)
-duration = 4.0
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-
-[node name="MovingHazard7" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(13374, 4452)
-destination = Vector2(0, -1000)
-duration = 4.0
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-
-[node name="MovingHazard8" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(13422, 4452)
-destination = Vector2(0, -1000)
-duration = 4.0
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-
 [node name="TimedPlatforms" type="Node" parent="."]
 
 [node name="TimedPlatform" parent="TimedPlatforms" instance=ExtResource("10_0dics")]
@@ -233,7 +192,16 @@ position = Vector2(7774, 2881)
 position = Vector2(10691.3, 3652.5)
 
 [node name="coin6" parent="Coins" instance=ExtResource("15_cpt6d")]
-position = Vector2(13159.3, 3955.85)
+position = Vector2(13275, 4193)
 
 [node name="coin7" parent="Coins" instance=ExtResource("15_cpt6d")]
 position = Vector2(2151.36, -310.381)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="StickyPlatform" parent="Node" instance=ExtResource("16_65ioe")]
+position = Vector2(13274.8, 4432.17)
+destination = Vector2(0, -1000)
+duration = 4.0
+wait_time_1 = 1.0
+wait_time_2 = 1.0

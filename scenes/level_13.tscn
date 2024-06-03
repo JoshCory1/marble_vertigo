@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cyblvmqq1jruk"]
+[gd_scene load_steps=17 format=3 uid="uid://cyblvmqq1jruk"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_kmk1a"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_wnarp"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="14_5bs6n"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="14_cmin5"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="15_4o0ub"]
+[ext_resource type="PackedScene" uid="uid://wiywj84wa50y" path="res://scenes/sticky_platform.tscn" id="16_oi8y5"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_kmk1a")
@@ -49,6 +50,33 @@ position = Vector2(33533, -3485)
 
 [node name="JumpBox3" parent="JumpBoxs" instance=ExtResource("11_savf0")]
 position = Vector2(33981, -2976)
+
+[node name="JumpBox4" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(30961.9, -5797.4)
+
+[node name="JumpBox5" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(31430, -5662)
+
+[node name="JumpBox6" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(31874, -5536)
+
+[node name="JumpBox7" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(32259, -5408)
+
+[node name="JumpBox8" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(32649, -5346)
+
+[node name="JumpBox9" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(33083, -5218)
+
+[node name="JumpBox10" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(33470, -5090)
+
+[node name="JumpBox11" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(33927, -4961)
+
+[node name="JumpBox12" parent="JumpBoxs" instance=ExtResource("11_savf0")]
+position = Vector2(34435, -4768)
 
 [node name="Pillars" type="Node" parent="."]
 
@@ -124,102 +152,6 @@ exit_point = NodePath("../Portal2")
 position = Vector2(30949, -6090)
 
 [node name="Hazards" type="Node" parent="."]
-
-[node name="MovingHazard" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(3966, 970)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard2" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(4026, 970)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard3" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(4078, 970)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard4" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(4138, 970)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard25" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(9930, 1154)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard26" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(9990, 1154)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard27" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(10042, 1154)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard28" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(10102, 1154)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard5" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(1413, 415)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard6" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(1473, 415)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard7" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(1525, 415)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
-
-[node name="MovingHazard8" parent="Hazards" instance=ExtResource("12_i4pcu")]
-position = Vector2(1585, 415)
-destination = Vector2(0, 300)
-wait_time_1 = 1.0
-wait_time_2 = 1.0
-bounce_force_min = 10.0
-bounce_force_max = 50.0
 
 [node name="MovingHazard9" parent="Hazards" instance=ExtResource("12_i4pcu")]
 position = Vector2(34056, -4766)
@@ -440,3 +372,26 @@ position = Vector2(33528.2, -3574.89)
 
 [node name="coin9" parent="Coins" instance=ExtResource("15_4o0ub")]
 position = Vector2(33981, -3089)
+
+[node name="StickyPlatforms" type="Node" parent="."]
+
+[node name="StickyPlatform" parent="StickyPlatforms" instance=ExtResource("16_oi8y5")]
+position = Vector2(10012, 1138.67)
+destination = Vector2(0, 300)
+duration = 1.0
+wait_time_1 = 1.0
+wait_time_2 = 1.0
+
+[node name="StickyPlatform2" parent="StickyPlatforms" instance=ExtResource("16_oi8y5")]
+position = Vector2(4052, 956)
+destination = Vector2(0, 300)
+duration = 1.0
+wait_time_1 = 1.0
+wait_time_2 = 1.0
+
+[node name="StickyPlatform3" parent="StickyPlatforms" instance=ExtResource("16_oi8y5")]
+position = Vector2(1497, 396)
+destination = Vector2(0, 300)
+duration = 1.0
+wait_time_1 = 1.0
+wait_time_2 = 1.0

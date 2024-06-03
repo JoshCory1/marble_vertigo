@@ -3,6 +3,8 @@ extends AnimatableBody2D
 
 # player reference
 @onready var player = get_tree().get_first_node_in_group("Player")
+# timer reference
+@onready var timer = $Timer
 ## the end point of travel path
 @export var destination: Vector2
 ## the amount  of time it takes to travel between beginning and end points
@@ -22,9 +24,10 @@ var player_up: bool = false
 var player_down: bool = false
 var in_transition: bool = false
 
+
 func _ready() -> void:
-	$Timer.wait_time = (duration + wait_time_1 + wait_time_2)
-	$Timer.start()
+	timer.wait_time = (duration + wait_time_1 + wait_time_2)
+	timer.start()
 	var tween = create_tween()
 	tween.set_loops()
 	tween.set_trans(Tween.TRANS_SINE)
@@ -58,6 +61,7 @@ func _on_reset():
 		player_down = false
 	if stuck:
 		stuck = false
+	
 		
 func _on_area_2dup_body_entered(body):
 	if body != null:

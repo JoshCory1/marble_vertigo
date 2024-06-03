@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bspwnpbok62fy"]
+
+[ext_resource type="Script" path="res://scripts/disappearing_platform.gd" id="1_4p6ys"]
+[ext_resource type="Texture2D" uid="uid://ceubsw07mgodv" path="res://assets/obstacles/disappearing_platform.png" id="1_8pi3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3grg7"]
+size = Vector2(186, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws2gl"]
+size = Vector2(184, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjvla"]
+size = Vector2(186, 41)
+
+[node name="DisappearingPlatform" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_4p6ys")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8pi3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3grg7")
+
+[node name="Area2DUp" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DUp"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_ws2gl")
+
+[node name="Area2DDown" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DDown"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_ws2gl")
+
+[node name="Area2DQueFree" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DQueFree"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_qjvla")
+
+[node name="TimerFlash" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="body_entered" from="Area2DUp" to="." method="_on_area_2d_up_body_entered"]
+[connection signal="body_entered" from="Area2DDown" to="." method="_on_area_2d_down_body_entered"]
+[connection signal="body_entered" from="Area2DQueFree" to="." method="_on_area_2d_que_free_body_entered"]
+[connection signal="timeout" from="TimerFlash" to="." method="_on_timer_flash_timeout"]

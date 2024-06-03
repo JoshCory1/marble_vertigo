@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dh1jhenl0m2fb"]
+[gd_scene load_steps=17 format=3 uid="uid://dh1jhenl0m2fb"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_qjlan"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_enhyr"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="14_wmwtd"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="15_6o2t4"]
 [ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="15_mdndh"]
+[ext_resource type="PackedScene" uid="uid://wiywj84wa50y" path="res://scenes/sticky_platform.tscn" id="16_ksinn"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_qjlan")
@@ -52,6 +53,14 @@ scale = Vector2(1.6, 1)
 [node name="JumpBox2" parent="JumpBoxs" instance=ExtResource("15_mdndh")]
 position = Vector2(7849, -1952.22)
 scale = Vector2(1.6, 1)
+
+[node name="JumpBox4" parent="JumpBoxs" instance=ExtResource("15_mdndh")]
+position = Vector2(8024.39, 795.83)
+scale = Vector2(4.24, 1)
+
+[node name="JumpBox5" parent="JumpBoxs" instance=ExtResource("15_mdndh")]
+position = Vector2(20185.5, 484.948)
+scale = Vector2(2.16004, 1)
 
 [node name="Pillars" type="Node" parent="."]
 
@@ -168,42 +177,6 @@ position = Vector2(1214, 273)
 
 [node name="MovingHazard4" parent="Hazards" instance=ExtResource("12_rmfud")]
 position = Vector2(1280, 273)
-
-[node name="MovingHazard5" parent="Hazards" instance=ExtResource("12_rmfud")]
-position = Vector2(3283, 201)
-destination = Vector2(1000, 0)
-duration = 4.0
-
-[node name="MovingHazard6" parent="Hazards" instance=ExtResource("12_rmfud")]
-position = Vector2(3349, 201)
-destination = Vector2(1000, 0)
-duration = 4.0
-
-[node name="MovingHazard7" parent="Hazards" instance=ExtResource("12_rmfud")]
-position = Vector2(3414, 201)
-destination = Vector2(1000, 0)
-duration = 4.0
-
-[node name="MovingHazard8" parent="Hazards" instance=ExtResource("12_rmfud")]
-position = Vector2(3480, 201)
-destination = Vector2(1000, 0)
-duration = 4.0
-
-[node name="MovingHazard13" parent="Hazards" instance=ExtResource("12_rmfud")]
-position = Vector2(7224, 101)
-destination = Vector2(0, -300)
-
-[node name="MovingHazard14" parent="Hazards" instance=ExtResource("12_rmfud")]
-position = Vector2(7290, 101)
-destination = Vector2(0, -300)
-
-[node name="MovingHazard15" parent="Hazards" instance=ExtResource("12_rmfud")]
-position = Vector2(7355, 101)
-destination = Vector2(0, -300)
-
-[node name="MovingHazard16" parent="Hazards" instance=ExtResource("12_rmfud")]
-position = Vector2(7421, 101)
-destination = Vector2(0, -300)
 
 [node name="MovingHazard17" parent="Hazards" instance=ExtResource("12_rmfud")]
 position = Vector2(8884, 537)
@@ -508,3 +481,15 @@ position = Vector2(14923, -2217)
 
 [node name="coin7" parent="Coins" instance=ExtResource("15_6o2t4")]
 position = Vector2(17839, 523)
+
+[node name="StickyPlatforms" type="Node" parent="."]
+
+[node name="StickyPlatform" parent="StickyPlatforms" instance=ExtResource("16_ksinn")]
+position = Vector2(3365.22, 200.955)
+destination = Vector2(1000, 0)
+duration = 4.0
+
+[node name="StickyPlatform2" parent="StickyPlatforms" instance=ExtResource("16_ksinn")]
+position = Vector2(7305.76, 96.0742)
+destination = Vector2(0, -300)
+duration = 1.0
