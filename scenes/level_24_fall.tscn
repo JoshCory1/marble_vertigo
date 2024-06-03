@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1uw41xb7fy0g"]
+[gd_scene load_steps=17 format=3 uid="uid://c1uw41xb7fy0g"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_ts7i5"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_vmlxq"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bspwnpbok62fy" path="res://scenes/disappearing_platform.tscn" id="13_wrirb"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="14_ucdu5"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="15_kiiih"]
+[ext_resource type="PackedScene" uid="uid://bve0323bnyyvb" path="res://scenes/rouge_portal.tscn" id="16_sllnl"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_ts7i5")
@@ -97,7 +98,7 @@ position = Vector2(5757, -245)
 destination = Vector2(100, 150)
 
 [node name="MovingHazard4" parent="Hazards" instance=ExtResource("11_frdeo")]
-position = Vector2(7539, 388)
+position = Vector2(7403, 268)
 destination = Vector2(100, -150)
 duration = 3.0
 
@@ -119,28 +120,6 @@ position = Vector2(11823, 271)
 destination = Vector2(300, -175)
 duration = 2.0
 wait_time_1 = 0.5
-
-[node name="MovingHazard9" parent="Hazards" instance=ExtResource("11_frdeo")]
-position = Vector2(13758, 370)
-scale = Vector2(0.3, 0.3)
-destination = Vector2(600, 0)
-duration = 6.0
-wait_time_1 = 0.5
-
-[node name="Portal3" parent="Hazards/MovingHazard9" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_r41ki")]
-position = Vector2(3, 2)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard10" parent="Hazards" instance=ExtResource("11_frdeo")]
-position = Vector2(15009, 374)
-scale = Vector2(0.3, 0.3)
-destination = Vector2(600, 0)
-duration = 6.0
-wait_time_1 = 0.5
-
-[node name="Portal3" parent="Hazards/MovingHazard10" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_r41ki")]
-position = Vector2(3, 2)
-exit_point = NodePath("../../../Portals/Portal2")
 
 [node name="StickyPlatforms" type="Node" parent="."]
 
@@ -215,6 +194,12 @@ position = Vector2(6388, -54)
 
 [node name="DisappearingPlatform20" parent="DisappearingPlatforms" instance=ExtResource("13_wrirb")]
 position = Vector2(8128, 429)
+
+[node name="DisappearingPlatform44" parent="DisappearingPlatforms" instance=ExtResource("13_wrirb")]
+position = Vector2(7183, 435)
+
+[node name="DisappearingPlatform45" parent="DisappearingPlatforms" instance=ExtResource("13_wrirb")]
+position = Vector2(7639, 435)
 
 [node name="DisappearingPlatform21" parent="DisappearingPlatforms" instance=ExtResource("13_wrirb")]
 position = Vector2(8360, 429)
@@ -371,3 +356,25 @@ position = Vector2(13900, 352)
 
 [node name="coin10" parent="Coins" instance=ExtResource("15_kiiih")]
 position = Vector2(15220, 354)
+
+[node name="RougePortals" type="Node" parent="."]
+
+[node name="RougePortal" parent="RougePortals" instance=ExtResource("16_sllnl")]
+position = Vector2(13721.4, 361.92)
+destination = Vector2(600, 0)
+duration = 6.0
+
+[node name="Portal" parent="RougePortals/RougePortal" index="4" node_paths=PackedStringArray("exit_point")]
+position = Vector2(-32, 0)
+exit_point = NodePath("../../../Portals/Portal2")
+
+[node name="RougePortal2" parent="RougePortals" instance=ExtResource("16_sllnl")]
+position = Vector2(15000, 365)
+destination = Vector2(600, 0)
+duration = 6.0
+
+[node name="Portal" parent="RougePortals/RougePortal2" index="4" node_paths=PackedStringArray("exit_point")]
+exit_point = NodePath("../../../Portals/Portal2")
+
+[editable path="RougePortals/RougePortal"]
+[editable path="RougePortals/RougePortal2"]

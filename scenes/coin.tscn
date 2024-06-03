@@ -15,5 +15,6 @@ script = ExtResource("1_75l3f")
 shape = SubResource("CircleShape2D_6wmjw")
 
 [node name="CoinSprite" parent="." instance=ExtResource("2_jq2dy")]
+frame_progress = 0.687656
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

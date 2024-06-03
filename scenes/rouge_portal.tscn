@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://bve0323bnyyvb"]
+
+[ext_resource type="Script" path="res://scripts/moving_hazard.gd" id="1_f0dio"]
+[ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="2_r7w80"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7880p"]
+size = Vector2(41.6667, 91.6667)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gu675"]
+radius = 6.0
+
+[node name="RougePortal" type="AnimatableBody2D"]
+collision_layer = 2
+script = ExtResource("1_f0dio")
+
+[node name="AreaBounceUp" type="Area2D" parent="."]
+position = Vector2(7, -4)
+rotation = 1.5708
+scale = Vector2(0.12, 0.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp"]
+position = Vector2(-8.33334, 66.6667)
+shape = SubResource("RectangleShape2D_7880p")
+disabled = true
+
+[node name="AreaBounceDown" type="Area2D" parent="AreaBounceUp"]
+position = Vector2(58.3335, 16.6665)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp/AreaBounceDown"]
+position = Vector2(8.33337, 58.3333)
+shape = SubResource("RectangleShape2D_7880p")
+disabled = true
+
+[node name="AreaBounceLeft" type="Area2D" parent="."]
+position = Vector2(-7, -2)
+scale = Vector2(0.12, 0.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceLeft"]
+position = Vector2(11.6667, 37.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7880p")
+disabled = true
+
+[node name="AreaBounceRight" type="Area2D" parent="."]
+position = Vector2(1, -2)
+scale = Vector2(0.12, 0.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceRight"]
+position = Vector2(11.6667, 50)
+shape = SubResource("RectangleShape2D_7880p")
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gu675")
+disabled = true
+
+[node name="Portal" parent="." instance=ExtResource("2_r7w80")]
+modulate = Color(1, 0.470588, 0.470588, 1)
+scale = Vector2(0.4, 0.4)
+
+[connection signal="body_entered" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_entered"]
+[connection signal="body_entered" from="AreaBounceUp/AreaBounceDown" to="." method="_on_area_bounce_down_body_entered"]
+[connection signal="body_entered" from="AreaBounceLeft" to="." method="_on_area_bounce_left_body_entered"]
+[connection signal="body_entered" from="AreaBounceRight" to="." method="_on_area_bounce_right_body_entered"]
