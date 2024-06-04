@@ -34,9 +34,9 @@ shape = SubResource("RectangleShape2D_ws2gl")
 position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_ws2gl")
 
-[node name="Area2DQueFree" type="Area2D" parent="."]
+[node name="Area2DDisable" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DQueFree"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DDisable"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_qjvla")
 
@@ -45,5 +45,5 @@ wait_time = 0.05
 
 [connection signal="body_entered" from="Area2DUp" to="." method="_on_area_2d_up_body_entered"]
 [connection signal="body_entered" from="Area2DDown" to="." method="_on_area_2d_down_body_entered"]
-[connection signal="body_entered" from="Area2DQueFree" to="." method="_on_area_2d_que_free_body_entered"]
+[connection signal="body_entered" from="Area2DDisable" to="." method="_on_area_2d_disable_body_entered"]
 [connection signal="timeout" from="TimerFlash" to="." method="_on_timer_flash_timeout"]

@@ -12,6 +12,7 @@ extends Node2D
 @onready var fade_duration: float = 0.5
 @onready var debug_menu = $DebugScreen
 @onready  var coin_count = $CanvasLayer2/CoinSprite/Label
+@onready var heart_count = null
 
 var current_button_array_number = 0
 
