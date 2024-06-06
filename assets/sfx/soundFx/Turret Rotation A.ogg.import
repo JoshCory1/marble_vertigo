@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dlfd747f7nita"
+path="res://.godot/imported/Turret Rotation A.ogg-cf3148532eb5f1b830ad33e8c11823f3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/soundFx/Turret Rotation A.ogg"
+dest_files=["res://.godot/imported/Turret Rotation A.ogg-cf3148532eb5f1b830ad33e8c11823f3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

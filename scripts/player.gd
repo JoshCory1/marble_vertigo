@@ -43,44 +43,45 @@ func _process(_delta):
 		debug_mode = false
 
 func _physics_process(_delta):
-	if debug == false && stop_velocity == false:
-		if use_accelerometer == true:
-			var mobile_input = Input.get_accelerometer()
-			var direction = mobile_input.x
-			if direction > 3:
-				direction = 3
-			if direction < -3:
-				direction = -3
-			if direction:
-				velocity.x = direction * accelerometer_speed
+	if stop_velocity == false:
+		if debug == false:
+			if use_accelerometer == true:
+				var mobile_input = Input.get_accelerometer()
+				var direction = mobile_input.x
+				if direction > 3:
+					direction = 3
+				if direction < -3:
+					direction = -3
+				if direction:
+					velocity.x = direction * accelerometer_speed
+				else:
+					velocity.x = move_toward(velocity.x, 0, accelerometer_speed / 200)
 			else:
-				velocity.x = move_toward(velocity.x, 0, accelerometer_speed / 200)
-		else:
-			var direction = Input.get_axis("move_left", "move_right")
-			if direction > 0:
-				speed = speed_var
-				velocity.x = speed / 2
-			elif direction < 0:
-				speed = -speed_var
-				velocity.x = speed / 2
-			elif Input.is_action_just_pressed("stop_move"):
-				velocity.x = 0 
-			
+				var direction = Input.get_axis("move_left", "move_right")
+				if direction > 0:
+					speed = speed_var
+					velocity.x = speed / 2
+				elif direction < 0:
+					speed = -speed_var
+					velocity.x = speed / 2
+				elif Input.is_action_just_pressed("stop_move"):
+					velocity.x = 0 
+				
 
-		velocity.y += gravity
-		if velocity.y > max_fall_velocity:
-			velocity.y = max_fall_velocity
-	else:
-		velocity = Vector2(0,0)
-		if Input.is_action_pressed("move_up"):
-			velocity.y -= speed_var * 10
-		if Input.is_action_pressed("move_down"):
-			velocity.y += speed_var * 10
-		if Input.is_action_pressed("move_left"):
-			velocity.x -= speed_var * 10
-		if Input.is_action_pressed("move_right"):
-			velocity.x += speed_var * 10
-	move_and_slide()
+			velocity.y += gravity
+			if velocity.y > max_fall_velocity:
+				velocity.y = max_fall_velocity
+		else:
+			velocity = Vector2(0,0)
+			if Input.is_action_pressed("move_up"):
+				velocity.y -= speed_var * 10
+			if Input.is_action_pressed("move_down"):
+				velocity.y += speed_var * 10
+			if Input.is_action_pressed("move_left"):
+				velocity.x -= speed_var * 10
+			if Input.is_action_pressed("move_right"):
+				velocity.x += speed_var * 10
+		move_and_slide()
 
 
 func bounce_up(min_b: int, max_b: int):

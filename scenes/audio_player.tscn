@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3fjwvcoo4xpv"]
+[gd_scene load_steps=11 format=3 uid="uid://d3fjwvcoo4xpv"]
 
 [ext_resource type="Script" path="res://scripts/audio_player.gd" id="1_iybdo"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_b4k87"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://doq4b5a6tvehe" path="res://assets/sfx/soundFx/stone_door.ogg" id="5_b7lhh"]
 [ext_resource type="AudioStream" uid="uid://qd4gkvf40wgw" path="res://assets/sfx/soundFx/teleport.ogg" id="6_v53e4"]
 [ext_resource type="AudioStream" uid="uid://cd47ifin0yd58" path="res://assets/sfx/soundFx/Signal Positive Bells B_coin.ogg" id="7_6rljc"]
+[ext_resource type="AudioStream" uid="uid://dlfd747f7nita" path="res://assets/sfx/soundFx/Turret Rotation A.ogg" id="8_xu5j4"]
+[ext_resource type="AudioStream" uid="uid://chyvhwfrj5jr1" path="res://assets/sfx/soundFx/Ship Torpedo A.ogg" id="9_bafyw"]
 
 [node name="AudioPlayer" type="Node"]
 script = ExtResource("1_iybdo")
@@ -17,6 +19,8 @@ shatter_sfx = ExtResource("4_qs1m0")
 pillar_move_sfx = ExtResource("5_b7lhh")
 portal_sfx = ExtResource("6_v53e4")
 coin_sfx = ExtResource("7_6rljc")
+boost_charge = ExtResource("8_xu5j4")
+boost_shoot = ExtResource("9_bafyw")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b4k87")

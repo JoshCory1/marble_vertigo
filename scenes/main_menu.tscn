@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=46 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_5bn02"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://dl5in6lwrtjhn" path="res://scenes/level_23_fall.tscn" id="31_0y1f6"]
 [ext_resource type="PackedScene" uid="uid://hgy4pkwna054" path="res://scenes/coin_sprite.tscn" id="32_23juq"]
 [ext_resource type="PackedScene" uid="uid://c1uw41xb7fy0g" path="res://scenes/level_24_fall.tscn" id="32_clayv"]
+[ext_resource type="PackedScene" uid="uid://3hjvqopd861" path="res://scenes/level_25_fall.tscn" id="33_ijfjo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
 font_color = Color(0, 0, 0, 1)
@@ -756,6 +757,7 @@ texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
+level = ExtResource("33_ijfjo")
 current_level = 25
 
 [node name="Label" type="Label" parent="MenuLevelButton_25"]
@@ -768,6 +770,33 @@ label_settings = SubResource("LabelSettings_o0hso")
 horizontal_alignment = 1
 
 [node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_25"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
+[node name="MenuLevelButton_26" type="TextureButton" parent="." groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 3609.0
+offset_top = 194.0
+offset_right = 3673.0
+offset_bottom = 258.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+current_level = 26
+
+[node name="Label" type="Label" parent="MenuLevelButton_26"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="MenuLevelButton_26"]
 z_index = -1
 position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
@@ -909,5 +938,6 @@ label_settings = SubResource("LabelSettings_v52m2")
 [connection signal="pressed" from="MenuLevelButton_23" to="MenuLevelButton_23" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_24" to="MenuLevelButton_24" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_25" to="MenuLevelButton_25" method="_on_pressed"]
+[connection signal="pressed" from="MenuLevelButton_26" to="MenuLevelButton_26" method="_on_pressed"]
 [connection signal="pressed" from="MenuLevelButton_Boss_1" to="MenuLevelButton_Boss_1" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chyvhwfrj5jr1"
+path="res://.godot/imported/Ship Torpedo A.ogg-0bdd66bc816ce31093e1362f8a956a66.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/soundFx/Ship Torpedo A.ogg"
+dest_files=["res://.godot/imported/Ship Torpedo A.ogg-0bdd66bc816ce31093e1362f8a956a66.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

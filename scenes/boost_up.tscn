@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://bp4irettwq182"]
+
+[ext_resource type="Texture2D" uid="uid://xebvbvjc5se2" path="res://assets/obstacles/booster.png" id="1_ot8hg"]
+[ext_resource type="Script" path="res://scripts/boost_up.gd" id="1_pqpch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gcxt"]
+atlas = ExtResource("1_ot8hg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvhtt"]
+atlas = ExtResource("1_ot8hg")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtgmn"]
+atlas = ExtResource("1_ot8hg")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buk70"]
+atlas = ExtResource("1_ot8hg")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlhe6"]
+atlas = ExtResource("1_ot8hg")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rj1j"]
+atlas = ExtResource("1_ot8hg")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78fry"]
+atlas = ExtResource("1_ot8hg")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhbdt"]
+atlas = ExtResource("1_ot8hg")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qsk1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gcxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvhtt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtgmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buk70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlhe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rj1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78fry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhbdt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q4aq"]
+size = Vector2(118, 132)
+
+[node name="BoostUp" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_pqpch")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qsk1i")
+autoplay = "default"
+frame = 3
+frame_progress = 0.918351
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5q4aq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

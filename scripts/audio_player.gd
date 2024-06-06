@@ -5,10 +5,14 @@ extends Node
 @export var pillar_move_sfx: AudioStream = null
 @export var portal_sfx: AudioStream = null
 @export var coin_sfx: AudioStream = null
+@export var boost_charge: AudioStream = null
+@export var boost_shoot: AudioStream = null
+@export var stop_now: bool = false
 
 @export var volume_sfx = 1
 
 @onready var m_player = $MusicPlayer
+
 
 func play_sfx(sfx_name: String):
 	
@@ -25,6 +29,10 @@ func play_sfx(sfx_name: String):
 		stream = portal_sfx
 	elif sfx_name == "coin_sfx":
 		stream = coin_sfx
+	elif sfx_name == "boost_charge":
+		stream = boost_charge
+	elif sfx_name == "boost_shoot":
+		stream = boost_shoot
 	else :
 		print("Invalid sfx name")
 		return
@@ -37,6 +45,7 @@ func play_sfx(sfx_name: String):
 	add_child(asp)
 	
 	asp.play()
-	
 	await asp.finished
 	asp.queue_free()
+
+
