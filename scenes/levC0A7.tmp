@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://bf1l3aux2652x"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_t53gu"]
+[ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_doggk"]
+[ext_resource type="PackedScene" uid="uid://cv21juxsplkpx" path="res://scenes/environment_fall.tscn" id="3_q41fx"]
+[ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="4_to32n"]
+[ext_resource type="PackedScene" uid="uid://djov3uvcs70tb" path="res://scenes/ground.tscn" id="5_mmnm5"]
+[ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="6_hkhsq"]
+[ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="7_lh7vb"]
+[ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="8_yodes"]
+[ext_resource type="PackedScene" uid="uid://bvilpffa1lme2" path="res://scenes/log.tscn" id="9_mvmps"]
+[ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="10_ygfwj"]
+[ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_lhy38"]
+[ext_resource type="PackedScene" uid="uid://bp4irettwq182" path="res://scenes/boost_up.tscn" id="12_4qyci"]
+[ext_resource type="PackedScene" uid="uid://6nl1xce7kbbw" path="res://scenes/boost_right.tscn" id="13_vo2lx"]
+[ext_resource type="PackedScene" uid="uid://btq31s55i3py7" path="res://scenes/boost_left.tscn" id="14_gwotq"]
+[ext_resource type="PackedScene" uid="uid://c11506taw77ph" path="res://scenes/boost_down.tscn" id="15_rehji"]
+
+[node name="TemplateLevel" type="Node2D"]
+script = ExtResource("1_t53gu")
+music_track = ExtResource("2_doggk")
+
+[node name="EnvironmentFall" parent="." instance=ExtResource("3_q41fx")]
+
+[node name="Exit" parent="." instance=ExtResource("4_to32n")]
+position = Vector2(-370, -309)
+current_lvl = 27
+
+[node name="Ground" parent="." instance=ExtResource("5_mmnm5")]
+
+[node name="Player" parent="." instance=ExtResource("6_hkhsq")]
+position = Vector2(387, 163)
+
+[node name="UI" parent="." instance=ExtResource("7_lh7vb")]
+
+[node name="SkinHandler" parent="." instance=ExtResource("8_yodes")]
+
+[node name="Logs" type="Node" parent="."]
+
+[node name="Log" parent="Logs" instance=ExtResource("9_mvmps")]
+position = Vector2(384, 511)
+
+[node name="Portals" type="Node" parent="."]
+
+[node name="Portal" parent="Portals" instance=ExtResource("10_ygfwj")]
+position = Vector2(-621, -304)
+
+[node name="Hazards" type="Node" parent="."]
+
+[node name="MovingHazard" parent="Hazards" instance=ExtResource("11_lhy38")]
+position = Vector2(-188, -225)
+destination = Vector2(100, 0)
+
+[node name="BoostUp" parent="." instance=ExtResource("12_4qyci")]
+position = Vector2(620.913, 291.033)
+
+[node name="BoostUp2" parent="." instance=ExtResource("12_4qyci")]
+position = Vector2(1101, -283)
+no_charge_up = true
+
+[node name="BoostUp4" parent="." instance=ExtResource("12_4qyci")]
+position = Vector2(2315, -283)
+no_charge_up = true
+
+[node name="BoostUp3" parent="." instance=ExtResource("12_4qyci")]
+position = Vector2(608, -683)
+no_charge_up = true
+
+[node name="BoostLeft" parent="." instance=ExtResource("14_gwotq")]
+position = Vector2(1096, -689)
+time_till_boost = 5.0
+min_bounce = 2000.0
+max_bounce = 2000.0
+no_charge_up = true
+pause_y_time = 2.0
+
+[node name="BoostLeft2" parent="." instance=ExtResource("14_gwotq")]
+position = Vector2(2315, -683)
+time_till_boost = 5.0
+min_bounce = 2000.0
+max_bounce = 2000.0
+no_charge_up = true
+pause_y_time = 2.0
+
+[node name="BoostRight" parent="." instance=ExtResource("13_vo2lx")]
+position = Vector2(621, -270)
+no_charge_up = true
+
+[node name="BoostRight2" parent="." instance=ExtResource("13_vo2lx")]
+position = Vector2(608, -1060)
+no_charge_up = true
+
+[node name="BoostRight4" parent="." instance=ExtResource("13_vo2lx")]
+position = Vector2(1812, -283)
+no_charge_up = true
+
+[node name="BoostRight3" parent="." instance=ExtResource("13_vo2lx")]
+position = Vector2(1326, -283)
+no_charge_up = true
+
+[node name="BoostDown" parent="." instance=ExtResource("15_rehji")]
+position = Vector2(1326, -1060)
+no_charge_up = true
+
+[node name="BoostDown2" parent="." instance=ExtResource("15_rehji")]
+position = Vector2(1812, -683)
+no_charge_up = true

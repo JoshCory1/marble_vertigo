@@ -6,9 +6,9 @@ signal stop_other_timers
 ## time until activation
 @export var time_till_boost: float = 2.0
 ## cotroles bounce min
-@export var min_bounce: float = 900
+@export var min_bounce: float = 2000
 ## cotroles bounce max
-@export var max_bounce: float = 900
+@export var max_bounce: float = 2000
 ## activats immediately
 @export var no_charge_up:bool = false
 # times how long y is locked
@@ -29,6 +29,7 @@ func _ready():
 		use_red_animation()
 	else:
 		use_default_animation()
+	y_timer.wait_time = pause_y_time
 	for stop_timer in stop_timers:
 		stop_timer.stop_other_timers.connect(_on_stop_other_timers)
 
@@ -40,23 +41,25 @@ func _on_body_entered(body):
 		AudioPlayer.play_sfx("boost_charge")
 	await get_tree().create_timer(time_till_boost).timeout
 	body.pause_y = true
-	body.velocity.x = 0
+	body.velocity.y = 0
 	body.stop_velocity = false
 	body.stop_contorls = true
 	AudioPlayer.stop_now = true
 	AudioPlayer.play_sfx("boost_shoot")
-	body.bounce_up(min_bounce,max_bounce)
+	body.bounce_right(min_bounce,max_bounce)
 	if body.pause_y:
 		y_timer.start()
-
+	
+	
 # animations
 
 func use_default_animation():
 	animation_player.play("default")
-		
+
 
 func  use_red_animation():
 	animation_player.play("red")
+
 
 func _on_y_timer_timeout():
 	y_lock_releasing.emit()
@@ -64,5 +67,3 @@ func _on_y_timer_timeout():
 	
 func _on_stop_other_timers():
 	y_timer.stop()
-
-

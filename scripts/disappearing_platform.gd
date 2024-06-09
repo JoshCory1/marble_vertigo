@@ -19,10 +19,18 @@ func _process(_delta):
 
 func _on_area_2d_up_body_entered(body):
 	body.bounce_up(min_bounce, max_bounce)
+	if body.pause_y:
+			body.pause_y = false
+	if body.stop_contorls:
+		body.stop_contorls = false
 
 
 func _on_area_2d_down_body_entered(body):
 	body.bounce_down(min_bounce, max_bounce)
+	if body.pause_y:
+			body.pause_y = false
+	if body.stop_contorls:
+		body.stop_contorls = false
 
 
 func _on_area_2d_disable_body_entered(_body):

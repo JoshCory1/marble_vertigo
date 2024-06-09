@@ -92,37 +92,31 @@ screenClamp = Vector2(300, 0)
 [node name="Hazards" type="Node" parent="."]
 
 [node name="MovingHazard" parent="Hazards" instance=ExtResource("11_v73b5")]
-position = Vector2(3033, -298)
+position = Vector2(3033, -341)
 destination = Vector2(300, 0)
 duration = 2.0
 
 [node name="MovingHazard2" parent="Hazards" instance=ExtResource("11_v73b5")]
-position = Vector2(3388, -298)
+position = Vector2(3388, -341)
 destination = Vector2(300, 0)
 duration = 2.5
 wait_time_1 = 0.5
 
 [node name="MovingHazard3" parent="Hazards" instance=ExtResource("11_v73b5")]
-position = Vector2(3716, -298)
+position = Vector2(3716, -341)
 destination = Vector2(300, 0)
 duration = 2.0
 
 [node name="MovingHazard4" parent="Hazards" instance=ExtResource("11_v73b5")]
-position = Vector2(4034, -298)
+position = Vector2(4034, -341)
 destination = Vector2(300, 0)
 duration = 2.5
 wait_time_1 = 0.5
 
 [node name="MovingHazard5" parent="Hazards" instance=ExtResource("11_v73b5")]
-position = Vector2(4353, -298)
+position = Vector2(4353, -341)
 destination = Vector2(300, 0)
 duration = 2.0
-
-[node name="MovingHazard6" parent="Hazards" instance=ExtResource("11_v73b5")]
-position = Vector2(4700, -298)
-destination = Vector2(300, 0)
-duration = 2.5
-wait_time_1 = 0.5
 
 [node name="MovingHazard7" parent="Hazards" instance=ExtResource("11_v73b5")]
 position = Vector2(6776, -1002)
@@ -267,18 +261,12 @@ time_till_start = 4.0
 
 [node name="BoostUp" parent="BoostUps" instance=ExtResource("13_c2fmp")]
 position = Vector2(2183.48, 344.533)
-min_bounce = 900.0
-max_bounce = 900.0
 
 [node name="BoostUp2" parent="BoostUps" instance=ExtResource("13_c2fmp")]
 position = Vector2(5003, -367)
-min_bounce = 900.0
-max_bounce = 900.0
 
 [node name="BoostUp3" parent="BoostUps" instance=ExtResource("13_c2fmp")]
 position = Vector2(8512, -941)
-min_bounce = 900.0
-max_bounce = 900.0
 
 [node name="Coins" type="Node" parent="."]
 

@@ -46,9 +46,17 @@ func _physics_process(_delta):
 			player.position = self.position + Vector2(0,30)
 	if !stuck && player_up:
 		player.bounce_up(bounce_force_min,bounce_force_max)
+		if player.pause_y:
+			player.pause_y = false
+		if player.stop_contorls:
+			player.stop_contorls = false
 		_on_reset()
 	if !stuck && player_down:
 		player.bounce_down(bounce_force_min,bounce_force_max)
+		if player.pause_y:
+			player.pause_y = false
+		if player.stop_contorls:
+			player.stop_contorls = false
 		_on_reset()
 
 	

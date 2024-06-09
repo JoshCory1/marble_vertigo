@@ -1,0 +1,150 @@
+[gd_scene load_steps=22 format=3 uid="uid://6nl1xce7kbbw"]
+
+[ext_resource type="Texture2D" uid="uid://xebvbvjc5se2" path="res://assets/obstacles/booster.png" id="1_gl3sf"]
+[ext_resource type="Script" path="res://scripts/boost_right.gd" id="1_gqhxw"]
+[ext_resource type="Texture2D" uid="uid://d230isn57yky6" path="res://assets/obstacles/booster_red.png" id="3_an3sn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu13i"]
+atlas = ExtResource("1_gl3sf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3toeb"]
+atlas = ExtResource("1_gl3sf")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddudh"]
+atlas = ExtResource("1_gl3sf")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4xt0"]
+atlas = ExtResource("1_gl3sf")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcr3g"]
+atlas = ExtResource("1_gl3sf")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvsuq"]
+atlas = ExtResource("1_gl3sf")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju3lb"]
+atlas = ExtResource("1_gl3sf")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tacy"]
+atlas = ExtResource("1_gl3sf")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4ith"]
+atlas = ExtResource("3_an3sn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erntu"]
+atlas = ExtResource("3_an3sn")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2ijk"]
+atlas = ExtResource("3_an3sn")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8fuk"]
+atlas = ExtResource("3_an3sn")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og1mp"]
+atlas = ExtResource("3_an3sn")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pgs5"]
+atlas = ExtResource("3_an3sn")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cwj1"]
+atlas = ExtResource("3_an3sn")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60nm8"]
+atlas = ExtResource("3_an3sn")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uyikr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu13i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3toeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddudh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4xt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcr3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvsuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju3lb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tacy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ith")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erntu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2ijk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8fuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og1mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pgs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cwj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60nm8")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2pyp"]
+size = Vector2(128, 130)
+
+[node name="BoostRight" type="Area2D" groups=["boost_x"]]
+collision_layer = 2
+script = ExtResource("1_gqhxw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_uyikr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f2pyp")
+
+[node name="YTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="YTimer" to="." method="_on_y_timer_timeout"]

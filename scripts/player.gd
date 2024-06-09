@@ -10,8 +10,8 @@ extends CharacterBody2D
 @onready var death_particles = $PlayerParticles2D
 @onready var sprite = $Sprite2D
 @onready var animation_player = $PlayerAnimationPlayer
+@onready var boosts = get_tree().get_nodes_in_group("boost_x")
 
-#var up_bounce:bool = false
 var no_bounce: bool = false
 var debug_mode = false
 var stop_velocity: bool = false 
@@ -19,13 +19,14 @@ var debug: bool = false
 var accelerometer_speed: float = 130.0
 var use_accelerometer: bool = false
 var speed: float = 0.0
-
+# pauses y velocity for set time
+var pause_y: bool = false
+var stop_contorls: bool = false
 
 
 func _ready():
-#	var stickys = get_tree().get_nodes_in_group("sticky")
-#	for sticky in stickys:
-#		sticky.sticky_bounce.connect(_on_sticky)
+	for boost in boosts:
+		boost.y_lock_releasing.connect(_on_y_lock_releasing)
 	var os_name = OS.get_name()
 	if os_name == "Android" || os_name == "iOS":
 		use_accelerometer = true
@@ -45,32 +46,34 @@ func _process(_delta):
 func _physics_process(_delta):
 	if stop_velocity == false:
 		if debug == false:
-			if use_accelerometer == true:
+			if use_accelerometer:
 				var mobile_input = Input.get_accelerometer()
-				var direction = mobile_input.x
-				if direction > 3:
-					direction = 3
-				if direction < -3:
-					direction = -3
-				if direction:
-					velocity.x = direction * accelerometer_speed
-				else:
-					velocity.x = move_toward(velocity.x, 0, accelerometer_speed / 200)
+				if !stop_contorls:
+					var direction = mobile_input.x
+					if direction > 3:
+						direction = 3
+					if direction < -3:
+						direction = -3
+					if direction:
+						velocity.x = direction * accelerometer_speed
+					else:
+						velocity.x = move_toward(velocity.x, 0, accelerometer_speed / 200)
 			else:
-				var direction = Input.get_axis("move_left", "move_right")
-				if direction > 0:
-					speed = speed_var
-					velocity.x = speed / 2
-				elif direction < 0:
-					speed = -speed_var
-					velocity.x = speed / 2
-				elif Input.is_action_just_pressed("stop_move"):
-					velocity.x = 0 
+				if !stop_contorls:
+					var direction = Input.get_axis("move_left", "move_right")
+					if direction > 0:
+						speed = speed_var
+						velocity.x = speed / 2
+					elif direction < 0:
+						speed = -speed_var
+						velocity.x = speed / 2
+					elif Input.is_action_just_pressed("stop_move"):
+						velocity.x = 0 
 				
-
-			velocity.y += gravity
-			if velocity.y > max_fall_velocity:
-				velocity.y = max_fall_velocity
+			if !pause_y:
+				velocity.y += gravity
+				if velocity.y > max_fall_velocity:
+					velocity.y = max_fall_velocity
 		else:
 			velocity = Vector2(0,0)
 			if Input.is_action_pressed("move_up"):
@@ -81,6 +84,7 @@ func _physics_process(_delta):
 				velocity.x -= speed_var * 10
 			if Input.is_action_pressed("move_right"):
 				velocity.x += speed_var * 10
+			
 		move_and_slide()
 
 
@@ -108,6 +112,12 @@ func random_bounce(min_boune: int, max_boune: int):
 	new_bounce_velocity = randi_range(min_boune,max_boune)
 	return new_bounce_velocity
 
+func _on_y_lock_releasing():
+	if pause_y:
+		pause_y = false
+	if stop_contorls:
+		stop_contorls = false
+
 func random_bounce_sound():
 	randf()
 	pass
@@ -132,11 +142,7 @@ func _on_no_bounce():
 		await get_tree().create_timer(.2).timeout
 		if no_bounce == true:
 			die()
-	else:
-		pass
-		
-		
-	
+
 	# Skins
 
 func use_default_skin():
