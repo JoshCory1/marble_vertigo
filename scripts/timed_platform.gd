@@ -20,13 +20,8 @@ func _ready():
 	
 
 func _process(_delta):
-#	$Sprite2D/Label.text = str(snappedi(timer.time_left, 0))
-#	$Sprite2D/Label2.text = str(snappedi(timer.time_left, 0))
-#	$Sprite2D/Label3.text = str(snappedi(timer.time_left, 0))
-#	$Sprite2D/Label4.text = str(snappedi(timer.time_left, 0))
-#	$Sprite2D/Label5.text = str(snappedi(timer.time_left, 0))
 	SetActive()
-	
+
 
 func SetActive():
 	if timer.time_left <= 0:

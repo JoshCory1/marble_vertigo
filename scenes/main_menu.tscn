@@ -639,10 +639,10 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_21" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 3022.0
-offset_top = 119.0
-offset_right = 3086.0
-offset_bottom = 183.0
+offset_left = 3166.0
+offset_top = 222.0
+offset_right = 3230.0
+offset_bottom = 286.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
@@ -667,10 +667,10 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_22" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 3188.0
-offset_top = 216.0
-offset_right = 3252.0
-offset_bottom = 280.0
+offset_left = 3354.0
+offset_top = 219.0
+offset_right = 3418.0
+offset_bottom = 283.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
@@ -695,10 +695,10 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_23" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 3275.0
-offset_top = 305.0
-offset_right = 3339.0
-offset_bottom = 369.0
+offset_left = 3351.0
+offset_top = 431.0
+offset_right = 3415.0
+offset_bottom = 495.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
@@ -723,10 +723,10 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_24" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 3347.0
-offset_top = 167.0
-offset_right = 3411.0
-offset_bottom = 231.0
+offset_left = 3631.0
+offset_top = 200.0
+offset_right = 3695.0
+offset_bottom = 264.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
@@ -751,10 +751,10 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_25" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 3520.0
-offset_top = 103.0
-offset_right = 3584.0
-offset_bottom = 167.0
+offset_left = 3719.0
+offset_top = 431.0
+offset_right = 3783.0
+offset_bottom = 495.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
@@ -779,10 +779,10 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_26" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 3594.0
-offset_top = 334.0
-offset_right = 3658.0
-offset_bottom = 398.0
+offset_left = 4071.0
+offset_top = 318.0
+offset_right = 4135.0
+offset_bottom = 382.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
@@ -807,10 +807,10 @@ texture = ExtResource("5_pj5dd")
 
 [node name="MenuLevelButton_27" type="TextureButton" parent="." groups=["LevelButtons"]]
 z_index = 1001
-offset_left = 3465.0
-offset_top = 432.0
-offset_right = 3529.0
-offset_bottom = 496.0
+offset_left = 4151.0
+offset_top = 68.0
+offset_right = 4215.0
+offset_bottom = 132.0
 texture_normal = ExtResource("2_dax72")
 texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")

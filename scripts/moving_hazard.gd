@@ -1,6 +1,12 @@
 extends AnimatableBody2D
 
+# refrence to player
 @onready var player = get_tree().get_first_node_in_group("Player")
+# refrences to area2D's
+@onready var area_bounce_up = $AreaBounceUp
+@onready var area_bounce_down = $AreaBounceUp/AreaBounceDown
+@onready var area_bounce_left = $AreaBounceLeft
+@onready var area_bounce_right = $AreaBounceRight
 
 ## the end point of travel path
 @export var destination: Vector2
@@ -24,8 +30,6 @@ func _ready() -> void:
 	tween.tween_property(self, "global_position", global_position + destination, duration)
 	tween.tween_interval(wait_time_2)
 	tween.tween_property(self, "global_position", global_position, duration)
-	
-
 
 func _on_area_bounce_up_body_entered(body):
 	if body != null:
@@ -52,3 +56,23 @@ func _on_area_bounce_right_body_entered(body):
 	if body != null:
 		body.bounce_right(bounce_force_min, bounce_force_max)
 		
+
+
+func _on_area_bounce_up_body_exited(body):
+	if body:
+		body.no_bounce_y = 0
+
+
+func _on_area_bounce_down_body_exited(body):
+	if body:
+		body.no_bounce_y = 0
+
+
+func _on_area_bounce_left_body_exited(body):
+	if body:
+		body.no_bounce_x = 0
+
+
+func _on_area_bounce_right_body_exited(body):
+	if body:
+		body.no_bounce_x = 0

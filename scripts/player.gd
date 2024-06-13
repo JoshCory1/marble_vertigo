@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var speed_var: float = 300
 
 @export var gravity: float = 8.0
@@ -12,12 +11,13 @@ extends CharacterBody2D
 @onready var animation_player = $PlayerAnimationPlayer
 @onready var boosts = get_tree().get_nodes_in_group("boost_x")
 
-var no_bounce: bool = false
+var no_bounce_x: int = 0
+var no_bounce_y: int = 0
 var debug_mode = false
 var stop_velocity: bool = false 
 var debug: bool = false
-var accelerometer_speed: float = 130.0
 var use_accelerometer: bool = false
+var accelerometer_speed: float = 130.0
 var speed: float = 0.0
 # pauses y velocity for set time
 var pause_y: bool = false
@@ -37,7 +37,9 @@ func _input(_event):
 			debug = !debug
 			
 func _process(_delta):
-	_on_no_bounce()
+	if no_bounce_x >= 2 || no_bounce_y >= 2:
+		die()
+	# _on_no_bounce()
 	if GameController.debug:
 		debug_mode = true
 	else:
@@ -84,7 +86,6 @@ func _physics_process(_delta):
 				velocity.x -= speed_var * 10
 			if Input.is_action_pressed("move_right"):
 				velocity.x += speed_var * 10
-			
 		move_and_slide()
 
 
@@ -96,16 +97,15 @@ func bounce_up(min_b: int, max_b: int):
 func bounce_down(min_b: int, max_b: int):
 	AudioPlayer.play_sfx("bounce_sfx_1")
 	velocity.y = random_bounce(min_b, max_b)
-
+	
+	
 func bounce_left(min_b: int, max_b: int):
 	AudioPlayer.play_sfx("bounce_sfx_2")
 	velocity.x = -random_bounce(min_b, max_b)
 	
-
 func bounce_right(min_b: int, max_b: int):
 	AudioPlayer.play_sfx("bounce_sfx_2")
 	velocity.x = random_bounce(min_b, max_b)
-	
 
 func random_bounce(min_boune: int, max_boune: int):
 	var new_bounce_velocity
@@ -126,7 +126,6 @@ func _on_area_2d_body_entered(_body):
 	die()
 
 func die():
-	no_bounce = false
 	if debug == false:
 		get_tree().paused = true
 		AudioPlayer.play_sfx("shatter_sfx")
@@ -137,11 +136,11 @@ func die():
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/start.tscn")
 		
-func _on_no_bounce():
-	if no_bounce == true:
-		await get_tree().create_timer(.2).timeout
-		if no_bounce == true:
-			die()
+# func _on_no_bounce():
+# 	if no_bounce == true:
+# 		await get_tree().create_timer(.2).timeout
+# 		if no_bounce == true:
+# 			die()
 
 	# Skins
 

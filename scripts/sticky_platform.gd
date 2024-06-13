@@ -39,6 +39,8 @@ func _ready() -> void:
 
 func _physics_process(_delta):
 	if stuck:
+		player.no_bounce_x = 0
+		player.no_bounce_y = 0
 		player.velocity = Vector2.ZERO
 		if player_up:
 			player.position = self.position + Vector2(0,-30)
@@ -61,6 +63,8 @@ func _physics_process(_delta):
 
 	
 func _on_reset():
+	player.no_bounce_x = 0
+	player.no_bounce_y = 0
 	if in_transition:
 		in_transition = false
 	if player_up:

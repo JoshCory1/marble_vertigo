@@ -7,7 +7,7 @@ extends StaticBody2D
 
 func _on_top_body_entered(body):
 	if body != null:
-		body.no_bounce = true
+		body.no_bounce_y += 1
 		body.bounce_up(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
@@ -17,7 +17,7 @@ func _on_top_body_entered(body):
 
 func _on_bottom_body_entered(body):
 	if body != null:
-		body.no_bounce = true
+		body.no_bounce_y += 1
 		body.bounce_down(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
@@ -26,7 +26,7 @@ func _on_bottom_body_entered(body):
 
 func _on_right_body_entered(body):
 	if body != null:
-		body.no_bounce = true
+		body.no_bounce_x += 1
 		body.bounce_right(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
@@ -36,7 +36,7 @@ func _on_right_body_entered(body):
 
 func _on_left_body_entered(body):
 	if body != null:
-		body.no_bounce = true
+		body.no_bounce_x += 1
 		body.bounce_left(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
@@ -46,19 +46,19 @@ func _on_left_body_entered(body):
 
 func _on_top_body_exited(body):
 	if body != null:
-		body.no_bounce = false
+		body.no_bounce_y = 0
 
 
 func _on_bottom_body_exited(body):
 	if body != null:
-		body.no_bounce = false
+		body.no_bounce_y = 0
 
 
 func _on_right_body_exited(body):
 	if body != null:
-		body.no_bounce = false
+		body.no_bounce_x = 0
 
 
 func _on_left_body_exited(body):
 	if body != null:
-		body.no_bounce = false
+		body.no_bounce_x = 0

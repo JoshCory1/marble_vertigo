@@ -67,3 +67,7 @@ func _on_y_timer_timeout():
 	
 func _on_stop_other_timers():
 	y_timer.stop()
+
+
+func _on_body_exited(body):
+	body.no_bounce_x = 0
