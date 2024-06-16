@@ -6,10 +6,10 @@
 size = Vector2(232, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60reo"]
-size = Vector2(260, 12)
+size = Vector2(260, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flom"]
-size = Vector2(260, 12)
+size = Vector2(260, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02c6t"]
 size = Vector2(12, 26)
@@ -23,12 +23,14 @@ script = ExtResource("1_1n6tu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1xq8i")
+disabled = true
 
 [node name="Top" type="Area2D" parent="."]
 position = Vector2(0, -20)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_60reo")
 
 [node name="Bottom" type="Area2D" parent="."]
@@ -36,6 +38,7 @@ position = Vector2(0, 20)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_4flom")
 
 [node name="Right" type="Area2D" parent="."]

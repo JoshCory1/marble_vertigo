@@ -162,8 +162,10 @@ no_charge_up = true
 
 [node name="BoostRight4" parent="Boosts" instance=ExtResource("13_vo2lx")]
 position = Vector2(4998, -128)
+min_bounce = 1200.0
+max_bounce = 1200.0
 no_charge_up = true
-pause_y_time = 1.0
+pause_y_time = 0.3
 
 [node name="BoostRight3" parent="Boosts" instance=ExtResource("13_vo2lx")]
 position = Vector2(-44, -381)
@@ -417,7 +419,7 @@ exit_point = NodePath("../../../Portals/Portal")
 
 [node name="RougePortal5" parent="RougePortals" instance=ExtResource("16_uvv21")]
 position = Vector2(7252, -486)
-destination = Vector2(0, 600)
+destination = Vector2(0, 700)
 duration = 0.5
 wait_time_1 = 3.0
 wait_time_2 = 0.5
@@ -427,7 +429,7 @@ exit_point = NodePath("../../../Portals/Portal")
 
 [node name="RougePortal7" parent="RougePortals" instance=ExtResource("16_uvv21")]
 position = Vector2(8037, -488)
-destination = Vector2(0, 600)
+destination = Vector2(0, 700)
 duration = 0.5
 wait_time_1 = 3.0
 wait_time_2 = 0.5
@@ -437,7 +439,7 @@ exit_point = NodePath("../../../Portals/Portal")
 
 [node name="RougePortal9" parent="RougePortals" instance=ExtResource("16_uvv21")]
 position = Vector2(8709, -488)
-destination = Vector2(0, 600)
+destination = Vector2(0, 700)
 duration = 0.5
 wait_time_1 = 3.0
 wait_time_2 = 0.5
@@ -447,7 +449,7 @@ exit_point = NodePath("../../../Portals/Portal")
 
 [node name="RougePortal11" parent="RougePortals" instance=ExtResource("16_uvv21")]
 position = Vector2(9494, -490)
-destination = Vector2(0, 600)
+destination = Vector2(0, 700)
 duration = 0.5
 wait_time_1 = 3.0
 wait_time_2 = 0.5
