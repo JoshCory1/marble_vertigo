@@ -7,12 +7,21 @@ extends StaticBody2D
 @export var active_time: float = 1.5 
 ## Time untill timer starts
 @export var time_till_start: float = 2
+#  bounce force min and max
+@export var bounce_force_min = 300
+@export var bounce_force_max = 450
 
+# animation reference
 @onready var animation_player = $AnimationPlayer
+# timer reference
 @onready var timer = $Timer
+# jump box reference
+@onready var jump_box = $JumpBox
 
 
 func _ready():
+	jump_box.bounce_force_min = bounce_force_min
+	jump_box.bounce_force_max = bounce_force_max
 	timer.wait_time = time_till_active
 	await get_tree().create_timer(time_till_start).timeout
 	timer.start()
