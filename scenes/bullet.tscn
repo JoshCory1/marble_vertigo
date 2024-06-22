@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://be5vhg81nkbns"]
+
+[ext_resource type="Texture2D" uid="uid://cvbvto42lthie" path="res://assets/ball/marble_v21.png" id="1_7xfp4"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_amooi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghha2"]
+radius = 32.0624
+
+[node name="Bullet" type="AnimatableBody2D"]
+scale = Vector2(0.8, 0.8)
+collision_layer = 4
+script = ExtResource("1_amooi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7xfp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ghha2")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://lxp6q0608kp6"]
+[gd_scene load_steps=17 format=3 uid="uid://lxp6q0608kp6"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_goamw"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_2yc4g"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c11506taw77ph" path="res://scenes/boost_down.tscn" id="12_hdxsb"]
 [ext_resource type="PackedScene" uid="uid://bspwnpbok62fy" path="res://scenes/disappearing_platform.tscn" id="13_2dlj7"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="14_t4fhg"]
+[ext_resource type="PackedScene" uid="uid://ksn32v22b7vs" path="res://scenes/cannon.tscn" id="15_jnb0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u37l7"]
 size = Vector2(2016, 59)
@@ -394,3 +395,6 @@ position = Vector2(15869, -554)
 
 [node name="DisappearingPlatform16" parent="TimedPlatforms" instance=ExtResource("13_2dlj7")]
 position = Vector2(11779, -586.227)
+
+[node name="Cannon" parent="." instance=ExtResource("15_jnb0f")]
+position = Vector2(846.92, 260.06)

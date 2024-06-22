@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed_var: float = 300
+@export var speed_var: float = 6000
 
 @export var gravity: float = 8.0
 @export var max_fall_velocity: float = 300.0
@@ -45,7 +45,7 @@ func _process(_delta):
 	else:
 		debug_mode = false
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if stop_velocity == false:
 		if debug == false:
 			if use_accelerometer:
@@ -65,10 +65,10 @@ func _physics_process(_delta):
 					var direction = Input.get_axis("move_left", "move_right")
 					if direction > 0:
 						speed = speed_var
-						velocity.x = speed / 2
+						velocity.x = speed * delta
 					elif direction < 0:
 						speed = -speed_var
-						velocity.x = speed / 2
+						velocity.x = speed * delta
 					elif Input.is_action_just_pressed("stop_move"):
 						velocity.x = 0 
 				
@@ -79,13 +79,13 @@ func _physics_process(_delta):
 		else:
 			velocity = Vector2(0,0)
 			if Input.is_action_pressed("move_up"):
-				velocity.y -= speed_var * 10
+				velocity.y -= speed_var * 10 * delta
 			if Input.is_action_pressed("move_down"):
-				velocity.y += speed_var * 10
+				velocity.y += speed_var * 10 * delta
 			if Input.is_action_pressed("move_left"):
-				velocity.x -= speed_var * 10
+				velocity.x -= speed_var * 10 * delta
 			if Input.is_action_pressed("move_right"):
-				velocity.x += speed_var * 10
+				velocity.x += speed_var * 10 * delta
 		move_and_slide()
 
 
@@ -118,9 +118,6 @@ func _on_y_lock_releasing():
 	if stop_contorls:
 		stop_contorls = false
 
-func random_bounce_sound():
-	randf()
-	pass
 
 func _on_area_2d_body_entered(_body):
 	die()
@@ -136,11 +133,6 @@ func die():
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/start.tscn")
 		
-# func _on_no_bounce():
-# 	if no_bounce == true:
-# 		await get_tree().create_timer(.2).timeout
-# 		if no_bounce == true:
-# 			die()
 
 	# Skins
 
