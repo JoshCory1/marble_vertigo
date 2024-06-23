@@ -44,7 +44,7 @@ func _on_body_entered(body):
 	body.pause_y = true
 	body.stop_velocity = false
 	body.stop_contorls = true
-	AudioPlayer.stop_now = true
+	#AudioPlayer.stop_now = true
 	AudioPlayer.play_sfx("boost_shoot")
 	body.bounce_down(min_bounce,max_bounce)
 	if body.pause_y:

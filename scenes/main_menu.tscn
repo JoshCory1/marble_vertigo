@@ -874,7 +874,7 @@ texture_pressed = ExtResource("3_lfw8e")
 texture_disabled = ExtResource("4_wiijs")
 script = ExtResource("5_s7i4j")
 level = ExtResource("37_e06ip")
-current_level = 29
+current_level = 1
 
 [node name="Label" type="Label" parent="MenuLevelButton_29"]
 layout_mode = 0

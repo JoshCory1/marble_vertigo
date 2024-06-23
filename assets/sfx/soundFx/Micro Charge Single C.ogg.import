@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b2c5sykcqxpmv"
+path="res://.godot/imported/Micro Charge Single C.ogg-c000591f43c6d474d45bffe7d82fc26f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/soundFx/Micro Charge Single C.ogg"
+dest_files=["res://.godot/imported/Micro Charge Single C.ogg-c000591f43c6d474d45bffe7d82fc26f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
