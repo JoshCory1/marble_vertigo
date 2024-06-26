@@ -56,23 +56,3 @@ func _on_area_bounce_right_body_entered(body):
 	if body != null:
 		body.bounce_right(bounce_force_min, bounce_force_max)
 		
-
-
-func _on_area_bounce_up_body_exited(body):
-	if body:
-		body.no_bounce_y = 0
-
-
-func _on_area_bounce_down_body_exited(body):
-	if body:
-		body.no_bounce_y = 0
-
-
-func _on_area_bounce_left_body_exited(body):
-	if body:
-		body.no_bounce_x = 0
-
-
-func _on_area_bounce_right_body_exited(body):
-	if body:
-		body.no_bounce_x = 0

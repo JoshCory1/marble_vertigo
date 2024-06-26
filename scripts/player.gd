@@ -37,9 +37,6 @@ func _input(_event):
 			debug = !debug
 			
 func _process(_delta):
-	if no_bounce_x >= 2 || no_bounce_y >= 2:
-		die()
-	# _on_no_bounce()
 	if GameController.debug:
 		debug_mode = true
 	else:

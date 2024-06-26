@@ -35,16 +35,12 @@ func shoot():
 
 
 func _on_timer_timeout():
-	print("cannon is: " + str(active))
+	print(cannon_emit_selection + " is: " + str(active))
 	if active:
 		shoot()
 
-
-
-
-func _on_area_2d_body_exited(body):
-	active = false
-
-func _on_cannon_active(trigger_string: String):
-	if trigger_string == cannon_emit_selection:
+func _on_cannon_active(trigger_string: String, flag: bool):
+	if trigger_string == cannon_emit_selection && flag:
 		active = true
+	elif trigger_string == cannon_emit_selection && !flag:
+		active = false

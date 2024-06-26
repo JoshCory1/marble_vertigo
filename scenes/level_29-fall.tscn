@@ -98,100 +98,6 @@ screenClamp = Vector2(100, 0)
 position = Vector2(12131, -498)
 screenClamp = Vector2(100, 0)
 
-[node name="labels" type="Node" parent="."]
-
-[node name="Label" type="Label" parent="labels"]
-offset_left = 1566.0
-offset_top = -289.0
-offset_right = 1777.0
-offset_bottom = -263.0
-text = "dissappearing plat forms ->"
-
-[node name="Label2" type="Label" parent="labels"]
-offset_left = 737.649
-offset_top = 354.23
-offset_right = 808.649
-offset_bottom = 380.23
-text = "pillars -->"
-
-[node name="Label3" type="Label" parent="labels"]
-offset_left = 1255.0
-offset_top = 337.0
-offset_right = 1326.0
-offset_bottom = 441.0
-text = "boost
-^
-|
-|"
-
-[node name="Label4" type="Label" parent="labels"]
-offset_left = 1775.0
-offset_top = -410.0
-offset_right = 1843.0
-offset_bottom = -306.0
-text = "boost up
-^
-|
-|"
-
-[node name="Label5" type="Label" parent="labels"]
-offset_left = 2107.12
-offset_top = -737.602
-offset_right = 2147.12
-offset_bottom = -714.602
-text = "timed platforms and disappearing platforms -->"
-
-[node name="Label6" type="Label" parent="labels"]
-offset_left = 2557.91
-offset_top = -842.728
-offset_right = 2597.91
-offset_bottom = -819.728
-text = "bullets -->
-<-- fireing this way"
-
-[node name="Label7" type="Label" parent="labels"]
-offset_left = 5894.0
-offset_top = -776.0
-offset_right = 6104.0
-offset_bottom = -750.0
-text = " boost sequence  --> <> ^ vv"
-
-[node name="Label8" type="Label" parent="labels"]
-offset_left = 8280.0
-offset_top = -752.0
-offset_right = 8351.0
-offset_bottom = -726.0
-text = "pillars -->"
-
-[node name="Label9" type="Label" parent="labels"]
-offset_left = 8413.03
-offset_top = -893.282
-offset_right = 8453.03
-offset_bottom = -870.282
-text = "bullets -->
-<-- fireing this way"
-
-[node name="Label10" type="Label" parent="labels"]
-offset_left = 10498.7
-offset_top = -638.57
-offset_right = 10538.7
-offset_bottom = -615.57
-text = "disappearing platforms and timed platformsq-->"
-
-[node name="Label11" type="Label" parent="labels"]
-offset_left = 12038.0
-offset_top = -710.0
-offset_right = 12272.0
-offset_bottom = -684.0
-text = "pillars and timed platforms -->"
-
-[node name="Label13" type="Label" parent="labels"]
-offset_left = 16491.0
-offset_top = -681.0
-offset_right = 16557.0
-offset_bottom = -655.0
-text = "pillarsq"
-
 [node name="Boosts" type="Node" parent="."]
 
 [node name="BoostUp" parent="Boosts" instance=ExtResource("10_17xa5")]
@@ -403,15 +309,33 @@ position = Vector2(2701, -733)
 scale = Vector2(1, 14.16)
 cannon_emit_selection = "cannon 1"
 
+[node name="CannonTrigger5" parent="Cannons" instance=ExtResource("16_q0mc7")]
+position = Vector2(6021, -723)
+scale = Vector2(1, 14.16)
+cannon_emit_selection = "cannon 1"
+activate_switch = false
+
 [node name="CannonTrigger2" parent="Cannons" instance=ExtResource("16_q0mc7")]
 position = Vector2(8955, -778)
 scale = Vector2(1, 14.16)
 cannon_emit_selection = "cannon 2"
 
+[node name="CannonTrigger4" parent="Cannons" instance=ExtResource("16_q0mc7")]
+position = Vector2(10568, -752)
+scale = Vector2(1, 14.16)
+cannon_emit_selection = "cannon 2"
+activate_switch = false
+
 [node name="CannonTrigger3" parent="Cannons" instance=ExtResource("16_q0mc7")]
 position = Vector2(10986, -704)
 scale = Vector2(1, 14.16)
 cannon_emit_selection = "cannon 3"
+
+[node name="CannonTrigger6" parent="Cannons" instance=ExtResource("16_q0mc7")]
+position = Vector2(16542, -704)
+scale = Vector2(1, 14.16)
+cannon_emit_selection = "cannon 3"
+activate_switch = false
 
 [node name="Coins" type="Node" parent="."]
 

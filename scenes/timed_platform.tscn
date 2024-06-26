@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="3_teo7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bin5q"]
-size = Vector2(30, 131)
+size = Vector2(30, 124.833)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ne5ne"]
 font_size = 36
@@ -72,6 +72,7 @@ collision_layer = 2
 script = ExtResource("1_wm3l8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.08333, 1.11616e-05)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_bin5q")
 
@@ -155,7 +156,8 @@ libraries = {
 }
 
 [node name="JumpBox" parent="." instance=ExtResource("3_teo7q")]
-scale = Vector2(0.52, 0.64)
+position = Vector2(-3.33333, 1.19209e-07)
+scale = Vector2(0.478333, 0.658)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

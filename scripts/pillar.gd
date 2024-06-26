@@ -54,7 +54,6 @@ func _on_touch_screen_button_released():
 
 func _on_area_bounce_up_body_entered(body):
 	if body != null:
-		body.no_bounce_y += 1
 		body.bounce_up(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
@@ -65,7 +64,6 @@ func _on_area_bounce_up_body_entered(body):
 
 func _on_area_bounce_down_body_entered(body):
 	if body != null:
-		body.no_bounce_y += 1
 		body.bounce_down(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
@@ -75,7 +73,6 @@ func _on_area_bounce_down_body_entered(body):
 
 func _on_area_bounce_left_body_entered(body):
 	if body != null:
-		body.no_bounce_x += 1
 		body.bounce_left(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
@@ -84,7 +81,6 @@ func _on_area_bounce_left_body_entered(body):
 
 func _on_area_bounce_right_body_entered(body):
 	if body != null:
-		body.no_bounce_x += 1
 		body.bounce_right(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
@@ -92,21 +88,3 @@ func _on_area_bounce_right_body_entered(body):
 			body.stop_contorls = false
 
 
-func _on_area_bounce_up_body_exited(body):
-	if body != null:
-		body.no_bounce_y = 0
-
-
-func _on_area_bounce_down_body_exited(body):
-	if body != null:
-		body.no_bounce_y = 0
-
-
-func _on_area_bounce_left_body_exited(body):
-	if body != null:
-		body.no_bounce_x = 0
-
-
-func _on_area_bounce_right_body_exited(body):
-	if body != null:
-		body.no_bounce_x = 0

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/pillar.gd" id="1_unbsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ltfh"]
-size = Vector2(195.455, 398.693)
+size = Vector2(132.352, 286.127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2dre"]
 size = Vector2(400, 96.612)
@@ -25,13 +25,14 @@ script = ExtResource("1_unbsr")
 texture = ExtResource("1_qhk2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6.81818, -6.53595)
+position = Vector2(-6.81818, -4.90197)
 scale = Vector2(1.54546, 1.13072)
 shape = SubResource("RectangleShape2D_1ltfh")
 
 [node name="AreaBounceUp" type="Area2D" parent="."]
 position = Vector2(0, -245.098)
 scale = Vector2(0.818182, 0.607844)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp"]
 position = Vector2(0, -13.8098)
@@ -40,6 +41,7 @@ shape = SubResource("RectangleShape2D_w2dre")
 [node name="AreaBounceDown" type="Area2D" parent="."]
 position = Vector2(0, 245.098)
 scale = Vector2(0.817229, 0.576786)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceDown"]
 position = Vector2(0, 8.35239)
@@ -47,6 +49,7 @@ shape = SubResource("RectangleShape2D_w2dre")
 
 [node name="AreaBounceLeft" type="Area2D" parent="."]
 position = Vector2(-136.364, 0)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceLeft"]
 position = Vector2(-27.2727, 3.81344)
@@ -55,6 +58,7 @@ shape = SubResource("RectangleShape2D_spktx")
 
 [node name="AreaBounceRight" type="Area2D" parent="."]
 position = Vector2(168.182, 0)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceRight"]
 position = Vector2(-27.2727, -10.095)
@@ -66,12 +70,8 @@ scale = Vector2(1.36364, 1.13072)
 shape = SubResource("RectangleShape2D_hfhwn")
 
 [connection signal="body_entered" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_entered"]
-[connection signal="body_exited" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_exited"]
 [connection signal="body_entered" from="AreaBounceDown" to="." method="_on_area_bounce_down_body_entered"]
-[connection signal="body_exited" from="AreaBounceDown" to="." method="_on_area_bounce_down_body_exited"]
 [connection signal="body_entered" from="AreaBounceLeft" to="." method="_on_area_bounce_left_body_entered"]
-[connection signal="body_exited" from="AreaBounceLeft" to="." method="_on_area_bounce_left_body_exited"]
 [connection signal="body_entered" from="AreaBounceRight" to="." method="_on_area_bounce_right_body_entered"]
-[connection signal="body_exited" from="AreaBounceRight" to="." method="_on_area_bounce_right_body_exited"]
 [connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]

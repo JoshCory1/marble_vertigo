@@ -32,13 +32,6 @@ func _on_area_2d_down_body_entered(body):
 	if body.stop_contorls:
 		body.stop_contorls = false
 
-func _on_area_2d_up_body_exited(body):
-	if body:
-		body.no_bounce_y = 0
-
-func _on_area_2d_down_body_exited(body):
-	if body:
-		body.no_bounce_y = 0
 	
 func _on_area_2d_disable_body_entered(_body):
 	timer_flash.start()

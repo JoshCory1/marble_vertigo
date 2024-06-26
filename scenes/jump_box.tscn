@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/jump_box.gd" id="1_1n6tu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xq8i"]
-size = Vector2(232, 20)
+size = Vector2(233.932, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60reo"]
 size = Vector2(260, 29)
@@ -18,10 +18,11 @@ size = Vector2(12, 26)
 size = Vector2(12, 26)
 
 [node name="JumpBox" type="StaticBody2D"]
-collision_layer = 2
+collision_layer = 4
 script = ExtResource("1_1n6tu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.00884, 1)
 shape = SubResource("RectangleShape2D_1xq8i")
 disabled = true
 
@@ -56,10 +57,6 @@ collision_layer = 2
 shape = SubResource("RectangleShape2D_6twit")
 
 [connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
-[connection signal="body_exited" from="Top" to="." method="_on_top_body_exited"]
 [connection signal="body_entered" from="Bottom" to="." method="_on_bottom_body_entered"]
-[connection signal="body_exited" from="Bottom" to="." method="_on_bottom_body_exited"]
 [connection signal="body_entered" from="Right" to="." method="_on_right_body_entered"]
-[connection signal="body_exited" from="Right" to="." method="_on_right_body_exited"]
 [connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]
-[connection signal="body_exited" from="Left" to="." method="_on_left_body_exited"]

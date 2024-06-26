@@ -57,10 +57,6 @@ position = Vector2(-3, 2)
 shape = SubResource("CircleShape2D_m5c80")
 
 [connection signal="body_entered" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_entered"]
-[connection signal="body_exited" from="AreaBounceUp" to="." method="_on_area_bounce_up_body_exited"]
 [connection signal="body_entered" from="AreaBounceUp/AreaBounceDown" to="." method="_on_area_bounce_down_body_entered"]
-[connection signal="body_exited" from="AreaBounceUp/AreaBounceDown" to="." method="_on_area_bounce_down_body_exited"]
 [connection signal="body_entered" from="AreaBounceLeft" to="." method="_on_area_bounce_left_body_entered"]
-[connection signal="body_exited" from="AreaBounceLeft" to="." method="_on_area_bounce_left_body_exited"]
 [connection signal="body_entered" from="AreaBounceRight" to="." method="_on_area_bounce_right_body_entered"]
-[connection signal="body_exited" from="AreaBounceRight" to="." method="_on_area_bounce_right_body_exited"]
