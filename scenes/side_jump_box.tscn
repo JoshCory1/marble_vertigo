@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdpptfa8jxj65"]
+
+[ext_resource type="Script" path="res://scripts/side_jump_box.gd" id="1_wa4ce"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn88n"]
+size = Vector2(20, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yj4x"]
+size = Vector2(20, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouqtx"]
+size = Vector2(32, 12)
+
+[node name="SideJumpBox" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_wa4ce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jn88n")
+
+[node name="Area2Dright" type="Area2D" parent="."]
+position = Vector2(8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dright"]
+shape = SubResource("RectangleShape2D_0yj4x")
+
+[node name="Area2DLeft" type="Area2D" parent="."]
+position = Vector2(-11, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DLeft"]
+shape = SubResource("RectangleShape2D_0yj4x")
+
+[node name="Area2DUP" type="Area2D" parent="."]
+position = Vector2(0, -82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DUP"]
+shape = SubResource("RectangleShape2D_ouqtx")
+
+[node name="Area2DDown" type="Area2D" parent="."]
+position = Vector2(0, 82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DDown"]
+shape = SubResource("RectangleShape2D_ouqtx")
+
+[connection signal="body_entered" from="Area2Dright" to="." method="_on_area_2_dright_body_entered"]
+[connection signal="body_entered" from="Area2DLeft" to="." method="_on_area_2d_left_body_entered"]
+[connection signal="body_entered" from="Area2DUP" to="." method="_on_area_2dup_body_entered"]
+[connection signal="body_entered" from="Area2DDown" to="." method="_on_area_2d_down_body_entered"]
