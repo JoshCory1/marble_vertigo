@@ -47,6 +47,8 @@ func _ready():
 	if get_tree().paused == true:
 		get_tree().paused = false
 	black_can.visible = false
+func _process(_delta):
+	coin_count.text = str(GameController.coins)
 
 func get_parallax_sprite_scale(parallax_sprite: Sprite2D):
 	var parallax_texure = parallax_sprite.get_texture()

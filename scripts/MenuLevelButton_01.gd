@@ -1,8 +1,8 @@
 extends TextureButton
 
 
-@onready var black_screen = $"../BlackCanvasLayer/ColorRectBlack"
-@onready var canvas = $"../BlackCanvasLayer"
+@onready var black_screen = $"../../BlackCanvasLayer/ColorRectBlack"
+@onready var canvas = $"../../BlackCanvasLayer"
 
 
 @export var fade_duration: float = 0.5

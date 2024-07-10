@@ -491,23 +491,23 @@ shape = SubResource("RectangleShape2D_n00xy")
 
 [node name="JumpBox" parent="JumpBoxs" instance=ExtResource("14_0oh3m")]
 position = Vector2(7757.49, 918)
-scale = Vector2(5.76, 1)
+scale = Vector2(5.76, 1.24)
 
 [node name="JumpBox2" parent="JumpBoxs" instance=ExtResource("14_0oh3m")]
 position = Vector2(10967, 612)
-scale = Vector2(4.04331, 1.01333)
+scale = Vector2(4.04331, 1.41333)
 
 [node name="JumpBox3" parent="JumpBoxs" instance=ExtResource("14_0oh3m")]
 position = Vector2(4637, 542.682)
-scale = Vector2(1.16, 1)
+scale = Vector2(1.16, 1.2)
 
 [node name="JumpBox4" parent="JumpBoxs" instance=ExtResource("14_0oh3m")]
 position = Vector2(4644, 162)
-scale = Vector2(1.16, 1)
+scale = Vector2(1.16, 1.32)
 
 [node name="JumpBox5" parent="JumpBoxs" instance=ExtResource("14_0oh3m")]
 position = Vector2(10338.4, 928.362)
-scale = Vector2(0.673794, 1)
+scale = Vector2(0.673794, 1.44)
 
 [node name="StickyPlatforms" type="Node" parent="."]
 
@@ -517,7 +517,7 @@ destination = Vector2(1519, 0)
 duration = 5.0
 
 [node name="StickyPlatform2" parent="StickyPlatforms" instance=ExtResource("14_5by1s")]
-position = Vector2(10334.6, 756)
+position = Vector2(10361.6, 756)
 scale = Vector2(0.639981, 1.2)
 destination = Vector2(0, -450)
 duration = 4.0

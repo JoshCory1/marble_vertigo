@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bfchs6iatrik8"
+path="res://.godot/imported/Hollow Clicks Double.ogg-2e75d655334f86da9695bc3ea9c9f539.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/soundFx/Hollow Clicks Double.ogg"
+dest_files=["res://.godot/imported/Hollow Clicks Double.ogg-2e75d655334f86da9695bc3ea9c9f539.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

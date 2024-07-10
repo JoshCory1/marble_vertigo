@@ -154,4 +154,43 @@ func use_spin_skin():
 	if sprite:
 		sprite.texture = preload("res://assets/ball/marble_v19.png")
 
+func  use_puzzle_skin():
+	if animation_player.current_animation != "Puzzle":
+		animation_player.play("Puzzle")
+		
+	if sprite:
+		sprite.texture = preload("res://assets/ball/marble_v4.png")
 
+func use_infinty_skin():
+	if animation_player.current_animation != "Infinty":
+		animation_player.play("Infinity")
+		
+	if sprite:
+		sprite.texture = preload("res://assets/ball/marble_v5.png")
+
+func  use_circle_skin():
+	if animation_player.current_animation != "circle":
+		animation_player.play("circle")
+		
+	if sprite:
+		sprite.texture = preload("res://assets/ball/marble_v2.png")
+
+func  use_star_skin():
+	if animation_player.current_animation != "star":
+		animation_player.play("star")
+		
+	if sprite:
+		sprite.texture = preload("res://assets/ball/marble_v6.png")
+
+func use_crystel_skin():
+	if animation_player.current_animation != "crystel":
+		animation_player.play("crystel")
+	if sprite:
+		sprite.texture = preload("res://assets/ball/marble_v7.png")
+
+func use_billiards_skin():
+	if animation_player.current_animation != "billiards":
+		animation_player.play("billiards")
+		
+	if sprite:
+		sprite.texture = preload("res://assets/ball/marble_v8.png")

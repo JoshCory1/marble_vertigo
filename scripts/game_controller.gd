@@ -43,14 +43,53 @@ var cube_1_skin_use: bool = false
 var spin_2_skin_unlocked: bool = false
 var spin_2_skin_use: bool = false
 
+#puzzle
+var puzzle_3_unlocked: bool = false
+var puzzle_3_skin_use: bool = false
+
+#infinty
+var infinty_4_unlocked: bool = false
+var infinty_4_skin_use: bool = false
+
+#circle
+var circle_5_unlocked: bool = false
+var circle_5_skin_use: bool = false
+
+#star
+var star_6_unlocked: bool = false
+var star_6_skin_use: bool = false
+
+#crystel
+var crystel_7_unlocked: bool = false
+var crystel_7_skin_use: bool = false
+
+#billiards
+var billiards_8_unlocked: bool = false
+var billiards_8_skin_use: bool = false
+
 #skins array
-@onready var skins = [default_0_skin_use, cube_1_skin_use, spin_2_skin_use]
-@onready var skins_unlocked = [default_0_skin_unlocked, cube_1_skin_unlocked, spin_2_skin_unlocked]
+@onready var skins_unlocked = [default_0_skin_unlocked, cube_1_skin_unlocked, spin_2_skin_unlocked, puzzle_3_unlocked, infinty_4_unlocked, circle_5_unlocked,star_6_unlocked,crystel_7_unlocked,billiards_8_unlocked]
+@onready var skins_unlocked_backup = [default_0_skin_unlocked, cube_1_skin_unlocked, spin_2_skin_unlocked, puzzle_3_unlocked, infinty_4_unlocked, circle_5_unlocked,star_6_unlocked,crystel_7_unlocked,billiards_8_unlocked]
+@onready var skins = [default_0_skin_use, cube_1_skin_use, spin_2_skin_use, puzzle_3_skin_use,infinty_4_skin_use , circle_5_skin_use, star_6_skin_use,crystel_7_skin_use,billiards_8_skin_use]
+@onready var skins_backup = [default_0_skin_use, cube_1_skin_use, spin_2_skin_use, puzzle_3_skin_use,infinty_4_skin_use , circle_5_skin_use, star_6_skin_use,crystel_7_skin_use,billiards_8_skin_use]
+
+#json save
+#var json = JSON.new()
 
 func _ready():
 	load_game()
+	for i in range(skins_unlocked_backup.size()):
+		var n = i
+		skins_unlocked[n] = skins_unlocked_backup[i]
+	skins_unlocked_backup = skins_unlocked
+	for i in range(skins_backup.size()):
+		var n = i
+		skins[n] = skins_backup[i]
+	skins_backup = skins
 
+	
 func _process(_delta):
+	print(skins_unlocked)
 	var time = Time.get_unix_time_from_system()
 	if time > old_time:
 		if time > old_time + 10:
@@ -90,12 +129,19 @@ func save_game():
 	my_log("Saved current level to disk")
 	file.store_var(coins)
 	my_log("saved coins to disk")
-	file.store_var(skins)
+	file.store_var(skins_backup)
 	my_log("Saved skins to disk")
-	file.store_var(skins_unlocked)
+	file.store_var(skins_unlocked_backup)
 	my_log("Saved skins_unlocked to disk")
 	file.close()
-	
+#	save_json(skins_unlocked)
+
+#func save_json(content):
+#	var path = FileAccess.open(save_file_path, FileAccess.WRITE)
+#	var data = {}
+#	path.store_string(json.stringify(content))
+#	path.close()
+#	path = null
 
 func load_game():
 	if FileAccess.file_exists(save_file_path):
@@ -103,8 +149,8 @@ func load_game():
 		current_play_through_count = file.get_var()
 		current_lvl = file.get_var()
 		coins = file.get_var()
-		skins = file.get_var()
-		skins_unlocked = file.get_var()
+		skins_backup = file.get_var()
+		skins_unlocked_backup = file.get_var()
 		my_log("Loaded current play through count: " + str(current_play_through_count) + "\n" + "Loaded current_level: " + str(current_lvl) + "\n" + "Loaded coins" + str(coins) + "\n" + "Loaded skins: " + str(skins) + "\n" + "Loaded skins_unlocked: " + str(skins_unlocked))
 		file.close()
 	else:
@@ -112,4 +158,9 @@ func load_game():
 		current_play_through_count = 5
 		current_lvl = 1
 		coins = 0
-		
+#		skins_unlocked = [default_0_skin_unlocked, cube_1_skin_unlocked, spin_2_skin_unlocked, puzzle_3_unlocked, infinty_4_unlocked]
+
+#func load_json():
+#	var file = FileAccess.open(save_file_path, FileAccess.READ)
+#	var content = json.parse_string(file.get_as_text())
+
