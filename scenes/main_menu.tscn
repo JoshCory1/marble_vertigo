@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=64 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_5bn02"]
@@ -49,6 +49,8 @@
 [ext_resource type="PackedScene" uid="uid://bcuvn3ri5ykq2" path="res://scenes/level_30_fall.tscn" id="38_t6e5d"]
 [ext_resource type="PackedScene" uid="uid://gydl6g7u2bnm" path="res://scenes/level_31_fall.tscn" id="39_o75hj"]
 [ext_resource type="PackedScene" uid="uid://dt6bv6mavg77r" path="res://scenes/level_32_fall.tscn" id="41_vtluf"]
+[ext_resource type="PackedScene" uid="uid://dfwwslrv5eylt" path="res://scenes/level_33_fall.tscn" id="42_pvkag"]
+[ext_resource type="Texture2D" uid="uid://dwbnw3ad70cpx" path="res://assets/UI/heart.png" id="49_2acyd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
 font_color = Color(0, 0, 0, 1)
@@ -58,6 +60,70 @@ font_size = 45
 font_color = Color(0.431373, 1, 0.827451, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2hy6"]
+atlas = ExtResource("49_2acyd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkh3s"]
+atlas = ExtResource("49_2acyd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rckmt"]
+atlas = ExtResource("49_2acyd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f716"]
+atlas = ExtResource("49_2acyd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixkhd"]
+atlas = ExtResource("49_2acyd")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0bo7"]
+atlas = ExtResource("49_2acyd")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6pea"]
+atlas = ExtResource("49_2acyd")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjjbc"]
+atlas = ExtResource("49_2acyd")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kor7u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2hy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkh3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rckmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f716")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixkhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0bo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6pea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjjbc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v52m2"]
 font_size = 36
@@ -983,6 +1049,34 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
+[node name="MenuLevelButton_33" type="TextureButton" parent="Buttons" groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 5456.0
+offset_top = 472.0
+offset_right = 5520.0
+offset_bottom = 536.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("42_pvkag")
+current_level = 33
+
+[node name="Label" type="Label" parent="Buttons/MenuLevelButton_33"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="Buttons/MenuLevelButton_33"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
 [node name="MenuLevelButton_Boss_1" type="TextureButton" parent="Buttons" groups=["LevelButtons"]]
 z_index = 1001
 offset_left = 4181.0
@@ -1055,6 +1149,21 @@ offset_bottom = 33.5
 text = "999999"
 label_settings = SubResource("LabelSettings_rp1uo")
 
+[node name="HeartSprite" type="AnimatedSprite2D" parent="CanvasLayer2"]
+position = Vector2(868, 32)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_kor7u")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/HeartSprite"]
+offset_left = 10.0
+offset_top = -6.8
+offset_right = 50.0
+offset_bottom = 59.2
+scale = Vector2(0.17, 0.17)
+text = "9"
+label_settings = SubResource("LabelSettings_rp1uo")
+
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
 [node name="ShopButton" type="TextureButton" parent="CanvasLayer3"]
@@ -1125,5 +1234,6 @@ label_settings = SubResource("LabelSettings_v52m2")
 [connection signal="pressed" from="Buttons/MenuLevelButton_30" to="Buttons/MenuLevelButton_30" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_31" to="Buttons/MenuLevelButton_31" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_32" to="Buttons/MenuLevelButton_32" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/MenuLevelButton_33" to="Buttons/MenuLevelButton_33" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_Boss_1" to="Buttons/MenuLevelButton_Boss_1" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]

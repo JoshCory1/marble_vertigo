@@ -12,7 +12,9 @@ extends Node2D
 @onready var fade_duration: float = 0.5
 @onready var debug_menu = $DebugScreen
 @onready  var coin_count = $CanvasLayer2/CoinSprite/Label
-@onready var heart_count = null
+@onready var heart = $CanvasLayer2/HeartSprite
+@onready var heart_text = $CanvasLayer2/HeartSprite/Label
+
 
 var current_button_array_number = 0
 
@@ -49,6 +51,11 @@ func _ready():
 	black_can.visible = false
 func _process(_delta):
 	coin_count.text = str(GameController.coins)
+	if GameController.premium == true:
+		heart.visible = false
+	else:
+		heart_text.text = str(GameController.current_play_through_count)
+		
 
 func get_parallax_sprite_scale(parallax_sprite: Sprite2D):
 	var parallax_texure = parallax_sprite.get_texture()
