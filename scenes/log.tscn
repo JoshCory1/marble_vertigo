@@ -36,7 +36,6 @@ scale = Vector2(0.818182, 0.607844)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp"]
 position = Vector2(0, -133.54)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_w2dre")
 
 [node name="AreaBounceDown" type="Area2D" parent="."]

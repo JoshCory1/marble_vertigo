@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfwwslrv5eylt"]
+[gd_scene load_steps=18 format=3 uid="uid://dfwwslrv5eylt"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_od688"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_c6tmn"]
@@ -11,6 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://bvilpffa1lme2" path="res://scenes/log.tscn" id="9_ddvdm"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="10_o042p"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_tigkt"]
+[ext_resource type="PackedScene" uid="uid://bspwnpbok62fy" path="res://scenes/disappearing_platform.tscn" id="12_3vdtf"]
+[ext_resource type="PackedScene" uid="uid://ksn32v22b7vs" path="res://scenes/cannon.tscn" id="13_c6nsg"]
+[ext_resource type="PackedScene" uid="uid://cpxdnyrpl6w1e" path="res://scenes/cannon_trigger.tscn" id="14_f3oqq"]
+[ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="15_6rlxs"]
+[ext_resource type="PackedScene" uid="uid://bve0323bnyyvb" path="res://scenes/rouge_portal.tscn" id="16_wbg7b"]
+[ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="17_ea3uc"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_od688")
@@ -36,107 +42,264 @@ position = Vector2(387, 163)
 
 [node name="Log" parent="Logs" instance=ExtResource("9_ddvdm")]
 position = Vector2(384, 511)
+screenClamp = Vector2(300, 0)
+
+[node name="Log2" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(707, 511)
+screenClamp = Vector2(300, 0)
+
+[node name="Log3" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(1036, 511)
+screenClamp = Vector2(250, 0)
+
+[node name="Log4" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(3918, 756)
+screenClamp = Vector2(200, 0)
+
+[node name="Log5" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(4246, 756)
+screenClamp = Vector2(300, 0)
+
+[node name="Log8" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(4831, 886)
+screenClamp = Vector2(50, 0)
+
+[node name="Log9" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(5365, 886)
+screenClamp = Vector2(50, 0)
+
+[node name="Log10" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(5862, 886)
+screenClamp = Vector2(50, 0)
+
+[node name="Log6" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(4549, 756)
+screenClamp = Vector2(50, 0)
+
+[node name="Log7" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(4549, 756)
+screenClamp = Vector2(50, 0)
+
+[node name="Log11" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(6269, 1039)
+screenClamp = Vector2(100, 0)
+
+[node name="Log12" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(6803, 1039)
+screenClamp = Vector2(50, 0)
+
+[node name="Log13" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(7367, 1039)
+screenClamp = Vector2(150, 0)
+
+[node name="Log14" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(7825, 1149)
+screenClamp = Vector2(100, 0)
+
+[node name="Log18" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(9535, 1287)
+screenClamp = Vector2(100, 0)
+
+[node name="Log19" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(9957, 1287)
+screenClamp = Vector2(200, 0)
+
+[node name="Log20" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(10328, 1287)
+screenClamp = Vector2(200, 0)
+
+[node name="Log15" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(8136, 1149)
+screenClamp = Vector2(200, 0)
+
+[node name="Log16" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(8579, 1153)
+screenClamp = Vector2(200, 0)
+
+[node name="Log17" parent="Logs" instance=ExtResource("9_ddvdm")]
+position = Vector2(8990, 1149)
+screenClamp = Vector2(200, 0)
 
 [node name="Portals" type="Node" parent="."]
 
 [node name="Portal" parent="Portals" instance=ExtResource("10_o042p")]
-position = Vector2(334, -79)
+position = Vector2(1487, -219)
 
 [node name="Hazards" type="Node" parent="."]
 
 [node name="MovingHazard" parent="Hazards" instance=ExtResource("11_tigkt")]
-position = Vector2(767, 0)
-destination = Vector2(100, 0)
+position = Vector2(4834, 17)
+destination = Vector2(0, 1000)
+duration = 0.5
+wait_time_1 = 4.5
+bounce_force_min = 800.0
+bounce_force_max = 850.0
 
-[node name="Labels" type="Node" parent="."]
+[node name="MovingHazard2" parent="Hazards" instance=ExtResource("11_tigkt")]
+position = Vector2(5365, 17)
+destination = Vector2(0, 1000)
+duration = 0.5
+wait_time_1 = 4.5
+bounce_force_min = 800.0
+bounce_force_max = 850.0
 
-[node name="Label" type="Label" parent="Labels"]
-offset_left = 609.0
-offset_top = 376.0
-offset_right = 649.0
-offset_bottom = 399.0
-text = "pillars -->"
+[node name="MovingHazard3" parent="Hazards" instance=ExtResource("11_tigkt")]
+position = Vector2(5862, 19)
+destination = Vector2(0, 1000)
+duration = 0.5
+wait_time_1 = 4.5
+bounce_force_min = 800.0
+bounce_force_max = 850.0
 
-[node name="Label2" type="Label" parent="Labels"]
-offset_left = 2299.63
-offset_top = 396.352
-offset_right = 2339.63
-offset_bottom = 419.352
-text = "cannon"
+[node name="MovingHazard4" parent="Hazards" instance=ExtResource("11_tigkt")]
+position = Vector2(8555, 941)
+destination = Vector2(-600, 0)
+duration = 1.5
+bounce_force_min = 800.0
+bounce_force_max = 850.0
 
-[node name="Label3" type="Label" parent="Labels"]
-offset_left = 3623.33
-offset_top = 469.892
-offset_right = 3663.33
-offset_bottom = 492.892
-text = "rouge portals"
+[node name="MovingHazard5" parent="Hazards" instance=ExtResource("11_tigkt")]
+position = Vector2(10450, 1196)
+destination = Vector2(-600, -75)
+duration = 1.5
+bounce_force_min = 800.0
+bounce_force_max = 850.0
 
-[node name="Label4" type="Label" parent="Labels"]
-offset_left = 1261.59
-offset_top = 418.98
-offset_right = 1301.59
-offset_bottom = 441.98
-text = "dissapearing platforms -->"
+[node name="MovingHazard6" parent="Hazards" instance=ExtResource("11_tigkt")]
+position = Vector2(10087, 1198)
+destination = Vector2(-600, -75)
+duration = 1.3
+bounce_force_min = 800.0
+bounce_force_max = 850.0
 
-[node name="Label5" type="Label" parent="Labels"]
-offset_left = 2674.31
-offset_top = 481.69
-offset_right = 2714.31
-offset_bottom = 504.69
-text = "timed platforms -->"
+[node name="DisappearingPlatforms" type="Node" parent="."]
 
-[node name="Label6" type="Label" parent="Labels"]
-offset_left = 4616.94
-offset_top = 576.898
-offset_right = 4656.94
-offset_bottom = 599.898
-text = "cannon"
+[node name="DisappearingPlatform" parent="DisappearingPlatforms" instance=ExtResource("12_3vdtf")]
+position = Vector2(1436, 437.04)
 
-[node name="Label7" type="Label" parent="Labels"]
-offset_left = 3816.89
-offset_top = 617.215
-offset_right = 3856.89
-offset_bottom = 640.215
-text = "pillars -->"
+[node name="DisappearingPlatform2" parent="DisappearingPlatforms" instance=ExtResource("12_3vdtf")]
+position = Vector2(1628, 437.04)
 
-[node name="Label8" type="Label" parent="Labels"]
-offset_left = 4808.44
-offset_top = 746.987
-offset_right = 4848.44
-offset_bottom = 769.987
-text = "pillars and timed platforms -->"
+[node name="DisappearingPlatform3" parent="DisappearingPlatforms" instance=ExtResource("12_3vdtf")]
+position = Vector2(1820, 437.04)
 
-[node name="Label9" type="Label" parent="Labels"]
-offset_left = 5905.73
-offset_top = 687.457
-offset_right = 5945.73
-offset_bottom = 710.457
-text = "falling hazrds"
+[node name="DisappearingPlatform4" parent="DisappearingPlatforms" instance=ExtResource("12_3vdtf")]
+position = Vector2(2012, 437.04)
 
-[node name="Label10" type="Label" parent="Labels"]
-offset_left = 7483.05
-offset_top = 895.805
-offset_right = 7523.05
-offset_bottom = 918.805
-text = "cannon x 2"
+[node name="DisappearingPlatform5" parent="DisappearingPlatforms" instance=ExtResource("12_3vdtf")]
+position = Vector2(2204, 437.04)
 
-[node name="Label11" type="Label" parent="Labels"]
-offset_left = 9204.26
-offset_top = 1052.6
-offset_right = 9244.26
-offset_bottom = 1075.6
-text = "moveing hazrds"
+[node name="DisappearingPlatform6" parent="DisappearingPlatforms" instance=ExtResource("12_3vdtf")]
+position = Vector2(2396, 437.04)
 
-[node name="Label12" type="Label" parent="Labels"]
-offset_left = 7889.3
-offset_top = 1009.84
-offset_right = 7929.3
-offset_bottom = 1032.84
-text = "pillars -->"
+[node name="Cannons" type="Node" parent="."]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 9487.19
-offset_top = 1209.22
-offset_right = 9527.19
-offset_bottom = 1232.22
-text = "pillars"
+[node name="Cannon" parent="Cannons" instance=ExtResource("13_c6nsg")]
+position = Vector2(2385, 373)
+cannon_emit_selection = "cannon 1"
+
+[node name="Cannon2" parent="Cannons" instance=ExtResource("13_c6nsg")]
+position = Vector2(7557, 947)
+cannon_emit_selection = "cannon 2"
+
+[node name="CannonTriggers" type="Node" parent="."]
+
+[node name="CannonTrigger" parent="CannonTriggers" instance=ExtResource("14_f3oqq")]
+position = Vector2(2061.32, 325.822)
+scale = Vector2(1, 4.64)
+cannon_emit_selection = "cannon 1"
+activate_switch = false
+
+[node name="CannonTrigger5" parent="CannonTriggers" instance=ExtResource("14_f3oqq")]
+position = Vector2(1497, -213)
+scale = Vector2(0.879999, 2.48)
+cannon_emit_selection = "cannon 1"
+
+[node name="CannonTrigger2" parent="CannonTriggers" instance=ExtResource("14_f3oqq")]
+position = Vector2(706.324, 325.822)
+scale = Vector2(1, 4.64)
+cannon_emit_selection = "cannon 1"
+
+[node name="CannonTrigger3" parent="CannonTriggers" instance=ExtResource("14_f3oqq")]
+position = Vector2(7313, 787)
+scale = Vector2(1, 4.64)
+cannon_emit_selection = "cannon 2"
+activate_switch = false
+
+[node name="CannonTrigger4" parent="CannonTriggers" instance=ExtResource("14_f3oqq")]
+position = Vector2(5958, 787)
+scale = Vector2(1, 4.64)
+cannon_emit_selection = "cannon 2"
+
+[node name="TimedPlatforms" type="Node" parent="."]
+
+[node name="TimedPlatform" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(2613.89, 514.176)
+
+[node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(2796.89, 514.176)
+time_till_start = 4.0
+
+[node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(2977.89, 514.176)
+
+[node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(3160.89, 514.176)
+time_till_start = 4.0
+
+[node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(3341.89, 514.176)
+
+[node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(3524.89, 514.176)
+time_till_start = 4.0
+
+[node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(5092, 832)
+time_till_start = 4.0
+
+[node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(5623, 832)
+time_till_start = 4.0
+
+[node name="TimedPlatform9" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(6530, 985)
+time_till_start = 4.0
+
+[node name="TimedPlatform10" parent="TimedPlatforms" instance=ExtResource("15_6rlxs")]
+position = Vector2(7072, 985)
+time_till_start = 4.0
+
+[node name="RougePortals" type="Node" parent="."]
+
+[node name="RougePortal" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("16_wbg7b")]
+position = Vector2(3340, 448)
+portal_exit = NodePath("../../Portals/Portal")
+destination = Vector2(-800, 0)
+duration = 2.5
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("17_ea3uc")]
+position = Vector2(1035, 349)
+
+[node name="coin2" parent="Coins" instance=ExtResource("17_ea3uc")]
+position = Vector2(1820, 373)
+
+[node name="coin3" parent="Coins" instance=ExtResource("17_ea3uc")]
+position = Vector2(2978, 442)
+
+[node name="coin4" parent="Coins" instance=ExtResource("17_ea3uc")]
+position = Vector2(4246, 586)
+
+[node name="coin5" parent="Coins" instance=ExtResource("17_ea3uc")]
+position = Vector2(5623, 756)
+
+[node name="coin6" parent="Coins" instance=ExtResource("17_ea3uc")]
+position = Vector2(7072, 910)
+
+[node name="coin7" parent="Coins" instance=ExtResource("17_ea3uc")]
+position = Vector2(8990, 967)
+
+[node name="coin8" parent="Coins" instance=ExtResource("17_ea3uc")]
+position = Vector2(9957, 1114)

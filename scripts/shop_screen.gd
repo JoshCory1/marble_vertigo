@@ -186,7 +186,7 @@ func _on_billiards_pressed():
 	if GameController.skins_unlocked[8] == false && GameController.coins >= 1:
 		GameController.skins_unlocked[8] = true
 		GameController.coins -= 1
-		show_owned($Box/ColorRect/ScrollContainer/VBoxContainer/Crystel/CoinSprite,$Box/ColorRect/ScrollContainer/VBoxContainer/Crystel/LabelOwned)
+		show_owned($Box/ColorRect/ScrollContainer/VBoxContainer/Billiards/CoinSprite,$Box/ColorRect/ScrollContainer/VBoxContainer/Billiards/LabelOwned)
 	if GameController.skins_unlocked[8] == true:
 		GameController.use_skin(8)
 		close_shop.emit()
