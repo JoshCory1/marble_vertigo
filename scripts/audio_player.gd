@@ -17,6 +17,8 @@ extends Node
 @export var boost_shoot: AudioStream = null
 ## bullet_sfx
 @export var bullet_sfx: AudioStream = null
+## grav_switch_sfx
+@export var grav_switch_sfx: AudioStream = null
 ## stop_now 
 #@export var stop_now: bool = false
 ## voume of sound fx
@@ -46,6 +48,8 @@ func play_sfx(sfx_name: String):
 		stream = boost_shoot
 	elif sfx_name == "bullet_sfx":
 		stream = bullet_sfx
+	elif sfx_name == "grav_switch_sfx":
+		stream = grav_switch_sfx
 	else :
 		print("Invalid sfx name")
 		return
