@@ -89,7 +89,6 @@ func _ready():
 
 	
 func _process(_delta):
-	print(skins_unlocked)
 	var time = Time.get_unix_time_from_system()
 	if time > old_time:
 		if time > old_time + 10:
