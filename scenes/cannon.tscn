@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://ksn32v22b7vs"]
+[gd_scene load_steps=15 format=3 uid="uid://ksn32v22b7vs"]
 
 [ext_resource type="Script" path="res://scripts/cannon.gd" id="1_dvy44"]
 [ext_resource type="Texture2D" uid="uid://c7tfv86c08217" path="res://assets/obstacles/cannon.png" id="2_4cknr"]
+[ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="3_si8lo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7qrq"]
 size = Vector2(142, 130)
@@ -95,5 +96,11 @@ position = Vector2(1, -46)
 sprite_frames = SubResource("SpriteFrames_h10bg")
 autoplay = "default"
 frame_progress = 0.994382
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, 109)
+texture = ExtResource("3_si8lo")
+region_enabled = true
+region_rect = Rect2(7, 71, 180, 52)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
