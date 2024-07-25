@@ -23,7 +23,8 @@ func _on_body_entered(body):
 		if animation_player.animation != "clicked":
 			animation_player.play("clicked")
 		switch_off = true
-		AudioPlayer.play_sfx("grav_switch_sfx")
+		if visabile_sprite:
+			AudioPlayer.play_sfx("grav_switch_sfx")
 		body.gravity = -body.gravity
 func _process(_delta):
 	if switch_off:

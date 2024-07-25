@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://ouc8ccinnrfo" path="res://assets/pillar/log.png" id="2_eulm2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ltfh"]
-size = Vector2(195.455, 442.196)
+size = Vector2(195.455, 387.283)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2dre"]
-size = Vector2(400, 173.78)
+size = Vector2(400, 224.069)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spktx"]
 size = Vector2(72.7273, 411.348)
@@ -26,7 +26,7 @@ scale = Vector2(5.68182, 2.88501)
 texture = ExtResource("2_eulm2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6.81818, 11.4379)
+position = Vector2(-6.81818, -9.80392)
 scale = Vector2(1.54546, 1.13072)
 shape = SubResource("RectangleShape2D_1ltfh")
 
@@ -36,6 +36,7 @@ scale = Vector2(0.818182, 0.607844)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceUp"]
 position = Vector2(0, -133.54)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_w2dre")
 
 [node name="AreaBounceDown" type="Area2D" parent="."]
