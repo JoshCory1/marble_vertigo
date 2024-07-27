@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var time_till_disabled: float = 3.0
+@export var time_till_disabled: float = 4.0
 @export var time_till_enabled: float = 10.0
 @export var min_bounce: float = 300
 @export var max_bounce: float = 450
