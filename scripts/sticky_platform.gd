@@ -7,6 +7,8 @@ extends AnimatableBody2D
 @onready var timer = $Timer
 ## the end point of travel path
 @export var destination: Vector2
+## additionel wait time for !stuck
+@export var unstuck_duration_offset:float = 0
 ## the amount  of time it takes to travel between beginning and end points
 @export var duration: float = 3.0
 ## waite time at start point
@@ -26,7 +28,7 @@ var in_transition: bool = false
 
 
 func _ready() -> void:
-	timer.wait_time = (duration + wait_time_1 + wait_time_2)
+	timer.wait_time = (duration + wait_time_1 + wait_time_2 + unstuck_duration_offset)
 	timer.start()
 	var tween = create_tween()
 	tween.set_loops()
