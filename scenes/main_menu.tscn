@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=71 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_5bn02"]
@@ -55,7 +55,9 @@
 [ext_resource type="PackedScene" uid="uid://720ju6jl22ty" path="res://scenes/level_36_fall.tscn" id="45_hpqpj"]
 [ext_resource type="PackedScene" uid="uid://b7a3s73ogvn20" path="res://scenes/level_37_fall.tscn" id="46_kfdf7"]
 [ext_resource type="PackedScene" uid="uid://bad53jvhxckjj" path="res://scenes/level_38_fall.tscn" id="47_4x6bt"]
+[ext_resource type="PackedScene" uid="uid://di7ffoctubeu1" path="res://scenes/level_39_fall.tscn" id="48_x6ia5"]
 [ext_resource type="Texture2D" uid="uid://dwbnw3ad70cpx" path="res://assets/UI/heart.png" id="49_2acyd"]
+[ext_resource type="PackedScene" uid="uid://bccocvqj1vci7" path="res://scenes/level_40_fall.tscn" id="49_4p3du"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
 font_color = Color(0, 0, 0, 1)
@@ -1222,6 +1224,62 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
+[node name="MenuLevelButton_39" type="TextureButton" parent="Buttons" groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 5057.0
+offset_top = -1263.0
+offset_right = 5121.0
+offset_bottom = -1199.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("48_x6ia5")
+current_level = 39
+
+[node name="Label" type="Label" parent="Buttons/MenuLevelButton_39"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="Buttons/MenuLevelButton_39"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
+[node name="MenuLevelButton_40" type="TextureButton" parent="Buttons" groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 4872.0
+offset_top = -1445.0
+offset_right = 4936.0
+offset_bottom = -1381.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("49_4p3du")
+current_level = 40
+
+[node name="Label" type="Label" parent="Buttons/MenuLevelButton_40"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="Buttons/MenuLevelButton_40"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
 [node name="MenuLevelButton_Boss_1" type="TextureButton" parent="Buttons" groups=["LevelButtons"]]
 visible = false
 z_index = 1001
@@ -1259,7 +1317,7 @@ position = Vector2(5841, 1011)
 
 [node name="NegativeMarker" type="Marker2D" parent="."]
 z_index = 50
-position = Vector2(-162, -207)
+position = Vector2(-276, -1693)
 
 [node name="BlackCanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -1386,5 +1444,7 @@ label_settings = SubResource("LabelSettings_v52m2")
 [connection signal="pressed" from="Buttons/MenuLevelButton_36" to="Buttons/MenuLevelButton_36" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_37" to="Buttons/MenuLevelButton_37" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_38" to="Buttons/MenuLevelButton_38" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/MenuLevelButton_39" to="Buttons/MenuLevelButton_39" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/MenuLevelButton_40" to="Buttons/MenuLevelButton_40" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_Boss_1" to="Buttons/MenuLevelButton_Boss_1" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]

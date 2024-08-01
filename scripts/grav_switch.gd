@@ -6,8 +6,8 @@ extends Area2D
 #switch to control time un till it can be activated again
 var switch_off: bool = false
 
-# float to control amount of time untill can be active agian
-var time_till_active: float = 1.5
+## float to control amount of time untill can be active agian
+@export var time_till_active: float = 5.0
 
 ## bool to contal sprite visability
 @export var visabile_sprite: bool = true

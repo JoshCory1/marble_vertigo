@@ -387,7 +387,7 @@ position = Vector2(10800, -379)
 [node name="StickyPlatform" parent="StickyPlatforms" instance=ExtResource("17_v7nmh")]
 position = Vector2(5226, 333)
 destination = Vector2(0, -600)
-unstuck_duration_offset = -2.0
+unstuck_duration_offset = -1.9
 duration = 2.0
 bounce_force_min = 600.0
 bounce_force_max = 850.0
