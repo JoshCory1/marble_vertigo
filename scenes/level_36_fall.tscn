@@ -125,7 +125,6 @@ screenClamp = Vector2(50, 0)
 position = Vector2(1071, -313)
 
 [node name="GravSwitch" parent="Portals/Portal" instance=ExtResource("12_cydyj")]
-visabile_sprite = false
 
 [node name="Hazards" type="Node" parent="."]
 

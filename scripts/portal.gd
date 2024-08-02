@@ -1,8 +1,17 @@
 extends Area2D
 
+## portal that this portal exits to
 @export var exit_point: Node = null
+## bool that controles sprite Visibility
+@export var visible_sprite: bool = true
+#sprite reference
+@onready var sprite = $Sprite2D
 
 var not_active: bool = false
+
+func _ready():
+	if !visible_sprite:
+		sprite.visible = false
 
 func _process(_delta):
 	if not_active == true:

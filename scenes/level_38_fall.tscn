@@ -200,7 +200,6 @@ screenClamp = Vector2(300, 0)
 position = Vector2(1026, 20)
 
 [node name="GravSwitch" parent="Portals/Portal" instance=ExtResource("15_vmr1j")]
-visabile_sprite = false
 
 [node name="RougePortal" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("12_ntchh")]
 position = Vector2(15296, 310)
@@ -349,7 +348,6 @@ position = Vector2(7812.98, 901.082)
 
 [node name="GravSwitch" parent="Boosts/BoostUp" instance=ExtResource("15_vmr1j")]
 position = Vector2(-1.49854, 4.49493)
-visabile_sprite = false
 
 [node name="BoostUp2" parent="Boosts" instance=ExtResource("14_imdtm")]
 position = Vector2(7812.99, 129.453)
@@ -367,7 +365,6 @@ position = Vector2(6871, -364)
 no_charge_up = true
 
 [node name="GravSwitch" parent="Boosts/BoostDown" instance=ExtResource("15_vmr1j")]
-visabile_sprite = false
 
 [node name="GravSwitchs" type="Node" parent="."]
 

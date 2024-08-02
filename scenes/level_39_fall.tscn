@@ -198,7 +198,6 @@ position = Vector2(2154, 523)
 
 [node name="GravSwitch" parent="Boosts/BoostUp3" instance=ExtResource("14_v3qg2")]
 position = Vector2(0.145996, -3.03278)
-visabile_sprite = false
 
 [node name="BoostUp2" parent="Boosts" instance=ExtResource("13_aebq7")]
 position = Vector2(1249.51, -2)
