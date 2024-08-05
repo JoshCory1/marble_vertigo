@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv21juxsplkpx"]
+[gd_scene load_steps=7 format=3 uid="uid://csk4k2q580bvk"]
 
-[ext_resource type="Script" path="res://scripts/environment.gd" id="1_pwrgr"]
-[ext_resource type="Texture2D" uid="uid://bxb3apcd0lo2w" path="res://assets/backgrounds/sky_landsape_background.png" id="2_ku47h"]
-[ext_resource type="Texture2D" uid="uid://m3t7r0vi8ief" path="res://assets/backgrounds/leaf.png" id="3_u0pi4"]
-[ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="4_45how"]
-[ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="5_rdc8f"]
+[ext_resource type="Script" path="res://scripts/environment.gd" id="1_pje4g"]
+[ext_resource type="Texture2D" uid="uid://cbxw0d0uiwn76" path="res://assets/backgrounds/winter_sky_bg.png" id="2_bub02"]
+[ext_resource type="Texture2D" uid="uid://bt0qdv3rdjfln" path="res://assets/backgrounds/clouds_loop-sheet.png" id="3_xyin1"]
+[ext_resource type="Texture2D" uid="uid://bn3n6dxgk533a" path="res://assets/backgrounds/clouds_vs_loop.png" id="4_1hp4h"]
+[ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="4_gld80"]
+[ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="5_0yysy"]
 
-[node name="EnvironmentFall" type="Node2D" node_paths=PackedStringArray("parallax1", "parallax2", "parallax3")]
-script = ExtResource("1_pwrgr")
+[node name="EnvironmentWinter" type="Node2D" node_paths=PackedStringArray("parallax1", "parallax2", "parallax3")]
+script = ExtResource("1_pje4g")
+scroll_speed_paralax_3 = Vector2(-15, 5)
 parallax1 = NodePath("ParallaxBG/ParallaxLayer1")
 parallax2 = NodePath("ParallaxBG/ParallaxLayer2")
 parallax3 = NodePath("ParallaxBG/ParallaxLayer3")
@@ -19,29 +21,31 @@ z_index = -100
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer1"]
-texture = ExtResource("2_ku47h")
+texture = ExtResource("2_bub02")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -99
-motion_scale = Vector2(0.5, 0)
 motion_mirroring = Vector2(960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer2"]
 modulate = Color(1, 1, 1, 0.733333)
+self_modulate = Color(1, 1, 1, 0.52549)
 texture_repeat = 2
-texture = ExtResource("3_u0pi4")
+texture = ExtResource("3_xyin1")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -99
-motion_mirroring = Vector2(960, 0)
+motion_mirroring = Vector2(960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer3"]
+modulate = Color(1, 1, 1, 0.74902)
+texture = ExtResource("4_1hp4h")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
@@ -52,7 +56,7 @@ layer = -105
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.643137, 0.858824, 1, 1)
 scale = Vector2(3.74609, 2.10547)
-texture = ExtResource("4_45how")
+texture = ExtResource("4_gld80")
 
 [node name="BlackCanvasLayer" type="CanvasLayer" parent="."]
 layer = 101
@@ -66,4 +70,4 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="DebugScreen" parent="." instance=ExtResource("5_rdc8f")]
+[node name="DebugScreen" parent="." instance=ExtResource("5_0yysy")]

@@ -1,9 +1,11 @@
 extends Node2D
 
 @export var fade_duration: float = 0.5
-@export var scroll_speed = Vector2(0,0)
+@export var scroll_speed_paralax_2 = Vector2(0,0)
+@export var scroll_speed_paralax_3 = Vector2(0,0)
 
-@onready var sprite = $ParallaxBG/ParallaxLayer2/Sprite2D
+@onready var sprite_paralax_2 = $ParallaxBG/ParallaxLayer2/Sprite2D
+@onready var sprite_paralax_3 = $ParallaxBG/ParallaxLayer2/Sprite2D
 @export var parallax1: ParallaxLayer
 @export var parallax2: ParallaxLayer
 @export var parallax3: ParallaxLayer
@@ -29,9 +31,12 @@ func _ready():
 		get_tree().paused = false
 
 func _process(delta):
-	sprite.region_rect.position += delta * Vector2(scroll_speed)
-	if sprite.region_rect.position >= Vector2(960, 540):
-		sprite.region_rect.position = Vector2.ZERO
+	sprite_paralax_2.region_rect.position += delta * Vector2(scroll_speed_paralax_2)
+	if sprite_paralax_2.region_rect.position >= Vector2(960, 540):
+		sprite_paralax_2.region_rect.position = Vector2.ZERO
+	sprite_paralax_3.region_rect.position += delta * Vector2(scroll_speed_paralax_3)
+	if sprite_paralax_3.region_rect.position >= Vector2(960, 540):
+		sprite_paralax_3.region_rect.position = Vector2.ZERO
 
 
 func set_bg_size_scale():
