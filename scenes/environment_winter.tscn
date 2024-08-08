@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://csk4k2q580bvk"]
 
 [ext_resource type="Script" path="res://scripts/environment.gd" id="1_pje4g"]
-[ext_resource type="Texture2D" uid="uid://cbxw0d0uiwn76" path="res://assets/backgrounds/winter_sky_bg.png" id="2_bub02"]
+[ext_resource type="Texture2D" uid="uid://bnycuc6uw6b1o" path="res://assets/backgrounds/star_night_loop.png" id="2_d7gd4"]
 [ext_resource type="Texture2D" uid="uid://bt0qdv3rdjfln" path="res://assets/backgrounds/clouds_loop-sheet.png" id="3_xyin1"]
 [ext_resource type="Texture2D" uid="uid://bn3n6dxgk533a" path="res://assets/backgrounds/clouds_vs_loop.png" id="4_1hp4h"]
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="4_gld80"]
@@ -18,10 +18,12 @@ parallax3 = NodePath("ParallaxBG/ParallaxLayer3")
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -100
-motion_scale = Vector2(0, 0)
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer1"]
-texture = ExtResource("2_bub02")
+texture_repeat = 2
+texture = ExtResource("2_d7gd4")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
@@ -31,24 +33,24 @@ z_index = -99
 motion_mirroring = Vector2(960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer2"]
-modulate = Color(1, 1, 1, 0.733333)
-self_modulate = Color(1, 1, 1, 0.52549)
+show_behind_parent = true
 texture_repeat = 2
 texture = ExtResource("3_xyin1")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 960, 540)
+region_rect = Rect2(0, 1, 960, 540)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -99
 motion_mirroring = Vector2(960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer3"]
-modulate = Color(1, 1, 1, 0.74902)
+modulate = Color(1, 1, 1, 0.482353)
 texture = ExtResource("4_1hp4h")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
+region_filter_clip_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -105

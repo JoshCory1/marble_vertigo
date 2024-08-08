@@ -23,6 +23,7 @@ texture = ExtResource("2_ku47h")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
+region_filter_clip_enabled = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -99

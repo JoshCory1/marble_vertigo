@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://oy3kwcnphhxo"]
 
 [ext_resource type="Script" path="res://scripts/environment.gd" id="1_0s0xi"]
-[ext_resource type="Texture2D" uid="uid://bnycuc6uw6b1o" path="res://assets/backgrounds/star_night_loop.png" id="1_w0k5a"]
 [ext_resource type="Texture2D" uid="uid://bn3n6dxgk533a" path="res://assets/backgrounds/clouds_vs_loop.png" id="2_0e3i3"]
+[ext_resource type="Texture2D" uid="uid://brqlpnn2mhqty" path="res://assets/backgrounds/sky_bg.png" id="2_48hdr"]
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="3_joeyc"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="4_o2hnm"]
 
@@ -15,16 +15,15 @@ parallax2 = NodePath("ParallaxBG/ParallaxLayer2")
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -100
-motion_scale = Vector2(0.25, 0.25)
-motion_mirroring = Vector2(960, 540)
+motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer1"]
 modulate = Color(0.811765, 1, 1, 1)
-texture_repeat = 2
-texture = ExtResource("1_w0k5a")
+texture = ExtResource("2_48hdr")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
+region_filter_clip_enabled = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -99

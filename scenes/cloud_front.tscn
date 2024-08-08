@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsmygla6tqib"]
+
+[ext_resource type="Texture2D" uid="uid://dva2pyp7m3tdv" path="res://assets/pillar/cloud_front.png" id="1_cjfhs"]
+[ext_resource type="Script" path="res://scripts/cloud_front.gd" id="1_df5ld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bvkp"]
+size = Vector2(940, 84)
+
+[node name="CloudFront" type="StaticBody2D"]
+script = ExtResource("1_df5ld")
+
+[node name="SpawnPositions" type="Node2D" parent="."]
+
+[node name="SpawnPosition_01" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(-357, 0)
+gizmo_extents = 25.0
+
+[node name="SpawnPosition_02" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(-236, 0)
+gizmo_extents = 25.0
+
+[node name="SpawnPosition_03" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(-115, 0)
+gizmo_extents = 25.0
+
+[node name="SpawnPosition_07" type="Marker2D" parent="SpawnPositions"]
+gizmo_extents = 25.0
+
+[node name="SpawnPosition_04" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(109, 0)
+gizmo_extents = 25.0
+
+[node name="SpawnPosition_05" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(231, 0)
+gizmo_extents = 25.0
+
+[node name="SpawnPosition_06" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(370, 0)
+gizmo_extents = 25.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8bvkp")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cjfhs")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

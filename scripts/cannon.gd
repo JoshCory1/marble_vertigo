@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-## position of bullet relative to cannon
-@export var bullet_position_offset: float = -75.0
 ## speed of the bullet
 @export var bullet_speed: float = -125.0
 ## min rate of bullet fire
@@ -18,6 +16,10 @@ var bullet_scene = preload("res://scenes/bullet.tscn")
 var active: bool = false
 # refrence to cannon trigger
 @onready var cannon_triggers = get_tree().get_nodes_in_group("CannonTrigger")
+# refrence to Cannon Container
+@onready var cannon_container = $Node2D
+# refrence to Timer
+@onready var timer = $Timer
 
 
 func _ready():
@@ -27,13 +29,13 @@ func _ready():
 		trigger.cannon_active.connect(_on_cannon_active)
 
 func _process(_delta):
-	$Timer.wait_time = randf_range(min_rate_of_fire,max_rate_of_fire)
+	timer.wait_time = randf_range(min_rate_of_fire,max_rate_of_fire)
 
 func shoot():
 	var bullet_instance = bullet_scene.instantiate()
 	bullet_instance.speed = bullet_speed
-	bullet_instance.global_position.x += bullet_position_offset
-	add_child(bullet_instance)
+	cannon_container.add_child(bullet_instance)
+	bullet_instance.global_position = global_position
 	AudioPlayer.play_sfx("bullet_sfx")
 	
 

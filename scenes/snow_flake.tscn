@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dolp2kj804iji"]
+
+[ext_resource type="Texture2D" uid="uid://d3r1pn4sp0vf0" path="res://assets/pillar/snowflake.png" id="1_lpxtc"]
+[ext_resource type="Script" path="res://scripts/snow_flake.gd" id="1_xorhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eunn8"]
+size = Vector2(66, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s3wk"]
+size = Vector2(66, 12)
+
+[node name="SnowFlake" type="AnimatableBody2D"]
+show_behind_parent = true
+collision_layer = 2
+script = ExtResource("1_xorhn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eunn8")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lpxtc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -27)
+shape = SubResource("RectangleShape2D_2s3wk")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

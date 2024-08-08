@@ -3,7 +3,7 @@ extends Node2D
 @export var music_track: AudioStream = null
 @export var music_volume: float = -10
 
-@onready var coins_in_level = get_tree().get_nodes_in_group("Coins") 
+@onready var coins_in_level = get_tree().get_nodes_in_group("Coins")
 
 var coins_this_level: int = 0
 var viewport_size: Vector2

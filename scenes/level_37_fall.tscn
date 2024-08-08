@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7a3s73ogvn20"]
+[gd_scene load_steps=18 format=3 uid="uid://b7a3s73ogvn20"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_viqjh"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_it0f7"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_h3q5p"]
 [ext_resource type="PackedScene" uid="uid://d8gsffpu18sb" path="res://scenes/grav_switch.tscn" id="12_bq7x7"]
 [ext_resource type="PackedScene" uid="uid://bspwnpbok62fy" path="res://scenes/disappearing_platform.tscn" id="13_62r4a"]
+[ext_resource type="PackedScene" uid="uid://cfm85q7hteqdx" path="res://scenes/animatable_mover.tscn" id="14_32o6c"]
 [ext_resource type="PackedScene" uid="uid://ksn32v22b7vs" path="res://scenes/cannon.tscn" id="14_gqn6o"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="14_r0r56"]
 [ext_resource type="PackedScene" uid="uid://cpxdnyrpl6w1e" path="res://scenes/cannon_trigger.tscn" id="15_qvnap"]
@@ -326,47 +327,43 @@ position = Vector2(4685, -690)
 
 [node name="Cannons" type="Node" parent="."]
 
-[node name="MovingHazard" parent="Cannons" instance=ExtResource("11_h3q5p")]
-position = Vector2(11958, -253)
-scale = Vector2(1, -1)
-destination = Vector2(0, 200)
-duration = 2.0
-
-[node name="Cannon3" parent="Cannons/MovingHazard" instance=ExtResource("14_gqn6o")]
-max_rate_of_fire = 15.0
-cannon_emit_selection = "cannon 3"
-
-[node name="MovingHazard2" parent="Cannons" instance=ExtResource("11_h3q5p")]
+[node name="AnimatableMover3" parent="Cannons" instance=ExtResource("14_32o6c")]
 position = Vector2(11958, -253)
 scale = Vector2(1, -1)
 destination = Vector2(0, -200)
-duration = 2.0
 
-[node name="Cannon2" parent="Cannons/MovingHazard2" instance=ExtResource("14_gqn6o")]
+[node name="Cannon2" parent="Cannons/AnimatableMover3" instance=ExtResource("14_gqn6o")]
 position = Vector2(-2700, -663)
 scale = Vector2(1, -1)
 max_rate_of_fire = 15.0
 cannon_emit_selection = "cannon 2"
 
-[node name="MovingHazard3" parent="Cannons" instance=ExtResource("11_h3q5p")]
+[node name="AnimatableMover4" parent="Cannons" instance=ExtResource("14_32o6c")]
 position = Vector2(11958, -253)
 scale = Vector2(1, -1)
 destination = Vector2(0, -200)
-duration = 2.0
 
-[node name="Cannon4" parent="Cannons/MovingHazard3" instance=ExtResource("14_gqn6o")]
+[node name="Cannon3" parent="Cannons/AnimatableMover4" instance=ExtResource("14_gqn6o")]
+max_rate_of_fire = 15.0
+cannon_emit_selection = "cannon 3"
+
+[node name="AnimatableMover2" parent="Cannons" instance=ExtResource("14_32o6c")]
+position = Vector2(11958, -253)
+scale = Vector2(1, -1)
+destination = Vector2(0, -200)
+
+[node name="Cannon4" parent="Cannons/AnimatableMover2" instance=ExtResource("14_gqn6o")]
 position = Vector2(1556, -1025)
 scale = Vector2(1, -1)
 max_rate_of_fire = 15.0
 cannon_emit_selection = "cannon 5"
 
-[node name="MovingHazard4" parent="Cannons" instance=ExtResource("11_h3q5p")]
+[node name="AnimatableMover" parent="Cannons" instance=ExtResource("14_32o6c")]
 position = Vector2(11958, -253)
 scale = Vector2(1, -1)
-destination = Vector2(0, 200)
-duration = 2.0
+destination = Vector2(0, -200)
 
-[node name="Cannon5" parent="Cannons/MovingHazard4" instance=ExtResource("14_gqn6o")]
+[node name="Cannon5" parent="Cannons/AnimatableMover" instance=ExtResource("14_gqn6o")]
 position = Vector2(4817, 306)
 max_rate_of_fire = 15.0
 cannon_emit_selection = "cannon 4"
@@ -396,7 +393,7 @@ scale = Vector2(2.83033, 5.165)
 cannon_emit_selection = "cannon 4"
 
 [node name="CannonTrigger3" parent="Cannons/Triggers" instance=ExtResource("15_qvnap")]
-position = Vector2(9029, 494)
+position = Vector2(9161, 476)
 scale = Vector2(3.19999, 4.72)
 cannon_emit_selection = "cannon 2"
 activate_switch = false
