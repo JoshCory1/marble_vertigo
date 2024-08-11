@@ -3,6 +3,9 @@ extends StaticBody2D
 ## sets time for next snowflake
 @export var next_snowflake: float = 1
 
+## sets time for snowflake timeout
+@export var snowflake_timeout: float = 60.0
+
 # refrnce to snowflake
 var snowflake = preload("res://scenes/snow_flake.tscn")
 
@@ -21,6 +24,7 @@ func spawn_snowflake():
 	var snowflake_instance = snowflake.instantiate()
 	
 	snowflake_instance.position = random_spawn_positions.position
+	snowflake_instance.timer_set_point = snowflake_timeout
 	add_child(snowflake_instance)
 
 

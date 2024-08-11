@@ -7,7 +7,7 @@
 size = Vector2(66, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2s3wk"]
-size = Vector2(66, 12)
+size = Vector2(66, 66)
 
 [node name="SnowFlake" type="AnimatableBody2D"]
 show_behind_parent = true
@@ -28,7 +28,6 @@ autostart = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_2s3wk")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
