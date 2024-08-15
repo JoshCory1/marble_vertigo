@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 ## sets time for next snowflake
-@export var next_snowflake: float = 1
+@export var next_snowflake: float = 1.4
 
 ## sets time for snowflake timeout
 @export var snowflake_timeout: float = 60.0

@@ -192,7 +192,7 @@ position = Vector2(637, 351)
 screenClamp = Vector2(300, 0)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("9_aw3v5")]
-position = Vector2(949, 343)
+position = Vector2(949, 346)
 screenClamp = Vector2(300, 0)
 
 [node name="Pillar39" parent="Pillars" instance=ExtResource("9_aw3v5")]
@@ -529,6 +529,9 @@ time_till_start = 4.0
 
 [node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("16_dpcr7")]
 position = Vector2(6728, -979.322)
+
+[node name="TimedPlatform12" parent="TimedPlatforms" instance=ExtResource("16_dpcr7")]
+position = Vector2(7104, -979.322)
 
 [node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("16_dpcr7")]
 position = Vector2(6920, -955.322)

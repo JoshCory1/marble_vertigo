@@ -1,8 +1,28 @@
 extends Area2D
 
+##the end point of travel path
+@export var destination: Vector2
+##the amount  of time it takes to travel between beginning and end points
+@export var duration: float = 1.0
+##waite time at start point
+@export var wait_time_1: float = 0.0
+##waite time at end point
+@export var wait_time_2: float = 0.0
+##time untill player exits level
 @export var time_till_exit = 0.8
+##the current level before level += 1
 @export var current_lvl = 1
+#refrence to the level
 @onready var level = $".."
+
+func _ready():
+	var tween = create_tween()
+	tween.set_loops()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.tween_interval(wait_time_1)
+	tween.tween_property(self, "global_position", global_position + destination, duration)
+	tween.tween_interval(wait_time_2)
+	tween.tween_property(self, "global_position", global_position, duration)
 
 func _on_body_entered(body):
 	if GameController.current_lvl <= current_lvl:
