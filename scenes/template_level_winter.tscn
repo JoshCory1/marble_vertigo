@@ -18,7 +18,7 @@ script = ExtResource("1_g83b1")
 music_track = ExtResource("2_kpjm5")
 
 [node name="Exit" parent="." instance=ExtResource("3_c4ia3")]
-position = Vector2(-356, -223)
+position = Vector2(1103, -406)
 
 [node name="Player" parent="." instance=ExtResource("6_xxr3v")]
 position = Vector2(387, 163)
@@ -41,18 +41,18 @@ position = Vector2(381, 351)
 position = Vector2(637, 351)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("9_yodeg")]
-position = Vector2(949, 327)
+position = Vector2(949, 351)
 
 [node name="Portals" type="Node" parent="."]
 
 [node name="Portal" parent="Portals" instance=ExtResource("10_y66km")]
-position = Vector2(-346, -468)
+position = Vector2(1113, -651)
 
 [node name="Hazards" type="Node" parent="."]
 
 [node name="MovingHazard" parent="Hazards" instance=ExtResource("11_exm6g")]
-position = Vector2(-347, 65)
+position = Vector2(1112, -118)
 destination = Vector2(100, 0)
 
 [node name="CloudFront" parent="." instance=ExtResource("13_07dkt")]
-position = Vector2(559.894, -1105)
+position = Vector2(1028, -1041)

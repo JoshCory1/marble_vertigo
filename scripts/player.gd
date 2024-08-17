@@ -43,7 +43,7 @@ func _process(_delta):
 		debug_mode = false
 
 func _physics_process(delta):
-	if stop_velocity == false:
+	if !stop_velocity:
 		if debug == false:
 			if use_accelerometer:
 				var mobile_input = Input.get_accelerometer()

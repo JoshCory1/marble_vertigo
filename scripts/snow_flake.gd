@@ -1,20 +1,19 @@
 extends AnimatableBody2D
 
-## controles gravity speed
+##controles gravity speed
 @export var grav_speed: float = 35
 
-# timer refrence
+#timer refrence
 @onready var timer = $Timer
 
 #timer set point
 var timer_set_point: float = 60
 
+#min bounce force amount of player bounce
 var bounce_force_min: float = 300
+#max bounce force amount of player bounce
 var bounce_force_max: float = 450
 
-func _ready():
-	pass
-	
 func  _physics_process(delta):
 	position.y += grav_speed * delta
 	timer.wait_time = timer_set_point

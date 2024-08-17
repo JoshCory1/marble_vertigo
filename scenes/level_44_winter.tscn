@@ -121,7 +121,7 @@ position = Vector2(17575, -1402)
 screenClamp = Vector2(150, 0)
 
 [node name="Pillar11" parent="Pillars" instance=ExtResource("9_i3l1n")]
-position = Vector2(5623, -1754)
+position = Vector2(5623, -1753)
 screenClamp = Vector2(300, 0)
 
 [node name="Pillar12" parent="Pillars" instance=ExtResource("9_i3l1n")]
@@ -235,14 +235,14 @@ bounce_force_max = 850
 [node name="GravSwitch" parent="GravSwitchs" instance=ExtResource("15_u5v7o")]
 position = Vector2(2830, -61)
 
-[node name="GravSwitch3" parent="GravSwitchs" instance=ExtResource("15_u5v7o")]
-position = Vector2(5135, -270)
-
 [node name="GravSwitch2" parent="GravSwitchs" instance=ExtResource("15_u5v7o")]
 position = Vector2(16135, 57)
 
 [node name="GravSwitch4" parent="GravSwitchs" instance=ExtResource("15_u5v7o")]
 position = Vector2(6262, -1618)
+
+[node name="GravSwitch5" parent="GravSwitchs" instance=ExtResource("15_u5v7o")]
+position = Vector2(3612, -1902.01)
 
 [node name="TimedPlatforms" type="Node" parent="."]
 
@@ -258,8 +258,8 @@ time_till_start = 4.0
 [node name="BoostUp" parent="Boosts" instance=ExtResource("17_uscgy")]
 position = Vector2(5129.54, -275.635)
 
-[node name="GravSwitch2" parent="Boosts/BoostUp" instance=ExtResource("15_u5v7o")]
-position = Vector2(-1517.54, -1626.37)
+[node name="GravSwitch3" parent="Boosts/BoostUp" instance=ExtResource("15_u5v7o")]
+position = Vector2(5.45996, 5.63501)
 visibile_sprite = false
 
 [node name="BoostUp2" parent="Boosts" instance=ExtResource("17_uscgy")]

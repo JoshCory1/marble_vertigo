@@ -1,9 +1,9 @@
 extends Area2D
 
 ##min bounce force amount of player bounce
-@export var bounce_force_min: int = 500
+@export var bounce_force_min: int = 750
 ##max bounce force amount of player bounce
-@export var bounce_force_max: int = 650
+@export var bounce_force_max: int = 850
 #sprite rfrence
 @onready var sprite = $AnimatedSprite2D
 
