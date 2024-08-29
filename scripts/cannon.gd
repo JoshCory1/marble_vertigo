@@ -1,12 +1,12 @@
 extends StaticBody2D
 
-## speed of the bullet
+##speed of the bullet
 @export var bullet_speed: float = -125.0
-## min rate of bullet fire
+##min rate of bullet fire
 @export var min_rate_of_fire: float = 2.0
-## max rate of bullet fire
+##max rate of bullet fire
 @export var max_rate_of_fire: float = 10.0
-## value to mach with sgnal of cannon_triggers
+##value to mach with sgnal of cannon_triggers
 @export var cannon_emit_selection: String = "text here"
 ## sprite visibility toggle
 @export var platform_sprite_visibility_toggle: bool = true

@@ -14,13 +14,16 @@ var bounce_force_min: float = 300
 #max bounce force amount of player bounce
 var bounce_force_max: float = 450
 
+
+
 func  _physics_process(delta):
 	position.y += grav_speed * delta
 	timer.wait_time = timer_set_point
 	
 
 func _on_timer_timeout():
-	queue_free()
+	pass
+#	queue_free()
 
 
 func _on_area_2d_body_entered(body):

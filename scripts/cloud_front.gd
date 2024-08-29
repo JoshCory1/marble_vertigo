@@ -26,6 +26,8 @@ func spawn_snowflake():
 	snowflake_instance.position = random_spawn_positions.position
 	snowflake_instance.timer_set_point = snowflake_timeout
 	add_child(snowflake_instance)
+	await get_tree().create_timer(snowflake_timeout).timeout
+	snowflake_instance.queue_free()
 
 
 func _on_timer_timeout():
