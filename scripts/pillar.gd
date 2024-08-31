@@ -13,7 +13,7 @@ var dragging = false
 @export var bounce_force_max: int = 450
 @export var reternSpeed: float = 300
 @export var movetospeed: float = 600
-@export var screenClamp: Vector2 = Vector2(600, 0)
+@export var screenClamp: Vector2 = Vector2(150, 0)
 
 @onready var player = get_tree().get_first_node_in_group("Player")
 
