@@ -12,6 +12,8 @@ extends Area2D
 @export var time_till_exit = 0.8
 ##the current level before level += 1
 @export var current_lvl = 1
+##amount to increase current level
+@export var amount_to_increase: int = 1
 #refrence to the level
 @onready var level = $".."
 
@@ -26,7 +28,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if GameController.current_lvl <= current_lvl:
-		GameController.current_lvl = GameController.current_lvl + 1
+		GameController.current_lvl = GameController.current_lvl + amount_to_increase
 	GameController.coins += level.coins_this_level
 	GameController.save_game()
 

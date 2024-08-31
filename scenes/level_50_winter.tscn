@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bxsbgm51pdai4"]
+[gd_scene load_steps=24 format=3 uid="uid://bxsbgm51pdai4"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_01e1d"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_lkah4"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="8_hsowh"]
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="9_mhvv8"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="10_4e4gp"]
-[ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_gascn"]
 [ext_resource type="PackedScene" uid="uid://bsmygla6tqib" path="res://scenes/cloud_front.tscn" id="12_iithl"]
 [ext_resource type="PackedScene" uid="uid://d8gsffpu18sb" path="res://scenes/grav_switch.tscn" id="13_rqxwu"]
 [ext_resource type="PackedScene" uid="uid://bspwnpbok62fy" path="res://scenes/disappearing_platform.tscn" id="14_40kmm"]
@@ -169,12 +168,6 @@ exit_point = NodePath("../Portal2")
 
 [node name="Portal2" parent="Portals" instance=ExtResource("10_4e4gp")]
 position = Vector2(16581, -5502)
-
-[node name="Hazards" type="Node" parent="."]
-
-[node name="MovingHazard" parent="Hazards" instance=ExtResource("11_gascn")]
-position = Vector2(1112, -118)
-destination = Vector2(100, 0)
 
 [node name="CloudFronts" type="Node" parent="."]
 

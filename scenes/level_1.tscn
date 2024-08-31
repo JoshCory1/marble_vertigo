@@ -21,6 +21,8 @@ music_track = ExtResource("2_7477w")
 
 [node name="Exit" parent="." instance=ExtResource("6_bkn5x")]
 position = Vector2(2925, 141)
+current_lvl = 99
+amount_to_increase = 99
 
 [node name="Ground" parent="." instance=ExtResource("11_inbuy")]
 z_index = 3
