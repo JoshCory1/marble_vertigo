@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brqlpnn2mhqty"
-path="res://.godot/imported/sky_bg.png-212b5d8595cceff2600ea284069f1862.ctex"
+uid="uid://d2molqiye2f0k"
+path="res://.godot/imported/stars_night_background_winter.png-ab3ad41c08b64c6ad6b4c8af79d19c95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/sky_bg.png"
-dest_files=["res://.godot/imported/sky_bg.png-212b5d8595cceff2600ea284069f1862.ctex"]
+source_file="res://assets/backgrounds/stars_night_background_winter.png"
+dest_files=["res://.godot/imported/stars_night_background_winter.png-ab3ad41c08b64c6ad6b4c8af79d19c95.ctex"]
 
 [params]
 

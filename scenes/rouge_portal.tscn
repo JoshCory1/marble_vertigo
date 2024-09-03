@@ -7,7 +7,7 @@
 radius = 6.0
 
 [node name="RougePortal" type="AnimatableBody2D"]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.9, 0.9)
 collision_layer = 2
 script = ExtResource("1_mms4n")
 
@@ -16,5 +16,12 @@ shape = SubResource("CircleShape2D_gu675")
 disabled = true
 
 [node name="Portal" parent="." instance=ExtResource("2_r7w80")]
-modulate = Color(1, 0.470588, 0.470588, 1)
+modulate = Color(1, 0.121569, 0.121569, 1)
 scale = Vector2(0.4, 0.4)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Portal"]
+emission_shape = 2
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+orbit_velocity_min = -424.24
+orbit_velocity_max = -424.24

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfu3vhcve7ebm"
-path="res://.godot/imported/Grass32x32.png-3d9b57a20482590c54879940be16e7d7.ctex"
+uid="uid://g8xald840ub3"
+path="res://.godot/imported/sky_bg_spring.png-d0424b13fef9a1815c1a42b82187a273.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/Grass32x32.png"
-dest_files=["res://.godot/imported/Grass32x32.png-3d9b57a20482590c54879940be16e7d7.ctex"]
+source_file="res://assets/backgrounds/sky_bg_spring.png"
+dest_files=["res://.godot/imported/sky_bg_spring.png-d0424b13fef9a1815c1a42b82187a273.ctex"]
 
 [params]
 

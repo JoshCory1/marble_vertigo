@@ -22,7 +22,9 @@ music_track = ExtResource("2_ugfyy")
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_jnm2w")]
 
 [node name="Exit" parent="." instance=ExtResource("4_8kbt0")]
-position = Vector2(6864, 312)
+position = Vector2(6864, 384)
+destination = Vector2(-200, 0)
+duration = 2.0
 current_lvl = 34
 
 [node name="Ground" parent="." instance=ExtResource("5_1utm3")]

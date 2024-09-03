@@ -6,6 +6,9 @@ Usage of:
 	(modified) image _8_gimp_1.0.png
 	(modified) pillar_ui_v2.1_ai.png
 	(modified) rock_1.1_alt.png
+	(modified) sky_bg_spring.png
+	(modified) fall_background_sky.png
+	(modified) stars_night_background_winter.png
 
 Objects below drawn by Kenny but modified with CyberRealistic
 	see: https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Licenses/License.txt and https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Kenney.txt

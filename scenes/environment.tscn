@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/environment.gd" id="1_0s0xi"]
 [ext_resource type="Texture2D" uid="uid://bn3n6dxgk533a" path="res://assets/backgrounds/clouds_vs_loop.png" id="2_0e3i3"]
-[ext_resource type="Texture2D" uid="uid://brqlpnn2mhqty" path="res://assets/backgrounds/sky_bg.png" id="2_48hdr"]
+[ext_resource type="Texture2D" uid="uid://g8xald840ub3" path="res://assets/backgrounds/sky_bg_spring.png" id="2_ywyps"]
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="3_joeyc"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="4_o2hnm"]
 
@@ -19,8 +19,7 @@ z_index = -100
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer1"]
-modulate = Color(0.811765, 1, 1, 1)
-texture = ExtResource("2_48hdr")
+texture = ExtResource("2_ywyps")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)

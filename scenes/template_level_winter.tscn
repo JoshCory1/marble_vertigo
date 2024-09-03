@@ -41,7 +41,7 @@ position = Vector2(381, 351)
 position = Vector2(637, 351)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("9_yodeg")]
-position = Vector2(949, 351)
+position = Vector2(925, 351)
 
 [node name="Portals" type="Node" parent="."]
 

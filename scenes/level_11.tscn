@@ -45,13 +45,19 @@ position = Vector2(387, 163)
 [node name="Pillars" type="Node" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("10_fs4no")]
-position = Vector2(381, 375)
+position = Vector2(381, 399)
+
+[node name="Pillar12" parent="Pillars" instance=ExtResource("10_fs4no")]
+position = Vector2(733, 399)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("10_fs4no")]
-position = Vector2(1082, 377)
+position = Vector2(1082, 401)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("10_fs4no")]
 position = Vector2(1713, 367)
+
+[node name="Pillar13" parent="Pillars" instance=ExtResource("10_fs4no")]
+position = Vector2(1377, 383)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("10_fs4no")]
 position = Vector2(4418, -602)
