@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=84 format=3 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_5bn02"]
@@ -70,6 +70,7 @@
 [ext_resource type="PackedScene" uid="uid://bxsbgm51pdai4" path="res://scenes/level_50_winter.tscn" id="59_e8yex"]
 [ext_resource type="PackedScene" uid="uid://cf14wmjxvmacj" path="res://scenes/level_51_winter.tscn" id="60_f6mn5"]
 [ext_resource type="PackedScene" uid="uid://bmigavoqqeb28" path="res://scenes/level_52_winter.tscn" id="61_50pvd"]
+[ext_resource type="PackedScene" uid="uid://ck3552tqd5s8q" path="res://scenes/level_53_winter.tscn" id="62_c7rdi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
 font_color = Color(0, 0, 0, 1)
@@ -1629,6 +1630,34 @@ position = Vector2(33, 97)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_pj5dd")
 
+[node name="MenuLevelButton_53" type="TextureButton" parent="Buttons" groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 1779.0
+offset_top = -2171.0
+offset_right = 1843.0
+offset_bottom = -2107.0
+texture_normal = ExtResource("2_dax72")
+texture_pressed = ExtResource("3_lfw8e")
+texture_disabled = ExtResource("4_wiijs")
+script = ExtResource("5_s7i4j")
+level = ExtResource("62_c7rdi")
+current_level = 53
+
+[node name="Label" type="Label" parent="Buttons/MenuLevelButton_53"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="Buttons/MenuLevelButton_53"]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pj5dd")
+
 [node name="MenuLevelButton_Boss_1" type="TextureButton" parent="Buttons" groups=["LevelButtons"]]
 visible = false
 z_index = 1001
@@ -1807,5 +1836,6 @@ label_settings = SubResource("LabelSettings_v52m2")
 [connection signal="pressed" from="Buttons/MenuLevelButton_50" to="Buttons/MenuLevelButton_50" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_51" to="Buttons/MenuLevelButton_51" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_52" to="Buttons/MenuLevelButton_52" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/MenuLevelButton_53" to="Buttons/MenuLevelButton_53" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_Boss_1" to="Buttons/MenuLevelButton_Boss_1" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]
