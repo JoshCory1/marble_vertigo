@@ -71,7 +71,6 @@ position = Vector2(7932, -272)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("10_nki5f")]
 position = Vector2(3274, 330)
-screenClamp = Vector2(150, 0)
 
 [node name="Pillar9" parent="Pillars" instance=ExtResource("10_nki5f")]
 position = Vector2(12370, 964)
