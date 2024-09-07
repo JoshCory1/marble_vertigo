@@ -8,21 +8,21 @@ extends AnimatableBody2D
 @onready var area_bounce_left = $AreaBounceLeft
 @onready var area_bounce_right = $AreaBounceRight
 
-## the end point of travel path
+##the end point of travel path
 @export var destination: Vector2
-## the amount  of time it takes to travel between beginning and end points
+##the amount  of time it takes to travel between beginning and end points
 @export var duration: float = 1.0
-## waite time at start point
+##waite time at start point
 @export var wait_time_1: float = 0.0
-## waite time at end point
+##waite time at end point
 @export var wait_time_2: float = 0.0
-## minimum bounce velocity of player
+##minimum bounce velocity of player
 @export var bounce_force_min: float = 300
-## maximum bounce velocity of player
+##maximum bounce velocity of player
 @export var bounce_force_max: float = 450
 
 
-func _ready() -> void:
+func _ready():
 	var tween = create_tween()
 	tween.set_loops()
 	tween.set_trans(Tween.TRANS_SINE)
