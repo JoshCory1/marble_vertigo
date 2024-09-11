@@ -25,6 +25,7 @@ func _ready():
 func _on_body_entered(body):
 	if body != null:
 		if body.gravity > 0:
+			@warning_ignore("integer_division")
 			body.bounce_up(round(bounce_force_min / 2),round(bounce_force_max / 2))
 			if body.pause_y:
 				body.pause_y = false

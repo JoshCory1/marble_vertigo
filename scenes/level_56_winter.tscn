@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://j7sn7teyx21w"]
+[gd_scene load_steps=22 format=3 uid="uid://j7sn7teyx21w"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_gbe1a"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_sh6ik"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="8_g08o2"]
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="9_xuw7i"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="10_l1nph"]
-[ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_w47kn"]
 [ext_resource type="PackedScene" uid="uid://bsmygla6tqib" path="res://scenes/cloud_front.tscn" id="12_mj73s"]
 [ext_resource type="PackedScene" uid="uid://dpdkk502012ah" path="res://scenes/spring_board.tscn" id="13_rr0qr"]
 [ext_resource type="PackedScene" uid="uid://bspwnpbok62fy" path="res://scenes/disappearing_platform.tscn" id="14_kfpxo"]
@@ -126,12 +125,6 @@ position = Vector2(12945, -1050)
 [node name="Portal" parent="Portals" instance=ExtResource("10_l1nph")]
 position = Vector2(1113, -651)
 
-[node name="Hazards" type="Node" parent="."]
-
-[node name="MovingHazard" parent="Hazards" instance=ExtResource("11_w47kn")]
-position = Vector2(1112, -118)
-destination = Vector2(100, 0)
-
 [node name="CloudFronts" type="Node" parent="."]
 
 [node name="CloudFront" parent="CloudFronts" instance=ExtResource("12_mj73s")]
@@ -150,8 +143,8 @@ position = Vector2(7771, -2066)
 
 [node name="SpringBoard" parent="SpringBoards" instance=ExtResource("13_rr0qr")]
 position = Vector2(2200.56, 299.716)
-bounce_force_min = 850
-bounce_force_max = 900
+bounce_force_min = 950
+bounce_force_max = 1000
 
 [node name="SpringBoard2" parent="SpringBoards" instance=ExtResource("13_rr0qr")]
 position = Vector2(3459, -1044)
