@@ -97,7 +97,7 @@ autoplay = "default"
 frame_progress = 0.994382
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(13, 109)
+position = Vector2(13, 108)
 texture = ExtResource("3_si8lo")
 region_enabled = true
 region_rect = Rect2(7, 71, 180, 52)
