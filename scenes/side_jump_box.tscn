@@ -31,13 +31,17 @@ position = Vector2(-11, 0)
 shape = SubResource("RectangleShape2D_0yj4x")
 
 [node name="Area2DUP" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -82)
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DUP"]
 shape = SubResource("RectangleShape2D_ouqtx")
 
 [node name="Area2DDown" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 82)
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DDown"]
 shape = SubResource("RectangleShape2D_ouqtx")
