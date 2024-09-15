@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://5r0aor4wsqe7"]
+[gd_scene load_steps=17 format=3 uid="uid://5r0aor4wsqe7"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_jrj44"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_m5ulv"]
@@ -8,15 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://djov3uvcs70tb" path="res://scenes/ground.tscn" id="5_yfi1r"]
 [ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="6_cvrj5"]
 [ext_resource type="PackedScene" uid="uid://dlls7frqqf2de" path="res://scenes/pillar.tscn" id="10_xv11r"]
+[ext_resource type="PackedScene" uid="uid://bdpptfa8jxj65" path="res://scenes/side_jump_box.tscn" id="11_2daee"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="11_jyokt"]
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="12_8racb"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_fmj8d"]
 [ext_resource type="PackedScene" uid="uid://cem5hy52p2bc5" path="res://scenes/bar.tscn" id="13_2ebxu"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="13_msafl"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="14_qsgra"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5t2v"]
-size = Vector2(66, 2976)
+[ext_resource type="PackedScene" uid="uid://htffvv6osno0" path="res://scenes/moving_platform.tscn" id="15_llp3a"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_jrj44")
@@ -35,19 +34,6 @@ layer_0/tile_data = PackedInt32Array(262109, 1048585, 0, 196573, 1048585, 0, 131
 [node name="Player" parent="." instance=ExtResource("5_cwsjj")]
 position = Vector2(427, -43)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(11485, -2455)
-scale = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_l5t2v")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(11938, -2455)
-scale = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_l5t2v")
-
 [node name="UI" parent="." instance=ExtResource("12_fmj8d")]
 
 [node name="SkinHandler" parent="." instance=ExtResource("13_msafl")]
@@ -62,77 +48,73 @@ scale = Vector2(17.8823, 1.27824)
 
 [node name="JumpBox2" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
 position = Vector2(6592.83, -480.958)
-scale = Vector2(5.32001, 1)
+scale = Vector2(5.32001, 1.4)
 
-[node name="JumpBox4" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
-position = Vector2(11714.4, -3172.68)
-scale = Vector2(1.44002, 1)
+[node name="SideJumpBox3" parent="JumpBoxs" instance=ExtResource("11_2daee")]
+position = Vector2(13793, -758)
+scale = Vector2(1.8, 1.6)
 
-[node name="JumpBox5" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
-position = Vector2(11714, -2213)
-scale = Vector2(1.44002, 1)
+[node name="SideJumpBox4" parent="JumpBoxs" instance=ExtResource("11_2daee")]
+position = Vector2(21396, -758)
+scale = Vector2(1.8, 1.6)
+
+[node name="JumpBox3" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
+position = Vector2(14387, -543)
+scale = Vector2(5.07999, 2)
 
 [node name="JumpBox6" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
-position = Vector2(14428, -545)
-scale = Vector2(4.56, 1)
+position = Vector2(17160, -534)
+scale = Vector2(11.2, 2.24)
 
 [node name="JumpBox7" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
-position = Vector2(17147, -548)
-scale = Vector2(11.24, 1)
-
-[node name="JumpBox8" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
-position = Vector2(20515, -546)
-scale = Vector2(7.08004, 1)
-
-[node name="JumpBox9" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
-position = Vector2(21404.8, -750.273)
-rotation = 1.5708
-
-[node name="JumpBox10" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
-position = Vector2(13795, -756)
-rotation = 1.5708
+position = Vector2(20537, -540)
+scale = Vector2(7.35999, 1.8)
+collision_layer = 2
 
 [node name="Pillars" type="Node" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(417, 242)
+position = Vector2(417, 257)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(752, 240)
+position = Vector2(784, 257)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(1176, 229)
+position = Vector2(1208, 257)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(1600, 225)
+position = Vector2(1696, 257)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(2155, 229)
+position = Vector2(2155, 257)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(2891, 54)
+position = Vector2(2891, 110)
 screenClamp = Vector2(200, 0)
 
 [node name="Pillar8" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(4189, -191)
+position = Vector2(4189, -159)
 
 [node name="Pillar9" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(4542, -191)
+position = Vector2(4542, -159)
 
 [node name="Pillar10" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(4983, -171)
+position = Vector2(4983, -139)
 
 [node name="Pillar11" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(5424, -188)
+position = Vector2(5424, -156)
 
 [node name="Pillar14" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(7502, -193)
+position = Vector2(7502, -153)
 
 [node name="Pillar7" parent="Pillars" instance=ExtResource("10_xv11r")]
 position = Vector2(8084, 482)
 
 [node name="Pillar12" parent="Pillars" instance=ExtResource("10_xv11r")]
-position = Vector2(15383, -489.258)
+position = Vector2(15455, -489.258)
+
+[node name="Pillar16" parent="Pillars" instance=ExtResource("10_xv11r")]
+position = Vector2(15215, -489.258)
 
 [node name="Pillar13" parent="Pillars" instance=ExtResource("10_xv11r")]
 position = Vector2(18837, -482)
@@ -150,14 +132,7 @@ exit_point = NodePath("../Portal2")
 position = Vector2(2894, -229)
 
 [node name="Portal3" parent="Portals" node_paths=PackedStringArray("exit_point") instance=ExtResource("11_jyokt")]
-position = Vector2(8423, 212)
-exit_point = NodePath("../Portal4")
-
-[node name="Portal4" parent="Portals" instance=ExtResource("11_jyokt")]
-position = Vector2(11720, -2946)
-
-[node name="Portal5" parent="Portals" node_paths=PackedStringArray("exit_point") instance=ExtResource("11_jyokt")]
-position = Vector2(11720, -2390)
+position = Vector2(8359, 260)
 exit_point = NodePath("../Portal6")
 
 [node name="Portal6" parent="Portals" instance=ExtResource("11_jyokt")]
@@ -172,151 +147,48 @@ position = Vector2(4180, -489)
 
 [node name="Hazards" type="Node" parent="."]
 
-[node name="MovingHazard1058" parent="Hazards" instance=ExtResource("12_8racb")]
-position = Vector2(5704, -339)
-destination = Vector2(0, -300)
+[node name="MovingHazard" parent="Hazards" instance=ExtResource("12_8racb")]
+position = Vector2(4238.79, 543.663)
+destination = Vector2(0, -550)
+duration = 0.65
 wait_time_1 = 2.0
-wait_time_2 = 2.0
 
-[node name="MovingHazard1059" parent="Hazards" instance=ExtResource("12_8racb")]
-position = Vector2(5704, -339)
-destination = Vector2(0, -300)
+[node name="MovingHazard6" parent="Hazards" instance=ExtResource("12_8racb")]
+position = Vector2(4174.79, 543.663)
+destination = Vector2(0, -550)
+duration = 0.65
 wait_time_1 = 2.0
-wait_time_2 = 2.0
 
-[node name="MovingHazard1079" parent="Hazards" instance=ExtResource("12_8racb")]
-position = Vector2(5704, -339)
-destination = Vector2(0, -300)
+[node name="MovingHazard2" parent="Hazards" instance=ExtResource("12_8racb")]
+position = Vector2(5565, 540)
+destination = Vector2(0, -550)
+duration = 0.65
 wait_time_1 = 2.0
-wait_time_2 = 2.0
+wait_time_2 = 0.5
 
-[node name="MovingHazard1080" parent="Hazards" instance=ExtResource("12_8racb")]
-position = Vector2(5704, -339)
-destination = Vector2(0, -300)
+[node name="MovingHazard5" parent="Hazards" instance=ExtResource("12_8racb")]
+position = Vector2(5501, 540)
+destination = Vector2(0, -550)
+duration = 0.65
 wait_time_1 = 2.0
-wait_time_2 = 2.0
+wait_time_2 = 0.5
 
-[node name="MovingHazard1086" parent="Hazards" instance=ExtResource("12_8racb")]
-position = Vector2(5760, -339)
-destination = Vector2(0, -300)
+[node name="MovingHazard3" parent="Hazards" instance=ExtResource("12_8racb")]
+position = Vector2(6688, 540)
+destination = Vector2(0, -550)
+duration = 0.65
 wait_time_1 = 2.0
-wait_time_2 = 2.0
 
-[node name="MovingHazard1087" parent="Hazards" instance=ExtResource("12_8racb")]
-position = Vector2(5760, -339)
-destination = Vector2(0, -300)
+[node name="MovingHazard4" parent="Hazards" instance=ExtResource("12_8racb")]
+position = Vector2(6608, 540)
+destination = Vector2(0, -550)
+duration = 0.65
 wait_time_1 = 2.0
-wait_time_2 = 2.0
-
-[node name="MovingHazard1060" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(5523, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1061" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(5588, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1062" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(5651, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1069" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(4955, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1070" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(5020, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1071" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(5083, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1072" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(4243, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1073" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(4308, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1074" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(4371, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1063" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(6379, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1064" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(6444, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1065" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(6507, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1066" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(7099, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1067" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(7164, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
-
-[node name="MovingHazard1068" parent="Hazards" instance=ExtResource("12_8racb")]
-modulate = Color(1, 0.129412, 0.129412, 1)
-position = Vector2(7227, 508)
-collision_layer = 4
-destination = Vector2(0, -300)
-wait_time_2 = 2.0
 
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("14_qsgra")]
-position = Vector2(2744, -221)
+position = Vector2(2744, -101)
 
 [node name="coin2" parent="Coins" instance=ExtResource("14_qsgra")]
 position = Vector2(6528, -651)
@@ -326,3 +198,10 @@ position = Vector2(6528, -651)
 
 [node name="coin4" parent="Coins" instance=ExtResource("14_qsgra")]
 position = Vector2(7609, 260)
+
+[node name="MovingPlatforms" type="Node" parent="."]
+
+[node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource("15_llp3a")]
+position = Vector2(5746.37, -182.239)
+destination = Vector2(0, -350)
+duration = 4.5
