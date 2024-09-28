@@ -51,8 +51,8 @@ position = Vector2(8038, 789)
 scale = Vector2(4.08001, 1.52)
 
 [node name="JumpBox5" parent="JumpBoxs" instance=ExtResource("15_mdndh")]
-position = Vector2(20199, 464)
-scale = Vector2(2.04, 1.52)
+position = Vector2(20199, 479)
+scale = Vector2(2.16004, 1.2)
 
 [node name="JumpBox2" parent="JumpBoxs" instance=ExtResource("15_mdndh")]
 position = Vector2(7832, -1950)

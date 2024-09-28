@@ -6,16 +6,17 @@
 size = Vector2(20, 146)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yj4x"]
-size = Vector2(20, 166)
+size = Vector2(23, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ouqtx"]
 size = Vector2(32, 12)
 
 [node name="SideJumpBox" type="StaticBody2D"]
-collision_layer = 4
+collision_layer = 2
 script = ExtResource("1_wa4ce")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.559999, 1)
 shape = SubResource("RectangleShape2D_jn88n")
 
 [node name="Area2Dright" type="Area2D" parent="."]
