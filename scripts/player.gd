@@ -117,7 +117,8 @@ func _on_y_lock_releasing():
 
 
 func _on_area_2d_body_entered(_body):
-	die()
+	if !debug_mode:
+		die()
 
 func die():
 	if debug == false:
