@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://25gplpydn7qi"]
+[gd_scene load_steps=16 format=3 uid="uid://25gplpydn7qi"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xslxq"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_q36pn"]
@@ -12,17 +12,16 @@
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="10_0dics"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="11_l4mko"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_jqppo"]
-[ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="13_db2kp"]
 [ext_resource type="PackedScene" uid="uid://cem5hy52p2bc5" path="res://scenes/bar.tscn" id="14_fi3kx"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="15_cpt6d"]
-[ext_resource type="PackedScene" uid="uid://wiywj84wa50y" path="res://scenes/sticky_platform.tscn" id="16_65ioe"]
+[ext_resource type="PackedScene" uid="uid://htffvv6osno0" path="res://scenes/moving_platform.tscn" id="15_xwnkp"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_xslxq")
 music_track = ExtResource("2_q36pn")
 
 [node name="Exit" parent="." instance=ExtResource("3_87sm6")]
-position = Vector2(2505, -374)
+position = Vector2(11557, 2019)
 current_lvl = 15
 
 [node name="Ground" parent="." instance=ExtResource("4_hxshc")]
@@ -42,94 +41,118 @@ position = Vector2(387, 163)
 
 [node name="JumpBoxs" type="Node" parent="."]
 
-[node name="JumpBox" parent="JumpBoxs" instance=ExtResource("13_db2kp")]
-position = Vector2(2495.73, -167.19)
-
 [node name="Pillars" type="Node" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(381, 375)
+position = Vector2(381, 391)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("7_161jx")]
 position = Vector2(1045, 389)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(250, 0)
+
+[node name="Pillar25" parent="Pillars" instance=ExtResource("7_161jx")]
+position = Vector2(712, 389)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(1926, -166)
+position = Vector2(11026, 2275)
+screenClamp = Vector2(225, 0)
+
+[node name="Pillar24" parent="Pillars" instance=ExtResource("7_161jx")]
+position = Vector2(11386, 2275)
 screenClamp = Vector2(225, 0)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("7_161jx")]
 position = Vector2(1582, 1395)
 
+[node name="Pillar26" parent="Pillars" instance=ExtResource("7_161jx")]
+position = Vector2(1913, 1395)
+
+[node name="Pillar27" parent="Pillars" instance=ExtResource("7_161jx")]
+position = Vector2(2272, 1395)
+
 [node name="Pillar4" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(2461, 1392)
+position = Vector2(2645, 1395)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(2955, 1389)
+position = Vector2(3043, 1395)
 
 [node name="Pillar7" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(3487, 1395)
+position = Vector2(3455, 1395)
 
 [node name="Pillar8" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(3979, 1386)
-screenClamp = Vector2(200, 0)
+position = Vector2(3875, 1395)
+screenClamp = Vector2(250, 0)
 
 [node name="Pillar9" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(4420, 2947)
+position = Vector2(4420, 2938)
 
 [node name="Pillar10" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(4974, 2947)
+position = Vector2(5198, 2938)
+
+[node name="Pillar28" parent="Pillars" instance=ExtResource("7_161jx")]
+position = Vector2(4805, 2938)
 
 [node name="Pillar11" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(5506, 2944)
+position = Vector2(5650, 2938)
 
 [node name="Pillar12" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(6004, 2941)
+position = Vector2(6044, 2938)
 
 [node name="Pillar13" parent="Pillars" instance=ExtResource("7_161jx")]
 position = Vector2(6428, 2938)
 screenClamp = Vector2(250, 0)
 
 [node name="Pillar14" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(8712, 2942)
-screenClamp = Vector2(400, 0)
+position = Vector2(8456, 2935)
 
 [node name="Pillar15" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(9305, 2935)
+position = Vector2(8841, 2935)
 
 [node name="Pillar16" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(9792, 2932)
+position = Vector2(9216, 2935)
 
 [node name="Pillar17" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(10288, 2936)
-screenClamp = Vector2(225, 0)
+position = Vector2(9584, 2935)
+
+[node name="Pillar29" parent="Pillars" instance=ExtResource("7_161jx")]
+position = Vector2(9960, 2935)
+
+[node name="Pillar30" parent="Pillars" instance=ExtResource("7_161jx")]
+position = Vector2(10356, 2935)
 
 [node name="Pillar18" parent="Pillars" instance=ExtResource("7_161jx")]
 position = Vector2(10708, 4504)
 
 [node name="Pillar19" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(11208, 4505)
+position = Vector2(11104, 4504)
 
 [node name="Pillar20" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(11691, 4501)
+position = Vector2(11507, 4504)
 
 [node name="Pillar21" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(12229, 4501)
+position = Vector2(11957, 4504)
 
 [node name="Pillar22" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(12712, 4498)
+position = Vector2(12432, 4504)
+
+[node name="Pillar31" parent="Pillars" instance=ExtResource("7_161jx")]
+position = Vector2(12903, 4504)
 
 [node name="Pillar23" parent="Pillars" instance=ExtResource("7_161jx")]
-position = Vector2(13746, 3714)
+position = Vector2(13690, 3714)
+screenClamp = Vector2(225, 0)
+
+[node name="Pillar32" parent="Pillars" instance=ExtResource("7_161jx")]
+position = Vector2(14015, 3714)
 screenClamp = Vector2(225, 0)
 
 [node name="Portals" type="Node" parent="."]
 
 [node name="Portal" parent="Portals" instance=ExtResource("8_1q2il")]
-position = Vector2(1929, -451)
+position = Vector2(11029, 1990)
 
 [node name="Portal2" parent="Portals" node_paths=PackedStringArray("exit_point") instance=ExtResource("8_1q2il")]
-position = Vector2(14225, 3571)
+position = Vector2(14225, 3469)
 exit_point = NodePath("../Portal")
 
 [node name="Hazards" type="Node" parent="."]
@@ -140,7 +163,7 @@ destination = Vector2(600, 0)
 duration = 4.0
 
 [node name="MovingHazard2" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(8682, 2634)
+position = Vector2(8426, 2634)
 destination = Vector2(600, 0)
 duration = 4.0
 
@@ -150,29 +173,29 @@ duration = 4.0
 position = Vector2(6854, 2975)
 
 [node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("10_0dics")]
-position = Vector2(7038, 2975)
-time_till_start = 4.0
+position = Vector2(7038, 2927)
+time_till_start = 5.0
 
 [node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("10_0dics")]
 position = Vector2(7221, 2975)
 
 [node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("10_0dics")]
-position = Vector2(7405, 2975)
-time_till_start = 4.0
+position = Vector2(7405, 2927)
+time_till_start = 5.0
 
 [node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("10_0dics")]
 position = Vector2(7590, 2975)
 
 [node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("10_0dics")]
-position = Vector2(7774, 2975)
-time_till_start = 4.0
+position = Vector2(7774, 2927)
+time_till_start = 5.0
 
 [node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("10_0dics")]
 position = Vector2(7957, 2975)
 
 [node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("10_0dics")]
-position = Vector2(8141, 2975)
-time_till_start = 4.0
+position = Vector2(8141, 2927)
+time_till_start = 5.0
 
 [node name="Coins" type="Node" parent="."]
 
@@ -183,10 +206,10 @@ position = Vector2(1570.45, 949.147)
 position = Vector2(4407.27, 1894.28)
 
 [node name="coin3" parent="Coins" instance=ExtResource("15_cpt6d")]
-position = Vector2(7038, 2881)
+position = Vector2(7038, 2817)
 
 [node name="coin4" parent="Coins" instance=ExtResource("15_cpt6d")]
-position = Vector2(7774, 2881)
+position = Vector2(7774, 2817)
 
 [node name="coin5" parent="Coins" instance=ExtResource("15_cpt6d")]
 position = Vector2(10691.3, 3652.5)
@@ -195,13 +218,11 @@ position = Vector2(10691.3, 3652.5)
 position = Vector2(13275, 4193)
 
 [node name="coin7" parent="Coins" instance=ExtResource("15_cpt6d")]
-position = Vector2(2151.36, -310.381)
+position = Vector2(11251.4, 2130.62)
 
-[node name="Node" type="Node" parent="."]
+[node name="Node2" type="Node" parent="."]
 
-[node name="StickyPlatform" parent="Node" instance=ExtResource("16_65ioe")]
-position = Vector2(13274.8, 4432.17)
+[node name="MovingPlatform" parent="Node2" instance=ExtResource("15_xwnkp")]
+position = Vector2(13273.2, 4400.54)
 destination = Vector2(0, -1000)
-duration = 4.0
-wait_time_1 = 1.0
-wait_time_2 = 1.0
+duration = 12.5
