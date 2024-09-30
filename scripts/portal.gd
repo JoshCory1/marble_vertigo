@@ -21,15 +21,13 @@ func _process(_delta):
 
 
 func _on_body_entered(body):
-	if not_active == false:
+	if !not_active:
 		if exit_point:
 			AudioPlayer.play_sfx("portal_sfx")
 			body.sprite.visible = false
-			body.stop_velocity = true
-			body.velocity = Vector2(0,0)
 			exit_point.not_active = true
+			body.ghost = true
 			body.global_position = exit_point.global_position
-			await get_tree().create_timer(.02).timeout
-			body.stop_velocity = false
+			body.ghost = false
 			body.velocity = Vector2(0,0)
 			body.sprite.visible = true

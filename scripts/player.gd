@@ -22,7 +22,7 @@ var speed: float = 0.0
 # pauses y velocity for set time
 var pause_y: bool = false
 var stop_contorls: bool = false
-
+var ghost: bool = false
 
 func _ready():
 	for boost in boosts:
@@ -37,6 +37,13 @@ func _input(_event):
 			debug = !debug
 			
 func _process(_delta):
+	if ghost:
+		$CollisionShape2D.disabled = true
+		$Area2D/CollisionShape2D.disabled = true
+	if !ghost:
+		$CollisionShape2D.disabled = false
+		$Area2D/CollisionShape2D.disabled = false
+			
 	if GameController.debug:
 		debug_mode = true
 	else:
