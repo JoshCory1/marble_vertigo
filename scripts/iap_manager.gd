@@ -16,8 +16,8 @@ func _ready():
 	else:
 		GameController.my_log("Andriod IAP support is not availbale")
 
-func purchase_skin():
-	GameController.cube_1_skin_unlocked = true
+func purchase_premium():
+	GameController.premium = true
 
 
 func _on_connected():

@@ -140,11 +140,9 @@ position = Vector2(12903, 4504)
 
 [node name="Pillar23" parent="Pillars" instance=ExtResource("7_161jx")]
 position = Vector2(13690, 3714)
-screenClamp = Vector2(225, 0)
 
 [node name="Pillar32" parent="Pillars" instance=ExtResource("7_161jx")]
 position = Vector2(14015, 3714)
-screenClamp = Vector2(225, 0)
 
 [node name="Portals" type="Node" parent="."]
 

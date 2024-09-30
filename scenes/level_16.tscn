@@ -19,7 +19,7 @@ script = ExtResource("1_4poem")
 music_track = ExtResource("2_kkf01")
 
 [node name="Exit" parent="." instance=ExtResource("4_yhwlp")]
-position = Vector2(7996, 1)
+position = Vector2(7868, -55)
 current_lvl = 16
 
 [node name="Bar" parent="." instance=ExtResource("4_i2xs5")]
@@ -40,31 +40,27 @@ position = Vector2(387, 163)
 [node name="Pillars" type="Node" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("8_locfg")]
-position = Vector2(381, 375)
+position = Vector2(381, 351)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("8_locfg")]
-position = Vector2(864, 372)
+position = Vector2(864, 348)
 screenClamp = Vector2(200, 0)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("8_locfg")]
-position = Vector2(1549, 369)
-screenClamp = Vector2(190, 0)
+position = Vector2(1549, 345)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("8_locfg")]
-position = Vector2(1857, 366)
-screenClamp = Vector2(300, 0)
+position = Vector2(1857, 345)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("8_locfg")]
-position = Vector2(2205, 363)
+position = Vector2(2205, 345)
 screenClamp = Vector2(200, 0)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("8_locfg")]
-position = Vector2(3019, 258)
-screenClamp = Vector2(150, 0)
+position = Vector2(3019, 242)
 
 [node name="Pillar7" parent="Pillars" instance=ExtResource("8_locfg")]
 position = Vector2(3726, 196)
-screenClamp = Vector2(150, 0)
 
 [node name="Pillar8" parent="Pillars" instance=ExtResource("8_locfg")]
 position = Vector2(4218, 188)
@@ -74,18 +70,25 @@ position = Vector2(4705, 137)
 screenClamp = Vector2(200, 0)
 
 [node name="Pillar10" parent="Pillars" instance=ExtResource("8_locfg")]
-position = Vector2(5274, 140)
-screenClamp = Vector2(400, 0)
+position = Vector2(5082, 140)
+
+[node name="Pillar15" parent="Pillars" instance=ExtResource("8_locfg")]
+position = Vector2(5458, 140)
+screenClamp = Vector2(250, 0)
 
 [node name="Pillar11" parent="Pillars" instance=ExtResource("8_locfg")]
 position = Vector2(6476, 194)
 screenClamp = Vector2(200, 0)
 
+[node name="Pillar14" parent="Pillars" instance=ExtResource("8_locfg")]
+position = Vector2(6836, 194)
+screenClamp = Vector2(200, 0)
+
 [node name="Pillar12" parent="Pillars" instance=ExtResource("8_locfg")]
-position = Vector2(7030, 194)
+position = Vector2(7182, 194)
 
 [node name="Pillar13" parent="Pillars" instance=ExtResource("8_locfg")]
-position = Vector2(7695, 160)
+position = Vector2(7583, 160)
 
 [node name="Hazards" type="Node" parent="."]
 
@@ -113,13 +116,13 @@ wait_time_2 = 0.5
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("11_upkrp")]
-position = Vector2(2568.9, 230.37)
+position = Vector2(2624.9, 158.37)
 
 [node name="coin2" parent="Coins" instance=ExtResource("11_upkrp")]
-position = Vector2(3299.16, 186.347)
+position = Vector2(3419.16, 66.347)
 
 [node name="coin3" parent="Coins" instance=ExtResource("11_upkrp")]
-position = Vector2(6124.5, 151.289)
+position = Vector2(6002.5, 71.289)
 
 [node name="coin4" parent="Coins" instance=ExtResource("11_upkrp")]
 position = Vector2(6534.62, -165.495)
