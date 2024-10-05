@@ -82,7 +82,7 @@
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rp1uo"]
-font_size = 10
+font_size = 45
 font_color = Color(0.431373, 1, 0.827451, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
