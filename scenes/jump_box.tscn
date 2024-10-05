@@ -18,13 +18,12 @@ size = Vector2(12, 26)
 size = Vector2(12, 26)
 
 [node name="JumpBox" type="StaticBody2D"]
-collision_layer = 4
+collision_layer = 2
 script = ExtResource("1_1n6tu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.00884, 1)
 shape = SubResource("RectangleShape2D_1xq8i")
-disabled = true
 
 [node name="Top" type="Area2D" parent="."]
 position = Vector2(0, -20)
