@@ -126,9 +126,14 @@ func _on_y_lock_releasing():
 func _on_area_2d_body_entered(_body):
 	if !debug_mode:
 		die()
+	elif debug_mode:
+		if gravity > 0:
+			bounce_up(300, 450)
+		elif gravity < 0:
+			bounce_down(300,450)
 
 func die():
-	if debug == false:
+	if !debug:
 		get_tree().paused = true
 		AudioPlayer.play_sfx("shatter_sfx")
 		death_particles.emitting = true
@@ -138,7 +143,6 @@ func die():
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/start.tscn")
 #		get_tree().reload_current_scene()
-		
 
 	# Skins
 

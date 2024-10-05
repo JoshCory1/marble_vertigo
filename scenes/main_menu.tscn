@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://2kxbgbevh4sq" path="res://scenes/iap_manager.tscn" id="17_dbfbd"]
 [ext_resource type="PackedScene" uid="uid://dh1jhenl0m2fb" path="res://scenes/level_10.tscn" id="18_1me3k"]
 [ext_resource type="PackedScene" uid="uid://cvcspdr0ukw7w" path="res://scenes/level_11.tscn" id="18_ejtsn"]
-[ext_resource type="Texture2D" uid="uid://ddadfss4auwp8" path="res://assets/ball/ui_black_bal.png" id="20_0p5i3"]
+[ext_resource type="Texture2D" uid="uid://ddadfss4auwp8" path="res://assets/UI/ui_black_bal.png" id="20_0p5i3"]
 [ext_resource type="PackedScene" uid="uid://bx3nsmuk7a74i" path="res://scenes/level_12.tscn" id="20_2caci"]
 [ext_resource type="PackedScene" uid="uid://bxai5wn7frshm" path="res://scenes/level_pong_boss_fight.tscn" id="20_y4bia"]
 [ext_resource type="PackedScene" uid="uid://cyblvmqq1jruk" path="res://scenes/level_13.tscn" id="21_f2i67"]
@@ -153,7 +153,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_v52m2"]
 font_size = 36
-font_color = Color(0.0941176, 0.85098, 0.180392, 1)
+font_color = Color(0.694118, 1, 0.682353, 1)
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
