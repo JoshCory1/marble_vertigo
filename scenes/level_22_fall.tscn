@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="8_4axk8"]
 [ext_resource type="PackedScene" uid="uid://bvilpffa1lme2" path="res://scenes/log.tscn" id="9_74q52"]
 [ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="10_bclpn"]
-[ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_rqid6"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="12_olal2"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="13_1vu5c"]
+[ext_resource type="PackedScene" uid="uid://bve0323bnyyvb" path="res://scenes/rouge_portal.tscn" id="14_n7olv"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_cqsd6")
@@ -21,7 +21,7 @@ music_track = ExtResource("2_trkuq")
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_t8dp4")]
 
 [node name="Exit" parent="." instance=ExtResource("4_uq4kj")]
-position = Vector2(16380, -258)
+position = Vector2(16220, -290)
 current_lvl = 22
 
 [node name="Ground" parent="." instance=ExtResource("5_32n8x")]
@@ -37,174 +37,100 @@ position = Vector2(387, 163)
 [node name="Logs" type="Node" parent="."]
 
 [node name="Log" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(384, 511)
+position = Vector2(384, 594)
 
 [node name="Log2" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(955, 511)
+position = Vector2(784, 594)
 
 [node name="Log3" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(1729, 513)
+position = Vector2(1184, 594)
 
 [node name="Log4" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(2417, 523)
+position = Vector2(1584, 594)
 
 [node name="Log5" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(3070, 523)
+position = Vector2(1984, 594)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(3607, 525)
+position = Vector2(2384, 594)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(4234, 525)
+position = Vector2(2784, 594)
+
+[node name="Log22" parent="Logs" instance=ExtResource("9_74q52")]
+position = Vector2(3184, 594)
+
+[node name="Log23" parent="Logs" instance=ExtResource("9_74q52")]
+position = Vector2(3584, 594)
+
+[node name="Log24" parent="Logs" instance=ExtResource("9_74q52")]
+position = Vector2(3984, 594)
 
 [node name="Log8" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(4986, -44)
+position = Vector2(4986, 14)
 screenClamp = Vector2(300, 0)
 
 [node name="Log9" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(5481, -39)
+position = Vector2(5481, 14)
 
 [node name="Log10" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(5911, -35)
+position = Vector2(5911, 14)
 
 [node name="Log11" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(6360, -34)
+position = Vector2(6360, 14)
 screenClamp = Vector2(200, 0)
 
 [node name="Log12" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(11346, -34)
-screenClamp = Vector2(200, 0)
+position = Vector2(11274, 25)
 
 [node name="Log13" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(11909, -34)
+position = Vector2(11674, 25)
 
 [node name="Log14" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(12490, -34)
+position = Vector2(12074, 25)
 
 [node name="Log15" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(13161, -33)
+position = Vector2(12474, 25)
 
 [node name="Log16" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(13781, -33)
+position = Vector2(12874, 25)
 
 [node name="Log17" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(14378, -33)
+position = Vector2(13274, 25)
 
 [node name="Log18" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(14905, -33)
+position = Vector2(13674, 25)
 
 [node name="Log19" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(15338, -33)
+position = Vector2(14074, 25)
 
 [node name="Log20" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(15788, -33)
+position = Vector2(14474, 25)
 
 [node name="Log21" parent="Logs" instance=ExtResource("9_74q52")]
-position = Vector2(16220, -33)
+position = Vector2(14874, 25)
+
+[node name="Log25" parent="Logs" instance=ExtResource("9_74q52")]
+position = Vector2(15274, 25)
+
+[node name="Log26" parent="Logs" instance=ExtResource("9_74q52")]
+position = Vector2(15674, 25)
+
+[node name="Log27" parent="Logs" instance=ExtResource("9_74q52")]
+position = Vector2(16074, 25)
 
 [node name="Portals" type="Node" parent="."]
 
 [node name="Portal2" parent="Portals" instance=ExtResource("10_bclpn")]
 position = Vector2(380, -4)
+visible_sprite = false
 
 [node name="Portal3" parent="Portals" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-position = Vector2(4420, 382)
+position = Vector2(4180, 342)
 exit_point = NodePath("../Portal4")
 
 [node name="Portal4" parent="Portals" instance=ExtResource("10_bclpn")]
-position = Vector2(4988, -378)
-
-[node name="Hazards" type="Node" parent="."]
-
-[node name="MovingHazard" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(1475, 413)
-destination = Vector2(-200, 0)
-duration = 3.0
-
-[node name="Portal" parent="Hazards/MovingHazard" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard2" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(3754, 428)
-destination = Vector2(-200, 0)
-duration = 3.0
-
-[node name="Portal" parent="Hazards/MovingHazard2" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard3" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(6547, -134)
-destination = Vector2(-200, 0)
-duration = 3.0
-
-[node name="Portal" parent="Hazards/MovingHazard3" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard4" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(7750, 587)
-destination = Vector2(0, -700)
-duration = 2.5
-
-[node name="Portal" parent="Hazards/MovingHazard4" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard5" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(8537, 587)
-destination = Vector2(0, -700)
-duration = 2.5
-
-[node name="Portal" parent="Hazards/MovingHazard5" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard6" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(9356, 587)
-destination = Vector2(0, -700)
-duration = 2.5
-
-[node name="Portal" parent="Hazards/MovingHazard6" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard7" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(10062, 587)
-destination = Vector2(0, -700)
-duration = 2.5
-
-[node name="Portal" parent="Hazards/MovingHazard7" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard8" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(10623, 585)
-destination = Vector2(0, -700)
-duration = 2.5
-
-[node name="Portal" parent="Hazards/MovingHazard8" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard9" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(13391, -139)
-destination = Vector2(-500, 0)
-duration = 3.0
-
-[node name="Portal" parent="Hazards/MovingHazard9" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
-
-[node name="MovingHazard10" parent="Hazards" instance=ExtResource("11_rqid6")]
-position = Vector2(15218, -133)
-destination = Vector2(-500, 0)
-duration = 3.0
-
-[node name="Portal" parent="Hazards/MovingHazard10" node_paths=PackedStringArray("exit_point") instance=ExtResource("10_bclpn")]
-scale = Vector2(0.7, 0.7)
-exit_point = NodePath("../../../Portals/Portal2")
+position = Vector2(4980, -322)
 
 [node name="TimedPlatforms" type="Node" parent="."]
 
@@ -213,84 +139,84 @@ position = Vector2(6798, -20)
 
 [node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(6976, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(7154, -20)
 
 [node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(7332, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(7518, -20)
 
 [node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(7696, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(7874, -20)
 
 [node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(8052, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform9" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(8239, -20)
 
 [node name="TimedPlatform10" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(8417, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform11" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(8595, -20)
 
 [node name="TimedPlatform12" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(8773, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform13" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(8959, -20)
 
 [node name="TimedPlatform14" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(9137, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform15" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(9315, -20)
 
 [node name="TimedPlatform16" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(9493, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform17" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(9674, -20)
 
 [node name="TimedPlatform18" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(9852, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform19" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(10030, -20)
 
 [node name="TimedPlatform20" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(10208, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform21" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(10394, -20)
 
 [node name="TimedPlatform22" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(10572, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform23" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(10750, -20)
 
 [node name="TimedPlatform24" parent="TimedPlatforms" instance=ExtResource("12_olal2")]
 position = Vector2(10928, -20)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="Coins" type="Node" parent="."]
 
@@ -304,16 +230,89 @@ position = Vector2(3078, 342)
 position = Vector2(6354, -191)
 
 [node name="coin4" parent="Coins" instance=ExtResource("13_1vu5c")]
-position = Vector2(7747, -87)
+position = Vector2(7747, -165)
 
 [node name="coin5" parent="Coins" instance=ExtResource("13_1vu5c")]
-position = Vector2(9355, -89)
+position = Vector2(9355, -165)
 
 [node name="coin6" parent="Coins" instance=ExtResource("13_1vu5c")]
-position = Vector2(10621, -101)
+position = Vector2(10621, -165)
 
 [node name="coin7" parent="Coins" instance=ExtResource("13_1vu5c")]
 position = Vector2(12491, -185)
 
 [node name="coin8" parent="Coins" instance=ExtResource("13_1vu5c")]
 position = Vector2(15336, -188)
+
+[node name="RougePortals" type="Node" parent="."]
+
+[node name="RougePortal" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(1506.15, 411)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(-400, 0)
+duration = 5.0
+
+[node name="RougePortal2" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(3783.44, 411)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(-600, 0)
+duration = 7.0
+
+[node name="RougePortal3" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(6521.19, -159.955)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(-400, 0)
+duration = 5.0
+
+[node name="RougePortal4" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(13254.3, -155)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(600, 0)
+duration = 7.0
+
+[node name="RougePortal5" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(15033.5, -155)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(500, 0)
+duration = 6.0
+
+[node name="RougePortal6" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(7338.36, 241.476)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(0, -700)
+duration = 4.0
+wait_time_1 = 0.5
+
+[node name="RougePortal7" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(7938.36, 241.476)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(0, -700)
+duration = 4.0
+
+[node name="RougePortal8" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(8538.36, 241.476)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(0, -700)
+duration = 4.0
+wait_time_1 = 0.6
+
+[node name="RougePortal9" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(9138.36, 241.476)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(0, -700)
+duration = 4.0
+wait_time_1 = 0.3
+
+[node name="RougePortal10" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(9738.36, 241.476)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(0, -700)
+duration = 4.0
+wait_time_1 = 0.5
+
+[node name="RougePortal11" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("14_n7olv")]
+position = Vector2(10338.4, 241.476)
+portal_exit = NodePath("../../Portals/Portal2")
+destination = Vector2(0, -700)
+duration = 4.0
+wait_time_1 = 0.2

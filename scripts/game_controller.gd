@@ -150,7 +150,7 @@ func load_game():
 		coins = file.get_var()
 		skins_backup = file.get_var()
 		skins_unlocked_backup = file.get_var()
-		my_log("Loaded current play through count: " + str(current_play_through_count) + "\n" + "Loaded current_level: " + str(current_lvl) + "\n" + "Loaded coins" + str(coins) + "\n" + "Loaded skins: " + str(skins) + "\n" + "Loaded skins_unlocked: " + str(skins_unlocked))
+		my_log("Loaded current play through count: " + str(current_play_through_count) + "\n" + "Loaded current_level: " + str(current_lvl) + "\n" + "Loaded coins" + str(coins))
 		file.close()
 	else:
 		my_log("Save file dosen't exist, setting default values")
