@@ -3,6 +3,7 @@ CyberRealistic
 Objects below drawn by Developer but modified with CyberRealistic
 
 Usage of:
+	(modified) Log_ai.png
 	(modified) image _8_gimp_1.0.png
 	(modified) pillar_ui_v2.1_ai.png
 	(modified) rock_1.1_alt.png

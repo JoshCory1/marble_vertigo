@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvilpffa1lme2"]
 
 [ext_resource type="Script" path="res://scripts/pillar.gd" id="1_vx2xg"]
-[ext_resource type="Texture2D" uid="uid://ouc8ccinnrfo" path="res://assets/pillar/log.png" id="2_eulm2"]
+[ext_resource type="Texture2D" uid="uid://bhy45u8w1c25g" path="res://assets/pillar/Log_ai.png" id="2_yeeq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ltfh"]
 size = Vector2(195.455, 387.283)
@@ -22,8 +22,8 @@ collision_layer = 4
 script = ExtResource("1_vx2xg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(5.68182, 2.88501)
-texture = ExtResource("2_eulm2")
+scale = Vector2(2.81818, 1.6536)
+texture = ExtResource("2_yeeq3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6.81818, -9.80392)
