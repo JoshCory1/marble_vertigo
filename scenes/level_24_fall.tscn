@@ -60,14 +60,13 @@ position = Vector2(3071, 52)
 position = Vector2(6989, 510)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_r42r1")]
-position = Vector2(7408, 510)
+position = Vector2(7400, 510)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_r42r1")]
-position = Vector2(7854, 510)
+position = Vector2(7822, 510)
 
 [node name="Log4" parent="Logs" instance=ExtResource("9_r42r1")]
 position = Vector2(16375, 531)
-screenClamp = Vector2(250, 0)
 
 [node name="Portals" type="Node" parent="."]
 
