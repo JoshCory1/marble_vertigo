@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bkbcqs24so8f"]
+[gd_scene load_steps=24 format=3 uid="uid://bkbcqs24so8f"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_n54mv"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_1c66q"]
@@ -14,28 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://x7qy3if6q7m4" path="res://scenes/moving_hazard.tscn" id="11_jwnbj"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="12_k6r2x"]
 [ext_resource type="PackedScene" uid="uid://c11506taw77ph" path="res://scenes/boost_down.tscn" id="12_nv7vb"]
-[ext_resource type="PackedScene" uid="uid://wiywj84wa50y" path="res://scenes/sticky_platform.tscn" id="13_a6utu"]
 [ext_resource type="PackedScene" uid="uid://bspwnpbok62fy" path="res://scenes/disappearing_platform.tscn" id="16_tbutp"]
+[ext_resource type="PackedScene" uid="uid://bdpptfa8jxj65" path="res://scenes/side_jump_box.tscn" id="17_06k0m"]
 [ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="17_odmlb"]
 [ext_resource type="PackedScene" uid="uid://bve0323bnyyvb" path="res://scenes/rouge_portal.tscn" id="18_ch1so"]
 [ext_resource type="PackedScene" uid="uid://6nl1xce7kbbw" path="res://scenes/boost_right.tscn" id="19_40chr"]
 [ext_resource type="PackedScene" uid="uid://bp4irettwq182" path="res://scenes/boost_up.tscn" id="20_pg1bo"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="21_7xpln"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x24kl"]
-size = Vector2(45, 307.856)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4yfj"]
-size = Vector2(46.3857, 563)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8toq"]
-size = Vector2(47.9998, 873)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhxrf"]
-size = Vector2(49, 429)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ahpn"]
-size = Vector2(46, 305)
+[ext_resource type="PackedScene" uid="uid://htffvv6osno0" path="res://scenes/moving_platform.tscn" id="22_28rbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxadt"]
 size = Vector2(1880, 51.9722)
@@ -63,29 +49,6 @@ position = Vector2(387, 163)
 
 [node name="SkinHandler" parent="." instance=ExtResource("8_mrq28")]
 
-[node name="MazeStaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MazeStaticBody2D"]
-position = Vector2(4574.5, 613.928)
-shape = SubResource("RectangleShape2D_x24kl")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="MazeStaticBody2D"]
-position = Vector2(4509.81, -87.5)
-shape = SubResource("RectangleShape2D_w4yfj")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="MazeStaticBody2D"]
-position = Vector2(5215, 0.5)
-shape = SubResource("RectangleShape2D_b8toq")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="MazeStaticBody2D"]
-position = Vector2(5854.5, 225.5)
-shape = SubResource("RectangleShape2D_lhxrf")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="MazeStaticBody2D"]
-position = Vector2(4959, -350.5)
-shape = SubResource("RectangleShape2D_6ahpn")
-
 [node name="DeathStaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4
 
@@ -108,33 +71,34 @@ position = Vector2(384, 511)
 screenClamp = Vector2(250, 0)
 
 [node name="Log2" parent="Logs" instance=ExtResource("9_0qygq")]
-position = Vector2(9796, 478)
+position = Vector2(9796, 544)
 screenClamp = Vector2(100, 0)
 
 [node name="Log3" parent="Logs" instance=ExtResource("9_0qygq")]
-position = Vector2(10182, 478)
+position = Vector2(10182, 544)
 screenClamp = Vector2(200, 0)
 
 [node name="Log4" parent="Logs" instance=ExtResource("9_0qygq")]
-position = Vector2(10508, 478)
+position = Vector2(10508, 544)
 screenClamp = Vector2(200, 0)
 
 [node name="Log5" parent="Logs" instance=ExtResource("9_0qygq")]
-position = Vector2(10838, 478)
+position = Vector2(10838, 544)
 screenClamp = Vector2(200, 0)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_0qygq")]
-position = Vector2(11127, 478)
+position = Vector2(11127, 544)
 screenClamp = Vector2(200, 0)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_0qygq")]
-position = Vector2(11447, 478)
+position = Vector2(11447, 544)
 screenClamp = Vector2(200, 0)
 
 [node name="Portals" type="Node" parent="."]
 
 [node name="Portal" parent="Portals" instance=ExtResource("10_dfg0k")]
 position = Vector2(3970, -476)
+visible_sprite = false
 
 [node name="BoostDown" parent="Portals/Portal" instance=ExtResource("12_nv7vb")]
 visible = false
@@ -158,10 +122,6 @@ position = Vector2(5428, -182)
 
 [node name="Hazards" type="Node" parent="."]
 
-[node name="MovingHazard" parent="Hazards" instance=ExtResource("11_jwnbj")]
-position = Vector2(767, 0)
-destination = Vector2(100, 0)
-
 [node name="MovingHazard2" parent="Hazards" instance=ExtResource("11_jwnbj")]
 position = Vector2(10190, 293)
 destination = Vector2(200, 0)
@@ -183,102 +143,59 @@ position = Vector2(802, 423)
 
 [node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(986, 423)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(1170, 423)
 
 [node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(1354, 423)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(1538, 423)
 
 [node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(1722, 423)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(1906, 423)
-
-[node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
-position = Vector2(2090, 423)
-time_till_start = 4.0
 
 [node name="TimedPlatform9" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(6034, 370)
 
 [node name="TimedPlatform10" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(6218, 370)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform11" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(6402, 370)
 
 [node name="TimedPlatform12" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(6586, 370)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform13" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(6770, 370)
 
 [node name="TimedPlatform14" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(6954, 370)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform15" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(7138, 370)
 
 [node name="TimedPlatform16" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(7322, 370)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform17" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(7503, 370)
 
 [node name="TimedPlatform18" parent="TimedPlatforms" instance=ExtResource("12_k6r2x")]
 position = Vector2(7687, 370)
-time_till_start = 4.0
-
-[node name="StickyPlatforms" type="Node" parent="."]
-
-[node name="StickyPlatform" parent="StickyPlatforms" instance=ExtResource("13_a6utu")]
-position = Vector2(2311, 412)
-destination = Vector2(725, 0)
-duration = 4.0
-
-[node name="StickyPlatform2" parent="StickyPlatforms" instance=ExtResource("13_a6utu")]
-position = Vector2(5434.11, 688.255)
-destination = Vector2(0, -300)
-duration = 4.0
-wait_time_1 = 0.5
-
-[node name="StickyPlatform3" parent="StickyPlatforms" instance=ExtResource("13_a6utu")]
-position = Vector2(4673, 684)
-scale = Vector2(0.6, 1)
-destination = Vector2(0, -300)
-duration = 4.0
-wait_time_1 = 0.5
-
-[node name="StickyPlatform4" parent="StickyPlatforms" instance=ExtResource("13_a6utu")]
-position = Vector2(5123, 358)
-scale = Vector2(0.51999, 1)
-destination = Vector2(0, -200)
-duration = 4.0
-
-[node name="StickyPlatform5" parent="StickyPlatforms" instance=ExtResource("13_a6utu")]
-position = Vector2(4945, 177)
-scale = Vector2(0.6, 1)
-destination = Vector2(0, -200)
-duration = 4.0
-wait_time_1 = 0.5
-
-[node name="StickyPlatform6" parent="StickyPlatforms" instance=ExtResource("13_a6utu")]
-position = Vector2(5121, -77)
-scale = Vector2(0.6, 1)
-destination = Vector2(0, -200)
-duration = 4.0
+time_till_start = 5.0
 
 [node name="DisappearingPlatforms" type="Node" parent="."]
 
@@ -290,6 +207,9 @@ position = Vector2(3462.84, 420.413)
 
 [node name="DisappearingPlatform3" parent="DisappearingPlatforms" instance=ExtResource("16_tbutp")]
 position = Vector2(3662.84, 420.413)
+
+[node name="DisappearingPlatform4" parent="DisappearingPlatforms" instance=ExtResource("16_tbutp")]
+position = Vector2(6031, 323)
 
 [node name="JumpBoxs" type="Node" parent="."]
 
@@ -337,6 +257,26 @@ scale = Vector2(1.36204, 1.00839)
 position = Vector2(5700, 288)
 scale = Vector2(0.962055, 0.968387)
 
+[node name="SideJumpBox" parent="JumpBoxs" instance=ExtResource("17_06k0m")]
+position = Vector2(4514, -89.7839)
+scale = Vector2(1.07998, 3.36)
+
+[node name="SideJumpBox3" parent="JumpBoxs" instance=ExtResource("17_06k0m")]
+position = Vector2(5855, 217)
+scale = Vector2(1.07998, 2.64)
+
+[node name="SideJumpBox4" parent="JumpBoxs" instance=ExtResource("17_06k0m")]
+position = Vector2(4579, 655)
+scale = Vector2(1.07998, 2.64)
+
+[node name="SideJumpBox5" parent="JumpBoxs" instance=ExtResource("17_06k0m")]
+position = Vector2(4962, -394)
+scale = Vector2(1.07998, 2.64)
+
+[node name="SideJumpBox2" parent="JumpBoxs" instance=ExtResource("17_06k0m")]
+position = Vector2(5219, -21)
+scale = Vector2(1.07998, 4.96)
+
 [node name="RougePortals" type="Node" parent="."]
 
 [node name="RougePortal" parent="RougePortals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("18_ch1so")]
@@ -358,30 +298,33 @@ portal_exit = NodePath("../../Portals/Portal")
 destination = Vector2(200, 0)
 duration = 4.0
 
-[node name="Node" type="Node" parent="."]
+[node name="Boosts" type="Node" parent="."]
 
-[node name="BoostRight" parent="Node" instance=ExtResource("19_40chr")]
+[node name="BoostRight" parent="Boosts" instance=ExtResource("19_40chr")]
 position = Vector2(7873, 258.22)
 
-[node name="BoostRight2" parent="Node" instance=ExtResource("19_40chr")]
+[node name="BoostRight2" parent="Boosts" instance=ExtResource("19_40chr")]
 position = Vector2(8251, 258.22)
 no_charge_up = true
 
-[node name="BoostRight3" parent="Node" instance=ExtResource("19_40chr")]
+[node name="BoostRight3" parent="Boosts" instance=ExtResource("19_40chr")]
 position = Vector2(8682, 258.22)
 no_charge_up = true
 
-[node name="BoostUp" parent="Node" instance=ExtResource("20_pg1bo")]
+[node name="BoostUp" parent="Boosts" instance=ExtResource("20_pg1bo")]
 position = Vector2(9042, 260)
+no_charge_up = true
 
-[node name="BoostRight4" parent="Node" instance=ExtResource("19_40chr")]
+[node name="BoostRight4" parent="Boosts" instance=ExtResource("19_40chr")]
 position = Vector2(9042, -351)
 
-[node name="BoostDown" parent="Node" instance=ExtResource("12_nv7vb")]
+[node name="BoostDown" parent="Boosts" instance=ExtResource("12_nv7vb")]
 position = Vector2(9796, -350)
+no_charge_up = true
 
-[node name="BoostDown2" parent="Node" instance=ExtResource("12_nv7vb")]
+[node name="BoostDown2" parent="Boosts" instance=ExtResource("12_nv7vb")]
 position = Vector2(9796, 16)
+no_charge_up = true
 
 [node name="Coins" type="Node" parent="."]
 
@@ -411,3 +354,47 @@ position = Vector2(8860, 258)
 
 [node name="coin9" parent="Coins" instance=ExtResource("21_7xpln")]
 position = Vector2(10838, 307)
+
+[node name="MovingPlatforms" type="Node" parent="."]
+
+[node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource("22_28rbr")]
+position = Vector2(2310.16, 410.068)
+destination = Vector2(725, 0)
+duration = 9.0
+
+[node name="MovingPlatform8" parent="MovingPlatforms" instance=ExtResource("22_28rbr")]
+position = Vector2(2102.16, 410.068)
+
+[node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource("22_28rbr")]
+position = Vector2(3035.16, 410.068)
+destination = Vector2(-725, 0)
+duration = 9.0
+
+[node name="MovingPlatform3" parent="MovingPlatforms" instance=ExtResource("22_28rbr")]
+position = Vector2(4678.57, 683.801)
+scale = Vector2(0.71998, 1)
+destination = Vector2(0, -300)
+duration = 3.5
+
+[node name="MovingPlatform4" parent="MovingPlatforms" instance=ExtResource("22_28rbr")]
+position = Vector2(5434.16, 680.947)
+destination = Vector2(0, -300)
+duration = 4.0
+
+[node name="MovingPlatform5" parent="MovingPlatforms" instance=ExtResource("22_28rbr")]
+position = Vector2(5122.18, 355.067)
+scale = Vector2(0.60001, 1)
+destination = Vector2(0, -200)
+duration = 3.0
+
+[node name="MovingPlatform6" parent="MovingPlatforms" instance=ExtResource("22_28rbr")]
+position = Vector2(4944.49, 172.537)
+scale = Vector2(0.718742, 1)
+destination = Vector2(0, -200)
+duration = 3.0
+
+[node name="MovingPlatform7" parent="MovingPlatforms" instance=ExtResource("22_28rbr")]
+position = Vector2(5119.18, -84.3279)
+scale = Vector2(0.72001, 1)
+destination = Vector2(0, -200)
+duration = 3.0

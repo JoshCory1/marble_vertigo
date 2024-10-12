@@ -56,10 +56,10 @@ func _physics_process(delta):
 				var mobile_input = Input.get_accelerometer()
 				if !stop_contorls:
 					var direction = mobile_input.x
-					if direction > 2:
-						direction = 2
-					if direction < -2:
-						direction = -2
+					if direction > 1:
+						direction = 1
+					if direction < -1:
+						direction = -1
 					if direction:
 						velocity.x = direction * accelerometer_speed
 					else:
