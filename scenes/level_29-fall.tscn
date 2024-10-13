@@ -67,12 +67,10 @@ position = Vector2(8354, -589)
 screenClamp = Vector2(100, 0)
 
 [node name="Log5" parent="Logs" instance=ExtResource("9_k8jig")]
-position = Vector2(8631, -589)
-screenClamp = Vector2(200, 0)
+position = Vector2(8640, -589)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_k8jig")]
 position = Vector2(8948, -589)
-screenClamp = Vector2(200, 0)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_k8jig")]
 position = Vector2(9296, -589)
