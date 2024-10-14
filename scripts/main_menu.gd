@@ -1,5 +1,4 @@
 extends Node2D
-
 @export var music_track : AudioStream = null
 
 @onready var button_array = get_tree().get_nodes_in_group("LevelButtons")
@@ -23,16 +22,12 @@ signal unfreeze_camera
 
 func _ready():
 	black_can.visible = true
-	if !GameController.is_reloaded:
-		GameController.is_reloaded = true
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://scenes/start.tscn")
 	setup_parallax_layer($ParallaxBackground/ParallaxLayer)
 	set_shop_size_scale()
 	shop.visible = false
 	shop.close_shop.connect(_on_close_shop)
 	coin_count.text = str(GameController.coins)
-	if music_track != null && GameController.is_reloaded:
+	if music_track != null:
 		AudioPlayer.m_player.stream = music_track
 		AudioPlayer.m_player.volume_db = -10.0
 		AudioPlayer.m_player.play()

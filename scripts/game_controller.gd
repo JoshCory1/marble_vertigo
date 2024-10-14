@@ -5,9 +5,6 @@ extends Node
 ## Debug toglles debug menu
 @export var debug_visible: bool = false
 
-# Start
-var is_reloaded: bool = false
-
 #Time
 var old_time: float = 0.0
 var ver_time: float = 0.0
@@ -73,8 +70,6 @@ var billiards_8_skin_use: bool = false
 @onready var skins = [default_0_skin_use, cube_1_skin_use, spin_2_skin_use, puzzle_3_skin_use,infinty_4_skin_use , circle_5_skin_use, star_6_skin_use,crystel_7_skin_use,billiards_8_skin_use]
 @onready var skins_backup = [default_0_skin_use, cube_1_skin_use, spin_2_skin_use, puzzle_3_skin_use,infinty_4_skin_use , circle_5_skin_use, star_6_skin_use,crystel_7_skin_use,billiards_8_skin_use]
 
-#json save
-#var json = JSON.new()
 
 func _ready():
 	load_game()
@@ -135,13 +130,6 @@ func save_game():
 	file.close()
 #	save_json(skins_unlocked)
 
-#func save_json(content):
-#	var path = FileAccess.open(save_file_path, FileAccess.WRITE)
-#	var data = {}
-#	path.store_string(json.stringify(content))
-#	path.close()
-#	path = null
-
 func load_game():
 	if FileAccess.file_exists(save_file_path):
 		var file = FileAccess.open(save_file_path, FileAccess.READ)
@@ -157,9 +145,3 @@ func load_game():
 		current_play_through_count = 5
 		current_lvl = 1
 		coins = 0
-#		skins_unlocked = [default_0_skin_unlocked, cube_1_skin_unlocked, spin_2_skin_unlocked, puzzle_3_unlocked, infinty_4_unlocked]
-
-#func load_json():
-#	var file = FileAccess.open(save_file_path, FileAccess.READ)
-#	var content = json.parse_string(file.get_as_text())
-
