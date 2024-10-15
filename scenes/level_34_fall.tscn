@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dek8pr5toc7ky"]
+[gd_scene load_steps=14 format=3 uid="uid://dek8pr5toc7ky"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_pay2u"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_ugfyy"]
@@ -15,6 +15,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8lg2"]
 size = Vector2(11530, 81.4167)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2wx1"]
+size = Vector2(75.3125, 990)
+
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_pay2u")
 music_track = ExtResource("2_ugfyy")
@@ -22,7 +25,7 @@ music_track = ExtResource("2_ugfyy")
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_jnm2w")]
 
 [node name="Exit" parent="." instance=ExtResource("4_8kbt0")]
-position = Vector2(6864, 384)
+position = Vector2(6776, 384)
 destination = Vector2(-200, 0)
 duration = 2.0
 current_lvl = 34
@@ -44,6 +47,14 @@ shape = SubResource("RectangleShape2D_k8lg2")
 position = Vector2(4356, -377)
 shape = SubResource("RectangleShape2D_k8lg2")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(-1393.34, 161)
+shape = SubResource("RectangleShape2D_o2wx1")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(10084, 161)
+shape = SubResource("RectangleShape2D_o2wx1")
+
 [node name="UI" parent="." instance=ExtResource("7_hhpcy")]
 
 [node name="SkinHandler" parent="." instance=ExtResource("8_y1nqj")]
@@ -52,111 +63,93 @@ shape = SubResource("RectangleShape2D_k8lg2")
 
 [node name="Log" parent="Logs" instance=ExtResource("9_5vw7h")]
 position = Vector2(384, 562)
-screenClamp = Vector2(300, 0)
 
 [node name="Log2" parent="Logs" instance=ExtResource("9_5vw7h")]
 position = Vector2(680, 562)
-screenClamp = Vector2(300, 0)
 
 [node name="Log3" parent="Logs" instance=ExtResource("9_5vw7h")]
 position = Vector2(984, 562)
-screenClamp = Vector2(300, 0)
 
 [node name="Log4" parent="Logs" instance=ExtResource("9_5vw7h")]
 position = Vector2(1248, 562)
 screenClamp = Vector2(75, 0)
 
 [node name="Log5" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(1371, -224)
-screenClamp = Vector2(200, 0)
+position = Vector2(1371, -280)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(1660, -224)
-screenClamp = Vector2(300, 0)
+position = Vector2(1671, -280)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(2016, -226)
-screenClamp = Vector2(300, 0)
+position = Vector2(1971, -282)
 
 [node name="Log11" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(2384, -222)
-screenClamp = Vector2(100, 0)
+position = Vector2(2271, -278)
 
 [node name="Log8" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(2429, 510)
+position = Vector2(2429, 534)
 screenClamp = Vector2(75, 0)
 
 [node name="Log9" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(2734, 510)
-screenClamp = Vector2(300, 0)
+position = Vector2(2729, 534)
 
 [node name="Log10" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(3075, 510)
-screenClamp = Vector2(200, 0)
+position = Vector2(3029, 534)
 
 [node name="Log12" parent="Logs" instance=ExtResource("9_5vw7h")]
 position = Vector2(3217, -270)
 screenClamp = Vector2(75, 0)
 
 [node name="Log13" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(3522, -270)
-screenClamp = Vector2(300, 0)
+position = Vector2(3517, -270)
 
 [node name="Log14" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(3863, -270)
-screenClamp = Vector2(200, 0)
+position = Vector2(3817, -270)
 
 [node name="Log15" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(3755, 464)
+position = Vector2(3755, 488)
 screenClamp = Vector2(60, 0)
 
 [node name="Log16" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(4060, 464)
-screenClamp = Vector2(300, 0)
+position = Vector2(4055, 488)
 
 [node name="Log17" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(4401, 464)
+position = Vector2(4355, 488)
 screenClamp = Vector2(65, 0)
 
 [node name="Log18" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(4518, -135)
+position = Vector2(4518, -199)
 screenClamp = Vector2(65, 0)
 
 [node name="Log19" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(4823, -135)
-screenClamp = Vector2(300, 0)
+position = Vector2(4818, -199)
 
 [node name="Log20" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(5164, -135)
-screenClamp = Vector2(300, 0)
+position = Vector2(5118, -199)
 
 [node name="Log25" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(5080, 470)
-screenClamp = Vector2(100, 0)
+position = Vector2(5096, 510)
 
 [node name="Log26" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(5385, 470)
-screenClamp = Vector2(300, 0)
+position = Vector2(5396, 510)
 
 [node name="Log27" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(5726, 470)
-screenClamp = Vector2(200, 0)
+position = Vector2(5696, 510)
 
 [node name="Log21" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(5551, -131)
-screenClamp = Vector2(300, 0)
+position = Vector2(5418, -195)
 
 [node name="Log22" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(5856, -131)
-screenClamp = Vector2(300, 0)
+position = Vector2(5718, -195)
 
 [node name="Log23" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(6197, -131)
-screenClamp = Vector2(300, 0)
+position = Vector2(6018, -195)
 
 [node name="Log24" parent="Logs" instance=ExtResource("9_5vw7h")]
-position = Vector2(6638, -126)
-screenClamp = Vector2(300, 0)
+position = Vector2(6318, -190)
+
+[node name="Log28" parent="Logs" instance=ExtResource("9_5vw7h")]
+position = Vector2(6618, -190)
 
 [node name="GravSwitchs" type="Node" parent="."]
 
@@ -164,25 +157,25 @@ screenClamp = Vector2(300, 0)
 position = Vector2(1406, 343)
 
 [node name="GravSwitch2" parent="GravSwitchs" instance=ExtResource("12_slwnh")]
-position = Vector2(2385, 29)
+position = Vector2(2401, -75)
 
 [node name="GravSwitch3" parent="GravSwitchs" instance=ExtResource("12_slwnh")]
-position = Vector2(3276, 378)
+position = Vector2(3228, 330)
 
 [node name="GravSwitch4" parent="GravSwitchs" instance=ExtResource("12_slwnh")]
-position = Vector2(4071, -128)
+position = Vector2(4039, -104)
 
 [node name="GravSwitch5" parent="GravSwitchs" instance=ExtResource("12_slwnh")]
-position = Vector2(4577, 317)
+position = Vector2(4513, 293)
 
 [node name="GravSwitch6" parent="GravSwitchs" instance=ExtResource("12_slwnh")]
-position = Vector2(6729, 139)
+position = Vector2(6641, 91)
 
 [node name="GravSwitch7" parent="GravSwitchs" instance=ExtResource("12_slwnh")]
-position = Vector2(5343, 0)
+position = Vector2(5391, 48)
 
 [node name="GravSwitch8" parent="GravSwitchs" instance=ExtResource("12_slwnh")]
-position = Vector2(5901, 329)
+position = Vector2(5701, 241)
 
 [node name="Coins" type="Node" parent="."]
 
