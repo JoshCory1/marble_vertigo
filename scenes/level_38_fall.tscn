@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bad53jvhxckjj"]
+[gd_scene load_steps=23 format=3 uid="uid://bad53jvhxckjj"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_843i7"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_6ol28"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://6nl1xce7kbbw" path="res://scenes/boost_right.tscn" id="16_d4ngs"]
 [ext_resource type="PackedScene" uid="uid://cfm85q7hteqdx" path="res://scenes/animatable_mover.tscn" id="16_nwqu6"]
 [ext_resource type="PackedScene" uid="uid://c11506taw77ph" path="res://scenes/boost_down.tscn" id="17_i1kai"]
-[ext_resource type="PackedScene" uid="uid://wiywj84wa50y" path="res://scenes/sticky_platform.tscn" id="17_v7nmh"]
 [ext_resource type="PackedScene" uid="uid://ksn32v22b7vs" path="res://scenes/cannon.tscn" id="20_jtldq"]
 [ext_resource type="PackedScene" uid="uid://cpxdnyrpl6w1e" path="res://scenes/cannon_trigger.tscn" id="21_7m22g"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="23_larh4"]
@@ -31,7 +30,7 @@ music_track = ExtResource("2_6ol28")
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_2eqdg")]
 
 [node name="Exit" parent="." instance=ExtResource("4_0smlg")]
-position = Vector2(15634, 208)
+position = Vector2(15430, 248)
 current_lvl = 38
 
 [node name="Ground" parent="." instance=ExtResource("5_lb6bn")]
@@ -48,158 +47,143 @@ position = Vector2(387, 163)
 
 [node name="Log" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(384, 511)
-screenClamp = Vector2(300, 0)
 
 [node name="Log2" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(720, 511)
-screenClamp = Vector2(300, 0)
 
 [node name="Log3" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(1027, 511)
-screenClamp = Vector2(300, 0)
 
 [node name="Log4" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(1333, 511)
-screenClamp = Vector2(300, 0)
 
 [node name="Log5" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(1642, 508)
-screenClamp = Vector2(300, 0)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(1961, 508)
-screenClamp = Vector2(300, 0)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(2275, 508)
-screenClamp = Vector2(300, 0)
 
 [node name="Log21" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(2099, -529)
-screenClamp = Vector2(300, 0)
 
 [node name="Log25" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(2459, -529)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(100, 0)
 
 [node name="Log22" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(1716, -529)
-screenClamp = Vector2(300, 0)
 
 [node name="Log23" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(1354, -529)
-screenClamp = Vector2(300, 0)
 
 [node name="Log24" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(1027, -529)
-screenClamp = Vector2(300, 0)
 
 [node name="Log8" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(3386, 505)
-screenClamp = Vector2(300, 0)
 
 [node name="Log26" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(4247, -454)
-screenClamp = Vector2(300, 0)
 
 [node name="Log27" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(4631, -454)
-screenClamp = Vector2(300, 0)
 
 [node name="Log28" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(4983, -454)
-screenClamp = Vector2(300, 0)
 
 [node name="Log29" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(5319, -454)
-screenClamp = Vector2(300, 0)
 
 [node name="Log9" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(5376, 508)
-screenClamp = Vector2(300, 0)
 
 [node name="Log10" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(5728, 508)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(175, 0)
 
 [node name="Log11" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(6520, 508)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(175, 0)
 
 [node name="Log12" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(6872, 508)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(100, 0)
 
 [node name="Log30" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(8294, -493)
-screenClamp = Vector2(300, 0)
+position = Vector2(8130, -493)
 
 [node name="Log37" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(7830, -493)
-screenClamp = Vector2(300, 0)
 
 [node name="Log31" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(8766, -493)
-screenClamp = Vector2(300, 0)
+position = Vector2(8430, -493)
 
 [node name="Log32" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(9222, -493)
-screenClamp = Vector2(300, 0)
+position = Vector2(8430, -493)
 
 [node name="Log33" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(9654, -493)
-screenClamp = Vector2(300, 0)
+position = Vector2(8730, -493)
 
 [node name="Log34" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(10118, -493)
-screenClamp = Vector2(300, 0)
+position = Vector2(9030, -493)
 
 [node name="Log35" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(10590, -493)
-screenClamp = Vector2(300, 0)
+position = Vector2(9330, -493)
+
+[node name="Log38" parent="Logs" instance=ExtResource("9_m1gfs")]
+position = Vector2(9630, -493)
+
+[node name="Log39" parent="Logs" instance=ExtResource("9_m1gfs")]
+position = Vector2(9930, -493)
+
+[node name="Log40" parent="Logs" instance=ExtResource("9_m1gfs")]
+position = Vector2(10230, -493)
+
+[node name="Log41" parent="Logs" instance=ExtResource("9_m1gfs")]
+position = Vector2(10530, -493)
 
 [node name="Log13" parent="Logs" instance=ExtResource("9_m1gfs")]
 position = Vector2(12523, 508)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(100, 0)
 
 [node name="Log14" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(12875, 508)
-screenClamp = Vector2(300, 0)
+position = Vector2(12823, 508)
 
 [node name="Log15" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(13171, 508)
-screenClamp = Vector2(300, 0)
+position = Vector2(13123, 508)
 
 [node name="Log16" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(13523, 508)
-screenClamp = Vector2(300, 0)
+position = Vector2(13423, 508)
 
 [node name="Log17" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(13851, 508)
-screenClamp = Vector2(300, 0)
+position = Vector2(13723, 508)
 
 [node name="Log18" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(14203, 508)
-screenClamp = Vector2(300, 0)
+position = Vector2(14023, 508)
 
 [node name="Log19" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(14499, 508)
-screenClamp = Vector2(300, 0)
+position = Vector2(14323, 508)
 
 [node name="Log20" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(14851, 508)
-screenClamp = Vector2(300, 0)
+position = Vector2(14623, 508)
 
 [node name="Log36" parent="Logs" instance=ExtResource("9_m1gfs")]
-position = Vector2(15291, 508)
-screenClamp = Vector2(300, 0)
+position = Vector2(14923, 508)
+
+[node name="Log42" parent="Logs" instance=ExtResource("9_m1gfs")]
+position = Vector2(15223, 508)
 
 [node name="Portals" type="Node" parent="."]
 
 [node name="Portal" parent="Portals" instance=ExtResource("10_m1rua")]
 position = Vector2(1026, 20)
+visible_sprite = false
 
 [node name="GravSwitch" parent="Portals/Portal" instance=ExtResource("15_vmr1j")]
+visibile_sprite = false
 
 [node name="RougePortal" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("12_ntchh")]
 position = Vector2(15296, 310)
@@ -235,7 +219,7 @@ duration = 3.0
 
 [node name="MovingHazard" parent="Hazards" instance=ExtResource("11_vsp2i")]
 position = Vector2(1967, 284)
-destination = Vector2(-800, 0)
+destination = Vector2(-700, 0)
 duration = 0.5
 wait_time_1 = 2.5
 wait_time_2 = 2.5
@@ -348,13 +332,14 @@ position = Vector2(7812.98, 901.082)
 
 [node name="GravSwitch" parent="Boosts/BoostUp" instance=ExtResource("15_vmr1j")]
 position = Vector2(-1.49854, 4.49493)
+visibile_sprite = false
 
 [node name="BoostUp2" parent="Boosts" instance=ExtResource("14_imdtm")]
 position = Vector2(7812.99, 129.453)
 no_charge_up = true
 
 [node name="BoostRight" parent="Boosts" instance=ExtResource("16_d4ngs")]
-position = Vector2(5551.65, -363.879)
+position = Vector2(5671.65, -363.879)
 
 [node name="BoostRight2" parent="Boosts" instance=ExtResource("16_d4ngs")]
 position = Vector2(6247, -364)
@@ -365,6 +350,7 @@ position = Vector2(6871, -364)
 no_charge_up = true
 
 [node name="GravSwitch" parent="Boosts/BoostDown" instance=ExtResource("15_vmr1j")]
+visibile_sprite = false
 
 [node name="GravSwitchs" type="Node" parent="."]
 
@@ -377,17 +363,7 @@ duration = 4.0
 position = Vector2(40.3257, 0.498108)
 
 [node name="GravSwitch" parent="GravSwitchs" instance=ExtResource("15_vmr1j")]
-position = Vector2(10800, -379)
-
-[node name="StickyPlatforms" type="Node" parent="."]
-
-[node name="StickyPlatform" parent="StickyPlatforms" instance=ExtResource("17_v7nmh")]
-position = Vector2(5226, 333)
-destination = Vector2(0, -600)
-unstuck_duration_offset = -1.9
-duration = 2.0
-bounce_force_min = 600.0
-bounce_force_max = 850.0
+position = Vector2(10736, -307)
 
 [node name="Cannons" type="Node" parent="."]
 
@@ -418,7 +394,7 @@ position = Vector2(2459, -308)
 position = Vector2(4247, -270)
 
 [node name="coin4" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(5226, 282)
+position = Vector2(5226, 202)
 
 [node name="coin5" parent="Coins" instance=ExtResource("23_larh4")]
 position = Vector2(6565, -358)
