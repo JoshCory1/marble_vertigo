@@ -89,11 +89,11 @@ screenClamp = Vector2(300, 0)
 
 [node name="Log11" parent="Logs" instance=ExtResource("9_rsmff")]
 position = Vector2(10020, -710)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(200, 0)
 
 [node name="Log13" parent="Logs" instance=ExtResource("9_rsmff")]
 position = Vector2(12081, -771)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(200, 0)
 
 [node name="Log14" parent="Logs" instance=ExtResource("9_rsmff")]
 position = Vector2(12425, -777)
@@ -292,9 +292,6 @@ position = Vector2(8527, -643)
 
 [node name="DisappearingPlatform17" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
 position = Vector2(8722, -603)
-
-[node name="DisappearingPlatform18" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
-position = Vector2(8918, -643)
 
 [node name="DisappearingPlatform12" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
 position = Vector2(7855, -44)

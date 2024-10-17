@@ -133,6 +133,7 @@ animations = [{
 size = Vector2(130, 122)
 
 [node name="BoostLeft" type="Area2D" groups=["boost_x"]]
+z_index = 1005
 collision_layer = 2
 script = ExtResource("1_34rjf")
 

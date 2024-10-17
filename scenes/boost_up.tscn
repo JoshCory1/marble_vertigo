@@ -133,6 +133,7 @@ animations = [{
 size = Vector2(118, 132)
 
 [node name="BoostUp" type="Area2D" groups=["boost_x"]]
+z_index = 1005
 collision_layer = 2
 script = ExtResource("1_pqpch")
 
