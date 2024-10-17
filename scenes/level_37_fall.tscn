@@ -25,7 +25,7 @@ music_track = ExtResource("2_it0f7")
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_diy2f")]
 
 [node name="Exit" parent="." instance=ExtResource("4_luq6g")]
-position = Vector2(16827, 2)
+position = Vector2(16827, -102)
 current_lvl = 37
 
 [node name="Ground" parent="." instance=ExtResource("5_c4o4v")]
@@ -53,43 +53,40 @@ position = Vector2(1262, 511)
 screenClamp = Vector2(100, 0)
 
 [node name="Log4" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(1490, -468)
-screenClamp = Vector2(300, 0)
+position = Vector2(1482, -468)
 
 [node name="Log5" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(1868, -468)
-screenClamp = Vector2(300, 0)
+position = Vector2(1782, -468)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(2258, -468)
-screenClamp = Vector2(300, 0)
+position = Vector2(2082, -468)
 
 [node name="Log9" parent="Logs" instance=ExtResource("9_ctryh")]
 position = Vector2(4881, 540)
 screenClamp = Vector2(300, 0)
 
 [node name="Log10" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(6227, 653)
-screenClamp = Vector2(300, 0)
+position = Vector2(6227, 717)
 
 [node name="Log11" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(6613, 653)
-screenClamp = Vector2(300, 0)
+position = Vector2(6527, 717)
 
 [node name="Log12" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(6966, 650)
-screenClamp = Vector2(250, 0)
+position = Vector2(6827, 714)
+
+[node name="Log28" parent="Logs" instance=ExtResource("9_ctryh")]
+position = Vector2(7127, 714)
 
 [node name="Log14" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(7730, 607)
+position = Vector2(7730, 671)
 screenClamp = Vector2(300, 0)
 
 [node name="Log15" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(8179, 607)
+position = Vector2(8179, 671)
 screenClamp = Vector2(300, 0)
 
 [node name="Log16" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(8617, 604)
+position = Vector2(8617, 668)
 screenClamp = Vector2(300, 0)
 
 [node name="Log17" parent="Logs" instance=ExtResource("9_ctryh")]
@@ -134,14 +131,17 @@ screenClamp = Vector2(300, 0)
 
 [node name="Log13" parent="Logs" instance=ExtResource("9_ctryh")]
 position = Vector2(7282, -1064)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(350, 0)
 
 [node name="Log8" parent="Logs" instance=ExtResource("9_ctryh")]
 position = Vector2(3557, -742)
 screenClamp = Vector2(200, 0)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_ctryh")]
-position = Vector2(2600, -468)
+position = Vector2(2382, -468)
+
+[node name="Log27" parent="Logs" instance=ExtResource("9_ctryh")]
+position = Vector2(2682, -468)
 screenClamp = Vector2(100, 0)
 
 [node name="Hazards" type="Node" parent="."]
@@ -188,28 +188,28 @@ position = Vector2(3558, 385)
 position = Vector2(4881, -581)
 
 [node name="GravSwitch5" parent="GravSwitchs" instance=ExtResource("12_bq7x7")]
-position = Vector2(5377, 474)
+position = Vector2(5273, 418)
 
 [node name="GravSwitch6" parent="GravSwitchs" instance=ExtResource("12_bq7x7")]
-position = Vector2(6227, -665)
+position = Vector2(6227, -721)
 
 [node name="GravSwitch7" parent="GravSwitchs" instance=ExtResource("12_bq7x7")]
-position = Vector2(7282, 499)
+position = Vector2(7282, 539)
 
 [node name="GravSwitch8" parent="GravSwitchs" instance=ExtResource("12_bq7x7")]
 position = Vector2(7730, -923)
 
 [node name="GravSwitch9" parent="GravSwitchs" instance=ExtResource("12_bq7x7")]
-position = Vector2(9048, 480)
+position = Vector2(9048, 544)
 
 [node name="GravSwitch10" parent="GravSwitchs" instance=ExtResource("12_bq7x7")]
 position = Vector2(11772, -224)
 
 [node name="GravSwitch11" parent="GravSwitchs" instance=ExtResource("12_bq7x7")]
-position = Vector2(13285, 766)
+position = Vector2(13285, 742)
 
 [node name="GravSwitch12" parent="GravSwitchs" instance=ExtResource("12_bq7x7")]
-position = Vector2(14076, -568)
+position = Vector2(14076, -504)
 
 [node name="GravSwitch13" parent="GravSwitchs" instance=ExtResource("12_bq7x7")]
 position = Vector2(14820, 762)
@@ -232,10 +232,13 @@ position = Vector2(3178, 499)
 position = Vector2(3370, 461)
 
 [node name="DisappearingPlatform5" parent="DisappearingPlatforms" instance=ExtResource("13_62r4a")]
-position = Vector2(5382, -655)
+position = Vector2(5278, -655)
 
 [node name="DisappearingPlatform6" parent="DisappearingPlatforms" instance=ExtResource("13_62r4a")]
-position = Vector2(5770, -654)
+position = Vector2(5666, -654)
+
+[node name="DisappearingPlatform21" parent="DisappearingPlatforms" instance=ExtResource("13_62r4a")]
+position = Vector2(6052, -654)
 
 [node name="DisappearingPlatform7" parent="DisappearingPlatforms" instance=ExtResource("13_62r4a")]
 position = Vector2(9048, -346)
@@ -285,10 +288,10 @@ position = Vector2(11559, -314)
 position = Vector2(3917, -690)
 
 [node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("14_r0r56")]
-position = Vector2(5580, -682)
+position = Vector2(5476, -682)
 
 [node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("14_r0r56")]
-position = Vector2(5968, -682)
+position = Vector2(5864, -682)
 
 [node name="DisappearingPlatform21" parent="TimedPlatforms" instance=ExtResource("13_62r4a")]
 position = Vector2(14820, -655)
@@ -313,14 +316,14 @@ position = Vector2(15786, -682)
 
 [node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("14_r0r56")]
 position = Vector2(4109, -648)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("14_r0r56")]
 position = Vector2(4301, -690)
 
 [node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("14_r0r56")]
 position = Vector2(4493, -648)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("14_r0r56")]
 position = Vector2(4685, -690)
@@ -361,10 +364,11 @@ cannon_emit_selection = "cannon 5"
 [node name="AnimatableMover" parent="Cannons" instance=ExtResource("14_32o6c")]
 position = Vector2(11958, -253)
 scale = Vector2(1, -1)
-destination = Vector2(0, -200)
+destination = Vector2(0, 200)
 
 [node name="Cannon5" parent="Cannons/AnimatableMover" instance=ExtResource("14_gqn6o")]
 position = Vector2(4817, 306)
+bullet_speed = 125.0
 max_rate_of_fire = 15.0
 cannon_emit_selection = "cannon 4"
 
@@ -382,7 +386,7 @@ scale = Vector2(2.83033, 5.165)
 cannon_emit_selection = "cannon 3"
 
 [node name="CannonTrigger9" parent="Cannons/Triggers" instance=ExtResource("15_qvnap")]
-position = Vector2(16470, -620)
+position = Vector2(16374, -620)
 scale = Vector2(2.95999, 4.28)
 cannon_emit_selection = "cannon 4"
 activate_switch = false
@@ -399,7 +403,7 @@ cannon_emit_selection = "cannon 2"
 activate_switch = false
 
 [node name="CannonTrigger4" parent="Cannons/Triggers" instance=ExtResource("15_qvnap")]
-position = Vector2(7869, 506)
+position = Vector2(7869, 490)
 scale = Vector2(2.91999, 4.08)
 cannon_emit_selection = "cannon 2"
 
@@ -426,7 +430,7 @@ position = Vector2(2794, 377)
 position = Vector2(4301, -598)
 
 [node name="coin4" parent="Coins" instance=ExtResource("16_6n3kc")]
-position = Vector2(5968, -585)
+position = Vector2(5864, -585)
 
 [node name="coin5" parent="Coins" instance=ExtResource("16_6n3kc")]
 position = Vector2(7282, -41)
@@ -444,4 +448,4 @@ position = Vector2(14457, 725)
 position = Vector2(15976, -572)
 
 [node name="coin10" parent="Coins" instance=ExtResource("16_6n3kc")]
-position = Vector2(16352, 45)
+position = Vector2(16352, -35)
