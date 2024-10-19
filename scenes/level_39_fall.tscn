@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://di7ffoctubeu1"]
+[gd_scene load_steps=21 format=3 uid="uid://di7ffoctubeu1"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_tvgln"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_fu2nf"]
@@ -21,6 +21,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ytke"]
 size = Vector2(10608, 139.372)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4a0r"]
+size = Vector2(87.2903, 1333)
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_tvgln")
@@ -45,6 +48,14 @@ collision_layer = 4
 position = Vector2(4300, -1690.69)
 shape = SubResource("RectangleShape2D_0ytke")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(-529.645, -957.5)
+shape = SubResource("RectangleShape2D_o4a0r")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(8294, -997)
+shape = SubResource("RectangleShape2D_o4a0r")
+
 [node name="UI" parent="." instance=ExtResource("7_gjdcc")]
 
 [node name="SkinHandler" parent="." instance=ExtResource("8_aaads")]
@@ -52,12 +63,11 @@ shape = SubResource("RectangleShape2D_0ytke")
 [node name="Logs" type="Node" parent="."]
 
 [node name="Log" parent="Logs" instance=ExtResource("9_2clay")]
-position = Vector2(384, 511)
+position = Vector2(384, 559)
 screenClamp = Vector2(300, 0)
 
 [node name="Log2" parent="Logs" instance=ExtResource("9_2clay")]
-position = Vector2(708, 511)
-screenClamp = Vector2(150, 0)
+position = Vector2(708, 559)
 
 [node name="Log4" parent="Logs" instance=ExtResource("9_2clay")]
 position = Vector2(2166, -302)
@@ -65,19 +75,15 @@ screenClamp = Vector2(125, 0)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_2clay")]
 position = Vector2(2462, -302)
-screenClamp = Vector2(150, 0)
 
 [node name="Log8" parent="Logs" instance=ExtResource("9_2clay")]
 position = Vector2(2774, -302)
-screenClamp = Vector2(150, 0)
 
 [node name="Log9" parent="Logs" instance=ExtResource("9_2clay")]
 position = Vector2(3046, -302)
-screenClamp = Vector2(150, 0)
 
 [node name="Log5" parent="Logs" instance=ExtResource("9_2clay")]
 position = Vector2(2692, -455)
-screenClamp = Vector2(150, 0)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_2clay")]
 position = Vector2(2977, -455)
@@ -85,22 +91,21 @@ screenClamp = Vector2(200, 0)
 
 [node name="Log10" parent="Logs" instance=ExtResource("9_2clay")]
 position = Vector2(4071, -669)
-screenClamp = Vector2(150, 0)
 
 [node name="Log11" parent="Logs" instance=ExtResource("9_2clay")]
 position = Vector2(4300, -669)
 screenClamp = Vector2(125, 0)
 
 [node name="Log12" parent="Logs" instance=ExtResource("9_2clay")]
-position = Vector2(5057, -302)
+position = Vector2(5057, -270)
 screenClamp = Vector2(125, 0)
 
 [node name="Log14" parent="Logs" instance=ExtResource("9_2clay")]
-position = Vector2(5378, -302)
+position = Vector2(5378, -270)
 screenClamp = Vector2(125, 0)
 
 [node name="Log15" parent="Logs" instance=ExtResource("9_2clay")]
-position = Vector2(5691, -305)
+position = Vector2(5691, -273)
 screenClamp = Vector2(275, 0)
 
 [node name="Log16" parent="Logs" instance=ExtResource("9_2clay")]
@@ -198,6 +203,7 @@ position = Vector2(2154, 523)
 
 [node name="GravSwitch" parent="Boosts/BoostUp3" instance=ExtResource("14_v3qg2")]
 position = Vector2(0.145996, -3.03278)
+visibile_sprite = false
 
 [node name="BoostUp2" parent="Boosts" instance=ExtResource("13_aebq7")]
 position = Vector2(1249.51, -2)
@@ -249,39 +255,39 @@ position = Vector2(6156, -749)
 
 [node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(6348, -727)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform3" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(6540, -749)
 
 [node name="TimedPlatform4" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(6732, -727)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(5084, 737)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(5276, 715)
 
 [node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(5468, 737)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform9" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(5660, 715)
 
 [node name="TimedPlatform10" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(5852, 737)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="TimedPlatform11" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(6044, 715)
 
 [node name="TimedPlatform12" parent="TimedPlatforms" instance=ExtResource("17_7ep8a")]
 position = Vector2(6236, 737)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="Coins" type="Node" parent="."]
 
