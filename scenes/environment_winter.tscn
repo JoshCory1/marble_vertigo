@@ -22,10 +22,11 @@ z_index = -100
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer1"]
+texture_repeat = 2
 texture = ExtResource("2_fhong")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 960, 540)
+region_rect = Rect2(0, 0, 960, 536)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -99
