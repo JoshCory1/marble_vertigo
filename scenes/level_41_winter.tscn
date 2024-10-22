@@ -17,7 +17,7 @@ script = ExtResource("1_bldjf")
 music_track = ExtResource("2_46kk2")
 
 [node name="Exit" parent="." instance=ExtResource("3_ap7js")]
-position = Vector2(11145, -1236)
+position = Vector2(11145, -1180)
 current_lvl = 41
 
 [node name="Player" parent="." instance=ExtResource("4_gr5d1")]
@@ -35,44 +35,98 @@ layer_0/tile_data = PackedInt32Array(655383, 65536, 1, 589847, 65536, 1, 524311,
 [node name="Pillars" type="Node" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("9_ie6sq")]
-position = Vector2(381, 351)
-screenClamp = Vector2(300, 0)
+position = Vector2(381, 343)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("9_ie6sq")]
-position = Vector2(637, 351)
-screenClamp = Vector2(300, 0)
+position = Vector2(637, 343)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("9_ie6sq")]
 position = Vector2(949, 343)
-screenClamp = Vector2(300, 0)
+
+[node name="Pillar11" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(1249, 343)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("9_ie6sq")]
-position = Vector2(2137, 132)
-screenClamp = Vector2(300, 0)
+position = Vector2(2033, 132)
+
+[node name="Pillar12" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(2321, 132)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("9_ie6sq")]
 position = Vector2(2855, -319)
-screenClamp = Vector2(300, 0)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("9_ie6sq")]
-position = Vector2(3599, -623)
-screenClamp = Vector2(300, 0)
+position = Vector2(3343, -623)
+
+[node name="Pillar13" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(3643, -623)
+
+[node name="Pillar14" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(3943, -623)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar7" parent="Pillars" instance=ExtResource("9_ie6sq")]
-position = Vector2(4511, 396)
-screenClamp = Vector2(300, 0)
+position = Vector2(4391, 412)
+
+[node name="Pillar15" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(4691, 412)
 
 [node name="Pillar8" parent="Pillars" instance=ExtResource("9_ie6sq")]
-position = Vector2(5702, -452)
-screenClamp = Vector2(300, 0)
+position = Vector2(5214, -412)
+
+[node name="Pillar16" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(5514, -412)
+
+[node name="Pillar17" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(5814, -412)
+
+[node name="Pillar18" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(6114, -412)
+
+[node name="Pillar19" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(6414, -412)
 
 [node name="Pillar9" parent="Pillars" instance=ExtResource("9_ie6sq")]
-position = Vector2(7579, -822)
-screenClamp = Vector2(300, 0)
+position = Vector2(7155, -795)
+
+[node name="Pillar20" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(7455, -795)
+
+[node name="Pillar21" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(7755, -795)
+
+[node name="Pillar22" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(8055, -795)
+
+[node name="Pillar23" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(8355, -795)
+
+[node name="Pillar24" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(8655, -795)
 
 [node name="Pillar10" parent="Pillars" instance=ExtResource("9_ie6sq")]
-position = Vector2(10179, -1015)
-screenClamp = Vector2(300, 0)
+position = Vector2(9396, -990)
+reternSpeed = 150.0
+
+[node name="Pillar25" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(9696, -990)
+reternSpeed = 150.0
+
+[node name="Pillar26" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(9996, -990)
+reternSpeed = 150.0
+
+[node name="Pillar27" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(10296, -990)
+reternSpeed = 150.0
+
+[node name="Pillar28" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(10596, -990)
+reternSpeed = 150.0
+
+[node name="Pillar29" parent="Pillars" instance=ExtResource("9_ie6sq")]
+position = Vector2(10896, -990)
+reternSpeed = 150.0
 
 [node name="CloudFronts" type="Node" parent="."]
 
