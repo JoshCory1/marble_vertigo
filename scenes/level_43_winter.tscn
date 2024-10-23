@@ -29,8 +29,8 @@ music_track = ExtResource("2_t1cbo")
 
 [node name="Exit" parent="." instance=ExtResource("3_k3fm5")]
 position = Vector2(17095, 79)
-destination = Vector2(-400, 0)
-duration = 4.0
+destination = Vector2(-500, 0)
+duration = 5.0
 current_lvl = 43
 
 [node name="Player" parent="." instance=ExtResource("4_1tbrg")]
@@ -49,67 +49,51 @@ layer_0/tile_data = PackedInt32Array(655383, 65536, 1, 589847, 65536, 1, 524311,
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("9_k6t28")]
 position = Vector2(381, 351)
-screenClamp = Vector2(300, 0)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(637, 349)
-screenClamp = Vector2(300, 0)
+position = Vector2(681, 349)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(949, 347)
-screenClamp = Vector2(300, 0)
+position = Vector2(981, 347)
 
 [node name="Pillar7" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(1253, 347)
-screenClamp = Vector2(150, 0)
+position = Vector2(1281, 347)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(1770, 574)
-screenClamp = Vector2(100, 0)
+position = Vector2(1770, 606)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(2037, 574)
-screenClamp = Vector2(300, 0)
+position = Vector2(2070, 606)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(2349, 577)
-screenClamp = Vector2(300, 0)
+position = Vector2(2370, 609)
 
 [node name="Pillar8" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(2661, 574)
-screenClamp = Vector2(300, 0)
-
-[node name="Pillar9" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(2933, 577)
-screenClamp = Vector2(300, 0)
+position = Vector2(2670, 606)
 
 [node name="Pillar10" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(3229, 577)
-screenClamp = Vector2(300, 0)
-
-[node name="Pillar11" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(3501, 574)
-screenClamp = Vector2(300, 0)
-
-[node name="Pillar12" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(3773, 577)
-screenClamp = Vector2(300, 0)
-
-[node name="Pillar13" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(4069, 577)
-screenClamp = Vector2(300, 0)
-
-[node name="Pillar14" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(4309, 574)
-screenClamp = Vector2(300, 0)
-
-[node name="Pillar15" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(4581, 577)
-screenClamp = Vector2(300, 0)
+position = Vector2(2970, 609)
 
 [node name="Pillar16" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(4877, 577)
-screenClamp = Vector2(300, 0)
+position = Vector2(3270, 609)
+
+[node name="Pillar15" parent="Pillars" instance=ExtResource("9_k6t28")]
+position = Vector2(3570, 609)
+
+[node name="Pillar14" parent="Pillars" instance=ExtResource("9_k6t28")]
+position = Vector2(3869, 606)
+
+[node name="Pillar13" parent="Pillars" instance=ExtResource("9_k6t28")]
+position = Vector2(4169, 609)
+
+[node name="Pillar12" parent="Pillars" instance=ExtResource("9_k6t28")]
+position = Vector2(4469, 609)
+
+[node name="Pillar11" parent="Pillars" instance=ExtResource("9_k6t28")]
+position = Vector2(4769, 606)
+
+[node name="Pillar9" parent="Pillars" instance=ExtResource("9_k6t28")]
+position = Vector2(5069, 609)
 
 [node name="Pillar17" parent="Pillars" instance=ExtResource("9_k6t28")]
 position = Vector2(7467, -1425)
@@ -117,81 +101,56 @@ screenClamp = Vector2(100, 0)
 
 [node name="Pillar18" parent="Pillars" instance=ExtResource("9_k6t28")]
 position = Vector2(7763, -1425)
-screenClamp = Vector2(300, 0)
 
 [node name="Pillar19" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(8035, -1428)
-screenClamp = Vector2(300, 0)
+position = Vector2(8035, -1425)
 
 [node name="Pillar20" parent="Pillars" instance=ExtResource("9_k6t28")]
 position = Vector2(8307, -1425)
-screenClamp = Vector2(300, 0)
 
 [node name="Pillar24" parent="Pillars" instance=ExtResource("9_k6t28")]
 position = Vector2(10125, 667)
-screenClamp = Vector2(150, 0)
 
 [node name="Pillar25" parent="Pillars" instance=ExtResource("9_k6t28")]
 position = Vector2(10421, 667)
-screenClamp = Vector2(300, 0)
 
 [node name="Pillar26" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(10693, 664)
-screenClamp = Vector2(300, 0)
+position = Vector2(10693, 667)
 
 [node name="Pillar27" parent="Pillars" instance=ExtResource("9_k6t28")]
 position = Vector2(10965, 667)
-screenClamp = Vector2(300, 0)
-
-[node name="Pillar28" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(15722, 398)
-screenClamp = Vector2(150, 0)
-
-[node name="Pillar29" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(16018, 398)
-screenClamp = Vector2(300, 0)
-
-[node name="Pillar30" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(16290, 395)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar31" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(16562, 398)
-screenClamp = Vector2(300, 0)
+position = Vector2(16514, 398)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar32" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(15722, 398)
-screenClamp = Vector2(150, 0)
+position = Vector2(15674, 398)
 
 [node name="Pillar33" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(16018, 398)
-screenClamp = Vector2(300, 0)
+position = Vector2(15970, 398)
 
 [node name="Pillar34" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(16290, 395)
-screenClamp = Vector2(300, 0)
-
-[node name="Pillar35" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(16562, 398)
-screenClamp = Vector2(300, 0)
+position = Vector2(16242, 398)
 
 [node name="Pillar21" parent="Pillars" instance=ExtResource("9_k6t28")]
 position = Vector2(8603, -1425)
-screenClamp = Vector2(300, 0)
 
 [node name="Pillar22" parent="Pillars" instance=ExtResource("9_k6t28")]
-position = Vector2(8843, -1428)
-screenClamp = Vector2(300, 0)
+position = Vector2(8843, -1425)
 
 [node name="Pillar23" parent="Pillars" instance=ExtResource("9_k6t28")]
 position = Vector2(9115, -1425)
-screenClamp = Vector2(150, 0)
 
 [node name="Portals" type="Node" parent="."]
 
 [node name="Portal" parent="Portals" instance=ExtResource("10_hrvfi")]
-position = Vector2(1252, 87)
+position = Vector2(980, 39)
 visible_sprite = false
+
+[node name="GravSwitch" parent="Portals/Portal" instance=ExtResource("15_jt7wb")]
+visibile_sprite = false
 
 [node name="CloudFronts" type="Node" parent="."]
 
@@ -206,6 +165,7 @@ position = Vector2(9812, -1809)
 
 [node name="CloudFront4" parent="CloudFronts" instance=ExtResource("12_nfy3y")]
 position = Vector2(13320, -2279)
+snowflake_timeout = 35.0
 
 [node name="CloudFront5" parent="CloudFronts" instance=ExtResource("12_nfy3y")]
 position = Vector2(14272, -2279)
@@ -225,8 +185,8 @@ position = Vector2(8.14307, -21.9929)
 cannon_emit_selection = "cannon 1"
 
 [node name="CannonTrigger" parent="Cannons" instance=ExtResource("14_7ltdd")]
-position = Vector2(5006, -85)
-scale = Vector2(1, 5.28)
+position = Vector2(4968, 108)
+scale = Vector2(1.24001, 9.8)
 cannon_emit_selection = "cannon 1"
 activate_switch = false
 
@@ -278,6 +238,9 @@ position = Vector2(6605.9, -1435.94)
 [node name="DisappearingPlatform10" parent="DisappearingPlatforms" instance=ExtResource("17_6ae87")]
 position = Vector2(6805.9, -1470.94)
 
+[node name="DisappearingPlatform11" parent="DisappearingPlatforms" instance=ExtResource("17_6ae87")]
+position = Vector2(13199, -2102)
+
 [node name="TimedPlatforms" type="Node" parent="."]
 
 [node name="TimedPlatform" parent="TimedPlatforms" instance=ExtResource("18_ke5rr")]
@@ -285,7 +248,7 @@ position = Vector2(7005.88, -1464.15)
 
 [node name="TimedPlatform2" parent="TimedPlatforms" instance=ExtResource("18_ke5rr")]
 position = Vector2(7205.88, -1400.15)
-time_till_start = 4.0
+time_till_start = 5.0
 
 [node name="Boosts" type="Node" parent="."]
 
@@ -305,14 +268,14 @@ position = Vector2(12602, -22)
 no_charge_up = true
 
 [node name="BoostUp2" parent="Boosts" instance=ExtResource("19_cbad5")]
-position = Vector2(13199, -398)
+position = Vector2(13199, -310)
 
 [node name="BoostUp4" parent="Boosts" instance=ExtResource("19_cbad5")]
 position = Vector2(13199, -22)
 no_charge_up = true
 
 [node name="BoostUp3" parent="Boosts" instance=ExtResource("19_cbad5")]
-position = Vector2(13199, -1230)
+position = Vector2(13199, -638)
 no_charge_up = true
 
 [node name="GravSwitch" parent="Boosts/BoostUp3" instance=ExtResource("15_jt7wb")]
