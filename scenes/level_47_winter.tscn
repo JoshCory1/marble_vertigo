@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bi1og437gpgki"]
+[gd_scene load_steps=17 format=3 uid="uid://bi1og437gpgki"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_iceoh"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_mtv0t"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://d8gsffpu18sb" path="res://scenes/grav_switch.tscn" id="13_ubv4b"]
 [ext_resource type="PackedScene" uid="uid://dpdkk502012ah" path="res://scenes/spring_board.tscn" id="14_x4dkb"]
 [ext_resource type="PackedScene" uid="uid://bspwnpbok62fy" path="res://scenes/disappearing_platform.tscn" id="14_x70l4"]
+[ext_resource type="PackedScene" uid="uid://dolp2kj804iji" path="res://scenes/snow_flake.tscn" id="15_c15fc"]
+[ext_resource type="PackedScene" uid="uid://6qa668mqmop" path="res://scenes/portal.tscn" id="16_mt26p"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_iceoh")
@@ -38,63 +40,51 @@ layer_0/tile_data = PackedInt32Array(655383, 65536, 1, 589847, 65536, 1, 524311,
 [node name="Pillars" type="Node" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(381, 351)
-screenClamp = Vector2(300, 0)
+position = Vector2(381, 367)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(637, 351)
-screenClamp = Vector2(300, 0)
+position = Vector2(637, 367)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(909, 351)
-screenClamp = Vector2(150, 0)
+position = Vector2(909, 367)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(1766, -172)
+position = Vector2(1766, -156)
 screenClamp = Vector2(100, 0)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(2022, -172)
-screenClamp = Vector2(300, 0)
+position = Vector2(2022, -156)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(2302, -172)
-screenClamp = Vector2(300, 0)
+position = Vector2(2302, -156)
 
 [node name="Pillar7" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(3472, -749)
-screenClamp = Vector2(300, 0)
+position = Vector2(3472, -725)
 
 [node name="Pillar8" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(3728, -749)
-screenClamp = Vector2(300, 0)
+position = Vector2(3728, -725)
 
 [node name="Pillar9" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(4633, -1298)
+position = Vector2(4633, -1250)
 screenClamp = Vector2(100, 0)
 
 [node name="Pillar10" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(4916, -1298)
+position = Vector2(4916, -1250)
 screenClamp = Vector2(200, 0)
 
 [node name="Pillar11" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(8001, -2286)
+position = Vector2(8001, -2270)
 screenClamp = Vector2(100, 0)
 
-[node name="Pillar12" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(8284, -2286)
-screenClamp = Vector2(200, 0)
-
 [node name="Pillar13" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(6239, -1832)
+position = Vector2(6239, -1816)
 screenClamp = Vector2(100, 0)
 
 [node name="Pillar14" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(6522, -1832)
-screenClamp = Vector2(200, 0)
+position = Vector2(6522, -1816)
 
 [node name="Pillar15" parent="Pillars" instance=ExtResource("9_jbdfw")]
-position = Vector2(6810, -1832)
+position = Vector2(6810, -1816)
 screenClamp = Vector2(100, 0)
 
 [node name="CloudFronts2" type="Node" parent="."]
@@ -133,9 +123,6 @@ position = Vector2(10472, -4414)
 
 [node name="GravSwitchs" type="Node" parent="."]
 
-[node name="GravSwitch" parent="GravSwitchs" instance=ExtResource("13_ubv4b")]
-position = Vector2(8291, -2513)
-
 [node name="GravSwitch2" parent="GravSwitchs" instance=ExtResource("13_ubv4b")]
 position = Vector2(10927, -4008)
 
@@ -143,6 +130,15 @@ position = Vector2(10927, -4008)
 
 [node name="DisappearingPlatform" parent="DisappearingPlatforms" instance=ExtResource("14_x70l4")]
 position = Vector2(10927.2, -3390.27)
+
+[node name="DisappearingPlatform2" parent="DisappearingPlatforms" instance=ExtResource("14_x70l4")]
+position = Vector2(3084.75, -736.19)
+
+[node name="DisappearingPlatform3" parent="DisappearingPlatforms" instance=ExtResource("14_x70l4")]
+position = Vector2(6063.27, -1875.49)
+
+[node name="DisappearingPlatform4" parent="DisappearingPlatforms" instance=ExtResource("14_x70l4")]
+position = Vector2(8723.05, -3862.32)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -182,7 +178,48 @@ position = Vector2(4005, -1800)
 [node name="coin12" parent="Coins" instance=ExtResource("13_nfkqu")]
 position = Vector2(2528, -1091)
 
+[node name="SpringBoards" type="Node" parent="."]
+
+[node name="SpringBoard" parent="SpringBoards" instance=ExtResource("14_x4dkb")]
+position = Vector2(1220.71, 301.245)
+
+[node name="flakes" type="Node" parent="."]
+
+[node name="SnowFlake" parent="flakes" instance=ExtResource("15_c15fc")]
+position = Vector2(2302.55, -440.789)
+
+[node name="SnowFlake2" parent="flakes" instance=ExtResource("15_c15fc")]
+position = Vector2(2302.55, -704.789)
+
+[node name="SnowFlake3" parent="flakes" instance=ExtResource("15_c15fc")]
+position = Vector2(2302.55, -992.789)
+
+[node name="SnowFlake4" parent="flakes" instance=ExtResource("15_c15fc")]
+position = Vector2(2430.55, -816.789)
+
+[node name="SnowFlake6" parent="flakes" instance=ExtResource("15_c15fc")]
+position = Vector2(2302.55, -1288.79)
+
+[node name="SnowFlake7" parent="flakes" instance=ExtResource("15_c15fc")]
+position = Vector2(2430.55, -1112.79)
+
+[node name="SnowFlake8" parent="flakes" instance=ExtResource("15_c15fc")]
+position = Vector2(2302.55, -1520.79)
+
+[node name="SnowFlake9" parent="flakes" instance=ExtResource("15_c15fc")]
+position = Vector2(2430.55, -1344.79)
+
+[node name="SnowFlake5" parent="flakes" instance=ExtResource("15_c15fc")]
+position = Vector2(2430.55, -560.789)
+
 [node name="Node" type="Node" parent="."]
 
-[node name="SpringBoard" parent="Node" instance=ExtResource("14_x4dkb")]
-position = Vector2(1220.71, 285.245)
+[node name="Portal" parent="Node" node_paths=PackedStringArray("exit_point") instance=ExtResource("16_mt26p")]
+position = Vector2(8287.1, -2465.69)
+exit_point = NodePath("../Portal2")
+
+[node name="Portal2" parent="Node" instance=ExtResource("16_mt26p")]
+position = Vector2(8719, -3658)
+
+[node name="GravSwitch" parent="Node/Portal2" instance=ExtResource("13_ubv4b")]
+visibile_sprite = false
