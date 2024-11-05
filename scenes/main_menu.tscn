@@ -1905,6 +1905,7 @@ text = "999999"
 label_settings = SubResource("LabelSettings_rp1uo")
 
 [node name="HeartSprite" type="AnimatedSprite2D" parent="CanvasLayer2"]
+visible = false
 position = Vector2(868, 32)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_kor7u")

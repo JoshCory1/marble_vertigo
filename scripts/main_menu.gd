@@ -1,6 +1,7 @@
 extends Node2D
+##Music trak for main level
 @export var music_track : AudioStream = null
-
+# on redy vars
 @onready var button_array = get_tree().get_nodes_in_group("LevelButtons")
 @onready var menu_camera = $UIMenuCamera
 @onready var bg = $ParallaxBackground/ParallaxLayer/Sprite2D
@@ -14,9 +15,9 @@ extends Node2D
 @onready var heart = $CanvasLayer2/HeartSprite
 @onready var heart_text = $CanvasLayer2/HeartSprite/Label
 
-
+# current play throue not used
 var current_button_array_number = 0
-
+# signals
 signal freeze_camera
 signal unfreeze_camera
 
@@ -46,10 +47,10 @@ func _ready():
 	black_can.visible = false
 func _process(_delta):
 	coin_count.text = str(GameController.coins)
-	if GameController.premium == true:
-		heart.visible = false
-	else:
-		heart_text.text = str(GameController.current_play_through_count)
+#	if GameController.premium == true: # not used
+#		heart.visible = false
+#	else:
+#		heart_text.text = str(GameController.current_play_through_count)
 		
 
 func get_parallax_sprite_scale(parallax_sprite: Sprite2D):
@@ -79,7 +80,6 @@ func _on_close_shop():
 	shop.visible = false
 	for button in button_array:
 		button.visible = true
-	#terrain.visible = true
 	unfreeze_camera.emit()
 	$CanvasLayer3/ShopButton.visible = true
 	
@@ -87,7 +87,6 @@ func _on_shop_button_pressed():
 	shop.visible = true
 	for button in button_array:
 		button.visible = false
-	#terrain.visible = false
 	freeze_camera.emit()
 	$CanvasLayer3/ShopButton.visible = false
 	

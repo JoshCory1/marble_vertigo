@@ -88,7 +88,7 @@ text = "Shop"
 label_settings = SubResource("LabelSettings_26ct4")
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Box"]
+[node name="ColorRect" type="ColorRect" parent="Box/Label"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -96,14 +96,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -318.5
-offset_top = -130.0
+offset_top = 41.5
 offset_right = 318.5
-offset_bottom = 131.0
+offset_bottom = 302.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.721569)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Box/ColorRect"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Box/Label/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,16 +111,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_wkkm2")
-scroll_vertical = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Box/ColorRect/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/Label/ColorRect/ScrollContainer"]
 layout_mode = 2
 
-[node name="Premium" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Premium" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_xbxfg")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Premium"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -134,12 +133,12 @@ offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Premium
-No Adds Unlimted plays"
+No Adds"
 label_settings = SubResource("LabelSettings_iceoc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Premium"]
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -149,16 +148,16 @@ offset_top = 14.0
 offset_right = 539.0
 offset_bottom = 40.0
 grow_horizontal = 0
-text = "$9.99"
+text = "$5.99"
 label_settings = SubResource("LabelSettings_wevwm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DefaultButton2" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="DefaultButton2" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_jggn5")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -173,7 +172,7 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Dfault"
 
-[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2"]
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2"]
 layout_mode = 0
 offset_left = 562.0
 offset_top = 23.0
@@ -182,11 +181,11 @@ offset_bottom = 49.0
 text = "Owned"
 label_settings = SubResource("LabelSettings_6ypck")
 
-[node name="CubeButton" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="CubeButton" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_quguk")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -201,10 +200,10 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Cube"
 
-[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton" instance=ExtResource("6_ucq4n")]
+[node name="CoinSprite" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton" instance=ExtResource("6_ucq4n")]
 position = Vector2(562, 22)
 
-[node name="LabelCost" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton/CoinSprite"]
+[node name="LabelCost" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton/CoinSprite"]
 offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
@@ -212,7 +211,7 @@ offset_bottom = -5.0
 text = "100"
 label_settings = SubResource("LabelSettings_v7o3s")
 
-[node name="LabelOwned" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton"]
+[node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton"]
 visible = false
 layout_mode = 0
 offset_left = 562.0
@@ -222,11 +221,11 @@ offset_bottom = 36.0
 text = "Owned"
 label_settings = SubResource("LabelSettings_mxl3r")
 
-[node name="SpinButton" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="SpinButton" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_oeu3k")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -241,10 +240,10 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Spinning"
 
-[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton" instance=ExtResource("6_ucq4n")]
+[node name="CoinSprite" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton" instance=ExtResource("6_ucq4n")]
 position = Vector2(562, 16)
 
-[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton/CoinSprite"]
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton/CoinSprite"]
 offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
@@ -252,7 +251,7 @@ offset_bottom = -5.0
 text = "100"
 label_settings = SubResource("LabelSettings_v7o3s")
 
-[node name="LabelOwned" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton"]
+[node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton"]
 visible = false
 layout_mode = 0
 offset_left = 562.0
@@ -262,11 +261,11 @@ offset_bottom = 30.0
 text = "Owned"
 label_settings = SubResource("LabelSettings_mxl3r")
 
-[node name="Puzzle" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Puzzle" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("8_i42wj")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Puzzle"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -281,10 +280,10 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Puzzle"
 
-[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Puzzle" instance=ExtResource("6_ucq4n")]
+[node name="CoinSprite" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle" instance=ExtResource("6_ucq4n")]
 position = Vector2(562, 16)
 
-[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Puzzle/CoinSprite"]
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle/CoinSprite"]
 offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
@@ -292,7 +291,7 @@ offset_bottom = -5.0
 text = "100"
 label_settings = SubResource("LabelSettings_v7o3s")
 
-[node name="LabelOwned" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Puzzle"]
+[node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle"]
 visible = false
 layout_mode = 0
 offset_left = 562.0
@@ -302,11 +301,11 @@ offset_bottom = 30.0
 text = "Owned"
 label_settings = SubResource("LabelSettings_mxl3r")
 
-[node name="Infinty" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Infinty" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("9_52gst")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Infinty"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Infinty"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -321,18 +320,20 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Infinty"
 
-[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Infinty" instance=ExtResource("6_ucq4n")]
+[node name="CoinSprite" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Infinty" instance=ExtResource("6_ucq4n")]
 position = Vector2(562, 16)
 
-[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Infinty/CoinSprite"]
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Infinty/CoinSprite"]
 offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "100"
+text = "100
+
+"
 label_settings = SubResource("LabelSettings_v7o3s")
 
-[node name="LabelOwned" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Infinty"]
+[node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Infinty"]
 visible = false
 layout_mode = 0
 offset_left = 562.0
@@ -342,11 +343,11 @@ offset_bottom = 30.0
 text = "Owned"
 label_settings = SubResource("LabelSettings_mxl3r")
 
-[node name="Circle" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Circle" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("10_syghd")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Circle"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Circle"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -361,18 +362,19 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Circle"
 
-[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Circle" instance=ExtResource("6_ucq4n")]
+[node name="CoinSprite" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Circle" instance=ExtResource("6_ucq4n")]
 position = Vector2(562, 16)
 
-[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Circle/CoinSprite"]
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Circle/CoinSprite"]
 offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "100"
+text = "500
+"
 label_settings = SubResource("LabelSettings_v7o3s")
 
-[node name="LabelOwned" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Circle"]
+[node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Circle"]
 visible = false
 layout_mode = 0
 offset_left = 562.0
@@ -382,11 +384,11 @@ offset_bottom = 30.0
 text = "Owned"
 label_settings = SubResource("LabelSettings_mxl3r")
 
-[node name="Star" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Star" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("11_r4hwg")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Star"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Star"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -401,18 +403,19 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Star"
 
-[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Star" instance=ExtResource("6_ucq4n")]
+[node name="CoinSprite" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Star" instance=ExtResource("6_ucq4n")]
 position = Vector2(562, 16)
 
-[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Star/CoinSprite"]
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Star/CoinSprite"]
 offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "100"
+text = "500
+"
 label_settings = SubResource("LabelSettings_v7o3s")
 
-[node name="LabelOwned" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Star"]
+[node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Star"]
 visible = false
 layout_mode = 0
 offset_left = 562.0
@@ -422,11 +425,11 @@ offset_bottom = 30.0
 text = "Owned"
 label_settings = SubResource("LabelSettings_mxl3r")
 
-[node name="Crystel" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Crystel" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("12_df8y0")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Crystel"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Crystel"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -441,10 +444,10 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Crystel"
 
-[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Crystel" instance=ExtResource("6_ucq4n")]
+[node name="CoinSprite" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Crystel" instance=ExtResource("6_ucq4n")]
 position = Vector2(562, 16)
 
-[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Crystel/CoinSprite"]
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Crystel/CoinSprite"]
 offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
@@ -452,7 +455,7 @@ offset_bottom = -5.0
 text = "500"
 label_settings = SubResource("LabelSettings_v7o3s")
 
-[node name="LabelOwned" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Crystel"]
+[node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Crystel"]
 visible = false
 layout_mode = 0
 offset_left = 562.0
@@ -462,11 +465,11 @@ offset_bottom = 30.0
 text = "Owned"
 label_settings = SubResource("LabelSettings_mxl3r")
 
-[node name="Billiards" type="TextureButton" parent="Box/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Billiards" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("13_cfao0")
 
-[node name="LabelPayment" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Billiards"]
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -481,10 +484,10 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Billiards"
 
-[node name="CoinSprite" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Billiards" instance=ExtResource("6_ucq4n")]
+[node name="CoinSprite" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards" instance=ExtResource("6_ucq4n")]
 position = Vector2(562, 16)
 
-[node name="Label" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Billiards/CoinSprite"]
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards/CoinSprite"]
 offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
@@ -492,7 +495,7 @@ offset_bottom = -5.0
 text = "500"
 label_settings = SubResource("LabelSettings_v7o3s")
 
-[node name="LabelOwned" type="Label" parent="Box/ColorRect/ScrollContainer/VBoxContainer/Billiards"]
+[node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards"]
 visible = false
 layout_mode = 0
 offset_left = 562.0
@@ -522,14 +525,14 @@ size_flags_horizontal = 4
 mouse_filter = 1
 color = Color(1, 0, 0, 0.5)
 
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/Premium" to="." method="_on_premium_pressed"]
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2" to="." method="_on_default_button_pressed"]
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton" to="." method="_on_cube_button_pressed"]
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton" to="." method="_on_spin_button_pressed"]
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/Puzzle" to="." method="_on_puzzle_pressed"]
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/Infinty" to="." method="_on_infinty_pressed"]
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/Circle" to="." method="_on_circle_pressed"]
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/Star" to="." method="_on_star_pressed"]
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/Crystel" to="." method="_on_crystel_pressed"]
-[connection signal="pressed" from="Box/ColorRect/ScrollContainer/VBoxContainer/Billiards" to="." method="_on_billiards_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium" to="." method="_on_premium_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2" to="." method="_on_default_button_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton" to="." method="_on_cube_button_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton" to="." method="_on_spin_button_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle" to="." method="_on_puzzle_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Infinty" to="." method="_on_infinty_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Circle" to="." method="_on_circle_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Star" to="." method="_on_star_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Crystel" to="." method="_on_crystel_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards" to="." method="_on_billiards_pressed"]
 [connection signal="pressed" from="Box/CloseButton" to="." method="_on_close_button_pressed"]
