@@ -59,13 +59,13 @@ position = Vector2(1237, 351)
 position = Vector2(7325, 1101)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("9_coht5")]
-position = Vector2(10312, -517)
+position = Vector2(10312, -485)
 
 [node name="Pillar7" parent="Pillars" instance=ExtResource("9_coht5")]
-position = Vector2(10612, -517)
+position = Vector2(10612, -485)
 
 [node name="Pillar8" parent="Pillars" instance=ExtResource("9_coht5")]
-position = Vector2(10925, -517)
+position = Vector2(10925, -485)
 
 [node name="Pillar9" parent="Pillars" instance=ExtResource("9_coht5")]
 position = Vector2(14810, -1304)
@@ -211,6 +211,9 @@ position = Vector2(6799, 946)
 
 [node name="DisappearingPlatform14" parent="DisappearingPlatforms" instance=ExtResource("13_51eln")]
 position = Vector2(6999, 978)
+
+[node name="DisappearingPlatform15" parent="DisappearingPlatforms" instance=ExtResource("13_51eln")]
+position = Vector2(10005.3, -577.935)
 
 [node name="TimedPlatforms" type="Node" parent="."]
 
