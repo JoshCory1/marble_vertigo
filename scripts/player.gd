@@ -1,25 +1,32 @@
 extends CharacterBody2D
-
+##var that contoles speed
 @export var speed_var: float = 6000
-
+##var that contoles gravity
 @export var gravity: float = 8.0
+#the max speed for gravity var
 @export var max_fall_velocity: float = 300.0
+##a time delay for bounce effect
 @export var bounceing_time_delay: float = 0.5
-
+@export var camera_zoom_clamp: float = 0.25
+#on ready vars
 @onready var death_particles = $PlayerParticles2D
 @onready var sprite = $Sprite2D
 @onready var animation_player = $PlayerAnimationPlayer
 @onready var boosts = get_tree().get_nodes_in_group("boost_x")
-
+@onready var camera = $Camera2D
+#scirpt gloable vars
+#bounce vars
 var no_bounce_x: int = 0
 var no_bounce_y: int = 0
+#debug mode
 var debug_mode = false
-var stop_velocity: bool = false 
 var debug: bool = false
+#velocity vars
+var stop_velocity: bool = false 
 var use_accelerometer: bool = false
 var accelerometer_speed: float = 130.0
 var speed: float = 0.0
-# pauses y velocity for set time
+#control vars
 var pause_y: bool = false
 var stop_contorls: bool = false
 var ghost: bool = false
@@ -90,8 +97,17 @@ func _physics_process(delta):
 				velocity.x -= speed_var * 10 * delta
 			if Input.is_action_pressed("move_right"):
 				velocity.x += speed_var * 10 * delta
+		zoom(velocity.x / 20)
 		move_and_slide()
 
+
+func zoom(z: float):
+	if z < 0:
+		z = z * -1
+	if z > camera_zoom_clamp:
+		z = camera_zoom_clamp
+	camera.zoom.x = 1 - z
+	camera.zoom.y = 1 - z
 
 func bounce_up(min_b: int, max_b: int):
 	if debug == false:

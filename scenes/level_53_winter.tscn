@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ck3552tqd5s8q"]
+[gd_scene load_steps=21 format=3 uid="uid://ck3552tqd5s8q"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_i2hao"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_28xsm"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ksn32v22b7vs" path="res://scenes/cannon.tscn" id="16_8x31x"]
 [ext_resource type="PackedScene" uid="uid://cpxdnyrpl6w1e" path="res://scenes/cannon_trigger.tscn" id="17_0vyea"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="20_42bpw"]
+[ext_resource type="PackedScene" uid="uid://htffvv6osno0" path="res://scenes/moving_platform.tscn" id="20_m8cjw"]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_i2hao")
@@ -26,7 +27,7 @@ music_track = ExtResource("2_28xsm")
 
 [node name="Exit" parent="." instance=ExtResource("3_5t413")]
 position = Vector2(7434, -2501)
-destination = Vector2(800, 0)
+destination = Vector2(600, 0)
 duration = 8.0
 current_lvl = 53
 
@@ -45,71 +46,72 @@ layer_0/tile_data = PackedInt32Array(655383, 65536, 2, 589847, 65536, 1, 524311,
 [node name="Pillars" type="Node" parent="."]
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(381, 351)
+position = Vector2(381, 350)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(637, 351)
+position = Vector2(637, 350)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(917, 351)
+position = Vector2(917, 350)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(1197, 351)
+position = Vector2(1197, 350)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(1453, 351)
+position = Vector2(1453, 350)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(1733, 351)
+position = Vector2(1733, 350)
 
 [node name="Pillar7" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(1989, 351)
+position = Vector2(1989, 350)
 
 [node name="Pillar9" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(2327, -1210)
+position = Vector2(2327, -1189)
 
 [node name="Pillar10" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(2607, -1210)
+position = Vector2(2607, -1189)
 
 [node name="Pillar11" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(2863, -1210)
+position = Vector2(2863, -1189)
 screenClamp = Vector2(50, 0)
 
 [node name="Pillar12" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(2235, -1848)
+position = Vector2(2235, -1855)
+screenClamp = Vector2(125, 0)
 
 [node name="Pillar13" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(2515, -1848)
+position = Vector2(2515, -1855)
 
 [node name="Pillar14" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(2771, -1848)
+position = Vector2(2771, -1855)
 
 [node name="Pillar15" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(3106, -2230)
+position = Vector2(3106, -2205)
 
 [node name="Pillar16" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(3386, -2230)
+position = Vector2(3386, -2205)
 
 [node name="Pillar17" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(3642, -2230)
+position = Vector2(3642, -2205)
 
 [node name="Pillar18" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(3914, -2230)
+position = Vector2(3914, -2205)
 
 [node name="Pillar19" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(4194, -2230)
+position = Vector2(4194, -2205)
 
 [node name="Pillar25" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(4148, 388)
+position = Vector2(4148, 395)
 
 [node name="Pillar26" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(4428, 388)
+position = Vector2(4428, 395)
 
 [node name="Pillar27" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(4684, 388)
+position = Vector2(4684, 395)
 
 [node name="Pillar28" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(4956, 388)
+position = Vector2(4956, 395)
 
 [node name="Pillar30" parent="Pillars" instance=ExtResource("9_xhmjb")]
 position = Vector2(4522, -1172)
@@ -121,226 +123,227 @@ position = Vector2(4778, -1172)
 position = Vector2(5050, -1172)
 
 [node name="Pillar29" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(5236, 388)
+position = Vector2(5236, 395)
 
 [node name="Pillar33" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(7087, 459)
+position = Vector2(7087, 471)
 
 [node name="Pillar34" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(7367, 459)
+position = Vector2(7367, 471)
 
 [node name="Pillar35" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(7623, 459)
+position = Vector2(7623, 471)
 
 [node name="Pillar36" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(7895, 459)
+position = Vector2(7895, 471)
 
 [node name="Pillar37" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(8175, 459)
+position = Vector2(8175, 471)
 
 [node name="Pillar38" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(8479, 459)
+position = Vector2(8479, 471)
 
 [node name="Pillar39" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(8759, 459)
+position = Vector2(8759, 471)
 
 [node name="Pillar40" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(9015, 459)
+position = Vector2(9015, 471)
 
 [node name="Pillar41" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(9287, 459)
+position = Vector2(9287, 471)
 
 [node name="Pillar42" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(9567, 459)
+position = Vector2(9567, 471)
 
 [node name="Pillar43" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(9871, 459)
+position = Vector2(9863, 471)
 
 [node name="Pillar44" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(10151, 459)
+position = Vector2(10151, 471)
 
 [node name="Pillar45" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(10407, 459)
+position = Vector2(10407, 471)
 
 [node name="Pillar46" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(10679, 459)
+position = Vector2(10679, 471)
 
 [node name="Pillar47" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(10959, 459)
+position = Vector2(10959, 471)
 
 [node name="Pillar48" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(14502, 459)
+position = Vector2(14502, 443)
 
 [node name="Pillar49" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(14798, 459)
+position = Vector2(14798, 443)
 
 [node name="Pillar50" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(15086, 459)
+position = Vector2(15086, 443)
 
 [node name="Pillar51" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(15374, 459)
+position = Vector2(15374, 443)
 
 [node name="Pillar70" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(14256, -1123)
+position = Vector2(14256, -1115)
 
 [node name="Pillar71" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(14552, -1123)
+position = Vector2(14552, -1115)
 
 [node name="Pillar72" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(14840, -1123)
+position = Vector2(14840, -1115)
 
 [node name="Pillar73" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(15128, -1123)
+position = Vector2(15128, -1115)
 
 [node name="Pillar74" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(15416, -1123)
+position = Vector2(15416, -1115)
 
 [node name="Pillar75" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(15712, -1123)
+position = Vector2(15712, -1115)
 
 [node name="Pillar76" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(16000, -1123)
+position = Vector2(16000, -1115)
 
 [node name="Pillar77" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(16288, -1123)
+position = Vector2(16288, -1115)
 
 [node name="Pillar52" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(15662, 459)
+position = Vector2(15662, 443)
 
 [node name="Pillar53" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(15918, 459)
+position = Vector2(15918, 443)
 
 [node name="Pillar54" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(16190, 459)
+position = Vector2(16190, 443)
 
 [node name="Pillar55" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(16470, 459)
+position = Vector2(16470, 443)
 
 [node name="Pillar56" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(16735, 459)
+position = Vector2(16735, 443)
 
 [node name="Pillar57" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(16991, 459)
+position = Vector2(16991, 443)
 
 [node name="Pillar58" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(17263, 459)
+position = Vector2(17263, 443)
 
 [node name="Pillar59" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(17859, -808)
+position = Vector2(17859, -792)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar60" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(18155, -808)
+position = Vector2(18155, -792)
 
 [node name="Pillar61" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(18443, -808)
+position = Vector2(18443, -792)
 
 [node name="Pillar62" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(18731, -808)
+position = Vector2(18731, -792)
 
 [node name="Pillar63" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(19019, -808)
+position = Vector2(19019, -792)
 
 [node name="Pillar64" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(19275, -808)
+position = Vector2(19275, -792)
 
 [node name="Pillar65" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(19547, -808)
+position = Vector2(19547, -792)
 
 [node name="Pillar66" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(19827, -808)
+position = Vector2(19827, -792)
 
 [node name="Pillar67" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(20092, -808)
+position = Vector2(20092, -792)
 
 [node name="Pillar68" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(20348, -808)
+position = Vector2(20348, -792)
 
 [node name="Pillar69" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(20620, -808)
+position = Vector2(20620, -792)
 
 [node name="Pillar78" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(17171, -2354)
+position = Vector2(17171, -2338)
 
 [node name="Pillar79" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(17467, -2354)
+position = Vector2(17467, -2338)
 
 [node name="Pillar80" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(17755, -2354)
+position = Vector2(17755, -2338)
 
 [node name="Pillar81" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(18043, -2354)
+position = Vector2(18043, -2338)
 
 [node name="Pillar82" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(18331, -2354)
+position = Vector2(18331, -2338)
 
 [node name="Pillar83" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(18587, -2354)
+position = Vector2(18587, -2338)
 
 [node name="Pillar84" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(18859, -2354)
+position = Vector2(18859, -2338)
 
 [node name="Pillar85" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(19139, -2354)
+position = Vector2(19139, -2338)
 
 [node name="Pillar86" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(19404, -2354)
+position = Vector2(19404, -2338)
 
 [node name="Pillar87" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(19660, -2354)
+position = Vector2(19660, -2338)
 
 [node name="Pillar88" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(19932, -2354)
+position = Vector2(19932, -2338)
 
 [node name="Pillar89" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(11580, -2354)
+position = Vector2(11580, -2340)
 
 [node name="Pillar90" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(11876, -2354)
+position = Vector2(11876, -2340)
 
 [node name="Pillar91" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(12164, -2354)
+position = Vector2(12164, -2340)
 
 [node name="Pillar92" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(12452, -2354)
+position = Vector2(12452, -2340)
 
 [node name="Pillar93" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(12740, -2354)
+position = Vector2(12740, -2340)
 
 [node name="Pillar94" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(12996, -2354)
+position = Vector2(12996, -2340)
 
 [node name="Pillar95" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(13268, -2354)
+position = Vector2(13268, -2340)
 
 [node name="Pillar96" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(13548, -2354)
+position = Vector2(13548, -2340)
 
 [node name="Pillar97" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(13813, -2354)
+position = Vector2(13813, -2340)
 
 [node name="Pillar98" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(14069, -2354)
+position = Vector2(14069, -2340)
 
 [node name="Pillar99" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(14341, -2354)
+position = Vector2(14341, -2340)
 
 [node name="Pillar20" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(4450, -2230)
+position = Vector2(4450, -2205)
 
 [node name="Pillar21" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(4698, -2230)
+position = Vector2(4698, -2205)
 
 [node name="Pillar22" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(4978, -2230)
+position = Vector2(4978, -2205)
 
 [node name="Pillar23" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(5234, -2230)
+position = Vector2(5234, -2205)
 
 [node name="Pillar24" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(5506, -2230)
+position = Vector2(5506, -2205)
 
 [node name="Pillar8" parent="Pillars" instance=ExtResource("9_xhmjb")]
-position = Vector2(2269, 351)
+position = Vector2(2269, 350)
 
 [node name="Portals" type="Node" parent="."]
 
@@ -355,32 +358,32 @@ position = Vector2(7087, 133)
 visibile_sprite = false
 
 [node name="RougePortal" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("11_rf5rc")]
-position = Vector2(19274, -680)
+position = Vector2(19274, -704)
 portal_exit = NodePath("../Portal2")
 destination = Vector2(800, 0)
-duration = 8.0
+duration = 12.0
 
 [node name="RougePortal2" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("11_rf5rc")]
-position = Vector2(18047, -2482)
+position = Vector2(18047, -2474)
 portal_exit = NodePath("../Portal2")
 destination = Vector2(800, 0)
-duration = 8.0
+duration = 12.0
 
 [node name="Portal3" parent="Portals" instance=ExtResource("10_b30ko")]
 position = Vector2(3380, -2740)
 visible_sprite = false
 
 [node name="RougePortal3" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("11_rf5rc")]
-position = Vector2(5231, -2375)
+position = Vector2(5231, -2335)
 portal_exit = NodePath("../Portal3")
 destination = Vector2(-600, 0)
-duration = 6.0
+duration = 9.0
 
 [node name="RougePortal4" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("11_rf5rc")]
-position = Vector2(4209, -2375)
+position = Vector2(4209, -2335)
 portal_exit = NodePath("../Portal3")
 destination = Vector2(-600, 0)
-duration = 6.0
+duration = 9.0
 
 [node name="GravSwitchs" type="Node" parent="."]
 
@@ -391,7 +394,7 @@ position = Vector2(2417, 154)
 position = Vector2(3899, 213)
 
 [node name="GravSwitch6" parent="GravSwitchs" instance=ExtResource("12_3qsbd")]
-position = Vector2(20624, 0)
+position = Vector2(20624, 32)
 
 [node name="GravSwitch8" parent="GravSwitchs" instance=ExtResource("12_3qsbd")]
 position = Vector2(20509, -1388)
@@ -400,7 +403,7 @@ position = Vector2(20509, -1388)
 position = Vector2(19939, -2842)
 
 [node name="GravSwitch7" parent="GravSwitchs" instance=ExtResource("12_3qsbd")]
-position = Vector2(13982, -1471)
+position = Vector2(13958, -1471)
 
 [node name="GravSwitch2" parent="GravSwitchs" instance=ExtResource("12_3qsbd")]
 position = Vector2(1686, -1369)
@@ -647,7 +650,7 @@ position = Vector2(4242, -1132)
 [node name="SpringBoards" type="Node" parent="."]
 
 [node name="SpringBoard" parent="SpringBoards" instance=ExtResource("14_okccs")]
-position = Vector2(3053.2, -1254.47)
+position = Vector2(3053.2, -1238.47)
 
 [node name="TimedPlatforms" type="Node" parent="."]
 
@@ -655,59 +658,59 @@ position = Vector2(3053.2, -1254.47)
 position = Vector2(1780, -1948)
 
 [node name="TimedPlatform5" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(11274, 406)
+position = Vector2(11274, 446)
 
 [node name="TimedPlatform6" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(11474, 356)
+position = Vector2(11474, 396)
 time_till_start = 5.0
 
 [node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(11676, 306)
+position = Vector2(11676, 346)
 
 [node name="TimedPlatform8" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(11874, 256)
+position = Vector2(11874, 296)
 time_till_start = 5.0
 
 [node name="TimedPlatform9" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(12074, 206)
+position = Vector2(12074, 246)
 
 [node name="TimedPlatform10" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(12275, 206)
+position = Vector2(12275, 246)
 time_till_start = 5.0
 
 [node name="TimedPlatform11" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(12477, 206)
+position = Vector2(12477, 246)
 
 [node name="TimedPlatform12" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(12680, 206)
+position = Vector2(12680, 246)
 time_till_start = 5.0
 
 [node name="TimedPlatform13" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(12879, 206)
+position = Vector2(12879, 246)
 
 [node name="TimedPlatform14" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(13079, 206)
+position = Vector2(13079, 246)
 time_till_start = 5.0
 
 [node name="TimedPlatform15" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(13281, 206)
+position = Vector2(13281, 246)
 
 [node name="TimedPlatform16" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(13479, 206)
+position = Vector2(13479, 246)
 time_till_start = 5.0
 
 [node name="TimedPlatform17" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(13679, 206)
+position = Vector2(13679, 246)
 
 [node name="TimedPlatform18" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(13880, 206)
+position = Vector2(13880, 246)
 time_till_start = 5.0
 
 [node name="TimedPlatform19" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(14082, 206)
+position = Vector2(14082, 246)
 
 [node name="TimedPlatform20" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
-position = Vector2(14286, 206)
+position = Vector2(14286, 246)
 time_till_start = 5.0
 
 [node name="TimedPlatform49" parent="TimedPlatforms" instance=ExtResource("15_apurr")]
@@ -899,7 +902,7 @@ time_till_start = 5.0
 [node name="Cannons" type="Node" parent="."]
 
 [node name="Cannon" parent="Cannons" instance=ExtResource("16_8x31x")]
-position = Vector2(12062, 323.477)
+position = Vector2(12062, 339.477)
 cannon_emit_selection = "Cannon 1"
 
 [node name="CannonTrigger" parent="Cannons" instance=ExtResource("17_0vyea")]
@@ -946,12 +949,12 @@ cannon_emit_selection = "Cannon 3"
 [node name="MovingHazards" type="Node" parent="."]
 
 [node name="MovingHazard" parent="MovingHazards" instance=ExtResource("11_6rdat")]
-position = Vector2(14214, -2579)
+position = Vector2(14214, -2563)
 destination = Vector2(-800, 0)
 duration = 8.0
 
 [node name="MovingHazard2" parent="MovingHazards" instance=ExtResource("11_6rdat")]
-position = Vector2(12074, -2581)
+position = Vector2(12074, -2565)
 destination = Vector2(-800, 0)
 duration = 8.0
 
@@ -996,3 +999,8 @@ position = Vector2(13008, -2561)
 
 [node name="coin10" parent="Coins" instance=ExtResource("20_42bpw")]
 position = Vector2(10694, -2569)
+
+[node name="MovingPlatforms" type="Node" parent="."]
+
+[node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource("20_m8cjw")]
+position = Vector2(8154.16, -2403.53)

@@ -10,7 +10,6 @@
 [node name="EnvironmentWinter" type="Node2D" node_paths=PackedStringArray("parallax1", "parallax2", "parallax3")]
 process_mode = 3
 script = ExtResource("1_pje4g")
-scroll_speed_paralax_3 = Vector2(-15, 5)
 parallax1 = NodePath("ParallaxBG/ParallaxLayer1")
 parallax2 = NodePath("ParallaxBG/ParallaxLayer2")
 parallax3 = NodePath("ParallaxBG/ParallaxLayer3")
@@ -30,7 +29,7 @@ region_rect = Rect2(0, 0, 960, 536)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -99
-motion_mirroring = Vector2(960, 540)
+motion_scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer2"]
 show_behind_parent = true
@@ -42,7 +41,6 @@ region_rect = Rect2(0, 1, 960, 540)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -99
-motion_mirroring = Vector2(960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/ParallaxLayer3"]
 modulate = Color(1, 1, 1, 0.482353)
