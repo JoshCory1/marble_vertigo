@@ -8,7 +8,9 @@ extends CharacterBody2D
 ##a time delay for bounce effect
 @export var bounceing_time_delay: float = 0.5
 ##duration for camera zoom efect how long it takes to get to max zoom effect
-@export var camera_zoom_duration: float = 2.0
+@export var camera_zoom_duration: float = 1.5
+##amount that camera zooms in or out
+@export var zoom_velocity: Vector2 = Vector2(0.15, 0.15)
 #on ready vars
 @onready var death_particles = $PlayerParticles2D
 @onready var sprite = $Sprite2D
@@ -96,15 +98,24 @@ func _physics_process(delta):
 				velocity.x -= speed_var * 10 * delta
 			if Input.is_action_pressed("move_right"):
 				velocity.x += speed_var * 10 * delta
-		var zoom_velocity = Vector2(0.15, 0.15)
-		if velocity.x > 50.0:
-			camera.camera_zoom_out(zoom_velocity, camera_zoom_duration)
-		elif velocity.x < -50.0:
-			camera.camera_zoom_out(zoom_velocity, camera_zoom_duration)
-		elif velocity.x < 50.0 || velocity.x > -20.0:
-			camera.zoom_reset(camera_zoom_duration)
-		print("my zoom velocity is: " + str(velocity.x))
+		camera_zoom()
 		move_and_slide()
+
+func camera_zoom():
+	if velocity.x > 50.0 && velocity.x < 150.0:
+		camera.camera_zoom_out(zoom_velocity, camera_zoom_duration)
+	elif velocity.x < -50.0 && velocity.x > -150.0:
+		camera.camera_zoom_out(zoom_velocity, camera_zoom_duration)
+	elif velocity.x > 150 && velocity.x < 400:
+		camera.camera_zoom_out(zoom_velocity + Vector2(0.15,0.15),camera_zoom_duration - 0.5)
+	elif velocity.x < -150 && velocity.x > -400.0:
+		camera.camera_zoom_out(zoom_velocity + Vector2(0.15,0.15),camera_zoom_duration - 0.5)
+	elif velocity.x > 400:
+		camera.camera_zoom_out(zoom_velocity + Vector2(0.35,0.35),camera_zoom_duration - 1.0)
+	elif velocity.x < -400:
+		camera.camera_zoom_out(zoom_velocity + Vector2(0.35,0.35),camera_zoom_duration - 1.0)
+	elif velocity.x < 50.0 || velocity.x > -20.0:
+		camera.zoom_reset(camera_zoom_duration)
 
 func bounce_up(min_b: int, max_b: int):
 	if debug == false:
