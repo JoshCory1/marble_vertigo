@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://0lnnh34odpf6"]
+[gd_scene load_steps=8 format=3 uid="uid://0lnnh34odpf6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l3r4b"]
 [ext_resource type="Texture2D" uid="uid://cxwrbuxn06n3u" path="res://assets/ball/marble_v3.png" id="2_mcxin"]
 [ext_resource type="PackedScene" uid="uid://d4e8yndj7jcb7" path="res://scenes/player_particles_2d.tscn" id="3_hd5ym"]
 [ext_resource type="PackedScene" uid="uid://c1dvemh15lx5" path="res://scenes/player_animation_player.tscn" id="4_b8b4q"]
+[ext_resource type="Script" path="res://scripts/PlayerCamera2D.gd" id="4_dit78"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uuxkn"]
 radius = 32.1403
@@ -30,10 +31,11 @@ shape = SubResource("CircleShape2D_ia64i")
 
 [node name="PlayerParticles2D" parent="." instance=ExtResource("3_hd5ym")]
 
-[node name="Camera2D" type="Camera2D" parent="." groups=["PlayerCamera"]]
+[node name="PlayerCamera2D" type="Camera2D" parent="." groups=["PlayerCamera"]]
 limit_smoothed = true
 drag_vertical_enabled = true
 drag_top_margin = 0.4
+script = ExtResource("4_dit78")
 
 [node name="PlayerAnimationPlayer" parent="." instance=ExtResource("4_b8b4q")]
 

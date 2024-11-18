@@ -365,7 +365,7 @@ duration = 12.0
 
 [node name="RougePortal2" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("11_rf5rc")]
 position = Vector2(18047, -2474)
-portal_exit = NodePath("../Portal2")
+portal_exit = NodePath("../Portal4")
 destination = Vector2(800, 0)
 duration = 12.0
 
@@ -384,6 +384,10 @@ position = Vector2(4209, -2335)
 portal_exit = NodePath("../Portal3")
 destination = Vector2(-600, 0)
 duration = 9.0
+
+[node name="Portal4" parent="Portals" instance=ExtResource("10_b30ko")]
+position = Vector2(19931.7, -2605.67)
+visible_sprite = false
 
 [node name="GravSwitchs" type="Node" parent="."]
 

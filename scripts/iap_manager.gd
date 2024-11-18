@@ -24,7 +24,7 @@ func _on_connected():
 	GameController.my_log("Connected!")
 
 func _on_connect_error(response_id, debug_msg):
-	GameController.my_log("Conenection error, Rsponse id: " + str(response_id) + "Debug msg: " +  str(debug_msg))
+	GameController.my_log("Conenection error, Rsponse id: " + str(response_id) + " " + "Debug msg: " +  str(debug_msg))
 	
 func _on_disconnected():
 	GameController.my_log("Disconnected!")

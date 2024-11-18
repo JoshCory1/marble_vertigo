@@ -86,10 +86,11 @@ func _ready():
 func _process(_delta):
 	var time = Time.get_unix_time_from_system()
 	if time > old_time:
-		if time > old_time + 10:
-			ver_time += 1
-			print("my time is: " + str(ver_time))
+		if time > old_time + 1.0 / 100.0:
+			ver_time += 0.01
 			old_time = time
+		if ver_time >= 1.0:
+			ver_time = 0.0
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("Reset"):

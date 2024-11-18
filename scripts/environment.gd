@@ -57,8 +57,8 @@ func  setup_parallax_layer(parallax_layer: ParallaxLayer):
 	if parallax_layer:
 		var parallax_sprite = parallax_layer.find_child("Sprite2D")
 		parallax_sprite.scale = get_parallax_sprite_scale(parallax_sprite)
-		parallax_sprite.scale.x = get_viewport_rect().size.x / get_viewport_rect().size.x / player_camera_zoom.zoom.x
-		parallax_sprite.scale.y = get_viewport_rect().size.y / get_viewport_rect().size.y / player_camera_zoom.zoom.y
+		parallax_sprite.scale.x = get_viewport_rect().size.x / 960 / player_camera_zoom.zoom.x
+		parallax_sprite.scale.y = get_viewport_rect().size.y / 540 / player_camera_zoom.zoom.y
 		var mx = parallax_sprite.scale.x * parallax_sprite.get_texture().get_width()
 		var my = parallax_sprite.scale.y * parallax_sprite.get_texture().get_height()
 		parallax_layer.motion_mirroring.x = mx
