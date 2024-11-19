@@ -1,12 +1,17 @@
 extends StaticBody2D
-
+##the amount of time until the platform disappears
 @export var time_till_disabled: float = 4.0
+##the amount of time until the platform reappears
 @export var time_till_enabled: float = 10.0
+##the min bounce of marble
 @export var min_bounce: float = 300
+##the max bounce of marble
 @export var max_bounce: float = 450
 
+#var that controls fade effect
 var fade_out: bool = false
 
+#on ready vars
 @onready var sprite = $Sprite2D
 @onready var timer_flash = $TimerFlash
 

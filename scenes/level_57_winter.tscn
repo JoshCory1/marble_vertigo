@@ -146,39 +146,31 @@ position = Vector2(16506, 86)
 
 [node name="Pillar36" parent="Pillars" instance=ExtResource("9_lnfty")]
 position = Vector2(22835, -1126)
+screenClamp = Vector2(125, 0)
 
 [node name="Pillar37" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(23067, -1126)
+position = Vector2(23135, -1126)
 
 [node name="Pillar38" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(23299, -1126)
+position = Vector2(23435, -1126)
 
 [node name="Pillar39" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(23515, -1126)
+position = Vector2(23735, -1126)
 
 [node name="Pillar40" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(23747, -1126)
+position = Vector2(24035, -1126)
 
 [node name="Pillar41" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(23979, -1126)
+position = Vector2(24335, -1126)
 
 [node name="Pillar42" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(24219, -1126)
+position = Vector2(24635, -1126)
 
 [node name="Pillar43" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(24451, -1126)
+position = Vector2(24935, -1126)
 
 [node name="Pillar44" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(24683, -1126)
-
-[node name="Pillar45" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(24899, -1126)
-
-[node name="Pillar46" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(25131, -1126)
-
-[node name="Pillar47" parent="Pillars" instance=ExtResource("9_lnfty")]
-position = Vector2(25363, -1126)
+position = Vector2(25235, -1126)
 
 [node name="Pillar16" parent="Pillars" instance=ExtResource("9_lnfty")]
 position = Vector2(6270, -674)
@@ -200,20 +192,20 @@ exit_point = NodePath("../Portal")
 position = Vector2(14657, -50)
 portal_exit = NodePath("../Portal")
 destination = Vector2(-600, 0)
-duration = 6.0
+duration = 9.0
 
 [node name="RougePortal2" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("11_1ciew")]
 position = Vector2(15396, -50)
 portal_exit = NodePath("../Portal")
 destination = Vector2(-600, 0)
-duration = 6.0
+duration = 9.0
 wait_time_1 = 0.5
 
 [node name="RougePortal3" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("11_1ciew")]
 position = Vector2(15960, -50)
 portal_exit = NodePath("../Portal")
 destination = Vector2(-600, 0)
-duration = 6.0
+duration = 9.0
 
 [node name="CloudFronts" type="Node" parent="."]
 
@@ -251,18 +243,23 @@ position = Vector2(7381, -206)
 
 [node name="DisappearingPlatform3" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(10214, -206)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform4" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(10587, -206)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform5" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(10966, -206)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform6" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(11340, -206)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform7" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(11717, -205)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform8" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(18757.7, -199.342)
@@ -287,69 +284,90 @@ position = Vector2(19913.7, -199.342)
 
 [node name="DisappearingPlatform15" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(20105.7, -199.342)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform16" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(20301.7, -199.342)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform18" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(20685.7, -199.342)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform20" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(21073.7, -199.342)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform22" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(21457.7, -199.342)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform17" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(22567.3, -1160.53)
 
 [node name="DisappearingPlatform19" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(25620, -1186)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform21" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(25811, -1226)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform23" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(26002, -1186)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform24" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(26193, -1226)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform25" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(26384, -1186)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform26" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(26575, -1226)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform27" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(26766, -1186)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform28" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(26957, -1226)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform29" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(27148, -1186)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform30" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(27339, -1226)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform31" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(27530, -1186)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform32" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(27721, -1226)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform33" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(27912, -1186)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform34" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(28103, -1226)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform35" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(28294, -1186)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform36" parent="DisappearingPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(28485, -1186)
+time_till_disabled = 5.0
 
 [node name="MovingPlatforms" type="Node" parent="."]
 
@@ -472,6 +490,7 @@ time_till_start = 5.0
 
 [node name="DisappearingPlatform8" parent="TimedPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(12092, -206)
+time_till_disabled = 5.0
 
 [node name="DisappearingPlatform9" parent="TimedPlatforms" instance=ExtResource("14_dmq5c")]
 position = Vector2(13440, -203)

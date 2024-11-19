@@ -102,19 +102,19 @@ func _physics_process(delta):
 		move_and_slide()
 
 func camera_zoom():
-	if velocity.x > 50.0 && velocity.x < 150.0:
+	if velocity.x > 80.0 && velocity.x < 300.0:
 		camera.camera_zoom_out(zoom_velocity, camera_zoom_duration)
-	elif velocity.x < -50.0 && velocity.x > -150.0:
+	elif velocity.x < -80.0 && velocity.x > -300.0:
 		camera.camera_zoom_out(zoom_velocity, camera_zoom_duration)
-	elif velocity.x > 150 && velocity.x < 400:
+	elif velocity.x > 300 && velocity.x < 600:
 		camera.camera_zoom_out(zoom_velocity + Vector2(0.15,0.15),camera_zoom_duration - 0.5)
-	elif velocity.x < -150 && velocity.x > -400.0:
+	elif velocity.x < -300 && velocity.x > -600.0:
 		camera.camera_zoom_out(zoom_velocity + Vector2(0.15,0.15),camera_zoom_duration - 0.5)
-	elif velocity.x > 400:
+	elif velocity.x > 600:
 		camera.camera_zoom_out(zoom_velocity + Vector2(0.35,0.35),camera_zoom_duration - 1.0)
-	elif velocity.x < -400:
+	elif velocity.x < -600:
 		camera.camera_zoom_out(zoom_velocity + Vector2(0.35,0.35),camera_zoom_duration - 1.0)
-	elif velocity.x < 50.0 || velocity.x > -20.0:
+	elif velocity.x < 80.0 || velocity.x > -80.0:
 		camera.zoom_reset(camera_zoom_duration)
 
 func bounce_up(min_b: int, max_b: int):
