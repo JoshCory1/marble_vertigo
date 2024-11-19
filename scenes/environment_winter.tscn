@@ -10,6 +10,7 @@
 [node name="EnvironmentWinter" type="Node2D" node_paths=PackedStringArray("parallax1", "parallax2", "parallax3")]
 process_mode = 3
 script = ExtResource("1_pje4g")
+scroll_speed_paralax_3 = Vector2(-15, 5)
 parallax1 = NodePath("ParallaxBG/ParallaxLayer1")
 parallax2 = NodePath("ParallaxBG/ParallaxLayer2")
 parallax3 = NodePath("ParallaxBG/ParallaxLayer3")

@@ -1,7 +1,10 @@
 extends Node2D
 
+#the speed of fade in
 @export var fade_duration: float = 0.5
+##speed of parallax scrolling for layer 2
 @export var scroll_speed_paralax_2 = Vector2(0,0)
+##speed of parallax scrolling for layer 3
 @export var scroll_speed_paralax_3 = Vector2(0,0)
 
 #onready vars
