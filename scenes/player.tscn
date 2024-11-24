@@ -13,7 +13,7 @@ radius = 32.1403
 radius = 35.1283
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-z_index = 1001
+z_index = 8
 collision_mask = 62
 script = ExtResource("1_l3r4b")
 

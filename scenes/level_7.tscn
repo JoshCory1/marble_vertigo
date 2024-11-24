@@ -69,7 +69,6 @@ scale = Vector2(11.2, 2.24)
 [node name="JumpBox7" parent="JumpBoxs" instance=ExtResource("6_cvrj5")]
 position = Vector2(20537, -540)
 scale = Vector2(7.35999, 1.8)
-collision_layer = 2
 
 [node name="Pillars" type="Node" parent="."]
 

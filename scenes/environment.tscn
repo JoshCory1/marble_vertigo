@@ -13,6 +13,7 @@ parallax1 = NodePath("ParallaxBG/ParallaxLayer1")
 parallax2 = NodePath("ParallaxBG/ParallaxLayer2")
 
 [node name="ParallaxBG" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBG"]
 z_index = -100

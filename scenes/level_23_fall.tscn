@@ -486,19 +486,19 @@ position = Vector2(-1409, -3768)
 scale = Vector2(17.3019, -5.37502)
 shape = SubResource("RectangleShape2D_hy4sd")
 
-[node name="Node" type="Node" parent="."]
+[node name="MovingPlatforms" type="Node" parent="."]
 
-[node name="MovingPlatform" parent="Node" instance=ExtResource("17_uxtu1")]
+[node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource("17_uxtu1")]
 position = Vector2(25627.1, -5524.18)
 destination = Vector2(1300, 0)
 duration = 15.0
 
-[node name="MovingPlatform2" parent="Node" instance=ExtResource("17_uxtu1")]
+[node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource("17_uxtu1")]
 position = Vector2(26927.1, -5524.18)
 destination = Vector2(-1300, 0)
 duration = 15.0
 
-[node name="MovingPlatform3" parent="Node" instance=ExtResource("17_uxtu1")]
+[node name="MovingPlatform3" parent="MovingPlatforms" instance=ExtResource("17_uxtu1")]
 position = Vector2(27466.5, -5497.57)
 destination = Vector2(0, -250)
 duration = 3.5

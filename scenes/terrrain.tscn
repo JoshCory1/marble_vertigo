@@ -780,7 +780,8 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_o6528")
 
 [node name="Terrrain" type="TileMap"]
-z_index = 10
+visibility_layer = 3
+z_index = 500
 tile_set = SubResource("TileSet_lxh7b")
 cell_quadrant_size = 8
 format = 2

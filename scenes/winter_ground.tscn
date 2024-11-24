@@ -110,6 +110,6 @@ terrain_set_0/terrain_0/color = Color(0.192157, 0.192157, 0.921569, 1)
 sources/0 = SubResource("TileSetAtlasSource_ums6j")
 
 [node name="WinterGround" type="TileMap"]
-z_index = 10
+z_index = 500
 tile_set = SubResource("TileSet_jpd6p")
 format = 2

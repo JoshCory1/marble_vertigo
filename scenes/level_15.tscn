@@ -218,9 +218,9 @@ position = Vector2(13275, 4193)
 [node name="coin7" parent="Coins" instance=ExtResource("15_cpt6d")]
 position = Vector2(11251.4, 2130.62)
 
-[node name="Node2" type="Node" parent="."]
+[node name="MovingPlatforms" type="Node" parent="."]
 
-[node name="MovingPlatform" parent="Node2" instance=ExtResource("15_xwnkp")]
+[node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource("15_xwnkp")]
 position = Vector2(13273.2, 4400.54)
 destination = Vector2(0, -1000)
 duration = 12.5

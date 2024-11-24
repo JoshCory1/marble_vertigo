@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://lxp6q0608kp6"]
+[gd_scene load_steps=20 format=3 uid="uid://lxp6q0608kp6"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_goamw"]
 [ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_2yc4g"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ksn32v22b7vs" path="res://scenes/cannon.tscn" id="15_jnb0f"]
 [ext_resource type="PackedScene" uid="uid://cpxdnyrpl6w1e" path="res://scenes/cannon_trigger.tscn" id="16_q0mc7"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="17_bhd8g"]
+[ext_resource type="PackedScene" uid="uid://cpd1ym5g1x5no" path="res://scenes/screen_reading.tscn" id="17_bmdsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u37l7"]
 size = Vector2(2016, 59)
@@ -301,7 +302,7 @@ cannon_emit_selection = "cannon 3"
 platform_sprite_visibility_toggle = false
 
 [node name="CannonTrigger" parent="Cannons" instance=ExtResource("16_q0mc7")]
-position = Vector2(2701, -733)
+position = Vector2(3828, -733)
 scale = Vector2(1, 14.16)
 cannon_emit_selection = "cannon 1"
 
@@ -323,7 +324,7 @@ cannon_emit_selection = "cannon 2"
 activate_switch = false
 
 [node name="CannonTrigger3" parent="Cannons" instance=ExtResource("16_q0mc7")]
-position = Vector2(10986, -704)
+position = Vector2(14534, -747)
 scale = Vector2(1, 14.16)
 cannon_emit_selection = "cannon 3"
 
@@ -332,6 +333,18 @@ position = Vector2(16542, -704)
 scale = Vector2(1, 14.16)
 cannon_emit_selection = "cannon 3"
 activate_switch = false
+
+[node name="ScreenReading" parent="Cannons" instance=ExtResource("17_bmdsq")]
+position = Vector2(9647.5, -1118)
+scale = Vector2(12.3828, 20.12)
+
+[node name="ScreenReading3" parent="Cannons" instance=ExtResource("17_bmdsq")]
+position = Vector2(15420.5, -1018)
+scale = Vector2(15.5859, 20.12)
+
+[node name="ScreenReading2" parent="Cannons" instance=ExtResource("17_bmdsq")]
+position = Vector2(4934.75, -1118)
+scale = Vector2(18.9024, 20.12)
 
 [node name="Coins" type="Node" parent="."]
 

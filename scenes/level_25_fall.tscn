@@ -403,14 +403,14 @@ position = Vector2(12233, -905)
 [node name="coin10" parent="Coins" instance=ExtResource("16_md1tb")]
 position = Vector2(13286, -900)
 
-[node name="Node" type="Node" parent="."]
+[node name="MovingPlatforms" type="Node" parent="."]
 
-[node name="MovingPlatform" parent="Node" instance=ExtResource("17_sufx8")]
+[node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource("17_sufx8")]
 position = Vector2(2757.15, 441.807)
 destination = Vector2(0, -400)
 duration = 4.0
 
-[node name="MovingPlatform2" parent="Node" instance=ExtResource("17_sufx8")]
+[node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource("17_sufx8")]
 position = Vector2(6753, -174)
 destination = Vector2(0, -400)
 duration = 4.0
