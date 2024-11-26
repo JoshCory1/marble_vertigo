@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://byggq5ha8dyfh" path="res://assets/backgrounds/bg.png" id="4_gld80"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="5_0yysy"]
 
-[node name="EnvironmentWinter" type="Node2D" node_paths=PackedStringArray("parallax1", "parallax2", "parallax3")]
+[node name="EnvironmentWinter" type="Node2D" node_paths=PackedStringArray("parallax1", "parallax2", "parallax3") groups=["environment"]]
 process_mode = 3
 script = ExtResource("1_pje4g")
 scroll_speed_paralax_3 = Vector2(-15, 5)

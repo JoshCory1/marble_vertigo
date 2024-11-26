@@ -41,7 +41,7 @@ func _ready():
 	var tween = create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(black_rect,"modulate:a", 0.0, fade_duration)
-	await get_tree().create_timer(0.2).timeout
+	await tween.finished
 	if get_tree().paused == true:
 		get_tree().paused = false
 	black_can.visible = false

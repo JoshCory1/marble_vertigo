@@ -9,7 +9,7 @@ extends Area2D
 ##waite time at end point
 @export var wait_time_2: float = 0.0
 ##time untill player exits level
-@export var time_till_exit = .0
+@export var time_till_exit = 0.5
 ##the current level before level += 1
 @export var current_lvl = 1
 ##amount to increase current level
@@ -17,6 +17,8 @@ extends Area2D
 #onready vars
 @onready var level = $".."
 @onready var animaytion_player = $AnimationPlayer
+#signels
+signal player_exit
 
 func _ready():
 	var tween = create_tween()
@@ -39,4 +41,6 @@ func _on_body_entered(body):
 	GameController.save_game()
 	GameController.my_log("Player enterd")
 	await animaytion_player.animation_finished
+	player_exit.emit()
+	await get_tree().create_timer(time_till_exit).timeout
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

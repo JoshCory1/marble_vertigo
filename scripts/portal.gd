@@ -4,8 +4,9 @@ extends Area2D
 @export var exit_point: Node = null
 ## bool that controles sprite Visibility
 @export var visible_sprite: bool = true
-#sprite reference
+#onready vars
 @onready var sprite = $Sprite2D
+
 
 var not_active: bool = false
 
@@ -31,3 +32,4 @@ func _on_body_entered(body):
 			body.ghost = false
 			body.velocity = Vector2(0,0)
 			body.sprite.visible = true
+

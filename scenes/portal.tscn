@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/portal.gd" id="1_3ouf8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xr0cl"]
-radius = 55.0
-height = 202.0
+radius = 38.8889
+height = 166.667
 
 [node name="Portal" type="Area2D"]
 z_index = 9

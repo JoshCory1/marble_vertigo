@@ -8,6 +8,7 @@ extends Node2D
 @export var scroll_speed_paralax_3 = Vector2(0,0)
 
 #onready vars
+@onready var exit = get_tree().get_first_node_in_group("Exit")
 @onready var sprite_paralax_2 = $ParallaxBG/ParallaxLayer2/Sprite2D
 @onready var sprite_paralax_3 = $ParallaxBG/ParallaxLayer2/Sprite2D
 @export var parallax1: ParallaxLayer
@@ -21,6 +22,7 @@ var viewport_size: Vector2
 
 
 func _ready():
+	exit.player_exit.connect(player_exit)
 	set_bg_size_scale()
 	if black_canvas:
 		black_canvas.visible = true
@@ -66,3 +68,8 @@ func  setup_parallax_layer(parallax_layer: ParallaxLayer):
 		var my = parallax_sprite.scale.y * parallax_sprite.get_texture().get_height()
 		parallax_layer.motion_mirroring.x = mx
 		parallax_layer.motion_mirroring.y = my
+
+func player_exit():
+	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(black_screen,"modulate:a", 1.0, fade_duration)

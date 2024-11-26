@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8ci2nsafwq17"]
+
+[ext_resource type="Texture2D" uid="uid://cdg7abpss5bxe" path="res://assets/particles/fire_part.png" id="1_kw7jn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vwuge"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_p4esq"]
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.0591716, 0.248521, 0.343195, 0.692308, 0.869823, 0.928994)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0.966667, 0, 1, 1, 0.883333, 0, 1, 1, 0.716449, 0, 1, 1, 0.299899, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_radow"]
+gradient = SubResource("Gradient_p4esq")
+width = 30
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_kj62u"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jxs0p"]
+curve = SubResource("Curve_kj62u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3qdu5"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 2.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 12.0
+angular_velocity_max = 250.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_min = 1.0
+radial_accel_max = 20.0
+damping_max = 100.0
+damping_curve = SubResource("CurveTexture_jxs0p")
+angle_max = 720.0
+scale_min = 0.3
+color_ramp = SubResource("GradientTexture1D_radow")
+
+[node name="FireParticles2D" type="GPUParticles2D"]
+process_mode = 3
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_vwuge")
+scale = Vector2(6, 6)
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_3qdu5")
+texture = ExtResource("1_kw7jn")
+explosiveness = 0.1
+randomness = 0.1
+trail_lifetime = 0.18
