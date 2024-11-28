@@ -286,19 +286,16 @@ position = Vector2(11779, -586.227)
 [node name="Cannons" type="Node" parent="."]
 
 [node name="Cannon" parent="Cannons" instance=ExtResource("15_jnb0f")]
-position = Vector2(5825, -733)
+position = Vector2(5833, -736)
 cannon_emit_selection = "cannon 1"
-platform_sprite_visibility_toggle = false
 
 [node name="Cannon2" parent="Cannons" instance=ExtResource("15_jnb0f")]
 position = Vector2(10367, -728)
 cannon_emit_selection = "cannon 2"
-platform_sprite_visibility_toggle = false
 
 [node name="Cannon3" parent="Cannons" instance=ExtResource("15_jnb0f")]
 position = Vector2(16347, -661)
 cannon_emit_selection = "cannon 3"
-platform_sprite_visibility_toggle = false
 
 [node name="CannonTrigger" parent="Cannons" instance=ExtResource("16_q0mc7")]
 position = Vector2(3828, -733)

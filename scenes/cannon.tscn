@@ -1,84 +1,34 @@
-[gd_scene load_steps=15 format=3 uid="uid://ksn32v22b7vs"]
+[gd_scene load_steps=11 format=3 uid="uid://ksn32v22b7vs"]
 
 [ext_resource type="Script" path="res://scripts/cannon.gd" id="1_dvy44"]
-[ext_resource type="Texture2D" uid="uid://c7tfv86c08217" path="res://assets/obstacles/cannon.png" id="2_4cknr"]
-[ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="3_si8lo"]
+[ext_resource type="Texture2D" uid="uid://c35bmx3nyjym7" path="res://assets/obstacles/cannon_outer.png" id="2_7i5n3"]
+[ext_resource type="Texture2D" uid="uid://dg5r1ndybp670" path="res://assets/obstacles/cannon_center.png" id="3_iwu6i"]
+[ext_resource type="Shader" path="res://shaders/cannon_distortion.gdshader" id="3_mhn8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7qrq"]
 size = Vector2(142, 130)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eoroq"]
-atlas = ExtResource("2_4cknr")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hgh22"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_drimp"]
-atlas = ExtResource("2_4cknr")
-region = Rect2(256, 0, 256, 256)
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oxrio"]
+noise = SubResource("FastNoiseLite_hgh22")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ncm7m"]
-atlas = ExtResource("2_4cknr")
-region = Rect2(512, 0, 256, 256)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_af1ps"]
+frequency = 0.0202
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jeqfr"]
-atlas = ExtResource("2_4cknr")
-region = Rect2(768, 0, 256, 256)
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_51sys"]
+noise = SubResource("FastNoiseLite_af1ps")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sdkj5"]
-atlas = ExtResource("2_4cknr")
-region = Rect2(1024, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6gmqg"]
-atlas = ExtResource("2_4cknr")
-region = Rect2(1280, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvcaa"]
-atlas = ExtResource("2_4cknr")
-region = Rect2(1536, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kmol0"]
-atlas = ExtResource("2_4cknr")
-region = Rect2(1792, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fuyjo"]
-atlas = ExtResource("2_4cknr")
-region = Rect2(2048, 0, 256, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_h10bg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eoroq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_drimp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ncm7m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jeqfr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sdkj5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6gmqg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cvcaa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kmol0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fuyjo")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_osfuy"]
+shader = ExtResource("3_mhn8a")
+shader_parameter/distortipn_strength = 0.1
+shader_parameter/offset_1 = Vector2(0.1, 0.1)
+shader_parameter/offset_2 = Vector2(0.2, 0.2)
+shader_parameter/noise_1 = SubResource("NoiseTexture2D_oxrio")
+shader_parameter/noise_2 = SubResource("NoiseTexture2D_51sys")
 
 [node name="Cannon" type="StaticBody2D"]
+z_index = -1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_dvy44")
@@ -89,22 +39,20 @@ shape = SubResource("RectangleShape2D_e7qrq")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -10
-position = Vector2(1, -46)
-sprite_frames = SubResource("SpriteFrames_h10bg")
-autoplay = "default"
-frame_progress = 0.994382
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(13, 108)
-texture = ExtResource("3_si8lo")
-region_enabled = true
-region_rect = Rect2(7, 71, 180, 52)
-
 [node name="CannonContainer" type="Node" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-110, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-20, 11)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7i5n3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_osfuy")
+position = Vector2(12, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iwu6i")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

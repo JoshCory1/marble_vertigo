@@ -8,8 +8,6 @@ extends StaticBody2D
 @export var max_rate_of_fire: float = 10.0
 ##value to mach with sgnal of cannon_triggers
 @export var cannon_emit_selection: String = "text here"
-## sprite visibility toggle
-@export var platform_sprite_visibility_toggle: bool = true
 # refrence to bullet scene
 var bullet_scene = preload("res://scenes/bullet.tscn")
 # bool that controles when cannon is active of null
@@ -23,8 +21,6 @@ var active: bool = false
 
 
 func _ready():
-	if !platform_sprite_visibility_toggle:
-		$Sprite2D.visible = false
 	for trigger in cannon_triggers:
 		trigger.cannon_active.connect(_on_cannon_active)
 
