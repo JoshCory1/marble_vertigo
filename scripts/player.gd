@@ -10,7 +10,7 @@ extends CharacterBody2D
 ##duration for camera zoom efect how long it takes to get to max zoom effect
 @export var camera_zoom_duration: float = 1.5
 ##amount that camera zooms in or out
-@export var zoom_velocity: Vector2 = Vector2(0.15, 0.15)
+@export var zoom_velocity: Vector2 = Vector2(0.25, 0.25)
 #on ready vars
 @onready var death_particles = $PlayerParticles2D
 @onready var sprite = $Sprite2D
@@ -111,9 +111,9 @@ func camera_zoom():
 	elif velocity.x < -300 && velocity.x > -600.0:
 		camera.camera_zoom_out(zoom_velocity + Vector2(0.15,0.15),camera_zoom_duration - 0.5)
 	elif velocity.x > 600:
-		camera.camera_zoom_out(zoom_velocity + Vector2(0.35,0.35),camera_zoom_duration - 1.0)
+		camera.camera_zoom_out(zoom_velocity + Vector2(0.25,0.25),camera_zoom_duration - 1.0)
 	elif velocity.x < -600:
-		camera.camera_zoom_out(zoom_velocity + Vector2(0.35,0.35),camera_zoom_duration - 1.0)
+		camera.camera_zoom_out(zoom_velocity + Vector2(0.25,0.25),camera_zoom_duration - 1.0)
 	elif velocity.x < 80.0 || velocity.x > -80.0:
 		camera.zoom_reset(camera_zoom_duration)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8ci2nsafwq17"]
+[gd_scene load_steps=10 format=3 uid="uid://b8ci2nsafwq17"]
 
 [ext_resource type="Texture2D" uid="uid://cdg7abpss5bxe" path="res://assets/particles/fire_part.png" id="1_kw7jn"]
 
@@ -10,9 +10,9 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="Gradient" id="Gradient_p4esq"]
-interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.0591716, 0.248521, 0.343195, 0.692308, 0.869823, 0.928994)
-colors = PackedColorArray(1, 0, 0, 0, 1, 0.966667, 0, 1, 1, 0.883333, 0, 1, 1, 0.716449, 0, 1, 1, 0.299899, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0)
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.00591716, 0.112426, 0.218935, 0.727811, 0.828402, 0.946746)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0.966667, 0, 1, 1, 0.2, 0, 1, 1, 0.11, 0.11, 0.952941, 1, 0.109804, 0.109804, 0.509804, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_radow"]
 gradient = SubResource("Gradient_p4esq")
@@ -21,38 +21,52 @@ use_hdr = true
 
 [sub_resource type="Curve" id="Curve_kj62u"]
 max_value = 100.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 14.7368), 0.0, 0.0, 0, 0, Vector2(0.71, 100), 0.0, 0.0, 0, 0, Vector2(1, 100), 26.3158, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_jxs0p"]
 curve = SubResource("Curve_kj62u")
 
+[sub_resource type="Curve" id="Curve_2kc4c"]
+_data = [Vector2(0.01, 0), 0.0, 0.0, 0, 0, Vector2(0.475, 1), 0.640732, 0.640732, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1j76f"]
+curve = SubResource("Curve_2kc4c")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3qdu5"]
-lifetime_randomness = 0.3
+lifetime_randomness = 0.14
 particle_flag_disable_z = true
 direction = Vector3(0, -1, 0)
-spread = 2.0
+spread = 180.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_max = 12.0
-angular_velocity_max = 250.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+initial_velocity_min = 501.79
+initial_velocity_max = 501.79
+angular_velocity_max = 100.0
+orbit_velocity_min = 214.28
+orbit_velocity_max = 214.28
 radial_accel_min = 1.0
 radial_accel_max = 20.0
+damping_min = 100.0
 damping_max = 100.0
 damping_curve = SubResource("CurveTexture_jxs0p")
 angle_max = 720.0
 scale_min = 0.3
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_1j76f")
 color_ramp = SubResource("GradientTexture1D_radow")
+sub_emitter_mode = 1
+sub_emitter_frequency = 100.0
+sub_emitter_keep_velocity = true
 
 [node name="FireParticles2D" type="GPUParticles2D"]
 process_mode = 3
-show_behind_parent = true
 material = SubResource("CanvasItemMaterial_vwuge")
-scale = Vector2(6, 6)
-amount = 25
+amount = 100
+sub_emitter = NodePath(".")
 process_material = SubResource("ParticleProcessMaterial_3qdu5")
 texture = ExtResource("1_kw7jn")
-explosiveness = 0.1
-randomness = 0.1
-trail_lifetime = 0.18
+lifetime = 0.2
+speed_scale = 0.5
+explosiveness = 0.05
+randomness = 0.64

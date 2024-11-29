@@ -1,6 +1,6 @@
 extends Camera2D
 ##max that the camera can zoom in or out
-@export var zoom_clamp: Vector2 = Vector2(0.40,0.40)
+@export var zoom_clamp: Vector2 = Vector2(0.50,0.50)
 #camer start zoom val
 var start_camera_zoom: Vector2 = Vector2.ZERO
 #bool for if has need to be reset

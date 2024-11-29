@@ -218,9 +218,6 @@ time_till_start = 5.0
 [node name="DisappearingPlatform13" parent="TimedPlatforms" instance=ExtResource("13_2dlj7")]
 position = Vector2(6020, -666)
 
-[node name="DisappearingPlatform17" parent="TimedPlatforms" instance=ExtResource("13_2dlj7")]
-position = Vector2(5828, -666)
-
 [node name="TimedPlatform7" parent="TimedPlatforms" instance=ExtResource("14_t4fhg")]
 position = Vector2(5429, -656)
 
@@ -286,7 +283,7 @@ position = Vector2(11779, -586.227)
 [node name="Cannons" type="Node" parent="."]
 
 [node name="Cannon" parent="Cannons" instance=ExtResource("15_jnb0f")]
-position = Vector2(5833, -736)
+position = Vector2(5833, -731)
 cannon_emit_selection = "cannon 1"
 
 [node name="Cannon2" parent="Cannons" instance=ExtResource("15_jnb0f")]

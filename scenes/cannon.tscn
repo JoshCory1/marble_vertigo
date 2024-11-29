@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ksn32v22b7vs"]
+[gd_scene load_steps=13 format=3 uid="uid://ksn32v22b7vs"]
 
 [ext_resource type="Script" path="res://scripts/cannon.gd" id="1_dvy44"]
 [ext_resource type="Texture2D" uid="uid://c35bmx3nyjym7" path="res://assets/obstacles/cannon_outer.png" id="2_7i5n3"]
 [ext_resource type="Texture2D" uid="uid://dg5r1ndybp670" path="res://assets/obstacles/cannon_center.png" id="3_iwu6i"]
 [ext_resource type="Shader" path="res://shaders/cannon_distortion.gdshader" id="3_mhn8a"]
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="5_jds6g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7qrq"]
 size = Vector2(142, 130)
@@ -26,6 +27,9 @@ shader_parameter/offset_1 = Vector2(0.1, 0.1)
 shader_parameter/offset_2 = Vector2(0.2, 0.2)
 shader_parameter/noise_1 = SubResource("NoiseTexture2D_oxrio")
 shader_parameter/noise_2 = SubResource("NoiseTexture2D_51sys")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o0dr"]
+size = Vector2(92, 24)
 
 [node name="Cannon" type="StaticBody2D"]
 z_index = -1
@@ -55,4 +59,12 @@ position = Vector2(12, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_iwu6i")
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_jds6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(14, 68)
+shape = SubResource("RectangleShape2D_1o0dr")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

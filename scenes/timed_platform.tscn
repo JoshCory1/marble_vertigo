@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dcdvjnvej1571"]
+[gd_scene load_steps=12 format=3 uid="uid://dcdvjnvej1571"]
 
 [ext_resource type="Script" path="res://scripts/timed_platform.gd" id="1_wm3l8"]
 [ext_resource type="Texture2D" uid="uid://c77gmdn2q40wr" path="res://assets/obstacles/timed_platform.png" id="2_8jm5m"]
@@ -66,186 +66,6 @@ _data = {
 "RESET": SubResource("Animation_130oc"),
 "RedActive": SubResource("Animation_7roa3")
 }
-
-[sub_resource type="Gradient" id="Gradient_0d7mc"]
-interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.0591716, 0.248521, 0.343195, 0.692308, 0.869823, 0.928994)
-colors = PackedColorArray(1, 0, 0, 0, 1, 0.966667, 0, 1, 1, 0.883333, 0, 1, 1, 0.716449, 0, 1, 1, 0.299899, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_kfra4"]
-gradient = SubResource("Gradient_0d7mc")
-width = 30
-use_hdr = true
-
-[sub_resource type="Curve" id="Curve_thm8k"]
-max_value = 100.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_dap3u"]
-curve = SubResource("Curve_thm8k")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i2etv"]
-lifetime_randomness = 0.3
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-spread = 2.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_max = 12.0
-angular_velocity_max = 250.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-radial_accel_min = 1.0
-radial_accel_max = 20.0
-damping_max = 100.0
-damping_curve = SubResource("CurveTexture_dap3u")
-angle_max = 720.0
-scale_min = 0.3
-color_ramp = SubResource("GradientTexture1D_kfra4")
-
-[sub_resource type="Gradient" id="Gradient_22og5"]
-interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.0591716, 0.248521, 0.343195, 0.692308, 0.869823, 0.928994)
-colors = PackedColorArray(1, 0, 0, 0, 1, 0.966667, 0, 1, 1, 0.883333, 0, 1, 1, 0.716449, 0, 1, 1, 0.299899, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_xpbcx"]
-gradient = SubResource("Gradient_22og5")
-width = 30
-use_hdr = true
-
-[sub_resource type="Curve" id="Curve_2hqh5"]
-max_value = 100.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ul4ll"]
-curve = SubResource("Curve_2hqh5")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sj52b"]
-lifetime_randomness = 0.3
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-spread = 2.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_max = 12.0
-angular_velocity_max = 250.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-radial_accel_min = 1.0
-radial_accel_max = 20.0
-damping_max = 100.0
-damping_curve = SubResource("CurveTexture_ul4ll")
-angle_max = 720.0
-scale_min = 0.3
-color_ramp = SubResource("GradientTexture1D_xpbcx")
-
-[sub_resource type="Gradient" id="Gradient_taimd"]
-interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.0591716, 0.248521, 0.343195, 0.692308, 0.869823, 0.928994)
-colors = PackedColorArray(1, 0, 0, 0, 1, 0.966667, 0, 1, 1, 0.883333, 0, 1, 1, 0.716449, 0, 1, 1, 0.299899, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_seo5r"]
-gradient = SubResource("Gradient_taimd")
-width = 30
-use_hdr = true
-
-[sub_resource type="Curve" id="Curve_yebvw"]
-max_value = 100.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_qdbf8"]
-curve = SubResource("Curve_yebvw")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sniyb"]
-lifetime_randomness = 0.3
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-spread = 2.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_max = 12.0
-angular_velocity_max = 250.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-radial_accel_min = 1.0
-radial_accel_max = 20.0
-damping_max = 100.0
-damping_curve = SubResource("CurveTexture_qdbf8")
-angle_max = 720.0
-scale_min = 0.3
-color_ramp = SubResource("GradientTexture1D_seo5r")
-
-[sub_resource type="Gradient" id="Gradient_ljdd7"]
-interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.0591716, 0.248521, 0.343195, 0.692308, 0.869823, 0.928994)
-colors = PackedColorArray(1, 0, 0, 0, 1, 0.966667, 0, 1, 1, 0.883333, 0, 1, 1, 0.716449, 0, 1, 1, 0.299899, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_iq6cn"]
-gradient = SubResource("Gradient_ljdd7")
-width = 30
-use_hdr = true
-
-[sub_resource type="Curve" id="Curve_b777q"]
-max_value = 100.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_2g4ko"]
-curve = SubResource("Curve_b777q")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ocrme"]
-lifetime_randomness = 0.3
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-spread = 2.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_max = 12.0
-angular_velocity_max = 250.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-radial_accel_min = 1.0
-radial_accel_max = 20.0
-damping_max = 100.0
-damping_curve = SubResource("CurveTexture_2g4ko")
-angle_max = 720.0
-scale_min = 0.3
-color_ramp = SubResource("GradientTexture1D_iq6cn")
-
-[sub_resource type="Gradient" id="Gradient_m48fh"]
-interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.0591716, 0.248521, 0.343195, 0.692308, 0.869823, 0.928994)
-colors = PackedColorArray(1, 0, 0, 0, 1, 0.966667, 0, 1, 1, 0.883333, 0, 1, 1, 0.716449, 0, 1, 1, 0.299899, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_5k2hm"]
-gradient = SubResource("Gradient_m48fh")
-width = 30
-use_hdr = true
-
-[sub_resource type="Curve" id="Curve_y6yab"]
-max_value = 100.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_8s7sh"]
-curve = SubResource("Curve_y6yab")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7h653"]
-lifetime_randomness = 0.3
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-spread = 2.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_max = 12.0
-angular_velocity_max = 250.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-radial_accel_min = 1.0
-radial_accel_max = 20.0
-damping_max = 100.0
-damping_curve = SubResource("CurveTexture_8s7sh")
-angle_max = 720.0
-scale_min = 0.3
-color_ramp = SubResource("GradientTexture1D_5k2hm")
 
 [node name="TimedPlatform" type="StaticBody2D"]
 scale = Vector2(1.5, 1.5)
@@ -346,21 +166,16 @@ one_shot = true
 autostart = true
 
 [node name="FireParticles2D" parent="." instance=ExtResource("5_46ai3")]
-position = Vector2(-51.4598, -0.459859)
-process_material = SubResource("ParticleProcessMaterial_i2etv")
+position = Vector2(-52, -0.666667)
 
 [node name="FireParticles2D2" parent="." instance=ExtResource("5_46ai3")]
-position = Vector2(45.2068, 0.873474)
-process_material = SubResource("ParticleProcessMaterial_sj52b")
+position = Vector2(-27.3333, -0.666667)
 
 [node name="FireParticles2D3" parent="." instance=ExtResource("5_46ai3")]
-position = Vector2(21.2068, -0.459859)
-process_material = SubResource("ParticleProcessMaterial_sniyb")
+position = Vector2(-3.33334, -0.666667)
 
 [node name="FireParticles2D4" parent="." instance=ExtResource("5_46ai3")]
-position = Vector2(-3.33333, 0.206808)
-process_material = SubResource("ParticleProcessMaterial_ocrme")
+position = Vector2(21.3333, -0.666667)
 
 [node name="FireParticles2D5" parent="." instance=ExtResource("5_46ai3")]
-position = Vector2(-27.3333, -0.459859)
-process_material = SubResource("ParticleProcessMaterial_7h653")
+position = Vector2(45.3333, -0.666667)
