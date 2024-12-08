@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8ci2nsafwq17"]
+[gd_scene load_steps=11 format=3 uid="uid://b8ci2nsafwq17"]
 
 [ext_resource type="Texture2D" uid="uid://cdg7abpss5bxe" path="res://assets/particles/fire_part.png" id="1_kw7jn"]
 
@@ -21,7 +21,7 @@ use_hdr = true
 
 [sub_resource type="Curve" id="Curve_kj62u"]
 max_value = 100.0
-_data = [Vector2(0, 14.7368), 0.0, 0.0, 0, 0, Vector2(0.71, 100), 0.0, 0.0, 0, 0, Vector2(1, 100), 26.3158, 0.0, 0, 0]
+_data = [Vector2(0, 14.7368), 0.0, 0.0, 0, 0, Vector2(0.211957, 100), 0.0, 0.0, 0, 0, Vector2(1, 100), 26.3158, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_jxs0p"]
@@ -34,23 +34,28 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_1j76f"]
 curve = SubResource("Curve_2kc4c")
 
+[sub_resource type="CurveTexture" id="CurveTexture_fn1q4"]
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3qdu5"]
 lifetime_randomness = 0.14
 particle_flag_disable_z = true
+angle_max = 720.0
 direction = Vector3(0, -1, 0)
 spread = 180.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 501.79
-initial_velocity_max = 501.79
+initial_velocity_min = 251.79
+initial_velocity_max = 251.79
 angular_velocity_max = 100.0
 orbit_velocity_min = 214.28
 orbit_velocity_max = 214.28
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+velocity_limit_curve = SubResource("CurveTexture_fn1q4")
+gravity = Vector3(0, 0, 0)
 radial_accel_min = 1.0
 radial_accel_max = 20.0
 damping_min = 100.0
 damping_max = 100.0
 damping_curve = SubResource("CurveTexture_jxs0p")
-angle_max = 720.0
 scale_min = 0.3
 scale_max = 0.5
 scale_curve = SubResource("CurveTexture_1j76f")

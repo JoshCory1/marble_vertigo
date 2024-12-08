@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcdvjnvej1571"]
+[gd_scene load_steps=11 format=3 uid="uid://dcdvjnvej1571"]
 
 [ext_resource type="Script" path="res://scripts/timed_platform.gd" id="1_wm3l8"]
 [ext_resource type="Texture2D" uid="uid://c77gmdn2q40wr" path="res://assets/obstacles/timed_platform.png" id="2_8jm5m"]
-[ext_resource type="PackedScene" uid="uid://cbwl1qmwn4txm" path="res://scenes/active_fire_wave.tscn" id="3_sx45p"]
 [ext_resource type="PackedScene" uid="uid://77ef0thgbp7d" path="res://scenes/jump_box.tscn" id="3_teo7q"]
 [ext_resource type="PackedScene" uid="uid://b8ci2nsafwq17" path="res://scenes/fire_particles_2d.tscn" id="5_46ai3"]
 
@@ -131,26 +130,6 @@ text = "9"
 label_settings = SubResource("LabelSettings_ne5ne")
 metadata/_edit_use_anchors_ = true
 
-[node name="ActiveFireWave" parent="Sprite2D" instance=ExtResource("3_sx45p")]
-show_behind_parent = true
-position = Vector2(-129.166, -1.6667)
-
-[node name="ActiveFireWave2" parent="Sprite2D" instance=ExtResource("3_sx45p")]
-show_behind_parent = true
-position = Vector2(-68.3334, -1.6667)
-
-[node name="ActiveFireWave3" parent="Sprite2D" instance=ExtResource("3_sx45p")]
-show_behind_parent = true
-position = Vector2(-6.6667, 5)
-
-[node name="ActiveFireWave4" parent="Sprite2D" instance=ExtResource("3_sx45p")]
-show_behind_parent = true
-position = Vector2(53.3333, -1.6667)
-
-[node name="ActiveFireWave5" parent="Sprite2D" instance=ExtResource("3_sx45p")]
-show_behind_parent = true
-position = Vector2(113.334, 1.6667)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_7fdv3")
@@ -167,15 +146,20 @@ autostart = true
 
 [node name="FireParticles2D" parent="." instance=ExtResource("5_46ai3")]
 position = Vector2(-52, -0.666667)
+lifetime = 0.02
 
 [node name="FireParticles2D2" parent="." instance=ExtResource("5_46ai3")]
 position = Vector2(-27.3333, -0.666667)
+lifetime = 0.02
 
 [node name="FireParticles2D3" parent="." instance=ExtResource("5_46ai3")]
 position = Vector2(-3.33334, -0.666667)
+lifetime = 0.02
 
 [node name="FireParticles2D4" parent="." instance=ExtResource("5_46ai3")]
 position = Vector2(21.3333, -0.666667)
+lifetime = 0.02
 
 [node name="FireParticles2D5" parent="." instance=ExtResource("5_46ai3")]
 position = Vector2(45.3333, -0.666667)
+lifetime = 0.02

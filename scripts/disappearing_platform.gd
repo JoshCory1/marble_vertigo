@@ -62,7 +62,3 @@ func _on_disable():
 	$Area2DUp/CollisionShape2D.disabled = false
 	$Area2DDown/CollisionShape2D.disabled = false
 	$Area2DDisable/CollisionShape2D.disabled = false
-
-
-
-

@@ -86,5 +86,3 @@ func _on_area_bounce_right_body_entered(body):
 			body.pause_y = false
 		if body.stop_contorls:
 			body.stop_contorls = false
-
-

@@ -76,5 +76,3 @@ func _on_y_timer_timeout():
 	
 func _on_stop_other_timers():
 	y_timer.stop()
-
-

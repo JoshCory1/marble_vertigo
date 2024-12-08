@@ -21,4 +21,3 @@ func _ready():
 
 func _on_coin_pickup():
 	coins_this_level +=1
-

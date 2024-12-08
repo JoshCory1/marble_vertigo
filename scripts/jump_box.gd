@@ -38,4 +38,3 @@ func _on_left_body_entered(body):
 			body.pause_y = false
 		if body.stop_contorls:
 			body.stop_contorls = false
-
