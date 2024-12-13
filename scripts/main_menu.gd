@@ -6,7 +6,6 @@ extends Node2D
 @onready var menu_camera = $UIMenuCamera
 @onready var bg = $ParallaxBackground/ParallaxLayer/Sprite2D
 @onready var shop = $CanvasLayer2/ShopScreen
-@onready var terrain = $UITerrain
 @onready var black_can = $BlackCanvasLayer
 @onready var black_rect = $BlackCanvasLayer/ColorRectBlack
 @onready var fade_duration: float = 0.5

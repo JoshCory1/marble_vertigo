@@ -4,12 +4,14 @@ extends Node2D
 @export var music_volume: float = -10
 
 @onready var coins_in_level = get_tree().get_nodes_in_group("Coins")
+@onready var exit = $Exit
 
 var coins_this_level: int = 0
 var viewport_size: Vector2
 
 
 func _ready():
+	log(exit.current_lvl)
 	
 	if music_track != null:
 		AudioPlayer.m_player.stream = music_track
