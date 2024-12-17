@@ -20,7 +20,7 @@ var current_log: String
 var old_log
 #Shop
 
-## premium controls if game has limited plays and needs to watch adds
+## premium controls if game has limited levels and adds
 @export var premium: bool = false
 
 #coin
@@ -81,6 +81,8 @@ func _ready():
 		var n = i
 		skins[n] = skins_backup[i]
 	skins_backup = skins
+	IapManager.purchase_successful.connect(_on_purchase_successful)
+	my_log("premium is: " + str(premium))
 
 	
 func _process(_delta):
@@ -106,7 +108,6 @@ func my_log(log_str: String):
 			if !log_lable.text.is_empty():
 				log_lable.text += "\n"
 			log_lable.text += log_str
-			print(log_str)
 
 func use_skin(val: int):
 	for i in range(skins.size()):
@@ -128,6 +129,8 @@ func save_game():
 	my_log("Saved skins to disk")
 	file.store_var(skins_unlocked_backup)
 	my_log("Saved skins_unlocked to disk")
+	file.store_var(premium)
+	my_log("Saved permium: " + str(premium) + ", to disk")
 	file.close()
 #	save_json(skins_unlocked)
 
@@ -139,10 +142,17 @@ func load_game():
 		coins = file.get_var()
 		skins_backup = file.get_var()
 		skins_unlocked_backup = file.get_var()
-		my_log("Loaded current play through count: " + str(current_play_through_count) + "\n" + "Loaded current_level: " + str(current_lvl) + "\n" + "Loaded coins" + str(coins))
+		premium = file.get_var()
+		my_log("Loaded current play through count: " + str(current_play_through_count) + "\n" + "Loaded current_level: " + str(current_lvl) + "\n" + "Loaded coins" + str(coins) + "\n" + "premium: " + str(premium))
 		file.close()
 	else:
 		my_log("Save file dosen't exist, setting default values")
 		current_play_through_count = 5
 		current_lvl = 1
 		coins = 0
+		premium = false
+func _on_purchase_successful():
+	if !premium:
+		premium = true
+		my_log("premium is: " + str(premium))
+		save_game()

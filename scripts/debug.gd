@@ -5,7 +5,7 @@ extends CanvasLayer
 
 
 func _ready():
-	console.visible = true
+	console.visible = false
 
 	if GameController.debug_visible:
 		self.visible = true
@@ -14,5 +14,4 @@ func _ready():
 
 func _on_toggle_console_pressed():
 	console.visible = !console.visible
-	GameController.debug = !GameController.debug
 	

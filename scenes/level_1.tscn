@@ -608,6 +608,7 @@ position = Vector2(381, 334)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(841, 334)
+screenClamp = Vector2(130, 0)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(616, 334)
@@ -626,7 +627,6 @@ position = Vector2(1827, 334)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(2072, 334)
-screenClamp = Vector2(210, 0)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(2339, 334)

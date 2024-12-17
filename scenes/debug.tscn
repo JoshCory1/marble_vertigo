@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://scripts/ScrollContainer.gd" id="2_upwck"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wxi5x"]
+font_color = Color(0.281333, 1, 0.23, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_epwfb"]
 
@@ -34,7 +35,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="Debug/ConsoleLog"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,7 +42,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.666667)
+color = Color(0, 0, 0, 0.470588)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Debug/ConsoleLog"]
 process_mode = 3
@@ -114,7 +114,7 @@ offset_right = 54.0001
 offset_bottom = 46.0
 grow_horizontal = 2
 scale = Vector2(0.928644, 0.837728)
-text = "Build 1.0.1"
+text = "Build 1.0.3"
 label_settings = SubResource("LabelSettings_epwfb")
 horizontal_alignment = 1
 vertical_alignment = 1

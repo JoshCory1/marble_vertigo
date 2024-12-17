@@ -3,12 +3,20 @@ extends Control
 
 signal close_shop
 
-## Flash duration
+##Flash duration
 @export var flash_duration: float = 0.05
 ##Wait time for screen flash
 @export var wait_time:float = 0.1
+#IAP vars
+@export var item_value: int
+@export var product_id: String
+@export var price: String = "Loading..."
+@onready var premium_butten_val = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium/Label
+
 
 func _ready():
+	premium_butten_val.text = price
+	IapManager.product_details_received.connect(_setPrice)
 	if GameController.skins_unlocked[1] == true:
 		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton/CoinSprite,$Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton/LabelOwned)
 	if GameController.skins_unlocked[2] == true:
@@ -25,7 +33,11 @@ func _ready():
 		show_owned($Box/ColorRect/ScrollContainer/VBoxContainer/Crystel/CoinSprite,$Box/ColorRect/ScrollContainer/VBoxContainer/Crystel/LabelOwned)
 	if GameController.skins_unlocked[8] == true:
 		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards/CoinSprite,$Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards/LabelOwned)
-	
+
+func _setPrice(_product_id: String, _price: String):
+	if _product_id == product_id:
+		premium_butten_val.text = _price # Update the displayed price
+
 func screen_flash():
 	var flash_rect = $Box/RedFlash
 	flash_rect.visible = true
@@ -49,7 +61,10 @@ func _on_close_button_pressed():
 	close_shop.emit()
 
 func _on_premium_pressed():
-	GameController.premium = true
+	IapManager.do_purchase(product_id)
+	#GameController.my_log("perchase attempted, response " + str(response.status))
+	#if response.status != OK:
+		#GameController.my_log("error purchsing item")
 	
 func _on_default_button_pressed():
 	AudioPlayer.play_sfx("bounce_sfx_1")
