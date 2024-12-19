@@ -8,7 +8,7 @@ extends StaticBody2D
 
 func _on_area_2_dright_body_entered(body):
 	if body != null:
-		body.velocity.y = 0
+		#body.velocity.y = 0
 		body.bounce_right(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
@@ -18,7 +18,7 @@ func _on_area_2_dright_body_entered(body):
 
 func _on_area_2d_left_body_entered(body):
 	if body != null:
-		body.velocity.y = 0
+		#body.velocity.y = 0
 		body.bounce_left(bounce_force_min, bounce_force_max)
 		if body.pause_y:
 			body.pause_y = false
