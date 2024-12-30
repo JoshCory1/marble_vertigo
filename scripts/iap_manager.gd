@@ -2,7 +2,7 @@ extends Node
 
 signal product_details_received(product_id: String, price: String)
 signal purchase_successful(product_id: String)
-signal purchase_failed(product_id: String, error: Dictionary)
+#signal purchase_failed(product_id: String, error: Dictionary)
 
 #premium var
 var new_premium
