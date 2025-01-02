@@ -81,7 +81,7 @@ func _ready():
 		var n = i
 		skins[n] = skins_backup[i]
 	skins_backup = skins
-	IapManager.purchase_successful.connect(_on_purchase_successful)
+	#IapManager.purchase_successful.connect(_on_purchase_successful)
 	my_log("premium is: " + str(premium))
 
 	
@@ -151,8 +151,7 @@ func load_game():
 		current_lvl = 1
 		coins = 0
 		premium = false
-func _on_purchase_successful():
-	if !premium:
-		premium = true
-		my_log("premium is: " + str(premium))
-		save_game()
+#func _on_purchase_successful():
+	#premium = true
+	#my_log("premium is: " + str(premium))
+	#save_game()

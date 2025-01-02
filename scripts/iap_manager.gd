@@ -1,18 +1,32 @@
+# AndroidIAPP is a plugin for the Godot game engine. 
+# It provides an interface to work with Google Play Billing Library version 7. 
+# The plugin supports all public functions of the library, passes all error codes, and can work with different subscription plans.
+# https://developer.android.com/google/play/billing
+#
+# You can use this plugin with any node in Godot.
+# But, I recommend adding this script as a singleton (autoload).
+# This makes it easier to access and use its functions from anywhere in your project.
+#
+# An example of working with a plugin:
+
+
 extends Node
 
 signal product_details_received(product_id: String, price: String)
-signal purchase_successful(product_id: String)
+signal purchase_successful()
 #signal purchase_failed(product_id: String, error: Dictionary)
 
-#premium var
-var new_premium
+var new_premium = null
 
+# https://developer.android.com/reference/com/android/billingclient/api/Purchase.PurchaseState
 enum purchaseState {
 	UNSPECIFIED_STATE = 0,
 	PURCHASED = 1,
 	PENDING = 2,
 	}
 
+
+# https://developer.android.com/reference/com/android/billingclient/api/BillingClient.BillingResponseCode
 enum billingResponseCode {
 	SERVICE_TIMEOUT = -3,
 	FEATURE_NOT_SUPPORTED = -2,
@@ -28,22 +42,32 @@ enum billingResponseCode {
 	ITEM_NOT_OWNED = 8,
 	NETWORK_ERROR = 12
 	}
-	
-const ITEM_ACKNOWLEDGED = ["premium_version"]
+
+
+const ITEM_CONSUMATED: Array = []
+
+const ITEM_ACKNOWLEDGED: Array = ["premium_version"]
+
+const SUBSCRIPTIONS: Array = []
+
 
 var billing = null
 
+
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	run_iapp_billing()
-	#billing.purchase_successful.connect(_on_purchase_successful)
-	#billing.purchase_failed.connect(_on_purchase_failed)
-	
-func run_iapp_billing():
 	await get_tree().create_timer(1).timeout
+	run_iapp_billing()
+
+
+func run_iapp_billing():
 	if Engine.has_singleton("AndroidIAPP"):
 		# Get the singleton instance of AndroidIAPP
 		billing = Engine.get_singleton("AndroidIAPP")
+		print("AndroidIAPP singleton loaded")
+		
+		# Connection information
+		
 		# Handle the response from the helloResponse signal
 		billing.helloResponse.connect(_on_hello_response)
 		# Handle the startConnection signal
@@ -100,8 +124,7 @@ func run_iapp_billing():
 		# Connection
 		billing.startConnection()
 	else:
-		GameController.my_log("AIAPP singleton not found")
-
+		GameController.my_log("AndroidIAPP singleton not found")
 
 
 func _on_start_connection() -> void:
@@ -110,9 +133,17 @@ func _on_start_connection() -> void:
 
 func _on_connected() -> void:
 	GameController.my_log("Billing successfully connected")
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.4).timeout
 	if billing.isReady():
+		# billing.sayHello("Hello from Godot Google IAPP plugin :)")
+		# Show products available to buy
+		# https://developer.android.com/google/play/billing/integrate#show-products
 		billing.queryProductDetails(ITEM_ACKNOWLEDGED, "inapp")
+		billing.queryProductDetails(ITEM_CONSUMATED, "inapp")
+		billing.queryProductDetails(SUBSCRIPTIONS, "subs")
+		# Handling purchases made outside your app
+		# https://developer.android.com/google/play/billing/integrate#ooap
+		billing.queryPurchases("subs")
 		billing.queryPurchases("inapp")
 
 
@@ -127,14 +158,13 @@ func _on_hello_response(response) -> void:
 func query_product_details(response) -> void:
 	for product in response["product_details_list"]:
 		#var product = response["product_details_list"][i]
-		#GameController.my_log(JSON.stringify(product["product_id"], "  "))
+		#print(JSON.stringify(product["product_id"], "  "))
 		var product_id = product["product_id"]
 		var price = product["one_time_purchase_offer_details"]["formatted_price"]
 		product_details_received.emit(product_id, price)
 		#
 		# Handle avaible for purchase product details here
 		#
-
 
 func _on_query_purchases(response) -> void:
 	GameController.my_log("on_query_Purchases_response: ")
@@ -150,14 +180,31 @@ func _on_purchase_updated(response):
 # Processing incoming purchase
 func process_purchase(purchase):
 	for product in purchase["products"]:
-		if product in ITEM_ACKNOWLEDGED:
-			# Consume the purchase
-			#GameController.my_log("Consuming: " + purchase["purchase_token"])
-			#billing.consumePurchase(purchase["purchase_token"])
+		if (product in ITEM_ACKNOWLEDGED) or (product in SUBSCRIPTIONS):
+			# Acknowledge the purchase
 			if not purchase["is_acknowledged"]:
+				print("Acknowledging: " + purchase["purchase_token"])
 				GameController.my_log("Acknowledging: " + purchase["purchase_token"])
 				billing.acknowledgePurchase(purchase["purchase_token"])
 				new_premium = purchase.purchase_token
+				if new_premium != null:
+					#purchase_successful.emit()
+					if !GameController.premium:
+						GameController.premium = true
+						GameController.my_log("premium: " + str(GameController.premium))
+			#elif purchase["is_acknowledged"]:
+				#GameController.my_log("Already acknowledged")
+				#purchase_successful.emit()
+			else:
+				GameController.my_log("Already acknowledged")
+				if !GameController.premium:
+					GameController.premium = true
+		elif product in ITEM_CONSUMATED:
+			# Consume the purchase
+			GameController.my_log("Consuming: " + purchase["purchase_token"])
+			billing.consumePurchase(purchase["purchase_token"])
+			#
+			# Here, process the use of the product in your game.
 			#
 		else:
 			GameController.my_log("Product not found: " + str(product))
@@ -168,33 +215,33 @@ func do_purchase(id: String, is_personalized: bool = false):
 	billing.purchase([id], is_personalized)
 
 # Subscriptions
+func do_subsciption(subscription_id: String, base_plan_id: String , is_personalized: bool = false):
+	billing.subscribe([subscription_id], [base_plan_id], is_personalized)
+
 
 func print_purchases(purchases):
 	for purchase in purchases:
-		GameController.my_log(JSON.stringify(purchase, "  "))
+		print(JSON.stringify(purchase, "  "))
 
 
 func _on_purchase(response) -> void:
 	GameController.my_log("Purchase started:")
-	GameController.my_log(JSON.stringify(response, "  "))
+	print(JSON.stringify(response, "  "))
 
 
 func _on_purchase_cancelled(response) -> void:
 	GameController.my_log("Purchase_cancelled:")
-	GameController.my_log(JSON.stringify(response, "  "))
+	print(JSON.stringify(response, "  "))
 
 
 func _on_purchase_consumed(response) -> void:
 	GameController.my_log("Purchase_consumed:")
-	GameController.my_log(JSON.stringify(response, "  "))
+	print(JSON.stringify(response, "  "))
 
 
 func _on_purchase_acknowledged(response) -> void:
 	GameController.my_log("Purchase_acknowledged:")
-	GameController.my_log(JSON.stringify(response, "  "))
-	if new_premium != null:
-		if new_premium == response:
-			purchase_successful.emit()
+	print(JSON.stringify(response, "  "))
 
 
 func _on_purchase_update_error(error) -> void:
@@ -219,8 +266,3 @@ func _on_query_purchases_error(error) -> void:
 
 func _on_query_product_details_error(error) -> void:
 	GameController.my_log(JSON.stringify(error, "  "))
-
-#func _on_purchase_successful(purchase_id):
-	#pass
-#func _on_purchase_failed(response_id, error_message):
-	#GameController.my_log("Purchase error, rspones id: " + str(response_id) + " error msg: " + error_message)

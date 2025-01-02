@@ -61,6 +61,7 @@ func _on_close_button_pressed():
 	close_shop.emit()
 
 func _on_premium_pressed():
+	#pass
 	IapManager.do_purchase(product_id)
 	#GameController.my_log("perchase attempted, response " + str(response.status))
 	#if response.status != OK:

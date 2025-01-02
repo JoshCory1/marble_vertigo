@@ -58,7 +58,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 script = ExtResource("1_4xgp3")
+flash_duration = null
+wait_time = null
+item_value = null
 product_id = "premium_version"
+price = null
 
 [node name="Box" type="TextureRect" parent="."]
 layout_mode = 1

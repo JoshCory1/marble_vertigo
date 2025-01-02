@@ -690,7 +690,7 @@ position = Vector2(10838, 544)
 screenClamp = Vector2(200, 0)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_0qygq")]
-position = Vector2(11127, 544)
+position = Vector2(11151, 544)
 screenClamp = Vector2(200, 0)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_0qygq")]
