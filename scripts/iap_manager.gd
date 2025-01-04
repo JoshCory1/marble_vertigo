@@ -13,7 +13,7 @@
 extends Node
 
 signal product_details_received(product_id: String, price: String)
-signal purchase_successful()
+#signal purchase_successful()
 #signal purchase_failed(product_id: String, error: Dictionary)
 
 var new_premium = null
@@ -44,11 +44,11 @@ enum billingResponseCode {
 	}
 
 
-const ITEM_CONSUMATED: Array = []
+const ITEM_CONSUMATED: Array = ["nill_consum"]
 
 const ITEM_ACKNOWLEDGED: Array = ["premium_version"]
 
-const SUBSCRIPTIONS: Array = []
+const SUBSCRIPTIONS: Array = ["nill_subs"]
 
 
 var billing = null
@@ -139,8 +139,8 @@ func _on_connected() -> void:
 		# Show products available to buy
 		# https://developer.android.com/google/play/billing/integrate#show-products
 		billing.queryProductDetails(ITEM_ACKNOWLEDGED, "inapp")
-		billing.queryProductDetails(ITEM_CONSUMATED, "inapp")
-		billing.queryProductDetails(SUBSCRIPTIONS, "subs")
+		#billing.queryProductDetails(ITEM_CONSUMATED, "inapp")
+		#billing.queryProductDetails(SUBSCRIPTIONS, "subs")
 		# Handling purchases made outside your app
 		# https://developer.android.com/google/play/billing/integrate#ooap
 		billing.queryPurchases("subs")
@@ -192,13 +192,11 @@ func process_purchase(purchase):
 					if !GameController.premium:
 						GameController.premium = true
 						GameController.my_log("premium: " + str(GameController.premium))
-			#elif purchase["is_acknowledged"]:
-				#GameController.my_log("Already acknowledged")
-				#purchase_successful.emit()
 			else:
 				GameController.my_log("Already acknowledged")
 				if !GameController.premium:
 					GameController.premium = true
+				GameController.my_log("premium: " + str(GameController.premium))
 		elif product in ITEM_CONSUMATED:
 			# Consume the purchase
 			GameController.my_log("Consuming: " + purchase["purchase_token"])

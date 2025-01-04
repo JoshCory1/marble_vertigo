@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3l4um0ne23fg"]
+
+[ext_resource type="Script" path="res://scripts/bullet_trap.gd" id="1_3akj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4300x"]
+size = Vector2(295.457, 618.948)
+
+[node name="BulletTrap" type="Area2D"]
+scale = Vector2(0.22, 0.306)
+collision_layer = 256
+collision_mask = 128
+script = ExtResource("1_3akj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.73828, 299.473)
+shape = SubResource("RectangleShape2D_4300x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

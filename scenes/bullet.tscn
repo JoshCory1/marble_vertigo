@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://be5vhg81nkbns"]
+[gd_scene load_steps=22 format=3 uid="uid://be5vhg81nkbns"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_amooi"]
 [ext_resource type="Texture2D" uid="uid://di7ed6gg6orut" path="res://assets/obstacles/bullet.png" id="2_idy8n"]
@@ -31,11 +31,9 @@ curve = SubResource("Curve_ns2vm")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i7ddj"]
 particle_flag_disable_z = true
 spread = 5.0
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = 100.0
 initial_velocity_max = 250.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 0, 0)
 linear_accel_min = 50.0
 linear_accel_max = 100.0
 damping_min = 100.0
@@ -44,11 +42,73 @@ scale_max = 2.0
 scale_curve = SubResource("CurveTexture_levis")
 color_ramp = SubResource("GradientTexture1D_ps7f6")
 
+[sub_resource type="Curve" id="Curve_iaqe0"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.657609, 217.582), 0.0, 0.0, 0, 0, Vector2(1, -265.055), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_rndqc"]
+curve = SubResource("Curve_iaqe0")
+
+[sub_resource type="Gradient" id="Gradient_4y1ak"]
+offsets = PackedFloat32Array(0.102564, 0.25, 0.467949, 0.621795, 0.75, 0.858974)
+colors = PackedColorArray(0, 0, 0, 0, 1, 0.883333, 0, 1, 1, 0.493667, 0.02, 1, 0.13, 0.039, 0.0208, 1, 1, 0.05, 0.0658331, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t6wh7"]
+gradient = SubResource("Gradient_4y1ak")
+
+[sub_resource type="Curve" id="Curve_ikclj"]
+max_value = 100.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.978261, 73.6264), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_t0jdd"]
+curve = SubResource("Curve_ikclj")
+
+[sub_resource type="Curve" id="Curve_j3ynv"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0eqaw"]
+curve = SubResource("Curve_j3ynv")
+
+[sub_resource type="Curve" id="Curve_0cyft"]
+max_value = 3.0
+_data = [Vector2(0.0217391, 2.14286), 0.0, 0.0, 0, 0, Vector2(0.608696, 2.73626), 0.0, 0.0, 0, 0, Vector2(0.961957, 1.18681), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xdv6r"]
+curve = SubResource("Curve_0cyft")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_asq2a"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.075
+spread = 180.0
+flatness = 0.575
+initial_velocity_min = 340.91
+initial_velocity_max = 686.37
+angular_velocity_curve = SubResource("CurveTexture_rndqc")
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -71.82
+linear_accel_max = -14.55
+damping_min = 42.728
+damping_max = 83.183
+damping_curve = SubResource("CurveTexture_t0jdd")
+scale_min = 0.2
+scale_over_velocity_curve = SubResource("CurveTexture_xdv6r")
+color_ramp = SubResource("GradientTexture1D_t6wh7")
+hue_variation_curve = SubResource("CurveTexture_0eqaw")
+turbulence_enabled = true
+turbulence_noise_strength = 10.11
+turbulence_noise_scale = 5.071
+
 [node name="Bullet" type="AnimatableBody2D"]
 z_index = 400
 scale = Vector2(0.6, 0.6)
-collision_layer = 4
-collision_mask = 2
+collision_layer = 132
+collision_mask = 258
 script = ExtResource("1_amooi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -59,7 +119,7 @@ texture = ExtResource("2_idy8n")
 shape = SubResource("CircleShape2D_ghha2")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 120.0
 autostart = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -71,5 +131,15 @@ lifetime = 0.5
 explosiveness = 0.1
 randomness = 1.0
 local_coords = true
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_asq2a")
+texture = ExtResource("3_3i7ij")
+lifetime = 0.5
+speed_scale = 1.5
+explosiveness = 0.5
+randomness = 0.5
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

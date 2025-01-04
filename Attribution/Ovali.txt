@@ -2,16 +2,14 @@ Ovani
 (all assets from ovali paid according to license  agreement)
 
 Usage of:
-	(modified) Chiptune Vol3 Cherries Main.oog
-	(modified) Chiptune Vol3 Quantum Main.oog
-	(modified) Chiptune Vol3 Ricochet Cut 30.oog
 	Casual Glass
 	Hollow Clicks Double.ogg
 	(modified) Micro Charge Single C.ogg
 	(modified) Ship Torpedo A.ogg
 	(modified) Signal Positive Bells B_coin.ogg
 	(modified) Turret Rotation A.ogg
-	
+	Music:
+		all(modified)
 
 Licenses:
 	https://github.com/JoshCory1/marble_vertigo/blob/master/Attribution/Licenses/ovali

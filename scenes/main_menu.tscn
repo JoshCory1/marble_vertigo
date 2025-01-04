@@ -2297,6 +2297,9 @@ visible = false
 z_index = 4096
 size_flags_horizontal = 4
 flash_duration = 0.01
+wait_time = 0.1
+item_value = 0
+price = "Loading..."
 
 [node name="CoinSprite" parent="CanvasLayer2" instance=ExtResource("32_23juq")]
 position = Vector2(39, 31)

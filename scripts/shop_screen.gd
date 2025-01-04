@@ -20,9 +20,9 @@ func _ready():
 	if GameController.skins_unlocked[1] == true:
 		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton/CoinSprite,$Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton/LabelOwned)
 	if GameController.skins_unlocked[2] == true:
-		show_owned($Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton/CoinSprite,$Box/ColorRect/ScrollContainer/VBoxContainer/SpinButton/LabelOwned)
+		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton/CoinSprite, $Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton/LabelOwned)
 	if GameController.skins_unlocked[3] == true:
-		show_owned($Box/ColorRect/ScrollContainer/VBoxContainer/Puzzle/CoinSprite,$Box/ColorRect/ScrollContainer/VBoxContainer/Puzzle/LabelOwned)
+		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle/CoinSprite, $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle/LabelOwned)
 	if GameController.skins_unlocked[4] == true:
 		show_owned($Box/ColorRect/ScrollContainer/VBoxContainer/Infinty/CoinSprite,$Box/ColorRect/ScrollContainer/VBoxContainer/Infinty/LabelOwned)
 	if GameController.skins_unlocked[5] == true:
@@ -61,11 +61,7 @@ func _on_close_button_pressed():
 	close_shop.emit()
 
 func _on_premium_pressed():
-	#pass
 	IapManager.do_purchase(product_id)
-	#GameController.my_log("perchase attempted, response " + str(response.status))
-	#if response.status != OK:
-		#GameController.my_log("error purchsing item")
 	
 func _on_default_button_pressed():
 	AudioPlayer.play_sfx("bounce_sfx_1")
@@ -82,7 +78,7 @@ func _on_cube_button_pressed():
 	if GameController.skins_unlocked[1] == false && GameController.coins >= 100:
 		GameController.skins_unlocked[1] = true
 		GameController.coins -= 100
-		show_owned($Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton/CoinSprite,$Box/ColorRect/ScrollContainer/VBoxContainer/CubeButton/LabelOwned)
+		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton/CoinSprite, $Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton/LabelOwned)
 	if GameController.skins_unlocked[1] == true:
 		GameController.use_skin(1)
 		close_shop.emit()
@@ -99,7 +95,7 @@ func _on_spin_button_pressed():
 	if GameController.skins_unlocked[2] == false && GameController.coins >= 100:
 		GameController.skins_unlocked[2] = true
 		GameController.coins -= 100
-		show_owned($Box/ColorRect/ScrollContainer/VBoxContainer/Billiards/CoinSprite,$Box/ColorRect/ScrollContainer/VBoxContainer/Billiards/LabelOwned)
+		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton/CoinSprite, $Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton/LabelOwned)
 	if GameController.skins_unlocked[2] == true:
 		GameController.use_skin(2)
 		close_shop.emit()
@@ -114,7 +110,7 @@ func _on_puzzle_pressed():
 	if GameController.skins_unlocked[3] == false && GameController.coins >= 100:
 		GameController.skins_unlocked[3] = true
 		GameController.coins -= 100
-		show_owned($Box/ColorRect/ScrollContainer/VBoxContainer/Puzzle/CoinSprite,$Box/ColorRect/ScrollContainer/VBoxContainer/Puzzle/LabelOwned)
+		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle/CoinSprite, $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle/LabelOwned)
 	if GameController.skins_unlocked[3] == true:
 		GameController.use_skin(3)
 		close_shop.emit()

@@ -93,6 +93,8 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_5="side_bars"
 2d_physics/layer_6="coins"
 2d_physics/layer_7="switch"
+2d_physics/layer_8="bullet"
+2d_physics/layer_9="bullet_trap"
 
 [rendering]
 
