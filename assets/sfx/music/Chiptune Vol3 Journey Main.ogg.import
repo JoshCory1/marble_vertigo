@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dcutlcdv2usgn"
+path="res://.godot/imported/Chiptune Vol3 Journey Main.ogg-7746a589e492b224750d95577c6c2f26.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Chiptune Vol3 Journey Main.ogg"
+dest_files=["res://.godot/imported/Chiptune Vol3 Journey Main.ogg-7746a589e492b224750d95577c6c2f26.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

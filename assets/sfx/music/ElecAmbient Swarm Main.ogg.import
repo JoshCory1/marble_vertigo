@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d11kbd3r4ib2v"
+path="res://.godot/imported/ElecAmbient Swarm Main.ogg-56666a7dd30f7c8579bd50100cb9bde1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/ElecAmbient Swarm Main.ogg"
+dest_files=["res://.godot/imported/ElecAmbient Swarm Main.ogg-56666a7dd30f7c8579bd50100cb9bde1.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
