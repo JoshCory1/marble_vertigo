@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxi4ddoyjcvy3"
+path="res://.godot/imported/Casual Field Day Main.ogg-558f39db5113b49e2670aa07644b1029.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Casual Field Day Main.ogg"
+dest_files=["res://.godot/imported/Casual Field Day Main.ogg-558f39db5113b49e2670aa07644b1029.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dcufv0c2fkmnm"
+path="res://.godot/imported/Casual Tiki Party Main.ogg-4b7ea9dc7c04e08e75cf23f8d0cbf695.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Casual Tiki Party Main.ogg"
+dest_files=["res://.godot/imported/Casual Tiki Party Main.ogg-4b7ea9dc7c04e08e75cf23f8d0cbf695.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

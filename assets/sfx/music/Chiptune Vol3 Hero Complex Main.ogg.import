@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ehqfnsbeseib"
+path="res://.godot/imported/Chiptune Vol3 Hero Complex Main.ogg-470b8eaf846caa848b0153a6c5b0b6de.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Chiptune Vol3 Hero Complex Main.ogg"
+dest_files=["res://.godot/imported/Chiptune Vol3 Hero Complex Main.ogg-470b8eaf846caa848b0153a6c5b0b6de.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
