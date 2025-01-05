@@ -1,7 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://qa1ifgwx3rum"]
+[gd_scene load_steps=26 format=4 uid="uid://qa1ifgwx3rum"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_40ytt"]
-[ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_5kne8"]
+[ext_resource type="AudioStream" uid="uid://ds4j4qgjuwjpr" path="res://assets/sfx/music/Synthpop The Arcade Main.ogg" id="2_bfybq"]
 [ext_resource type="PackedScene" uid="uid://cv21juxsplkpx" path="res://scenes/environment_fall.tscn" id="3_uvj8o"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="4_xvbtt"]
 [ext_resource type="Texture2D" uid="uid://d13cv6dglt12l" path="res://assets/tiles/Tilesheet/platformer_ground_tiles-sheet-shee1t_fall.png" id="5_4xwxf"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bspwnpbok62fy" path="res://scenes/disappearing_platform.tscn" id="12_ewx15"]
 [ext_resource type="PackedScene" uid="uid://ksn32v22b7vs" path="res://scenes/cannon.tscn" id="13_6wih1"]
 [ext_resource type="PackedScene" uid="uid://cpxdnyrpl6w1e" path="res://scenes/cannon_trigger.tscn" id="14_tno5s"]
-[ext_resource type="PackedScene" uid="uid://cfm85q7hteqdx" path="res://scenes/animatable_mover.tscn" id="15_mst3p"]
 [ext_resource type="PackedScene" uid="uid://dcdvjnvej1571" path="res://scenes/timed_platform.tscn" id="16_nmwqa"]
 [ext_resource type="PackedScene" uid="uid://6nl1xce7kbbw" path="res://scenes/boost_right.tscn" id="17_und2r"]
 [ext_resource type="PackedScene" uid="uid://bp4irettwq182" path="res://scenes/boost_up.tscn" id="18_jpb43"]
@@ -584,7 +583,7 @@ size = Vector2(25496.5, 101)
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_40ytt")
-music_track = ExtResource("2_5kne8")
+music_track = ExtResource("2_bfybq")
 
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_uvj8o")]
 
@@ -619,27 +618,26 @@ shape = SubResource("RectangleShape2D_ehl3y")
 [node name="Logs" type="Node" parent="."]
 
 [node name="Log" parent="Logs" instance=ExtResource("9_rsmff")]
-position = Vector2(384, 579)
+position = Vector2(384, 555)
 
 [node name="Log2" parent="Logs" instance=ExtResource("9_rsmff")]
-position = Vector2(684, 579)
+position = Vector2(684, 555)
 
 [node name="Log3" parent="Logs" instance=ExtResource("9_rsmff")]
-position = Vector2(984, 579)
+position = Vector2(984, 555)
 
 [node name="Log4" parent="Logs" instance=ExtResource("9_rsmff")]
-position = Vector2(1284, 579)
+position = Vector2(1284, 555)
 
 [node name="Log37" parent="Logs" instance=ExtResource("9_rsmff")]
-position = Vector2(1584, 579)
+position = Vector2(1584, 555)
 
 [node name="Log5" parent="Logs" instance=ExtResource("9_rsmff")]
 position = Vector2(3905, -226)
-screenClamp = Vector2(300, 0)
+screenClamp = Vector2(125, 0)
 
 [node name="Log6" parent="Logs" instance=ExtResource("9_rsmff")]
 position = Vector2(4282, -226)
-screenClamp = Vector2(300, 0)
 
 [node name="Log10" parent="Logs" instance=ExtResource("9_rsmff")]
 position = Vector2(9609, -710)
@@ -731,8 +729,8 @@ position = Vector2(14360, -400)
 screenClamp = Vector2(75, 0)
 
 [node name="Log7" parent="Logs" instance=ExtResource("9_rsmff")]
-position = Vector2(4668, -226)
-screenClamp = Vector2(75, 0)
+position = Vector2(4620, -226)
+screenClamp = Vector2(100, 0)
 
 [node name="Log8" parent="Logs" instance=ExtResource("9_rsmff")]
 position = Vector2(5035, -284)
@@ -790,31 +788,31 @@ position = Vector2(17841, -888)
 [node name="DisappearingPlatforms" type="Node" parent="."]
 
 [node name="DisappearingPlatform" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
-position = Vector2(1724.33, -51.8723)
+position = Vector2(1724.33, -91.8723)
 
 [node name="DisappearingPlatform2" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
 position = Vector2(1918.33, -92.8723)
 
 [node name="DisappearingPlatform3" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
-position = Vector2(2112.33, -51.8723)
+position = Vector2(2112.33, -91.8723)
 
 [node name="DisappearingPlatform4" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
 position = Vector2(2306.33, -92.8723)
 
 [node name="DisappearingPlatform5" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
-position = Vector2(2501.33, -51.8723)
+position = Vector2(2501.33, -91.8723)
 
 [node name="DisappearingPlatform6" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
 position = Vector2(2695.33, -92.8723)
 
 [node name="DisappearingPlatform7" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
-position = Vector2(2889.33, -51.8723)
+position = Vector2(2889.33, -91.8723)
 
 [node name="DisappearingPlatform8" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
 position = Vector2(3083.33, -92.8723)
 
 [node name="DisappearingPlatform9" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
-position = Vector2(3278.33, -51.8723)
+position = Vector2(3278.33, -91.8723)
 
 [node name="DisappearingPlatform10" parent="DisappearingPlatforms" instance=ExtResource("12_ewx15")]
 position = Vector2(3472.33, -92.8723)
@@ -860,18 +858,13 @@ position = Vector2(7855, -44)
 
 [node name="Cannons and triggers" type="Node" parent="."]
 
-[node name="AnimatableMover4" parent="Cannons and triggers" instance=ExtResource("15_mst3p")]
-position = Vector2(3630.85, 41.4271)
+[node name="Cannon" parent="Cannons and triggers" instance=ExtResource("13_6wih1")]
+position = Vector2(3645, -35)
 scale = Vector2(1, -1)
-destination = Vector2(0, 225)
-duration = 2.5
-
-[node name="Cannon" parent="Cannons and triggers/AnimatableMover4" instance=ExtResource("13_6wih1")]
-position = Vector2(14.1465, 16.4271)
 cannon_emit_selection = "cannon 1"
 
 [node name="CannonTrigger" parent="Cannons and triggers" instance=ExtResource("14_tno5s")]
-position = Vector2(3650, 80)
+position = Vector2(3349, 80)
 scale = Vector2(1, 6.16)
 cannon_emit_selection = "cannon 1"
 activate_switch = false
@@ -881,13 +874,9 @@ position = Vector2(1745, 80)
 scale = Vector2(1, 6.16)
 cannon_emit_selection = "cannon 1"
 
-[node name="AnimatableMover2" parent="Cannons and triggers" instance=ExtResource("15_mst3p")]
+[node name="Cannon3" parent="Cannons and triggers" instance=ExtResource("13_6wih1")]
 position = Vector2(11896, -649)
 scale = Vector2(1, -1)
-destination = Vector2(0, 225)
-duration = 2.5
-
-[node name="Cannon2" parent="Cannons and triggers/AnimatableMover2" instance=ExtResource("13_6wih1")]
 cannon_emit_selection = "cannon 3"
 
 [node name="CannonTrigger5" parent="Cannons and triggers" instance=ExtResource("14_tno5s")]
@@ -901,13 +890,9 @@ position = Vector2(8556, -357)
 scale = Vector2(1, 6.16)
 cannon_emit_selection = "cannon 3"
 
-[node name="AnimatableMover3" parent="Cannons and triggers" instance=ExtResource("15_mst3p")]
+[node name="Cannon4" parent="Cannons and triggers" instance=ExtResource("13_6wih1")]
 position = Vector2(13487, -691)
 scale = Vector2(1, -1)
-destination = Vector2(0, 225)
-duration = 2.5
-
-[node name="Cannon2" parent="Cannons and triggers/AnimatableMover3" instance=ExtResource("13_6wih1")]
 cannon_emit_selection = "cannon 4"
 
 [node name="CannonTrigger7" parent="Cannons and triggers" instance=ExtResource("14_tno5s")]
@@ -921,13 +906,9 @@ position = Vector2(12146, -531)
 scale = Vector2(1, 6.16)
 cannon_emit_selection = "cannon 4"
 
-[node name="AnimatableMover5" parent="Cannons and triggers" instance=ExtResource("15_mst3p")]
+[node name="Cannon5" parent="Cannons and triggers" instance=ExtResource("13_6wih1")]
 position = Vector2(18018, -1051)
 scale = Vector2(1, -1)
-destination = Vector2(0, 225)
-duration = 2.5
-
-[node name="Cannon2" parent="Cannons and triggers/AnimatableMover5" instance=ExtResource("13_6wih1")]
 cannon_emit_selection = "cannon 5"
 
 [node name="CannonTrigger9" parent="Cannons and triggers" instance=ExtResource("14_tno5s")]
@@ -941,13 +922,9 @@ position = Vector2(15314, -760)
 scale = Vector2(1, 6.16)
 cannon_emit_selection = "cannon 5"
 
-[node name="AnimatableMover6" parent="Cannons and triggers" instance=ExtResource("15_mst3p")]
+[node name="Cannon6" parent="Cannons and triggers" instance=ExtResource("13_6wih1")]
 position = Vector2(20238, -1116)
 scale = Vector2(1, -1)
-destination = Vector2(0, 225)
-duration = 2.5
-
-[node name="Cannon2" parent="Cannons and triggers/AnimatableMover6" instance=ExtResource("13_6wih1")]
 cannon_emit_selection = "cannon 6"
 
 [node name="CannonTrigger11" parent="Cannons and triggers" instance=ExtResource("14_tno5s")]
@@ -961,24 +938,19 @@ position = Vector2(18227, -867)
 scale = Vector2(1, 6.16)
 cannon_emit_selection = "cannon 6"
 
-[node name="AnimatableMover" parent="Cannons and triggers" instance=ExtResource("15_mst3p")]
-position = Vector2(5273.34, -172.973)
+[node name="Cannon2" parent="Cannons and triggers" instance=ExtResource("13_6wih1")]
+position = Vector2(5273, -56.0003)
 scale = Vector2(1, -1)
-destination = Vector2(0, 225)
-duration = 2.5
-
-[node name="Cannon2" parent="Cannons and triggers/AnimatableMover" instance=ExtResource("13_6wih1")]
-position = Vector2(-0.342773, -20.9727)
 cannon_emit_selection = "cannon 2"
 
 [node name="CannonTrigger3" parent="Cannons and triggers" instance=ExtResource("14_tno5s")]
-position = Vector2(5278, -97)
-scale = Vector2(1, 6.16)
+position = Vector2(4686, -97)
+scale = Vector2(2.04, 6.16)
 cannon_emit_selection = "cannon 2"
 activate_switch = false
 
 [node name="CannonTrigger4" parent="Cannons and triggers" instance=ExtResource("14_tno5s")]
-position = Vector2(3373, -97)
+position = Vector2(3908, -97)
 scale = Vector2(1, 6.16)
 cannon_emit_selection = "cannon 2"
 
@@ -1033,7 +1005,7 @@ position = Vector2(1079, 340)
 position = Vector2(2112, 25)
 
 [node name="coin3" parent="Coins" instance=ExtResource("19_cpq6h")]
-position = Vector2(3905, -11)
+position = Vector2(3905, -27)
 
 [node name="coin4" parent="Coins" instance=ExtResource("19_cpq6h")]
 position = Vector2(5488, -97)
