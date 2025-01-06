@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6jf1ut670fm8"
+path="res://.godot/imported/Wave and Beach Sand Bank Loop.ogg-1b185a07fb4be9ba21d75d7bfdc3dbbb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Wave and Beach Sand Bank Loop.ogg"
+dest_files=["res://.godot/imported/Wave and Beach Sand Bank Loop.ogg-1b185a07fb4be9ba21d75d7bfdc3dbbb.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
