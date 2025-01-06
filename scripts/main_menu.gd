@@ -1,10 +1,13 @@
 extends Node2D
 ##Music trak for main level
 @export var music_track : AudioStream = null
+##Background scroll speed
+@export var scroll_speed_paralax_bg: Vector2
 # on redy vars
 @onready var button_array = get_tree().get_nodes_in_group("LevelButtons")
 @onready var menu_camera = $UIMenuCamera
 @onready var bg = $ParallaxBackground/ParallaxLayer/Sprite2D
+#@onready var bg_dis = $ParallaxBackground/ParallaxLayer/Sprite2D2
 @onready var shop = $CanvasLayer2/ShopScreen
 @onready var black_can = $BlackCanvasLayer
 @onready var black_rect = $BlackCanvasLayer/ColorRectBlack
@@ -21,6 +24,7 @@ signal freeze_camera
 signal unfreeze_camera
 
 func _ready():
+	#set_bg_size_scale()
 	black_can.visible = true
 	setup_parallax_layer($ParallaxBackground/ParallaxLayer)
 	set_shop_size_scale()
@@ -44,8 +48,18 @@ func _ready():
 	if get_tree().paused == true:
 		get_tree().paused = false
 	black_can.visible = false
-func _process(_delta):
+
+#func set_bg_size_scale():
+	#if bg_dis:
+		#bg_dis.visible = true
+		#bg_dis.position = get_viewport_rect().size / 2
+		#bg_dis.scale = get_viewport_rect().size
+
+func _process(delta):
 	coin_count.text = str(GameController.coins)
+	bg.region_rect.position += delta * Vector2(scroll_speed_paralax_bg)
+	if bg.region_rect.position >= Vector2(960, 540):
+		bg.region_rect.position = Vector2.ZERO
 #	if GameController.premium == true: # not used
 #		heart.visible = false
 #	else:

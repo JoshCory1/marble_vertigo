@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=4 uid="uid://7d3eky6wq7g1"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6oils"]
-[ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_7477w"]
+[ext_resource type="AudioStream" uid="uid://dxi4ddoyjcvy3" path="res://assets/sfx/music/Casual Field Day Main.ogg" id="2_25s7c"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="3_f05t8"]
 [ext_resource type="Texture2D" uid="uid://d13cv6dglt12l" path="res://assets/tiles/Tilesheet/platformer_ground_tiles-sheet-shee1t_fall.png" id="4_3k7oc"]
 [ext_resource type="Texture2D" uid="uid://ovsatvx0hecs" path="res://assets/tiles/dungen_tileset.png" id="5_m46g7"]
@@ -580,7 +580,7 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_6oils")
-music_track = ExtResource("2_7477w")
+music_track = ExtResource("2_25s7c")
 
 [node name="Exit" parent="." instance=ExtResource("6_bkn5x")]
 position = Vector2(2925, 125)
@@ -605,37 +605,47 @@ position = Vector2(387, 163)
 
 [node name="Pillar" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(381, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar2" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(841, 334)
-screenClamp = Vector2(130, 0)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar5" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(616, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar3" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(1072, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar8" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(1331, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar9" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(1571, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar10" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(1827, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(2072, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar6" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(2339, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar11" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(2611, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Pillar7" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(2924, 334)
+screenClamp = Vector2(100, 0)
 
 [node name="Directions1" type="Sprite2D" parent="."]
 position = Vector2(385, -6)

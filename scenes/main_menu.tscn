@@ -1,11 +1,12 @@
-[gd_scene load_steps=93 format=4 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=99 format=4 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
-[ext_resource type="AudioStream" uid="uid://c1lqatl61pq66" path="res://assets/sfx/music/Western No Gallop Main.ogg" id="2_3ok8e"]
 [ext_resource type="Texture2D" uid="uid://cqh402wxwmiq4" path="res://assets/ball/ball_blue_large_alt.png" id="2_dax72"]
+[ext_resource type="AudioStream" uid="uid://6jf1ut670fm8" path="res://assets/sfx/music/Wave and Beach Sand Bank Loop.ogg" id="2_f8tgd"]
 [ext_resource type="Texture2D" uid="uid://co13v6vi1k1tb" path="res://assets/tiles/Tilesheet/mapPack_tilesheet.png" id="3_cehi5"]
 [ext_resource type="Texture2D" uid="uid://coca365g1i45y" path="res://assets/ball/shattered_ball.png" id="3_lfw8e"]
-[ext_resource type="Texture2D" uid="uid://banwwurp13p10" path="res://assets/backgrounds/water_temp.png" id="4_2rw6r"]
+[ext_resource type="Shader" path="res://shaders/main_menu.gdshader" id="4_2g4oe"]
+[ext_resource type="Texture2D" uid="uid://injkjt5g3o7f" path="res://assets/backgrounds/sea.png" id="4_8twi8"]
 [ext_resource type="Texture2D" uid="uid://uijnvnrgxi88" path="res://assets/ball/BubbleSimple_v1.png" id="4_wiijs"]
 [ext_resource type="Texture2D" uid="uid://byoncwrexv1fd" path="res://assets/pillar/pillar_ui_v2.1_ai.png" id="5_pj5dd"]
 [ext_resource type="Script" path="res://scripts/MenuLevelButton_01.gd" id="5_s7i4j"]
@@ -477,6 +478,26 @@ terrain_set_0/terrain_2/color = Color(0, 0.85098, 1, 1)
 sources/2 = SubResource("TileSetAtlasSource_1fuvp")
 sources/0 = SubResource("TileSetAtlasSource_clwbi")
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mqcfd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ema7y"]
+seamless_blend_skirt = 0.365
+noise = SubResource("FastNoiseLite_mqcfd")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0xsir"]
+frequency = 0.0047
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2twiu"]
+noise = SubResource("FastNoiseLite_0xsir")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afw2r"]
+shader = ExtResource("4_2g4oe")
+shader_parameter/distortipn_strength = 0.03
+shader_parameter/offset_1 = Vector2(0.05, 0.1)
+shader_parameter/offset_2 = Vector2(0.2, 0.2)
+shader_parameter/noise_1 = SubResource("NoiseTexture2D_ema7y")
+shader_parameter/noise_2 = SubResource("NoiseTexture2D_2twiu")
+
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
 font_color = Color(0, 0, 0, 1)
 
@@ -557,7 +578,8 @@ font_color = Color(0.694118, 1, 0.682353, 1)
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_egfi4")
-music_track = ExtResource("2_3ok8e")
+music_track = ExtResource("2_f8tgd")
+scroll_speed_paralax_bg = Vector2(15, 5)
 
 [node name="UnderGround" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -570,14 +592,24 @@ tile_map_data = PackedByteArray("AAAAAAIAAgAGAAEAAAAAAAMAAgAGAAEAAAABAAMAAgAGAAE
 tile_set = SubResource("TileSet_52lc8")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.25, 0.25)
 motion_mirroring = Vector2(960, 540)
 
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_afw2r")
+texture = ExtResource("4_8twi8")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 540)
+
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-texture = ExtResource("4_2rw6r")
+texture = ExtResource("4_8twi8")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
