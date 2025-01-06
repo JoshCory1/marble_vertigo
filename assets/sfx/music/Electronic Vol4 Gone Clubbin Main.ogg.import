@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://duiyildbwm708"
+path="res://.godot/imported/Electronic Vol4 Gone Clubbin Main.ogg-09e849a735fb1f64fc4f185f822880e5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Electronic Vol4 Gone Clubbin Main.ogg"
+dest_files=["res://.godot/imported/Electronic Vol4 Gone Clubbin Main.ogg-09e849a735fb1f64fc4f185f822880e5.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
