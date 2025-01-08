@@ -22,7 +22,7 @@ extends Node
 ## stop_now 
 #@export var stop_now: bool = false
 ## voume of sound fx
-@export var volume_sfx = 1
+@export var volume_sfx: float = 0.5
 # m_player refrence to background music player
 @onready var m_player = $MusicPlayer
 
@@ -55,14 +55,12 @@ func play_sfx(sfx_name: String):
 		return
 	var asp = AudioStreamPlayer.new()
 	
+	asp.volume_db = volume_sfx
 	asp.stream = stream
 	asp.name = "SFX"
-	asp.volume_db = volume_sfx
 	
 	add_child(asp)
 	
 	asp.play()
 	await asp.finished
 	asp.queue_free()
-
-
