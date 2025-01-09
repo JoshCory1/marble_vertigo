@@ -209,7 +209,7 @@ offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "100"
+text = "200"
 label_settings = SubResource("LabelSettings_v7o3s")
 
 [node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton"]
@@ -249,7 +249,7 @@ offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "100"
+text = "500"
 label_settings = SubResource("LabelSettings_v7o3s")
 
 [node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton"]
@@ -289,7 +289,7 @@ offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "100"
+text = "500"
 label_settings = SubResource("LabelSettings_v7o3s")
 
 [node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Puzzle"]
@@ -329,7 +329,7 @@ offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "100
+text = "500
 
 "
 label_settings = SubResource("LabelSettings_v7o3s")
@@ -371,7 +371,7 @@ offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "500
+text = "1,000
 "
 label_settings = SubResource("LabelSettings_v7o3s")
 
@@ -412,7 +412,7 @@ offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "500
+text = "1,000
 "
 label_settings = SubResource("LabelSettings_v7o3s")
 
@@ -453,7 +453,7 @@ offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "500"
+text = "1,000"
 label_settings = SubResource("LabelSettings_v7o3s")
 
 [node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Crystel"]
@@ -493,7 +493,7 @@ offset_left = 39.0001
 offset_top = -31.0
 offset_right = 79.0001
 offset_bottom = -5.0
-text = "500"
+text = "1,000"
 label_settings = SubResource("LabelSettings_v7o3s")
 
 [node name="LabelOwned" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards"]

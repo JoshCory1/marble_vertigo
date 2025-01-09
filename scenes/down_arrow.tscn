@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://8yx6ugqonoqh"]
+
+[ext_resource type="Texture2D" uid="uid://cenhbgv6cbj4i" path="res://assets/directions/arrow.png" id="1_hgsx0"]
+
+[node name="DownArrow" type="Sprite2D"]
+position = Vector2(7813, 441)
+texture = ExtResource("1_hgsx0")

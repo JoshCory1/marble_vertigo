@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bad53jvhxckjj"]
+[gd_scene load_steps=30 format=4 uid="uid://bad53jvhxckjj"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_843i7"]
 [ext_resource type="AudioStream" uid="uid://c1lqatl61pq66" path="res://assets/sfx/music/Western No Gallop Main.ogg" id="2_tsfxa"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://ksn32v22b7vs" path="res://scenes/cannon.tscn" id="20_jtldq"]
 [ext_resource type="PackedScene" uid="uid://cpxdnyrpl6w1e" path="res://scenes/cannon_trigger.tscn" id="21_7m22g"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="23_larh4"]
+[ext_resource type="PackedScene" uid="uid://8yx6ugqonoqh" path="res://scenes/down_arrow.tscn" id="25_yllyw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0nl2b"]
 texture = ExtResource("5_i7o5e")
@@ -748,7 +749,7 @@ visible_sprite = false
 visibile_sprite = false
 
 [node name="RougePortal" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("12_ntchh")]
-position = Vector2(15296, 310)
+position = Vector2(15296, 334)
 portal_exit = NodePath("../Portal")
 destination = Vector2(-600, 0)
 duration = 7.0
@@ -766,7 +767,7 @@ destination = Vector2(0, 600)
 duration = 7.0
 
 [node name="RougePortal3" parent="Portals" node_paths=PackedStringArray("portal_exit") instance=ExtResource("12_ntchh")]
-position = Vector2(11777, 310)
+position = Vector2(11777, 334)
 portal_exit = NodePath("../Portal")
 destination = Vector2(-600, 0)
 duration = 7.0
@@ -938,9 +939,10 @@ scale = Vector2(1, -1)
 cannon_emit_selection = "Cannon 1"
 
 [node name="CannonTrigger" parent="Cannons" instance=ExtResource("21_7m22g")]
-position = Vector2(10598.4, -308.249)
+position = Vector2(10230, -308)
 scale = Vector2(2.36001, 3.6)
 cannon_emit_selection = "Cannon 1"
+activate_switch = false
 
 [node name="CannonTrigger2" parent="Cannons" instance=ExtResource("21_7m22g")]
 position = Vector2(7843, -311)
@@ -967,35 +969,8 @@ position = Vector2(6565, -358)
 [node name="coin6" parent="Coins" instance=ExtResource("23_larh4")]
 position = Vector2(6151, 347)
 
-[node name="coin7" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7811, 607)
-
-[node name="coin14" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7811, 567)
-
-[node name="coin15" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7811, 527)
-
-[node name="coin16" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7811, 487)
-
-[node name="coin19" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7811, 450)
-
 [node name="coin20" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7811, 410)
-
-[node name="coin12" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7771, 583)
-
-[node name="coin17" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7738, 559)
-
-[node name="coin18" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7887, 558)
-
-[node name="coin13" parent="Coins" instance=ExtResource("23_larh4")]
-position = Vector2(7852, 583)
+position = Vector2(7811, 4)
 
 [node name="coin8" parent="Coins" instance=ExtResource("23_larh4")]
 position = Vector2(9222, -275)
@@ -1008,6 +983,10 @@ position = Vector2(12523, 310)
 
 [node name="coin11" parent="Coins" instance=ExtResource("23_larh4")]
 position = Vector2(14202, 313)
+
+[node name="Directions" type="Node" parent="."]
+
+[node name="DownArrow" parent="Directions" instance=ExtResource("25_yllyw")]
 
 [editable path="Portals/RougePortal5"]
 [editable path="Portals/RougePortal5/Portal"]

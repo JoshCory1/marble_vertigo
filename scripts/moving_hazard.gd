@@ -33,26 +33,31 @@ func _ready():
 
 func _on_area_bounce_up_body_entered(body):
 	if body != null:
+		body.stop_velocity = true
 		if destination.y < 0:
 			bounce_force_min = bounce_force_min / 1.5
 			bounce_force_max = bounce_force_max / 1.5
 		body.bounce_up(bounce_force_min, bounce_force_max)
+		body.stop_velocity = false
 		
 
 
 func _on_area_bounce_down_body_entered(body):
 	if body != null:
+		body.stop_velocity = true
 		body.bounce_down(bounce_force_min, bounce_force_max)
-		
+		body.stop_velocity = false
 
 
 func _on_area_bounce_left_body_entered(body):
 	if body != null:
+		body.stop_velocity = true
 		body.bounce_left(bounce_force_min, bounce_force_max)
-		
+		body.stop_velocity = false
 
 
 func _on_area_bounce_right_body_entered(body):
 	if body != null:
+		body.stop_velocity = true
 		body.bounce_right(bounce_force_min, bounce_force_max)
-		
+		body.stop_velocity = false
