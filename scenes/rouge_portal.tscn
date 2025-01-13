@@ -75,8 +75,8 @@ position = Vector2(0, 8.33333)
 
 [node name="Sprite2D" parent="Portal" index="1"]
 material = SubResource("ShaderMaterial_t18nk")
-position = Vector2(6, -32.3334)
-scale = Vector2(1.5, 1.5)
+position = Vector2(6, 5.93049)
+scale = Vector2(1.5, 1.32326)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
