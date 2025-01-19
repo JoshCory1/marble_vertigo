@@ -1,6 +1,6 @@
 extends StaticBody2D
 ##the amount of time until the platform disappears
-@export var time_till_disabled: float = 4.0
+@export var time_till_disabled: float = 6.0
 ##the amount of time until the platform reappears
 @export var time_till_enabled: float = 10.0
 ##the min bounce of marble
