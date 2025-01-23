@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3fjwvcoo4xpv"]
+[gd_scene load_steps=14 format=3 uid="uid://d3fjwvcoo4xpv"]
 
 [ext_resource type="Script" path="res://scripts/audio_player.gd" id="1_iybdo"]
 [ext_resource type="AudioStream" uid="uid://daotv3edmgbt2" path="res://assets/sfx/music/Chiptune Vol3 Quantum Main.ogg" id="2_b4k87"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://chyvhwfrj5jr1" path="res://assets/sfx/soundFx/Ship Torpedo A.ogg" id="9_bafyw"]
 [ext_resource type="AudioStream" uid="uid://b2c5sykcqxpmv" path="res://assets/sfx/soundFx/Micro Charge Single C.ogg" id="10_w708q"]
 [ext_resource type="AudioStream" uid="uid://bfchs6iatrik8" path="res://assets/sfx/soundFx/Hollow Clicks Double.ogg" id="11_545ob"]
+[ext_resource type="AudioStream" uid="uid://bfm2suubv3408" path="res://assets/sfx/soundFx/Bouncy Select.wav" id="12_hmk4a"]
 
 [node name="AudioPlayer" type="Node"]
 script = ExtResource("1_iybdo")
@@ -25,6 +26,7 @@ boost_charge = ExtResource("8_xu5j4")
 boost_shoot = ExtResource("9_bafyw")
 bullet_sfx = ExtResource("10_w708q")
 grav_switch_sfx = ExtResource("11_545ob")
+springboard_sfx = ExtResource("12_hmk4a")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b4k87")

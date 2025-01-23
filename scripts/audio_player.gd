@@ -1,29 +1,29 @@
 extends Node
-## bounce_sfx_1
+##bounce_sfx_1
 @export var bounce_sfx_1: AudioStream = null
-## bounce_sfx_2
+##bounce_sfx_2
 @export var bounce_sfx_2: AudioStream = null
-## shatter_sfx
+##shatter_sfx
 @export var shatter_sfx: AudioStream = null
-## pillar_move_sfx
+##pillar_move_sfx
 @export var pillar_move_sfx: AudioStream = null
-## portal_sfx
+##portal_sfx
 @export var portal_sfx: AudioStream = null
-## coin_sfx
+##coin_sfx
 @export var coin_sfx: AudioStream = null
-## boost_charge
+##boost_charge
 @export var boost_charge: AudioStream = null
-## boost_shoot
+##boost_shoot
 @export var boost_shoot: AudioStream = null
-## bullet_sfx
+##bullet_sfx
 @export var bullet_sfx: AudioStream = null
-## grav_switch_sfx
+##grav_switch_sfx
 @export var grav_switch_sfx: AudioStream = null
-## stop_now 
-#@export var stop_now: bool = false
-## voume of sound fx
+##springboard_sfx
+@export var springboard_sfx: AudioStream = null
+##voume of sound fx
 @export var volume_sfx: float = 0.5
-# m_player refrence to background music player
+#m_player refrence to background music player
 @onready var m_player = $MusicPlayer
 
 
@@ -50,6 +50,8 @@ func play_sfx(sfx_name: String):
 		stream = bullet_sfx
 	elif sfx_name == "grav_switch_sfx":
 		stream = grav_switch_sfx
+	elif sfx_name == "springboard_sfx":
+		stream = springboard_sfx
 	else :
 		print("Invalid sfx name")
 		return

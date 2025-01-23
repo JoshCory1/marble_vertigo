@@ -9,6 +9,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body != null:
+		AudioPlayer.play_sfx("springboard_sfx")
 		sprite.play("default")
 		if body.gravity > 0:
 			body.bounce_up(bounce_force_min, bounce_force_max)
