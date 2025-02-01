@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=4 uid="uid://bthqlat7q1xqk"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_q6pfs"]
-[ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_u03gp"]
+[ext_resource type="AudioStream" uid="uid://c1lqatl61pq66" path="res://assets/sfx/music/Western No Gallop Main.ogg" id="2_lk7jc"]
 [ext_resource type="PackedScene" uid="uid://cv21juxsplkpx" path="res://scenes/environment_fall.tscn" id="3_6c2mo"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="4_kvvi2"]
 [ext_resource type="Texture2D" uid="uid://d13cv6dglt12l" path="res://assets/tiles/Tilesheet/platformer_ground_tiles-sheet-shee1t_fall.png" id="5_tw13l"]
@@ -578,7 +578,7 @@ sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_q6pfs")
-music_track = ExtResource("2_u03gp")
+music_track = ExtResource("2_lk7jc")
 
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_6c2mo")]
 

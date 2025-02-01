@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=4 uid="uid://bkbcqs24so8f"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_n54mv"]
-[ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_1c66q"]
+[ext_resource type="AudioStream" uid="uid://dv61fcos1p5hy" path="res://assets/sfx/music/Western Lovely Lady Main.ogg" id="2_gby2o"]
 [ext_resource type="PackedScene" uid="uid://cv21juxsplkpx" path="res://scenes/environment_fall.tscn" id="3_2i2u1"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="4_lffxp"]
 [ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="5_q8cd1"]
@@ -625,7 +625,7 @@ size = Vector2(1880, 51.9722)
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_n54mv")
-music_track = ExtResource("2_1c66q")
+music_track = ExtResource("2_gby2o")
 
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_2i2u1")]
 

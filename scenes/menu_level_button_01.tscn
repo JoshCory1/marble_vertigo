@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbm6m1fjr8abt"]
+
+[ext_resource type="Texture2D" uid="uid://cqh402wxwmiq4" path="res://assets/ball/ball_blue_large_alt.png" id="1_7ms3n"]
+[ext_resource type="Texture2D" uid="uid://coca365g1i45y" path="res://assets/ball/shattered_ball.png" id="2_xuei4"]
+[ext_resource type="Texture2D" uid="uid://uijnvnrgxi88" path="res://assets/ball/BubbleSimple_v1.png" id="3_ccocw"]
+[ext_resource type="Script" path="res://scripts/MenuLevelButton_01.gd" id="4_e3yee"]
+[ext_resource type="PackedScene" uid="uid://7d3eky6wq7g1" path="res://scenes/level_1.tscn" id="5_dlvfn"]
+[ext_resource type="Texture2D" uid="uid://byoncwrexv1fd" path="res://assets/pillar/pillar_ui_v2.1_ai.png" id="6_686ah"]
+[ext_resource type="Texture2D" uid="uid://6w17laqwmjoh" path="res://assets/UI/Lock.png" id="7_r20ln"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="MenuLevelButton_01" type="TextureButton" groups=["LevelButtons"]]
+z_index = 1001
+offset_left = 39.0
+offset_top = -160.0
+offset_right = 103.0
+offset_bottom = -96.0
+texture_normal = ExtResource("1_7ms3n")
+texture_pressed = ExtResource("2_xuei4")
+texture_disabled = ExtResource("3_ccocw")
+script = ExtResource("4_e3yee")
+level = ExtResource("5_dlvfn")
+current_level = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 63.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_o0hso")
+horizontal_alignment = 1
+
+[node name="PillarUi" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(33, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_686ah")
+
+[node name="Lock" type="Sprite2D" parent="."]
+position = Vector2(32, 31)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_r20ln")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

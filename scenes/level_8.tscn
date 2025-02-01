@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=4 uid="uid://dvig3dqm6mlyy"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bmw5i"]
-[ext_resource type="AudioStream" uid="uid://dxi4ddoyjcvy3" path="res://assets/sfx/music/Casual Field Day Main.ogg" id="2_tffyv"]
+[ext_resource type="AudioStream" uid="uid://xb54dlqro758" path="res://assets/sfx/music/Chiptune Vol3 Summer Main.ogg" id="2_swoja"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="3_ljyru"]
 [ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="3_y4it2"]
 [ext_resource type="Texture2D" uid="uid://d13cv6dglt12l" path="res://assets/tiles/Tilesheet/platformer_ground_tiles-sheet-shee1t_fall.png" id="4_cqayq"]
@@ -574,7 +574,7 @@ sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_bmw5i")
-music_track = ExtResource("2_tffyv")
+music_track = ExtResource("2_swoja")
 
 [node name="Exit" parent="." instance=ExtResource("3_ljyru")]
 position = Vector2(7933, -400)

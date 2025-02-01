@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=4 uid="uid://25gplpydn7qi"]
+[gd_scene load_steps=25 format=4 uid="uid://25gplpydn7qi"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xslxq"]
-[ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_q36pn"]
+[ext_resource type="AudioStream" uid="uid://xb54dlqro758" path="res://assets/sfx/music/Chiptune Vol3 Summer Main.ogg" id="2_yqg7e"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="3_87sm6"]
 [ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="4_obn4c"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="5_ep3va"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="12_jqppo"]
 [ext_resource type="PackedScene" uid="uid://kf4y5odm7nvo" path="res://scenes/coin.tscn" id="15_cpt6d"]
 [ext_resource type="PackedScene" uid="uid://htffvv6osno0" path="res://scenes/moving_platform.tscn" id="15_xwnkp"]
+[ext_resource type="PackedScene" uid="uid://8yx6ugqonoqh" path="res://scenes/down_arrow.tscn" id="18_ody47"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ll6dk"]
 texture = ExtResource("4_obn4c")
@@ -615,7 +616,7 @@ sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_xslxq")
-music_track = ExtResource("2_q36pn")
+music_track = ExtResource("2_yqg7e")
 
 [node name="Exit" parent="." instance=ExtResource("3_87sm6")]
 position = Vector2(11557, 2019)
@@ -758,7 +759,7 @@ exit_point = NodePath("../Portal")
 [node name="Hazards" type="Node" parent="."]
 
 [node name="MovingHazard" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(4385, 2626)
+position = Vector2(5191, 2733)
 destination = Vector2(600, 0)
 duration = 4.0
 
@@ -768,22 +769,22 @@ destination = Vector2(600, 0)
 duration = 4.0
 
 [node name="MovingHazard4" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(9904, 2636)
+position = Vector2(9904, 2700)
 destination = Vector2(600, 0)
 duration = 4.0
 
 [node name="MovingHazard5" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(11110, 4239)
+position = Vector2(11110, 4303)
 destination = Vector2(600, 0)
 duration = 4.0
 
 [node name="MovingHazard6" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(12431, 4239)
+position = Vector2(12431, 4303)
 destination = Vector2(600, 0)
 duration = 4.0
 
 [node name="MovingHazard2" parent="Hazards" instance=ExtResource("9_lmt6q")]
-position = Vector2(8426, 2634)
+position = Vector2(8426, 2698)
 destination = Vector2(600, 0)
 duration = 4.0
 
@@ -854,3 +855,14 @@ duration = 12.5
 
 [node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource("15_xwnkp")]
 position = Vector2(1332.1, 383.089)
+
+[node name="Directions" type="Node" parent="."]
+
+[node name="DownArrow" parent="Directions" instance=ExtResource("18_ody47")]
+position = Vector2(1581, 316)
+
+[node name="DownArrow2" parent="Directions" instance=ExtResource("18_ody47")]
+position = Vector2(4423, 1317)
+
+[node name="DownArrow3" parent="Directions" instance=ExtResource("18_ody47")]
+position = Vector2(10707, 2802)

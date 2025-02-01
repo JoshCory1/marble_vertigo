@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=4 uid="uid://lxp6q0608kp6"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_goamw"]
-[ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_2yc4g"]
+[ext_resource type="AudioStream" uid="uid://dr20w4uuy6mwg" path="res://assets/sfx/music/Western Warm Lead Main.ogg" id="2_vbhw4"]
 [ext_resource type="PackedScene" uid="uid://cv21juxsplkpx" path="res://scenes/environment_fall.tscn" id="3_d0uwt"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="4_rjju0"]
 [ext_resource type="Texture2D" uid="uid://d13cv6dglt12l" path="res://assets/tiles/Tilesheet/platformer_ground_tiles-sheet-shee1t_fall.png" id="5_nvufn"]
@@ -582,7 +582,7 @@ size = Vector2(2016, 59)
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_goamw")
-music_track = ExtResource("2_2yc4g")
+music_track = ExtResource("2_vbhw4")
 
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_d0uwt")]
 
