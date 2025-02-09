@@ -1,0 +1,181 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm4yvhgeehtmb"]
+
+[ext_resource type="Script" path="res://scripts/premium_popup_screen.gd" id="1_6y7sd"]
+[ext_resource type="Texture2D" uid="uid://6cnj04ds7j82" path="res://assets/shop/ShopBox.png" id="2_3igmy"]
+[ext_resource type="PackedScene" uid="uid://dtxikyw3nal8l" path="res://scenes/close_button.tscn" id="14_uk02p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_26ct4"]
+font_size = 65
+font_color = Color(0.160784, 1, 0.231373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_62y1r"]
+font_size = 34
+font_color = Color(0.160784, 1, 0.231373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fbbkn"]
+font_size = 22
+font_color = Color(0.160784, 1, 0.231373, 1)
+
+[node name="PremiumPopupScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_6y7sd")
+
+[node name="Box" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -218.0
+offset_right = 388.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3igmy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Box"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Shop"
+label_settings = SubResource("LabelSettings_26ct4")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Box/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.5
+offset_top = 41.5
+offset_right = 318.5
+offset_bottom = 302.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.721569)
+
+[node name="YesButton" type="Button" parent="Box/Label/ColorRect"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = 0.385
+anchor_right = 0.405
+anchor_bottom = 0.6
+offset_left = -0.297005
+offset_top = 0.514992
+offset_right = -1.98502
+offset_bottom = 0.399994
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Box/Label/ColorRect/YesButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.036
+anchor_right = 1.0
+anchor_bottom = 0.982
+offset_left = -0.00100005
+offset_top = -0.016
+offset_bottom = 0.00799561
+grow_horizontal = 2
+grow_vertical = 2
+text = "Yes"
+label_settings = SubResource("LabelSettings_62y1r")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NoButton" type="Button" parent="Box/Label/ColorRect"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.385
+anchor_right = 0.824
+anchor_bottom = 0.6
+offset_left = -0.200012
+offset_top = 0.0149918
+offset_right = 0.111938
+offset_bottom = -0.100006
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Box/Label/ColorRect/NoButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.036
+anchor_right = 1.0
+anchor_bottom = 0.982
+offset_left = -0.00100005
+offset_top = -2.016
+offset_right = 1.0
+offset_bottom = 1.008
+grow_horizontal = 2
+grow_vertical = 2
+text = "No"
+label_settings = SubResource("LabelSettings_62y1r")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Box/Label/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.204
+anchor_top = 0.056
+anchor_right = 0.796
+anchor_bottom = 0.305
+offset_left = 0.0519714
+offset_top = -0.116
+offset_right = -0.0520325
+offset_bottom = -0.105003
+grow_horizontal = 2
+text = "This level is locked would you like to unlock it by buying premium"
+label_settings = SubResource("LabelSettings_fbbkn")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CloseButton" parent="Box" instance=ExtResource("14_uk02p")]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 6.0
+offset_right = 752.0
+offset_bottom = 20.0
+scale = Vector2(2, 2)
+
+[node name="RedFlash" type="ColorRect" parent="Box"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+color = Color(1, 0, 0, 0.5)
+
+[connection signal="pressed" from="Box/Label/ColorRect/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="Box/CloseButton" to="." method="_on_close_button_pressed"]

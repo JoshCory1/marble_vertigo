@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7fce28hvwujr"]
+[gd_scene load_steps=6 format=3 uid="uid://b7fce28hvwujr"]
 
 [ext_resource type="PackedScene" uid="uid://hgy4pkwna054" path="res://scenes/coin_sprite.tscn" id="1_40say"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_o8s0o"]
+[ext_resource type="PackedScene" uid="uid://cabf65t318egf" path="res://scenes/canvas_layer_directions.tscn" id="3_lpdyx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w8srw"]
 font_size = 45
@@ -56,5 +57,7 @@ vertical_alignment = 1
 [node name="StartTimer" type="Timer" parent="."]
 process_mode = 3
 autostart = true
+
+[node name="CanvasLayerDirections" parent="." instance=ExtResource("3_lpdyx")]
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

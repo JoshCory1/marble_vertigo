@@ -151,7 +151,3 @@ func load_game():
 		current_lvl = 1
 		coins = 0
 		premium = false
-#func _on_purchase_successful():
-	#premium = true
-	#my_log("premium is: " + str(premium))
-	#save_game()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://7d3eky6wq7g1"]
+[gd_scene load_steps=16 format=4 uid="uid://7d3eky6wq7g1"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6oils"]
 [ext_resource type="AudioStream" uid="uid://dw0lnn0p1a6so" path="res://assets/sfx/music/Rhythmic Africa Main.ogg" id="2_b8ogu"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="6_qmkek"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="9_ti7py"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="11_23yea"]
-[ext_resource type="Texture2D" uid="uid://dw2wkm0jph2so" path="res://assets/directions/marble_vertigo_directions_1.png" id="11_hhobp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0nl2b"]
 texture = ExtResource("4_3k7oc")
@@ -570,14 +569,6 @@ sources/9 = SubResource("TileSetAtlasSource_eqxs2")
 sources/0 = SubResource("TileSetAtlasSource_0nl2b")
 sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
-[sub_resource type="LabelSettings" id="LabelSettings_i1cjg"]
-font_size = 38
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_lt13x"]
-font_size = 38
-font_color = Color(0, 0, 0, 1)
-
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_6oils")
 music_track = ExtResource("2_b8ogu")
@@ -596,6 +587,7 @@ z_index = 2
 position = Vector2(387, 163)
 
 [node name="UI" parent="." instance=ExtResource("9_ti7py")]
+first_level = true
 
 [node name="SkinHandler" parent="." instance=ExtResource("11_23yea")]
 
@@ -646,27 +638,3 @@ screenClamp = Vector2(100, 0)
 [node name="Pillar7" parent="Pillars" instance=ExtResource("5_vcihk")]
 position = Vector2(2924, 334)
 screenClamp = Vector2(100, 0)
-
-[node name="Directions1" type="Sprite2D" parent="."]
-position = Vector2(385, -6)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_hhobp")
-
-[node name="Label" type="Label" parent="Directions1"]
-offset_left = -240.0
-offset_top = 266.0
-offset_right = 270.0
-offset_bottom = 378.0
-text = "Tilt your device to move the 
-marble"
-label_settings = SubResource("LabelSettings_i1cjg")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Directions1"]
-offset_left = 588.0
-offset_top = 392.0
-offset_right = 1161.0
-offset_bottom = 448.0
-text = "Touch the pillars to move them"
-label_settings = SubResource("LabelSettings_lt13x")

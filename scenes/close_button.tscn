@@ -9,6 +9,7 @@ offset_right = 7.0
 offset_bottom = 7.0
 
 [node name="CloseSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.494118, 1)
 texture = ExtResource("1_hh5je")
 centered = false
 region_enabled = true

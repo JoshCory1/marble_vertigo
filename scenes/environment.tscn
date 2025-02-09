@@ -42,6 +42,7 @@ region_rect = Rect2(8, 4, 960, 540)
 layer = -105
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 scale = Vector2(3.74609, 2.10547)
 texture = ExtResource("3_joeyc")
@@ -59,3 +60,4 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="DebugScreen" parent="." instance=ExtResource("4_o2hnm")]
+visible = false

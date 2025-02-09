@@ -1,5 +1,6 @@
 extends Node2D
 
+
 #the speed of fade in
 @export var fade_duration: float = 0.5
 ##speed of parallax scrolling for layer 2
@@ -7,17 +8,23 @@ extends Node2D
 ##speed of parallax scrolling for layer 3
 @export var scroll_speed_paralax_3 = Vector2(0,0)
 
+##setup parallax layer 1
+@export var parallax1: ParallaxLayer
+##setup parallax layer 2
+@export var parallax2: ParallaxLayer
+##setup parallax layer 3
+@export var parallax3: ParallaxLayer
+
 #onready vars
 @onready var exit = get_tree().get_first_node_in_group("Exit")
 @onready var sprite_paralax_2 = $ParallaxBG/ParallaxLayer2/Sprite2D
 @onready var sprite_paralax_3 = $ParallaxBG/ParallaxLayer2/Sprite2D
-@export var parallax1: ParallaxLayer
-@export var parallax2: ParallaxLayer
-@export var parallax3: ParallaxLayer
 @onready var black_canvas = $BlackCanvasLayer
 @onready var black_screen = $BlackCanvasLayer/ColorRect
 @onready var bg = $CanvasLayer/Sprite2D
 @onready var debug_menu = $DebugScreen
+
+#system vars
 var viewport_size: Vector2
 
 

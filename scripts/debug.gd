@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+#onready vars
 @onready var console = $Debug/ConsoleLog
 @onready var log_lable = $Debug/ConsoleLog/ScrollContainer/VBoxContainer/LogLabel
 

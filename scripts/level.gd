@@ -14,7 +14,6 @@ var viewport_size: Vector2
 
 func _ready():
 	log(exit.current_lvl)
-	
 	if music_track != null:
 		AudioPlayer.m_player.stream = music_track
 		AudioPlayer.m_player.volume_db = music_volume
@@ -25,3 +24,4 @@ func _ready():
 
 func _on_coin_pickup():
 	coins_this_level +=1
+	
