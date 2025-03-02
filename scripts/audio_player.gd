@@ -22,10 +22,14 @@ extends Node
 ##springboard_sfx
 @export var springboard_sfx: AudioStream = null
 ##voume of sound fx
-@export var volume_sfx: float = 0.5
+@export_range(-80.0, 24.0) var volume_sfx: float = -0.0
 #m_player refrence to background music player
 @onready var m_player = $MusicPlayer
+#system vars
+var m_player_vol: float
 
+func _process(_delta: float):
+	m_player.volume_db = m_player_vol
 
 func play_sfx(sfx_name: String):
 	

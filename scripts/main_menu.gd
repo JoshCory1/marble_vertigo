@@ -17,6 +17,8 @@ extends Node2D
 @onready var heart_text = $CanvasLayer2/HeartSprite/Label
 @onready var premium_popup_screen = $CanvasLayer2/PremiumPopupScreen
 @onready var close_shop_button = $CanvasLayer3/ShopButton
+@onready var settings_button = $CanvasLayer3/SettingsButton
+@onready var settings = $CanvasLayer2/Settings
 
 #current play throue not used
 var current_button_array_number = 0
@@ -28,11 +30,13 @@ func _ready():
 	black_can.visible = true
 	setup_parallax_layer($ParallaxBackground/ParallaxLayer)
 	set_shop_size_scale()
+	settings.visible = false
 	shop.visible = false
 	premium_popup_screen.visible = false
 	for button in button_array:
 		button.show_popup.connect(_on_show_popup)
 	shop.close_shop.connect(_on_close_shop)
+	settings.close_settings.connect(_on_close_settings)
 	premium_popup_screen.close_popup.connect(_on_close_popup)
 	premium_popup_screen.open_shop.connect(_on_shop_button_pressed)
 	coin_count.text = str(GameController.coins)
@@ -89,6 +93,7 @@ func _on_close_shop():
 		button.visible = true
 	unfreeze_camera.emit()
 	close_shop_button.visible = true
+	settings_button.visible = true
 	
 func _on_shop_button_pressed():
 	shop.visible = true
@@ -97,6 +102,7 @@ func _on_shop_button_pressed():
 	freeze_camera.emit()
 	close_shop_button.visible = false
 	premium_popup_screen.visible = false
+	settings_button.visible = false
 
 func _on_show_popup():
 	premium_popup_screen.visible = true
@@ -104,6 +110,7 @@ func _on_show_popup():
 		button.visible = false
 	freeze_camera.emit()
 	close_shop_button.visible = false
+	settings_button.visible = false
 
 func  _on_close_popup():
 	premium_popup_screen.visible = false
@@ -111,3 +118,20 @@ func  _on_close_popup():
 		button.visible = true
 	unfreeze_camera.emit()
 	close_shop_button.visible = true
+	settings_button.visible = true
+#work on this
+func _on_button_pressed() -> void:
+	settings.visible = true
+	for button in button_array:
+		button.visible = false
+	freeze_camera.emit()
+	close_shop_button.visible = false
+	settings_button.visible = false
+
+func _on_close_settings():
+	settings.visible = false
+	for button in button_array:
+		button.visible = true
+	unfreeze_camera.emit()
+	close_shop_button.visible = true
+	settings_button.visible = true

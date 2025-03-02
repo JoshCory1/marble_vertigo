@@ -21,6 +21,7 @@ extends Area2D
 signal player_exit
 
 func _ready():
+	animaytion_player.play("RESET")
 	var tween = create_tween()
 	tween.set_loops()
 	tween.set_trans(Tween.TRANS_SINE)

@@ -21,11 +21,10 @@ signal camera_scroll_off
 
 var current_active: bool = true
 
-func _enter_tree() -> void:
-	if GameController.premium:
-		free_level = true
 
 func _ready():
+	if GameController.premium:
+		free_level = true
 	if free_level:
 		if lock.visible == true:
 			lock.visible = false

@@ -19,11 +19,14 @@ extends CanvasLayer
 #system vars
 var coin_so_far: int = 0
 
+
 func _ready():
-	direction_layer.start_level.connect(_on_start_level)
-	direction_layer.visible = false
+	direction_layer.is_canvas_visible = false
 	if first_level:
-		direction_layer.visible = true
+		direction_layer.is_canvas_visible = true
+	direction_layer.start_level.connect(_on_start_level)
+	print("is canvas vis: " + str(direction_layer.is_canvas_visible))
+	print("first level: " + str(first_level))
 	if player:
 		player.stop_velocity = true
 	if !first_level:

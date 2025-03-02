@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=37 format=4 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://6jf1ut670fm8" path="res://assets/sfx/music/Wave and Beach Sand Bank Loop.ogg" id="2_f8tgd"]
@@ -14,9 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="12_gh0hx"]
 [ext_resource type="PackedScene" uid="uid://bfcy0hnl86squ" path="res://scenes/shop_screen.tscn" id="13_47q5w"]
 [ext_resource type="Texture2D" uid="uid://bx8i2dyr8tjht" path="res://assets/shop/shop_button.png" id="14_da51e"]
-[ext_resource type="PackedScene" uid="uid://lweu12r6uhlr" path="res://scenes/settings.tscn" id="16_7767t"]
 [ext_resource type="PackedScene" uid="uid://2kxbgbevh4sq" path="res://scenes/iap_manager.tscn" id="17_dbfbd"]
-[ext_resource type="Texture2D" uid="uid://c2sk681gyyx1h" path="res://assets/UI/Settings_gear.png" id="18_f4855"]
 [ext_resource type="PackedScene" uid="uid://hgy4pkwna054" path="res://scenes/coin_sprite.tscn" id="32_23juq"]
 [ext_resource type="Texture2D" uid="uid://dwbnw3ad70cpx" path="res://assets/UI/heart.png" id="49_2acyd"]
 
@@ -566,7 +564,6 @@ offset_bottom = 128.0
 disabled = true
 level = ExtResource("7_h4l65")
 current_level = 2
-free_level = true
 
 [node name="MenuLevelButton_03" parent="Buttons" instance=ExtResource("6_651t2")]
 offset_left = 249.0
@@ -576,7 +573,6 @@ offset_bottom = 194.0
 disabled = true
 level = ExtResource("8_usw41")
 current_level = 3
-free_level = true
 
 [node name="MenuLevelButton_04" parent="Buttons" instance=ExtResource("6_651t2")]
 offset_left = 381.0
@@ -653,9 +649,6 @@ label_settings = SubResource("LabelSettings_rp1uo")
 [node name="PremiumPopupScreen" parent="CanvasLayer2" instance=ExtResource("12_38ve0")]
 visible = false
 
-[node name="Settings" parent="CanvasLayer2" instance=ExtResource("16_7767t")]
-visible = false
-
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
 [node name="ShopButton" type="TextureButton" parent="CanvasLayer3"]
@@ -692,21 +685,6 @@ grow_vertical = 2
 text = "Shop"
 label_settings = SubResource("LabelSettings_v52m2")
 
-[node name="SettingsButton" type="Button" parent="CanvasLayer3"]
-anchors_preset = -1
-anchor_left = 0.932292
-anchor_right = 0.999583
-anchor_bottom = 0.124074
-offset_right = 258.4
-offset_bottom = 268.0
-grow_horizontal = 0
-scale = Vector2(0.2, 0.2)
-size_flags_horizontal = 8
-icon = ExtResource("18_f4855")
-flat = true
-metadata/_edit_use_anchors_ = true
-
 [node name="IAPManager" parent="." instance=ExtResource("17_dbfbd")]
 
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]
-[connection signal="pressed" from="CanvasLayer3/SettingsButton" to="." method="_on_button_pressed"]

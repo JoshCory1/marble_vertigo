@@ -131,8 +131,12 @@ func save_game():
 	my_log("Saved skins_unlocked to disk")
 	file.store_var(premium)
 	my_log("Saved permium: " + str(premium) + ", to disk")
+	file.store_var(AudioPlayer.volume_sfx)
+	my_log("Saved volume_sfx: " + str(AudioPlayer.volume_sfx))
+	file.store_var(AudioPlayer.m_player_vol)
+	my_log("Saved m_player: " + str(AudioPlayer.m_player))
 	file.close()
-#	save_json(skins_unlocked)
+	
 
 func load_game():
 	if FileAccess.file_exists(save_file_path):
@@ -143,6 +147,8 @@ func load_game():
 		skins_backup = file.get_var()
 		skins_unlocked_backup = file.get_var()
 		premium = file.get_var()
+		AudioPlayer.volume_sfx = file.get_var()
+		AudioPlayer.m_player_vol = file.get_var()
 		my_log("Loaded current play through count: " + str(current_play_through_count) + "\n" + "Loaded current_level: " + str(current_lvl) + "\n" + "Loaded coins" + str(coins) + "\n" + "premium: " + str(premium))
 		file.close()
 	else:

@@ -1,0 +1,174 @@
+[gd_scene load_steps=19 format=3 uid="uid://lweu12r6uhlr"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_epdfo"]
+[ext_resource type="Texture2D" uid="uid://6cnj04ds7j82" path="res://assets/shop/ShopBox.png" id="2_qrh7o"]
+[ext_resource type="Texture2D" uid="uid://stbsihfx21mi" path="res://assets/UI/bar_marbler_vertigo_bracket.png" id="3_jmwvp"]
+[ext_resource type="PackedScene" uid="uid://dtxikyw3nal8l" path="res://scenes/close_button.tscn" id="14_kqwpp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_26ct4"]
+font_size = 65
+font_color = Color(0.160784, 1, 0.231373, 1)
+
+[sub_resource type="ImageTexture" id="ImageTexture_bh4ss"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_n1mpl"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_fyg2n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2n7v"]
+texture = SubResource("Texture2DRD_fyg2n")
+modulate_color = Color(0.0470588, 1, 1, 1)
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_5c08y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djtq0"]
+texture = SubResource("Texture2DRD_5c08y")
+modulate_color = Color(0.0470588, 1, 1, 1)
+
+[sub_resource type="ImageTexture" id="ImageTexture_erjp1"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_apjfm"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_mebka"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q4b2i"]
+texture = SubResource("Texture2DRD_mebka")
+modulate_color = Color(0.0470588, 1, 1, 1)
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_fbwpl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rewa"]
+texture = SubResource("Texture2DRD_fbwpl")
+modulate_color = Color(0.0470588, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k4maw"]
+font_color = Color(0.160784, 1, 0.231373, 1)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_epdfo")
+
+[node name="Box" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -218.0
+offset_right = 388.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qrh7o")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.338
+anchor_right = 0.662
+anchor_bottom = 0.206
+offset_left = 105.55
+offset_right = -105.55
+offset_bottom = -66.816
+grow_horizontal = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_26ct4")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Box/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.5
+offset_top = 41.5
+offset_right = 318.5
+offset_bottom = 302.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.721569)
+
+[node name="HSliderMusicFX" type="HSlider" parent="Box/Label/ColorRect"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 104.0
+offset_right = 426.0
+offset_bottom = 120.0
+tooltip_text = "MusicFX Volume"
+theme_override_icons/grabber = SubResource("ImageTexture_bh4ss")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_n1mpl")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_t2n7v")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_djtq0")
+min_value = -24.0
+max_value = 24.0
+
+[node name="HSlider2SoundFX" type="HSlider" parent="Box/Label/ColorRect"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 194.5
+offset_right = 426.0
+offset_bottom = 210.5
+tooltip_text = "SoundFX Volume"
+theme_override_icons/grabber = SubResource("ImageTexture_erjp1")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_apjfm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_q4b2i")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_0rewa")
+min_value = -24.0
+max_value = 24.0
+
+[node name="MusicFXLabel" type="Label" parent="Box/Label/ColorRect"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 62.5
+offset_right = 374.0
+offset_bottom = 85.5
+text = "MusicFX Volume"
+label_settings = SubResource("LabelSettings_k4maw")
+
+[node name="SoundFXLabel" type="Label" parent="Box/Label/ColorRect"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 149.5
+offset_right = 378.0
+offset_bottom = 172.5
+text = "SoundFX Volume"
+label_settings = SubResource("LabelSettings_k4maw")
+
+[node name="BarMarblerVertigoBracket" type="Sprite2D" parent="Box/Label/ColorRect"]
+position = Vector2(300.5, 111.5)
+scale = Vector2(0.185, 0.0333333)
+texture = ExtResource("3_jmwvp")
+
+[node name="BarMarblerVertigoBracket2" type="Sprite2D" parent="Box/Label/ColorRect"]
+position = Vector2(300, 201.5)
+scale = Vector2(0.185, 0.0333333)
+texture = ExtResource("3_jmwvp")
+
+[node name="CloseButton" parent="Box" instance=ExtResource("14_kqwpp")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.952
+anchor_right = 0.988
+anchor_bottom = 0.078
+offset_left = 0.200012
+offset_top = 6.0
+offset_right = -13.7
+offset_bottom = -14.008
+scale = Vector2(2, 2)
+
+[connection signal="value_changed" from="Box/Label/ColorRect/HSliderMusicFX" to="." method="_on_h_slider_music_fx_value_changed"]
+[connection signal="value_changed" from="Box/Label/ColorRect/HSlider2SoundFX" to="." method="_on_h_slider_2_sound_fx_value_changed"]
+[connection signal="pressed" from="Box/CloseButton" to="." method="_on_close_button_pressed"]

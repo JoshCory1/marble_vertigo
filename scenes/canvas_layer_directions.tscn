@@ -1,22 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cabf65t318egf"]
+[gd_scene load_steps=5 format=3 uid="uid://cabf65t318egf"]
 
 [ext_resource type="Texture2D" uid="uid://uitb1f1e2r2u" path="res://assets/directions/mobile_directions.png" id="1_63y3k"]
 [ext_resource type="Script" path="res://scripts/canvas_layer_directions.gd" id="1_aaylq"]
 
-[node name="CanvasLayerDirections" type="CanvasLayer"]
-layer = 127
-script = ExtResource("1_aaylq")
+[sub_resource type="LabelSettings" id="LabelSettings_p4ciw"]
+font_color = Color(0.270588, 1, 0, 1)
 
-[node name="Control_Directions" type="Control" parent="."]
+[sub_resource type="LabelSettings" id="LabelSettings_58bwk"]
+font_color = Color(0.270588, 1, 0, 1)
+
+[node name="Control_Directions" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aaylq")
 
-[node name="ColorRect" type="ColorRect" parent="Control_Directions"]
-layout_mode = 1
+[node name="CanvasLayerDirections" type="CanvasLayer" parent="."]
+layer = 127
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayerDirections"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,25 +29,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.482353)
 
-[node name="MobileDirections" type="Sprite2D" parent="Control_Directions"]
-position = Vector2(486, 91)
+[node name="MobileDirections" type="Sprite2D" parent="CanvasLayerDirections"]
+position = Vector2(486, 115)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_63y3k")
 
-[node name="Label" type="Label" parent="Control_Directions"]
-layout_mode = 0
-offset_left = 370.0
-offset_top = 169.0
-offset_right = 615.0
-offset_bottom = 192.0
+[node name="DirectionLable" type="Label" parent="CanvasLayerDirections"]
+offset_left = 363.0
+offset_top = 226.0
+offset_right = 608.0
+offset_bottom = 275.0
 text = "Tilt Your device to move marble
-Press ok to Countenue"
+Press OK to continue"
+label_settings = SubResource("LabelSettings_p4ciw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="Control_Directions"]
-modulate = Color(0.270588, 1, 0, 1)
-layout_mode = 0
+[node name="Button" type="Button" parent="CanvasLayerDirections"]
 offset_left = 455.0
 offset_top = 335.0
 offset_right = 486.0
@@ -50,21 +53,22 @@ offset_bottom = 366.0
 scale = Vector2(2.26445, 1.76)
 flat = true
 
-[node name="Label" type="Label" parent="Control_Directions/Button"]
+[node name="Label" type="Label" parent="CanvasLayerDirections/Button"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+anchors_preset = -1
+anchor_left = -0.145
+anchor_top = 0.129
+anchor_right = 1.145
+anchor_bottom = 0.871
+offset_left = -0.00499964
+offset_top = 0.000999689
+offset_right = 0.00499725
+offset_bottom = -0.00100136
 grow_horizontal = 2
 grow_vertical = 2
 text = "OK"
+label_settings = SubResource("LabelSettings_58bwk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Control_Directions/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayerDirections/Button" to="." method="_on_button_pressed"]

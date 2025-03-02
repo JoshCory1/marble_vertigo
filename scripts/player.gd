@@ -3,20 +3,21 @@ extends CharacterBody2D
 @export var speed_var: float = 6000
 ##var that contoles gravity
 @export var gravity: float = 8.0
-#the max speed for gravity var
+##the max speed for gravity var
 @export var max_fall_velocity: float = 300.0
 ##a time delay for bounce effect
 @export var bounceing_time_delay: float = 0.5
 ##duration for camera zoom efect how long it takes to get to max zoom effect
 @export var camera_zoom_duration: float = 1.5
 ##amount that camera zooms in or out
-@export var zoom_velocity: Vector2 = Vector2(0.25, 0.25)
-#on ready vars
+@export var zoom_velocity: Vector2 = Vector2(0.10, 0.10)
+#onready vars
 @onready var death_particles = $PlayerParticles2D
 @onready var sprite = $Sprite2D
 @onready var animation_player = $PlayerAnimationPlayer
 @onready var boosts = get_tree().get_nodes_in_group("boost_x")
 @onready var camera = $PlayerCamera2D
+@onready var control_timer = $ControlTimer
 #bounce vars
 var no_bounce_x: int = 0
 var no_bounce_y: int = 0
@@ -100,6 +101,7 @@ func _physics_process(delta):
 				velocity.x += speed_var * 10 * delta
 		camera_zoom()
 		move_and_slide()
+	
 
 func camera_zoom():
 	if velocity.x > 80.0 && velocity.x < 300.0:
@@ -130,10 +132,14 @@ func bounce_down(min_b: int, max_b: int):
 func bounce_left(min_b: int, max_b: int):
 	AudioPlayer.play_sfx("bounce_sfx_2")
 	velocity.x = -random_bounce(min_b, max_b)
-	
+	if stop_contorls:
+		control_timer.start()
+
 func bounce_right(min_b: int, max_b: int):
 	AudioPlayer.play_sfx("bounce_sfx_2")
 	velocity.x = random_bounce(min_b, max_b)
+	if stop_contorls:
+		control_timer.start()
 
 func random_bounce(min_boune: int, max_boune: int):
 	var new_bounce_velocity
@@ -146,6 +152,9 @@ func _on_y_lock_releasing():
 	if stop_contorls:
 		stop_contorls = false
 
+func _on_control_timer_timeout() -> void:
+	if stop_contorls:
+		stop_contorls = false
 
 func _on_area_2d_body_entered(_body):
 	if !debug_mode:

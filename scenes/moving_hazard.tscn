@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cnvws0g7i2060" path="res://assets/obstacles/rock_0.1_alt.png" id="2_5ubrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2urn"]
-size = Vector2(58.3333, 588.889)
+size = Vector2(93.3333, 666.667)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5c80"]
 
@@ -39,7 +39,7 @@ position = Vector2(-31, -2)
 scale = Vector2(0.12, 0.12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceLeft"]
-position = Vector2(11.6667, 37.34)
+position = Vector2(-33.3333, 33.3333)
 scale = Vector2(1, 0.75)
 shape = SubResource("RectangleShape2D_k2urn")
 
@@ -48,7 +48,7 @@ position = Vector2(27, -2)
 scale = Vector2(0.12, 0.12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBounceRight"]
-position = Vector2(11.6667, 37.34)
+position = Vector2(41.6667, 33.3333)
 scale = Vector2(1, 0.75)
 shape = SubResource("RectangleShape2D_k2urn")
 

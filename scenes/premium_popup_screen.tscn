@@ -46,14 +46,14 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="Box"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_left = 0.474
+anchor_right = 0.526
+anchor_bottom = 0.206
+offset_left = 0.149963
+offset_right = -0.150024
+offset_bottom = -66.816
 grow_horizontal = 2
-text = "Shop"
 label_settings = SubResource("LabelSettings_26ct4")
 horizontal_alignment = 1
 

@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvbtb0g7fcr6o"]
+
+[ext_resource type="Texture2D" uid="uid://cqh402wxwmiq4" path="res://assets/ball/ball_blue_large_alt.png" id="1_fumdc"]
+[ext_resource type="Shader" path="res://shaders/cannon_distortion.gdshader" id="2_nqcnd"]
+[ext_resource type="Texture2D" uid="uid://6w17laqwmjoh" path="res://assets/UI/Lock.png" id="3_asrrc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52om5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fcmsk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dwfmj"]
+noise = SubResource("FastNoiseLite_fcmsk")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7r6xh"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eehed"]
+noise = SubResource("FastNoiseLite_7r6xh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ic5yt"]
+shader = ExtResource("2_nqcnd")
+shader_parameter/distortipn_strength = 0.1
+shader_parameter/offset_1 = Vector2(0.1, 0.1)
+shader_parameter/offset_2 = Vector2(0.2, 0.2)
+shader_parameter/noise_1 = SubResource("NoiseTexture2D_dwfmj")
+shader_parameter/noise_2 = SubResource("NoiseTexture2D_eehed")
+
+[node name="LockPremiumButton" type="Sprite2D"]
+material = SubResource("ShaderMaterial_52om5")
+texture = ExtResource("1_fumdc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_ic5yt")
+texture = ExtResource("1_fumdc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-1, -1)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_asrrc")

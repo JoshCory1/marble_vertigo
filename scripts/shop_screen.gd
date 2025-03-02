@@ -8,11 +8,15 @@ signal close_shop
 ##Wait time for screen flash
 @export var wait_time:float = 0.1
 #IAP vars
+##value of item
 @export var item_value: int
+##string that describs product
 @export var product_id: String
+##loading string for when product id in not avalaible
 @export var price: String = "Loading..."
+#onready vars
 @onready var premium_butten_val = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium/Label
-
+@onready var premium_button = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium
 
 func _ready():
 	premium_butten_val.text = price
@@ -33,6 +37,11 @@ func _ready():
 		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/Crystel/CoinSprite, $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Crystel/LabelOwned)
 	if GameController.skins_unlocked[8] == true:
 		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards/CoinSprite, $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards/LabelOwned)
+
+func _process(_delta: float):
+	if GameController.premium == true:
+		premium_button.visible = false
+		premium_button.disabled = true
 
 func _setPrice(_product_id: String, _price: String):
 	if _product_id == product_id:

@@ -16,7 +16,6 @@ func _ready():
 	log(exit.current_lvl)
 	if music_track != null:
 		AudioPlayer.m_player.stream = music_track
-		AudioPlayer.m_player.volume_db = music_volume
 		AudioPlayer.m_player.play()
 	viewport_size = get_viewport_rect().size
 	for coin in coins_in_level:
