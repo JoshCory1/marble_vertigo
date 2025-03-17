@@ -1,8 +1,6 @@
 extends Node2D
 ##Sets the music track for the level
 @export var music_track: AudioStream = null
-##Sets the music volume for the level
-@export var music_volume: float = -10
 
 #onready vars
 @onready var coins_in_level = get_tree().get_nodes_in_group("Coins")

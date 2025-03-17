@@ -117,6 +117,7 @@ theme = SubResource("Theme_wkkm2")
 layout_mode = 2
 
 [node name="Premium" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("4_jggn5")
 

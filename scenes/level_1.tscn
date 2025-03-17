@@ -649,7 +649,7 @@ offset_left = 1019.0
 offset_top = 75.0
 offset_right = 1359.0
 offset_bottom = 161.0
-color = Color(0, 0, 0, 0.301961)
+color = Color(0, 0, 0, 0.129412)
 
 [node name="Label" type="Label" parent="DirectionsHint"]
 layout_mode = 1
@@ -670,7 +670,7 @@ offset_left = 1733.0
 offset_top = 75.0
 offset_right = 2436.0
 offset_bottom = 161.0
-color = Color(0, 0, 0, 0.301961)
+color = Color(0, 0, 0, 0.129412)
 
 [node name="Label" type="Label" parent="DirectionsHint2"]
 layout_mode = 1

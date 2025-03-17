@@ -13,7 +13,8 @@ var current_lvl: int = 1
 var current_play_through_count: int = 5
 
 # Save game
-var save_file_path = "user://vertigo_save.save"
+var node_name: String
+var save_file_path = "user://GameController.save"
 
 # Log
 var current_log: String
@@ -72,6 +73,8 @@ var billiards_8_skin_use: bool = false
 
 
 func _ready():
+	node_name = self.name
+	print("my name is : " + str(node_name))
 	load_game()
 	for i in range(skins_unlocked_backup.size()):
 		var n = i
@@ -97,6 +100,8 @@ func _process(_delta):
 		get_tree().quit()
 	if Input.is_action_just_pressed("Reset"):
 		get_tree().reload_current_scene()
+	if coins >= 999999:
+		coins = 999999
 
 # Debug Log
 

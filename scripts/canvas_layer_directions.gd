@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 signal start_level
 
@@ -9,11 +9,12 @@ signal start_level
 @onready var canvas_layer_directions = $CanvasLayerDirections
 
 #system vars
-var is_canvas_visible: bool = true
+var is_canvas_visible: bool = false
 
 func _ready():
-	if !is_canvas_visible:
-		canvas_layer_directions.visible = false
+	mobile_directions.visible = false
+	directions_lable.visible = false
+	ok_button.visible = false
 	var viewport = get_viewport_rect().size
 	mobile_directions.position.x = viewport.x / 2
 	#mobile_directions.position.y = 0 + viewport.y / 5 
@@ -23,9 +24,13 @@ func _ready():
 	#ok_button.position.y = 0 + viewport.y / 1.5
 
 func _process(_delta: float):
-	if !is_canvas_visible:
+	if is_canvas_visible:
+		mobile_directions.visible = true
+		directions_lable.visible = true
+		ok_button.visible = true
+	else:
 		canvas_layer_directions.visible = false
-		
-func _on_button_pressed() -> void:
+
+func _on_button_pressed():
 	is_canvas_visible = false
 	start_level.emit()

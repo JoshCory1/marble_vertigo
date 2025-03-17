@@ -21,27 +21,26 @@ var coin_so_far: int = 0
 
 
 func _ready():
-	direction_layer.is_canvas_visible = false
+	direction_layer.visible = false
 	if first_level:
 		direction_layer.is_canvas_visible = true
-	direction_layer.start_level.connect(_on_start_level)
-	print("is canvas vis: " + str(direction_layer.is_canvas_visible))
-	print("first level: " + str(first_level))
-	if player:
-		player.stop_velocity = true
-	if !first_level:
-		if black_canvas:
-			black_canvas.visible = true
+		direction_layer.visible = true
+		start_timer.stop()
+		start_count_label.visible = false
+	else:
+		black_canvas.visible = true
+		direction_layer.is_canvas_visible = false
 		start_count_label.text = str(time_until_start)
+		if player:
+			player.stop_velocity = true
 		if time_until_start > 0:
 			if get_tree().paused == false:
 				get_tree().paused = true
-	else:
-		start_timer.stop()
-		start_count_label.visible = false
 	coin_lable.text = " "
 	for coin in coins_in_level:
 		coin.coin_pickup.connect(_on_coin_pickup)
+	direction_layer.start_level.connect(_on_start_level)
+	
 	
 func _process(_delta):
 	start_count_label.text = str(time_until_start)
@@ -72,4 +71,4 @@ func _on_start_timer_timeout():
 func _on_start_level():
 	get_tree().paused = false
 	if player:
-			player.stop_velocity = false
+		player.stop_velocity = false

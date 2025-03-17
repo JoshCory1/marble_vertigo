@@ -13,7 +13,7 @@
 extends Node
 
 signal product_details_received(product_id: String, price: String)
-#signal purchase_successful()
+signal purchase_successful()
 #signal purchase_failed(product_id: String, error: Dictionary)
 
 var new_premium = null
@@ -188,12 +188,13 @@ func process_purchase(purchase):
 				billing.acknowledgePurchase(purchase["purchase_token"])
 				new_premium = purchase.purchase_token
 				if new_premium != null:
-					#purchase_successful.emit()
+					purchase_successful.emit()
 					if !GameController.premium:
 						GameController.premium = true
 						GameController.my_log("premium: " + str(GameController.premium))
 			else:
 				GameController.my_log("Already acknowledged")
+				purchase_successful.emit()
 				if !GameController.premium:
 					GameController.premium = true
 				GameController.my_log("premium: " + str(GameController.premium))

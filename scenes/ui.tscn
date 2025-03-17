@@ -59,6 +59,6 @@ process_mode = 3
 autostart = true
 
 [node name="CanvasLayerDirections" parent="." instance=ExtResource("3_lpdyx")]
-visible = false
+z_index = -1
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

@@ -621,7 +621,7 @@ screenClamp = Vector2(300, 0)
 
 [node name="MovingHazard" parent="Hazards" instance=ExtResource("11_qve7p")]
 position = Vector2(763, -15)
-destination = Vector2(0, 200)
+destination = Vector2(0, 150)
 
 [node name="MovingHazard2" parent="Hazards" instance=ExtResource("11_qve7p")]
 position = Vector2(1462, 277)

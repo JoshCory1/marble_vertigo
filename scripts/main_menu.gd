@@ -1,4 +1,5 @@
 extends Node2D
+signal popup_gold_pass
 ##Music trak for main level
 @export var music_track : AudioStream = null
 ##Background scroll speed
@@ -42,7 +43,6 @@ func _ready():
 	coin_count.text = str(GameController.coins)
 	if music_track != null:
 		AudioPlayer.m_player.stream = music_track
-		AudioPlayer.m_player.volume_db = -10.0
 		AudioPlayer.m_player.play()
 	for number_of_buttons in button_array:
 		if number_of_buttons.current_active == true:
@@ -104,13 +104,14 @@ func _on_shop_button_pressed():
 	premium_popup_screen.visible = false
 	settings_button.visible = false
 
-func _on_show_popup():
+func _on_show_popup(gold: int):
 	premium_popup_screen.visible = true
 	for button in button_array:
 		button.visible = false
 	freeze_camera.emit()
 	close_shop_button.visible = false
 	settings_button.visible = false
+	popup_gold_pass.emit(gold)
 
 func  _on_close_popup():
 	premium_popup_screen.visible = false
