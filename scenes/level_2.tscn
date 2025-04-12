@@ -642,7 +642,7 @@ screenClamp = Vector2(100, 0)
 position = Vector2(5876, 102)
 
 [node name="Pillar11" parent="Pillars" instance=ExtResource("10_e43q8")]
-position = Vector2(4444, 176)
+position = Vector2(4444, 192)
 
 [node name="Pillar12" parent="Pillars" instance=ExtResource("10_e43q8")]
 position = Vector2(3369, 253)

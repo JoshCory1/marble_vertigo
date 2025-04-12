@@ -42,6 +42,9 @@ func _process(_delta: float):
 	if GameController.premium == true:
 		premium_button.visible = false
 		premium_button.disabled = true
+	if GameController.premium == false:
+		premium_button.visible = true
+		premium_button.disabled = false
 
 func _setPrice(_product_id: String, _price: String):
 	if _product_id == product_id:
@@ -216,3 +219,7 @@ func _on_billiards_pressed():
 		GameController.use_skin(0)
 	await get_tree().create_timer(.5).timeout
 	GameController.save_game()
+
+
+func _on_button_pressed() -> void:
+	IapManager.reset_purchases()

@@ -635,4 +635,7 @@ duration = 4.0
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("11_cn4m0")]
-position = Vector2(1451, 20)
+position = Vector2(1622, 228)
+
+[node name="coin2" parent="Coins" instance=ExtResource("11_cn4m0")]
+position = Vector2(2502, 195)

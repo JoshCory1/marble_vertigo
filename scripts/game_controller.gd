@@ -1,13 +1,24 @@
 extends Node
+
+signal purchased_premium
+
 #Debug
-## Debug contorls if player can hit Q(debug key) to by pass game for testing purpose
+##Debug contorls if player can hit Q(debug key) to by pass game for testing purpose
 @export var debug: bool = false
-## Debug toglles debug menu
+
+##Debug toglles debug menu
 @export var debug_visible: bool = false
+
+##premium controls if game has limited levels and adds
+@export var premium: bool = false
+
+##controles the ad responce for if ad is played or not
+@export var master_no_ads: bool = false
 
 #Time
 var old_time: float = 0.0
 var ver_time: float = 0.0
+
 #Level
 var current_lvl: int = 1
 var current_play_through_count: int = 5
@@ -21,8 +32,6 @@ var current_log: String
 var old_log
 #Shop
 
-## premium controls if game has limited levels and adds
-@export var premium: bool = false
 
 #coin
 var coins: int = 0
@@ -73,8 +82,12 @@ var billiards_8_skin_use: bool = false
 
 
 func _ready():
+	MobileAds.initialize()
+	IapManager.premium_purchase_successful.connect(_on_premium_purchase_successful)
+	if premium:
+		my_log("premium is: " + str(premium))
+		purchased_premium.emit()
 	node_name = self.name
-	print("my name is : " + str(node_name))
 	load_game()
 	for i in range(skins_unlocked_backup.size()):
 		var n = i
@@ -84,8 +97,6 @@ func _ready():
 		var n = i
 		skins[n] = skins_backup[i]
 	skins_backup = skins
-	#IapManager.purchase_successful.connect(_on_purchase_successful)
-	my_log("premium is: " + str(premium))
 
 	
 func _process(_delta):
@@ -134,8 +145,8 @@ func save_game():
 	my_log("Saved skins to disk")
 	file.store_var(skins_unlocked_backup)
 	my_log("Saved skins_unlocked to disk")
-	file.store_var(premium)
-	my_log("Saved permium: " + str(premium) + ", to disk")
+	#file.store_var(premium)
+	#my_log("Saved permium: " + str(premium) + ", to disk")
 	file.store_var(AudioPlayer.volume_sfx)
 	my_log("Saved volume_sfx: " + str(AudioPlayer.volume_sfx))
 	file.store_var(AudioPlayer.m_player_vol)
@@ -151,7 +162,7 @@ func load_game():
 		coins = file.get_var()
 		skins_backup = file.get_var()
 		skins_unlocked_backup = file.get_var()
-		premium = file.get_var()
+		#premium = file.get_var()
 		AudioPlayer.volume_sfx = file.get_var()
 		AudioPlayer.m_player_vol = file.get_var()
 		my_log("Loaded current play through count: " + str(current_play_through_count) + "\n" + "Loaded current_level: " + str(current_lvl) + "\n" + "Loaded coins" + str(coins) + "\n" + "premium: " + str(premium))
@@ -161,4 +172,12 @@ func load_game():
 		current_play_through_count = 5
 		current_lvl = 1
 		coins = 0
-		premium = false
+		skins_unlocked = [0]
+		skins_backup = [0]
+
+func _on_premium_purchase_successful():
+	if !premium:
+		premium = true
+	if premium:
+		purchased_premium.emit()
+	my_log("premium is now: " + str(premium))

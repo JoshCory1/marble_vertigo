@@ -114,7 +114,7 @@ offset_right = 54.0001
 offset_bottom = 46.0
 grow_horizontal = 2
 scale = Vector2(0.928644, 0.837728)
-text = "Build 1.0.7
+text = "Build 1.0.8
 "
 label_settings = SubResource("LabelSettings_epwfb")
 horizontal_alignment = 1

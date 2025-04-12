@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=47 format=4 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://6jf1ut670fm8" path="res://assets/sfx/music/Wave and Beach Sand Bank Loop.ogg" id="2_f8tgd"]
@@ -22,7 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://dh1jhenl0m2fb" path="res://scenes/level_10.tscn" id="15_pgam1"]
 [ext_resource type="PackedScene" uid="uid://lweu12r6uhlr" path="res://scenes/settings.tscn" id="16_7767t"]
 [ext_resource type="PackedScene" uid="uid://2kxbgbevh4sq" path="res://scenes/iap_manager.tscn" id="17_dbfbd"]
+[ext_resource type="PackedScene" uid="uid://tbucgx8txtjl" path="res://scenes/portal_wheel_of.tscn" id="17_ycsef"]
 [ext_resource type="Texture2D" uid="uid://c2sk681gyyx1h" path="res://assets/UI/Settings_gear.png" id="18_f4855"]
+[ext_resource type="PackedScene" uid="uid://cwe0fn31ert48" path="res://scenes/ad_interstitial.tscn" id="26_s5naw"]
 [ext_resource type="PackedScene" uid="uid://hgy4pkwna054" path="res://scenes/coin_sprite.tscn" id="32_23juq"]
 [ext_resource type="Texture2D" uid="uid://dwbnw3ad70cpx" path="res://assets/UI/heart.png" id="49_2acyd"]
 
@@ -573,6 +575,7 @@ disabled = true
 level = ExtResource("7_h4l65")
 current_level = 2
 free_level = true
+gold_cost = 1
 
 [node name="MenuLevelButton_03" parent="Buttons" instance=ExtResource("6_651t2")]
 offset_left = 249.0
@@ -592,6 +595,7 @@ offset_bottom = 315.0
 disabled = true
 level = ExtResource("9_74naj")
 current_level = 4
+gold_cost = 2
 
 [node name="MenuLevelButton_05" parent="Buttons" instance=ExtResource("6_651t2")]
 offset_left = 724.0
@@ -619,6 +623,7 @@ offset_bottom = 390.0
 disabled = true
 level = ExtResource("12_50q57")
 current_level = 7
+gold_cost = 3
 
 [node name="MenuLevelButton_08" parent="Buttons" instance=ExtResource("6_651t2")]
 offset_left = 1163.0
@@ -670,6 +675,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="PortalWheelOf" parent="BlackCanvasLayer" instance=ExtResource("17_ycsef")]
 
 [node name="DebugScreen" parent="." instance=ExtResource("12_gh0hx")]
 visible = false
@@ -767,6 +774,8 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="IAPManager" parent="." instance=ExtResource("17_dbfbd")]
+
+[node name="AdInterstitial" parent="." instance=ExtResource("26_s5naw")]
 
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="CanvasLayer3/SettingsButton" to="." method="_on_button_pressed"]

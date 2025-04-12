@@ -1,9 +1,19 @@
 extends Node2D
+
+# signals
+signal freeze_camera
+signal unfreeze_camera
 signal popup_gold_pass
+signal next_level
+
 ##Music trak for main level
 @export var music_track : AudioStream = null
+
 ##Background scroll speed
 @export var scroll_speed_paralax_bg: Vector2
+##duration of fade in and out effect
+@export var fade_duration: float = 0.5
+
 #onready vars
 @onready var button_array = get_tree().get_nodes_in_group("LevelButtons")
 @onready var menu_camera = $UIMenuCamera
@@ -11,7 +21,7 @@ signal popup_gold_pass
 @onready var shop = $CanvasLayer2/ShopScreen
 @onready var black_can = $BlackCanvasLayer
 @onready var black_rect = $BlackCanvasLayer/ColorRectBlack
-@onready var fade_duration: float = 0.5
+@onready var wheel = $BlackCanvasLayer/PortalWheelOf
 @onready var debug_menu = $DebugScreen
 @onready  var coin_count = $CanvasLayer2/CoinSprite/Label
 @onready var heart = $CanvasLayer2/HeartSprite
@@ -20,15 +30,15 @@ signal popup_gold_pass
 @onready var close_shop_button = $CanvasLayer3/ShopButton
 @onready var settings_button = $CanvasLayer3/SettingsButton
 @onready var settings = $CanvasLayer2/Settings
+@onready var interstitial = $AdInterstitial
 
 #current play throue not used
 var current_button_array_number = 0
-# signals
-signal freeze_camera
-signal unfreeze_camera
+var name_of_next_level
 
 func _ready():
 	black_can.visible = true
+	wheel.animation_start()
 	setup_parallax_layer($ParallaxBackground/ParallaxLayer)
 	set_shop_size_scale()
 	settings.visible = false
@@ -36,20 +46,24 @@ func _ready():
 	premium_popup_screen.visible = false
 	for button in button_array:
 		button.show_popup.connect(_on_show_popup)
+		button.show_ad.connect(_on_show_ad)
+	interstitial.load_next_level.connect(_on_end_of_ad)
 	shop.close_shop.connect(_on_close_shop)
 	settings.close_settings.connect(_on_close_settings)
 	premium_popup_screen.close_popup.connect(_on_close_popup)
-	premium_popup_screen.open_shop.connect(_on_shop_button_pressed)
 	coin_count.text = str(GameController.coins)
-	if music_track != null:
-		AudioPlayer.m_player.stream = music_track
-		AudioPlayer.m_player.play()
 	for number_of_buttons in button_array:
 		if number_of_buttons.current_active == true:
 			current_button_array_number += 1
 		if number_of_buttons.current_active == true and number_of_buttons.current_level == current_button_array_number:
 			menu_camera.global_position = number_of_buttons.global_position
 	GameController.my_log("Plays left: " + str(GameController.current_play_through_count)+ "\n" + " coins: " + str(GameController.coins))
+	await get_tree().create_timer(2.0).timeout
+	wheel.visible = false
+	wheel.animation_stop()
+	if music_track != null:
+		AudioPlayer.m_player.stream = music_track
+		AudioPlayer.m_player.play()
 	var tween = create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(black_rect,"modulate:a", 0.0, fade_duration)
@@ -104,14 +118,14 @@ func _on_shop_button_pressed():
 	premium_popup_screen.visible = false
 	settings_button.visible = false
 
-func _on_show_popup(gold: int):
+func _on_show_popup(gold: int, string: String):
 	premium_popup_screen.visible = true
 	for button in button_array:
 		button.visible = false
 	freeze_camera.emit()
 	close_shop_button.visible = false
 	settings_button.visible = false
-	popup_gold_pass.emit(gold)
+	popup_gold_pass.emit(gold, string)
 
 func  _on_close_popup():
 	premium_popup_screen.visible = false
@@ -136,3 +150,19 @@ func _on_close_settings():
 	unfreeze_camera.emit()
 	close_shop_button.visible = true
 	settings_button.visible = true
+
+func _on_show_ad(string: String):
+	AudioPlayer.m_player.stop()
+	name_of_next_level = string
+	black_can.visible = true
+	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(black_rect,"modulate:a", 1.0, fade_duration)
+	await tween.finished
+	wheel.visible = true
+	wheel.animation_start()
+
+func _on_end_of_ad():
+	black_can.visible = false
+	wheel.animation_stop()
+	next_level.emit(name_of_next_level)

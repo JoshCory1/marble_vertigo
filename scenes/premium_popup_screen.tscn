@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm4yvhgeehtmb"]
+[gd_scene load_steps=11 format=3 uid="uid://cm4yvhgeehtmb"]
 
 [ext_resource type="Script" path="res://scripts/premium_popup_screen.gd" id="1_6y7sd"]
 [ext_resource type="Texture2D" uid="uid://6cnj04ds7j82" path="res://assets/shop/ShopBox.png" id="2_3igmy"]
+[ext_resource type="PackedScene" uid="uid://hgy4pkwna054" path="res://scenes/coin_sprite.tscn" id="3_kfwpb"]
+[ext_resource type="PackedScene" uid="uid://08cip12qr3r" path="res://scenes/premium_buy_sprite.tscn" id="4_k3023"]
 [ext_resource type="PackedScene" uid="uid://dtxikyw3nal8l" path="res://scenes/close_button.tscn" id="14_uk02p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_26ct4"]
@@ -16,17 +18,27 @@ font_color = Color(0.160784, 1, 0.231373, 1)
 font_size = 22
 font_color = Color(0.160784, 1, 0.231373, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_a8lmu"]
+font_color = Color(0.160784, 1, 0.231373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tvxx6"]
+font_size = 30
+
 [node name="PremiumPopupScreen" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_left = 0.099
+anchor_top = 0.104
+anchor_right = 0.903
+anchor_bottom = 0.902
+offset_left = 384.96
+offset_top = 213.84
+offset_right = -386.88
+offset_bottom = -217.08
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 script = ExtResource("1_6y7sd")
+product_id = "premium_version"
 
 [node name="Box" type="TextureRect" parent="."]
 layout_mode = 1
@@ -59,15 +71,15 @@ horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Box/Label"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -318.5
-offset_top = 41.5
-offset_right = 318.5
-offset_bottom = 302.5
+anchors_preset = -1
+anchor_left = -7.462
+anchor_top = 0.961
+anchor_right = 8.462
+anchor_bottom = 3.861
+offset_left = -0.0197449
+offset_top = 0.00999451
+offset_right = 0.0197144
+offset_bottom = 0.00997925
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.721569)
@@ -76,16 +88,17 @@ color = Color(0, 0, 0, 0.721569)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.181
-anchor_top = 0.385
-anchor_right = 0.405
-anchor_bottom = 0.6
-offset_left = -0.297005
-offset_top = 0.514992
-offset_right = -1.98502
-offset_bottom = 0.399994
+anchor_left = 0.261
+anchor_top = 0.542
+anchor_right = 0.416
+anchor_bottom = 0.694
+offset_left = -0.256973
+offset_top = 0.0379791
+offset_right = 42.008
+offset_bottom = 16.366
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.71, 0.71)
 
 [node name="Label" type="Label" parent="Box/Label/ColorRect/YesButton"]
 layout_mode = 1
@@ -109,26 +122,27 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6
-anchor_top = 0.385
-anchor_right = 0.824
-anchor_bottom = 0.6
-offset_left = -0.200012
-offset_top = 0.0149918
-offset_right = 0.111938
-offset_bottom = -0.100006
+anchor_left = 0.568
+anchor_top = 0.538
+anchor_right = 0.726
+anchor_bottom = 0.691
+offset_left = 0.18399
+offset_top = 0.0819855
+offset_right = 42.5379
+offset_bottom = 16.149
 grow_vertical = 2
+scale = Vector2(0.71, 0.71)
 
 [node name="Label" type="Label" parent="Box/Label/ColorRect/NoButton"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.007
+anchor_left = -0.32502
 anchor_top = 0.036
-anchor_right = 1.0
+anchor_right = 0.66798
 anchor_bottom = 0.982
-offset_left = -0.00100005
+offset_left = 46.4779
 offset_top = -2.016
-offset_right = 1.0
+offset_right = 47.4789
 offset_bottom = 1.008
 grow_horizontal = 2
 grow_vertical = 2
@@ -144,17 +158,85 @@ anchors_preset = -1
 anchor_left = 0.204
 anchor_top = 0.056
 anchor_right = 0.796
-anchor_bottom = 0.305
-offset_left = 0.0519714
-offset_top = -0.116
-offset_right = -0.0520325
-offset_bottom = -0.105003
+anchor_bottom = 0.352
+offset_left = 0.052002
+offset_top = -0.615998
+offset_right = -0.0519409
+offset_bottom = 0.128006
 grow_horizontal = 2
-text = "This level is locked would you like to unlock it by buying premium"
+text = "This level is locked would you like to unlock it"
 label_settings = SubResource("LabelSettings_fbbkn")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="CoinSprite" parent="Box/Label/ColorRect" instance=ExtResource("3_kfwpb")]
+position = Vector2(284, 105.5)
+frame = 6
+frame_progress = 0.880767
+
+[node name="GoldLabel" type="Label" parent="Box/Label/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.484
+anchor_top = 0.362
+anchor_right = 0.57
+anchor_bottom = 0.45
+offset_left = -0.307983
+offset_top = 0.0179977
+offset_right = -0.0899963
+offset_bottom = 0.0499954
+text = "9999"
+label_settings = SubResource("LabelSettings_a8lmu")
+
+[node name="PremiumBuyButton" type="Button" parent="Box/Label/ColorRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 263.0
+offset_right = 645.0
+offset_bottom = 341.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+
+[node name="PremiumBuySprite" parent="Box/Label/ColorRect" instance=ExtResource("4_k3023")]
+position = Vector2(325, 301.5)
+
+[node name="PremiumPriceLabel" type="Label" parent="Box/Label/ColorRect/PremiumBuySprite"]
+anchors_preset = -1
+anchor_left = 0.809
+anchor_top = 0.141
+anchor_right = 0.927
+anchor_bottom = 0.5
+offset_left = -318.333
+offset_top = -32.024
+offset_right = -318.499
+offset_bottom = -32.0
+text = "Loading..."
+
+[node name="Label" type="Label" parent="Box/Label/ColorRect/PremiumBuySprite"]
+anchors_preset = -1
+anchor_left = 0.274
+anchor_top = 0.109
+anchor_right = 0.654
+anchor_bottom = 0.766
+offset_left = -318.538
+offset_top = -31.976
+offset_right = -318.598
+offset_bottom = -32.024
+text = "Unlock All Levels"
+label_settings = SubResource("LabelSettings_tvxx6")
 
 [node name="CloseButton" parent="Box" instance=ExtResource("14_uk02p")]
 layout_mode = 0
@@ -178,4 +260,5 @@ color = Color(1, 0, 0, 0.5)
 
 [connection signal="pressed" from="Box/Label/ColorRect/YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/PremiumBuyButton" to="." method="_on_premium_buy_button_pressed"]
 [connection signal="pressed" from="Box/CloseButton" to="." method="_on_close_button_pressed"]

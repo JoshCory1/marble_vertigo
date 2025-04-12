@@ -13,8 +13,8 @@
 extends Node
 
 signal product_details_received(product_id: String, price: String)
-signal purchase_successful()
-#signal purchase_failed(product_id: String, error: Dictionary)
+signal premium_purchase_successful()
+signal purchase_failed(product_id: String, error: Dictionary)
 
 var new_premium = null
 
@@ -183,21 +183,21 @@ func process_purchase(purchase):
 		if (product in ITEM_ACKNOWLEDGED) or (product in SUBSCRIPTIONS):
 			# Acknowledge the purchase
 			if not purchase["is_acknowledged"]:
-				print("Acknowledging: " + purchase["purchase_token"])
-				GameController.my_log("Acknowledging: " + purchase["purchase_token"])
-				billing.acknowledgePurchase(purchase["purchase_token"])
-				new_premium = purchase.purchase_token
-				if new_premium != null:
-					purchase_successful.emit()
-					if !GameController.premium:
-						GameController.premium = true
-						GameController.my_log("premium: " + str(GameController.premium))
+				if purchase.size() > 0:
+					if product == ITEM_ACKNOWLEDGED [0]:
+						new_premium = purchase["purchase_token"]
+						billing.acknowledgePurchase(purchase["purchase_token"])
+						if !new_premium.is_empty():
+							if new_premium == purchase["purchase_token"]:
+								premium_purchase_successful.emit()
+						#billing.acknowledgePurchase(purchase["purchase_token"])
+						GameController.my_log("Acknowledging: " + purchase["purchase_token"])
 			else:
-				GameController.my_log("Already acknowledged")
-				purchase_successful.emit()
-				if !GameController.premium:
-					GameController.premium = true
-				GameController.my_log("premium: " + str(GameController.premium))
+				if purchase.size() > 0:
+					if product == ITEM_ACKNOWLEDGED [0]:
+						new_premium = purchase["purchase_token"]
+						GameController.my_log("Premium Already acknowledged")
+						premium_purchase_successful.emit()
 		elif product in ITEM_CONSUMATED:
 			# Consume the purchase
 			GameController.my_log("Consuming: " + purchase["purchase_token"])
@@ -208,6 +208,11 @@ func process_purchase(purchase):
 		else:
 			GameController.my_log("Product not found: " + str(product))
 
+func reset_purchases():
+	if billing:
+		if !new_premium.is_empty():
+			billing.consumePurchase(new_premium)
+			GameController.premium = false
 
 # Purchase
 func do_purchase(id: String, is_personalized: bool = false):
@@ -234,13 +239,13 @@ func _on_purchase_cancelled(response) -> void:
 
 
 func _on_purchase_consumed(response) -> void:
-	GameController.my_log("Purchase_consumed:")
+	GameController.my_log("Purchase_consumed")
 	print(JSON.stringify(response, "  "))
 
 
 func _on_purchase_acknowledged(response) -> void:
-	GameController.my_log("Purchase_acknowledged:")
 	print(JSON.stringify(response, "  "))
+	GameController.my_log("Purchase_acknowledged:")
 
 
 func _on_purchase_update_error(error) -> void:
