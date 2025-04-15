@@ -161,6 +161,8 @@ func _on_show_ad(string: String):
 	await tween.finished
 	wheel.visible = true
 	wheel.animation_start()
+	await get_tree().create_timer(8.0).timeout
+	_on_end_of_ad()
 
 func _on_end_of_ad():
 	black_can.visible = false

@@ -11,12 +11,13 @@
 
 
 extends Node
-
+signal close_window()
 signal product_details_received(product_id: String, price: String)
+signal product_details_received_no_ads(product_id: String, price: String)
 signal premium_purchase_successful()
+signal no_ads_purchase_succssful()
 signal purchase_failed(product_id: String, error: Dictionary)
 
-var new_premium = null
 
 # https://developer.android.com/reference/com/android/billingclient/api/Purchase.PurchaseState
 enum purchaseState {
@@ -46,13 +47,16 @@ enum billingResponseCode {
 
 const ITEM_CONSUMATED: Array = ["nill_consum"]
 
-const ITEM_ACKNOWLEDGED: Array = ["premium_version"]
+const ITEM_ACKNOWLEDGED: Array = ["premium_version", "no_ads"]
 
 const SUBSCRIPTIONS: Array = ["nill_subs"]
 
 
 var billing = null
 
+var new_premium = null
+
+var new_no_ads = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -156,15 +160,16 @@ func _on_hello_response(response) -> void:
 
 
 func query_product_details(response) -> void:
+	#left off here
 	for product in response["product_details_list"]:
 		#var product = response["product_details_list"][i]
 		#print(JSON.stringify(product["product_id"], "  "))
 		var product_id = product["product_id"]
 		var price = product["one_time_purchase_offer_details"]["formatted_price"]
-		product_details_received.emit(product_id, price)
-		#
-		# Handle avaible for purchase product details here
-		#
+		if product_id == "premium_version":
+			product_details_received.emit(product_id, price)
+		if product_id == "no_ads":
+			product_details_received_no_ads.emit(product_id, price)
 
 func _on_query_purchases(response) -> void:
 	GameController.my_log("on_query_Purchases_response: ")
@@ -190,14 +195,27 @@ func process_purchase(purchase):
 						if !new_premium.is_empty():
 							if new_premium == purchase["purchase_token"]:
 								premium_purchase_successful.emit()
-						#billing.acknowledgePurchase(purchase["purchase_token"])
-						GameController.my_log("Acknowledging: " + purchase["purchase_token"])
+								close_window.emit()
+								GameController.my_log("Acknowledging: " + purchase["purchase_token"])
+					if product == ITEM_ACKNOWLEDGED [1]:
+						new_no_ads = purchase["purchase_token"]
+						billing.acknowledgePurchase(purchase["purchase_token"])
+						if !new_no_ads.is_empty():
+							if new_no_ads == purchase["purchase_token"]:
+								no_ads_purchase_succssful.emit()
+								close_window.emit()
+								GameController.my_log("Acknowledging: " + purchase["purchase_token"])
+
 			else:
 				if purchase.size() > 0:
 					if product == ITEM_ACKNOWLEDGED [0]:
 						new_premium = purchase["purchase_token"]
 						GameController.my_log("Premium Already acknowledged")
 						premium_purchase_successful.emit()
+					if product == ITEM_ACKNOWLEDGED [1]:
+						new_no_ads = purchase["purchase_token"]
+						GameController.my_log("No Ads Already acknowledged")
+						no_ads_purchase_succssful.emit()
 		elif product in ITEM_CONSUMATED:
 			# Consume the purchase
 			GameController.my_log("Consuming: " + purchase["purchase_token"])
@@ -213,7 +231,8 @@ func reset_purchases():
 		if !new_premium.is_empty():
 			billing.consumePurchase(new_premium)
 			GameController.premium = false
-
+		if !new_no_ads.is_empty():
+			billing.consumePurchase(new_no_ads)
 # Purchase
 func do_purchase(id: String, is_personalized: bool = false):
 	billing.purchase([id], is_personalized)

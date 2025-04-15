@@ -157,6 +157,14 @@ position = Vector2(300, 201.5)
 scale = Vector2(0.185, 0.0333333)
 texture = ExtResource("3_jmwvp")
 
+[node name="Label" type="Label" parent="Box/Label/ColorRect"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 364.5
+offset_right = 681.0
+offset_bottom = 387.5
+text = "For Attributions and licenses see: https://github.com/JoshCory1/Marble-Vertigo-Attribution"
+
 [node name="CloseButton" parent="Box" instance=ExtResource("14_kqwpp")]
 layout_mode = 1
 anchors_preset = -1

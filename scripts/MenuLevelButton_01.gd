@@ -44,6 +44,7 @@ func _ready():
 	popup_screen.perchase_button.connect(_on_perchase_button)
 	disabled = true
 	GameController.purchased_premium.connect(_on_purchase_premium_successful)
+	IapManager.no_ads_purchase_succssful.connect(_on_no_ads_purchase_succssful)
 	if free_level:
 		button_ready_up(true)
 	elif level_for_gold_unlock:
@@ -113,6 +114,10 @@ func _on_pressed():
 	
 func _on_purchase_premium_successful():
 	button_ready_up(true)
+
+func _on_no_ads_purchase_succssful():
+	no_ads = true
+	GameController.my_log("no ads is: " + str(no_ads))
 
 func _on_perchase_button(string: String):
 	if string == name_of_level:

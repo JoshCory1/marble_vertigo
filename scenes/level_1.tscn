@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://7d3eky6wq7g1"]
+[gd_scene load_steps=21 format=4 uid="uid://7d3eky6wq7g1"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6oils"]
 [ext_resource type="AudioStream" uid="uid://dw0lnn0p1a6so" path="res://assets/sfx/music/Rhythmic Africa Main.ogg" id="2_b8ogu"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="6_qmkek"]
 [ext_resource type="PackedScene" uid="uid://b7fce28hvwujr" path="res://scenes/ui.tscn" id="9_ti7py"]
 [ext_resource type="PackedScene" uid="uid://baimc1vvdontw" path="res://scenes/skin_handler.tscn" id="11_23yea"]
+[ext_resource type="Texture2D" uid="uid://vyqpnprgsm0r" path="res://assets/UI/Chatbubles.png" id="12_8w8bi"]
+[ext_resource type="Texture2D" uid="uid://ddp5qv3gubjim" path="res://assets/UI/Chatbubles_XL-sheet.png" id="12_a1gvk"]
 [ext_resource type="PackedScene" uid="uid://htffvv6osno0" path="res://scenes/moving_platform.tscn" id="12_mw4wu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0nl2b"]
@@ -571,8 +573,10 @@ sources/0 = SubResource("TileSetAtlasSource_0nl2b")
 sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [sub_resource type="LabelSettings" id="LabelSettings_r7nja"]
-font_size = 24
-font_color = Color(0.270588, 1, 0, 1)
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_tpxyg"]
+font_size = 23
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_6oils")
@@ -589,7 +593,7 @@ tile_set = SubResource("TileSet_k0iyo")
 
 [node name="Player" parent="." instance=ExtResource("3_f05t8")]
 z_index = 2
-position = Vector2(387, 163)
+position = Vector2(387, 158)
 
 [node name="UI" parent="." instance=ExtResource("9_ti7py")]
 first_level = true
@@ -644,47 +648,24 @@ screenClamp = Vector2(100, 0)
 position = Vector2(2924, 334)
 screenClamp = Vector2(100, 0)
 
-[node name="DirectionsHint" type="ColorRect" parent="."]
-offset_left = 1019.0
-offset_top = 75.0
-offset_right = 1359.0
-offset_bottom = 161.0
-color = Color(0, 0, 0, 0.129412)
-
-[node name="Label" type="Label" parent="DirectionsHint"]
-layout_mode = 1
-anchors_preset = -1
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 33.5
-offset_top = 32.5
-offset_right = -33.5
-offset_bottom = -30.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Touch pillars to move them"
-label_settings = SubResource("LabelSettings_r7nja")
-
-[node name="DirectionsHint2" type="ColorRect" parent="."]
-offset_left = 1733.0
-offset_top = 75.0
-offset_right = 2436.0
-offset_bottom = 161.0
-color = Color(0, 0, 0, 0.129412)
-
-[node name="Label" type="Label" parent="DirectionsHint2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 221.5
-offset_top = 31.5
-offset_right = -221.5
-offset_bottom = -31.5
+offset_left = 1764.0
+offset_top = 102.0
+offset_right = 2405.0
+offset_bottom = 134.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Some objects cannot be moved, or will move on their own"
 label_settings = SubResource("LabelSettings_r7nja")
+
+[node name="ChatbublesXl-sheet" type="Sprite2D" parent="Label2"]
+show_behind_parent = true
+position = Vector2(323.5, 18)
+scale = Vector2(1.00684, 1)
+texture = ExtResource("12_a1gvk")
 
 [node name="MovingPlatform" parent="." instance=ExtResource("12_mw4wu")]
 position = Vector2(2107.38, 213.722)
@@ -695,3 +676,47 @@ duration = 7.0
 position = Vector2(2707.38, 245.722)
 destination = Vector2(-600, 0)
 duration = 7.0
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 967.867
+offset_top = 101.0
+offset_right = 1283.87
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Touch pillars to move them"
+label_settings = SubResource("LabelSettings_r7nja")
+
+[node name="Chatbubles" type="Sprite2D" parent="Label"]
+show_behind_parent = true
+position = Vector2(154.633, 17)
+scale = Vector2(1.33203, 1)
+texture = ExtResource("12_8w8bi")
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1158.0
+offset_top = 182.0
+offset_right = 1474.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Do not touch the ground"
+label_settings = SubResource("LabelSettings_tpxyg")
+
+[node name="Chatbubles" type="Sprite2D" parent="Label3"]
+show_behind_parent = true
+position = Vector2(138.066, 17)
+scale = Vector2(1.20261, 1)
+texture = ExtResource("12_8w8bi")

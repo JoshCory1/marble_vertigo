@@ -59,7 +59,6 @@ func _ready():
 func _on_load_pressed(_string: String):
 	if interstitial_ad:
 		interstitial_ad.destroy()
-	
 	var unit_id: String
 	if OS.get_name() == "Android":
 		unit_id = "ca-app-pub-3940256099942544/1033173712"

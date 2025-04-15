@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=96 format=4 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://6jf1ut670fm8" path="res://assets/sfx/music/Wave and Beach Sand Bank Loop.ogg" id="2_f8tgd"]
@@ -21,12 +21,61 @@
 [ext_resource type="Texture2D" uid="uid://bx8i2dyr8tjht" path="res://assets/shop/shop_button.png" id="14_da51e"]
 [ext_resource type="PackedScene" uid="uid://dh1jhenl0m2fb" path="res://scenes/level_10.tscn" id="15_pgam1"]
 [ext_resource type="PackedScene" uid="uid://lweu12r6uhlr" path="res://scenes/settings.tscn" id="16_7767t"]
+[ext_resource type="PackedScene" uid="uid://cvcspdr0ukw7w" path="res://scenes/level_11.tscn" id="16_cx25i"]
+[ext_resource type="PackedScene" uid="uid://bx3nsmuk7a74i" path="res://scenes/level_12.tscn" id="17_auye1"]
 [ext_resource type="PackedScene" uid="uid://2kxbgbevh4sq" path="res://scenes/iap_manager.tscn" id="17_dbfbd"]
 [ext_resource type="PackedScene" uid="uid://tbucgx8txtjl" path="res://scenes/portal_wheel_of.tscn" id="17_ycsef"]
 [ext_resource type="Texture2D" uid="uid://c2sk681gyyx1h" path="res://assets/UI/Settings_gear.png" id="18_f4855"]
+[ext_resource type="PackedScene" uid="uid://cyblvmqq1jruk" path="res://scenes/level_13.tscn" id="18_j71n4"]
+[ext_resource type="PackedScene" uid="uid://bj2bln0uoe522" path="res://scenes/level_14.tscn" id="19_a4ljg"]
+[ext_resource type="PackedScene" uid="uid://25gplpydn7qi" path="res://scenes/level_15.tscn" id="20_xima3"]
+[ext_resource type="PackedScene" uid="uid://ogatfisubquo" path="res://scenes/level_16.tscn" id="21_fvgo2"]
+[ext_resource type="PackedScene" uid="uid://ld2de8goi01v" path="res://scenes/level_17.tscn" id="22_eqso4"]
+[ext_resource type="PackedScene" uid="uid://c6rpwhgrs4t6s" path="res://scenes/level_18.tscn" id="23_upbmf"]
+[ext_resource type="PackedScene" uid="uid://bc5orhqpvy5vo" path="res://scenes/level_19.tscn" id="24_o08vl"]
+[ext_resource type="PackedScene" uid="uid://dh015pgtpx26y" path="res://scenes/level_20.tscn" id="25_7ylia"]
+[ext_resource type="PackedScene" uid="uid://yn8v4q16klw3" path="res://scenes/level_21_fall.tscn" id="26_awjm0"]
 [ext_resource type="PackedScene" uid="uid://cwe0fn31ert48" path="res://scenes/ad_interstitial.tscn" id="26_s5naw"]
+[ext_resource type="PackedScene" uid="uid://dc1p42y3j4ygx" path="res://scenes/level_22_fall.tscn" id="27_pgj78"]
+[ext_resource type="PackedScene" uid="uid://dl5in6lwrtjhn" path="res://scenes/level_23_fall.tscn" id="28_xbvyr"]
+[ext_resource type="PackedScene" uid="uid://c1uw41xb7fy0g" path="res://scenes/level_24_fall.tscn" id="29_uj0wc"]
+[ext_resource type="PackedScene" uid="uid://3hjvqopd861" path="res://scenes/level_25_fall.tscn" id="30_8qpv6"]
+[ext_resource type="PackedScene" uid="uid://bthqlat7q1xqk" path="res://scenes/level_26_fall.tscn" id="31_gqkbr"]
 [ext_resource type="PackedScene" uid="uid://hgy4pkwna054" path="res://scenes/coin_sprite.tscn" id="32_23juq"]
+[ext_resource type="PackedScene" uid="uid://bf1l3aux2652x" path="res://scenes/level_27_fall.tscn" id="32_pbhf1"]
+[ext_resource type="PackedScene" uid="uid://bkbcqs24so8f" path="res://scenes/level_28_fall.tscn" id="33_ma6bl"]
+[ext_resource type="PackedScene" uid="uid://lxp6q0608kp6" path="res://scenes/level_29-fall.tscn" id="34_fg1cf"]
+[ext_resource type="PackedScene" uid="uid://bcuvn3ri5ykq2" path="res://scenes/level_30_fall.tscn" id="35_o70yf"]
+[ext_resource type="PackedScene" uid="uid://gydl6g7u2bnm" path="res://scenes/level_31_fall.tscn" id="36_nfqln"]
+[ext_resource type="PackedScene" uid="uid://dt6bv6mavg77r" path="res://scenes/level_32_fall.tscn" id="37_56wd0"]
+[ext_resource type="PackedScene" uid="uid://dfwwslrv5eylt" path="res://scenes/level_33_fall.tscn" id="38_hnhil"]
+[ext_resource type="PackedScene" uid="uid://dek8pr5toc7ky" path="res://scenes/level_34_fall.tscn" id="39_b0j1y"]
+[ext_resource type="PackedScene" uid="uid://qa1ifgwx3rum" path="res://scenes/level_35_fall.tscn" id="40_ntlf4"]
+[ext_resource type="PackedScene" uid="uid://720ju6jl22ty" path="res://scenes/level_36_fall.tscn" id="41_18yr3"]
+[ext_resource type="PackedScene" uid="uid://b7a3s73ogvn20" path="res://scenes/level_37_fall.tscn" id="42_bv7da"]
+[ext_resource type="PackedScene" uid="uid://bad53jvhxckjj" path="res://scenes/level_38_fall.tscn" id="43_hciij"]
+[ext_resource type="PackedScene" uid="uid://di7ffoctubeu1" path="res://scenes/level_39_fall.tscn" id="44_mr14y"]
+[ext_resource type="PackedScene" uid="uid://bccocvqj1vci7" path="res://scenes/level_40_fall.tscn" id="45_b1dfj"]
+[ext_resource type="PackedScene" uid="uid://dj3761hnqb52l" path="res://scenes/level_41_winter.tscn" id="46_lk1yh"]
+[ext_resource type="PackedScene" uid="uid://ddkxef8wkostd" path="res://scenes/level_42_winter.tscn" id="47_p50au"]
+[ext_resource type="PackedScene" uid="uid://dwfclvhd82ggg" path="res://scenes/level_43_winter.tscn" id="48_jeewt"]
 [ext_resource type="Texture2D" uid="uid://dwbnw3ad70cpx" path="res://assets/UI/heart.png" id="49_2acyd"]
+[ext_resource type="PackedScene" uid="uid://8xsh1pg7fpj1" path="res://scenes/level_44_winter.tscn" id="49_lulrj"]
+[ext_resource type="PackedScene" uid="uid://bn0onf7g531fl" path="res://scenes/level_45_winter.tscn" id="50_v3dcy"]
+[ext_resource type="PackedScene" uid="uid://dhocvhdn6x5d1" path="res://scenes/level_46_winter.tscn" id="51_3abi3"]
+[ext_resource type="PackedScene" uid="uid://bi1og437gpgki" path="res://scenes/level_47_winter.tscn" id="52_r1ytn"]
+[ext_resource type="PackedScene" uid="uid://6rn1j2afx34f" path="res://scenes/level_48_winter.tscn" id="53_6lkj7"]
+[ext_resource type="PackedScene" uid="uid://dghw2kiocicjo" path="res://scenes/level_49_winter.tscn" id="54_dts2o"]
+[ext_resource type="PackedScene" uid="uid://bxsbgm51pdai4" path="res://scenes/level_50_winter.tscn" id="55_um8t1"]
+[ext_resource type="PackedScene" uid="uid://cf14wmjxvmacj" path="res://scenes/level_51_winter.tscn" id="56_l0m12"]
+[ext_resource type="PackedScene" uid="uid://bmigavoqqeb28" path="res://scenes/level_52_winter.tscn" id="57_8ql4p"]
+[ext_resource type="PackedScene" uid="uid://ck3552tqd5s8q" path="res://scenes/level_53_winter.tscn" id="58_tysel"]
+[ext_resource type="PackedScene" uid="uid://csvb6x5in3upr" path="res://scenes/level_54_winter.tscn" id="59_xb5wx"]
+[ext_resource type="PackedScene" uid="uid://b2db7tyoemh2s" path="res://scenes/level_55_winter.tscn" id="60_56624"]
+[ext_resource type="PackedScene" uid="uid://j7sn7teyx21w" path="res://scenes/level_56_winter.tscn" id="61_e06lj"]
+[ext_resource type="PackedScene" uid="uid://5q8hhs0182e7" path="res://scenes/level_57_winter.tscn" id="62_63khb"]
+[ext_resource type="PackedScene" uid="uid://bax5hp6kl0t4x" path="res://scenes/level_58_winter.tscn" id="63_407s3"]
+[ext_resource type="PackedScene" uid="uid://nritg6lx23hu" path="res://scenes/level_59_winter.tscn" id="64_onwj5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clwbi"]
 texture_region_size = Vector2i(64, 64)
@@ -575,7 +624,6 @@ disabled = true
 level = ExtResource("7_h4l65")
 current_level = 2
 free_level = true
-gold_cost = 1
 
 [node name="MenuLevelButton_03" parent="Buttons" instance=ExtResource("6_651t2")]
 offset_left = 249.0
@@ -585,7 +633,7 @@ offset_bottom = 194.0
 disabled = true
 level = ExtResource("8_usw41")
 current_level = 3
-gold_cost = 1
+free_level = true
 
 [node name="MenuLevelButton_04" parent="Buttons" instance=ExtResource("6_651t2")]
 offset_left = 483.0
@@ -595,7 +643,7 @@ offset_bottom = 315.0
 disabled = true
 level = ExtResource("9_74naj")
 current_level = 4
-gold_cost = 2
+free_level = true
 
 [node name="MenuLevelButton_05" parent="Buttons" instance=ExtResource("6_651t2")]
 offset_left = 724.0
@@ -605,6 +653,7 @@ offset_bottom = -52.0
 disabled = true
 level = ExtResource("10_qu2g1")
 current_level = 5
+free_level = true
 
 [node name="MenuLevelButton_06" parent="Buttons" instance=ExtResource("6_651t2")]
 offset_left = 1032.0
@@ -614,43 +663,540 @@ offset_bottom = 108.0
 disabled = true
 level = ExtResource("11_8l331")
 current_level = 6
+free_level = true
+gold_cost = 5
 
 [node name="MenuLevelButton_07" parent="Buttons" instance=ExtResource("6_651t2")]
-offset_left = 793.0
-offset_top = 326.0
-offset_right = 857.0
-offset_bottom = 390.0
+offset_left = 616.0
+offset_top = 269.0
+offset_right = 680.0
+offset_bottom = 333.0
 disabled = true
 level = ExtResource("12_50q57")
 current_level = 7
-gold_cost = 3
+free_level = true
+gold_cost = 5
 
 [node name="MenuLevelButton_08" parent="Buttons" instance=ExtResource("6_651t2")]
-offset_left = 1163.0
-offset_top = 310.0
-offset_right = 1227.0
-offset_bottom = 374.0
+offset_left = 825.0
+offset_top = 317.0
+offset_right = 889.0
+offset_bottom = 381.0
 disabled = true
 level = ExtResource("13_oeiwx")
 current_level = 8
+free_level = true
+gold_cost = 5
 
 [node name="MenuLevelButton_09" parent="Buttons" instance=ExtResource("6_651t2")]
-offset_left = 1487.0
-offset_top = 379.0
-offset_right = 1551.0
-offset_bottom = 443.0
+offset_left = 1031.0
+offset_top = 391.0
+offset_right = 1095.0
+offset_bottom = 455.0
 disabled = true
 level = ExtResource("14_3s8xg")
 current_level = 9
+gold_cost = 5
 
 [node name="MenuLevelButton_10" parent="Buttons" instance=ExtResource("6_651t2")]
-offset_left = 1665.0
-offset_top = 509.0
-offset_right = 1729.0
-offset_bottom = 573.0
+offset_left = 1226.0
+offset_top = 411.0
+offset_right = 1290.0
+offset_bottom = 475.0
 disabled = true
 level = ExtResource("15_pgam1")
 current_level = 10
+gold_cost = 5
+
+[node name="MenuLevelButton_11" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1487.0
+offset_top = 358.0
+offset_right = 1551.0
+offset_bottom = 422.0
+disabled = true
+level = ExtResource("16_cx25i")
+current_level = 11
+gold_cost = 5
+
+[node name="MenuLevelButton_12" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1677.0
+offset_top = 546.0
+offset_right = 1741.0
+offset_bottom = 610.0
+disabled = true
+level = ExtResource("17_auye1")
+current_level = 12
+gold_cost = 8
+
+[node name="MenuLevelButton_13" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1794.0
+offset_top = 340.0
+offset_right = 1858.0
+offset_bottom = 404.0
+disabled = true
+level = ExtResource("18_j71n4")
+current_level = 13
+gold_cost = 8
+
+[node name="MenuLevelButton_14" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2011.0
+offset_top = 443.0
+offset_right = 2075.0
+offset_bottom = 507.0
+disabled = true
+level = ExtResource("19_a4ljg")
+current_level = 14
+gold_cost = 10
+
+[node name="MenuLevelButton_15" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2181.0
+offset_top = 356.0
+offset_right = 2245.0
+offset_bottom = 420.0
+disabled = true
+level = ExtResource("20_xima3")
+current_level = 15
+gold_cost = 12
+
+[node name="MenuLevelButton_16" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2349.0
+offset_top = 422.0
+offset_right = 2413.0
+offset_bottom = 486.0
+disabled = true
+level = ExtResource("21_fvgo2")
+current_level = 16
+gold_cost = 14
+
+[node name="MenuLevelButton_17" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2523.0
+offset_top = 311.0
+offset_right = 2587.0
+offset_bottom = 375.0
+disabled = true
+level = ExtResource("22_eqso4")
+current_level = 17
+gold_cost = 14
+
+[node name="MenuLevelButton_18" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2565.0
+offset_top = 110.0
+offset_right = 2629.0
+offset_bottom = 174.0
+disabled = true
+level = ExtResource("23_upbmf")
+current_level = 18
+gold_cost = 16
+
+[node name="MenuLevelButton_19" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2701.0
+offset_top = 337.0
+offset_right = 2765.0
+offset_bottom = 401.0
+disabled = true
+level = ExtResource("24_o08vl")
+current_level = 19
+gold_cost = 18
+
+[node name="MenuLevelButton_20" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2856.0
+offset_top = 63.0
+offset_right = 2920.0
+offset_bottom = 127.0
+disabled = true
+level = ExtResource("25_7ylia")
+current_level = 20
+gold_cost = 20
+
+[node name="MenuLevelButton_21" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 3097.0
+offset_top = 111.0
+offset_right = 3161.0
+offset_bottom = 175.0
+disabled = true
+level = ExtResource("26_awjm0")
+current_level = 21
+gold_cost = 22
+
+[node name="MenuLevelButton_22" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 3267.0
+offset_top = 238.0
+offset_right = 3331.0
+offset_bottom = 302.0
+disabled = true
+level = ExtResource("27_pgj78")
+current_level = 22
+gold_cost = 24
+
+[node name="MenuLevelButton_23" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 3474.0
+offset_top = 405.0
+offset_right = 3538.0
+offset_bottom = 469.0
+disabled = true
+level = ExtResource("28_xbvyr")
+current_level = 23
+gold_cost = 26
+
+[node name="MenuLevelButton_24" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 3633.0
+offset_top = 198.0
+offset_right = 3697.0
+offset_bottom = 262.0
+disabled = true
+level = ExtResource("29_uj0wc")
+current_level = 24
+gold_cost = 28
+
+[node name="MenuLevelButton_25" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 3685.0
+offset_top = 431.0
+offset_right = 3749.0
+offset_bottom = 495.0
+disabled = true
+level = ExtResource("30_8qpv6")
+current_level = 25
+gold_cost = 30
+
+[node name="MenuLevelButton_26" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4041.0
+offset_top = 310.0
+offset_right = 4105.0
+offset_bottom = 374.0
+disabled = true
+level = ExtResource("31_gqkbr")
+current_level = 26
+gold_cost = 32
+
+[node name="MenuLevelButton_27" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4089.0
+offset_top = -18.0
+offset_right = 4153.0
+offset_bottom = 46.0
+disabled = true
+level = ExtResource("32_pbhf1")
+current_level = 27
+gold_cost = 34
+
+[node name="MenuLevelButton_28" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4333.0
+offset_top = 186.0
+offset_right = 4397.0
+offset_bottom = 250.0
+disabled = true
+level = ExtResource("33_ma6bl")
+current_level = 28
+gold_cost = 34
+
+[node name="MenuLevelButton_29" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4525.0
+offset_top = 468.0
+offset_right = 4589.0
+offset_bottom = 532.0
+disabled = true
+level = ExtResource("34_fg1cf")
+current_level = 29
+gold_cost = 36
+
+[node name="MenuLevelButton_30" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4825.0
+offset_top = 390.0
+offset_right = 4889.0
+offset_bottom = 454.0
+disabled = true
+level = ExtResource("35_o70yf")
+current_level = 30
+gold_cost = 38
+
+[node name="MenuLevelButton_31" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 5129.0
+offset_top = 500.0
+offset_right = 5193.0
+offset_bottom = 564.0
+disabled = true
+level = ExtResource("36_nfqln")
+current_level = 31
+gold_cost = 40
+
+[node name="MenuLevelButton_32" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 5449.0
+offset_top = 316.0
+offset_right = 5513.0
+offset_bottom = 380.0
+disabled = true
+level = ExtResource("37_56wd0")
+current_level = 32
+gold_cost = 42
+
+[node name="MenuLevelButton_33" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 5277.0
+offset_top = 80.0
+offset_right = 5341.0
+offset_bottom = 144.0
+disabled = true
+level = ExtResource("38_hnhil")
+current_level = 33
+gold_cost = 44
+
+[node name="MenuLevelButton_34" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 5069.0
+offset_top = -28.0
+offset_right = 5133.0
+offset_bottom = 36.0
+disabled = true
+level = ExtResource("39_b0j1y")
+current_level = 34
+gold_cost = 46
+
+[node name="MenuLevelButton_35" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4991.0
+offset_top = -372.0
+offset_right = 5055.0
+offset_bottom = -308.0
+disabled = true
+level = ExtResource("40_ntlf4")
+current_level = 35
+gold_cost = 48
+
+[node name="MenuLevelButton_36" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4891.0
+offset_top = -696.0
+offset_right = 4955.0
+offset_bottom = -632.0
+disabled = true
+level = ExtResource("41_18yr3")
+current_level = 36
+gold_cost = 50
+
+[node name="MenuLevelButton_37" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 5331.0
+offset_top = -824.0
+offset_right = 5395.0
+offset_bottom = -760.0
+disabled = true
+level = ExtResource("42_bv7da")
+current_level = 37
+gold_cost = 52
+
+[node name="MenuLevelButton_38" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 5475.0
+offset_top = -1230.0
+offset_right = 5539.0
+offset_bottom = -1166.0
+disabled = true
+level = ExtResource("43_hciij")
+current_level = 38
+gold_cost = 54
+
+[node name="MenuLevelButton_39" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 5262.0
+offset_top = -1427.0
+offset_right = 5326.0
+offset_bottom = -1363.0
+disabled = true
+level = ExtResource("44_mr14y")
+current_level = 39
+gold_cost = 56
+
+[node name="MenuLevelButton_40" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4981.0
+offset_top = -1564.0
+offset_right = 5045.0
+offset_bottom = -1500.0
+disabled = true
+level = ExtResource("45_b1dfj")
+current_level = 40
+gold_cost = 58
+
+[node name="MenuLevelButton_41" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4787.0
+offset_top = -1631.0
+offset_right = 4851.0
+offset_bottom = -1567.0
+disabled = true
+level = ExtResource("46_lk1yh")
+current_level = 41
+gold_cost = 60
+
+[node name="MenuLevelButton_42" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4455.0
+offset_top = -1510.0
+offset_right = 4519.0
+offset_bottom = -1446.0
+disabled = true
+level = ExtResource("47_p50au")
+current_level = 42
+gold_cost = 62
+
+[node name="MenuLevelButton_43" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4176.0
+offset_top = -1662.0
+offset_right = 4240.0
+offset_bottom = -1598.0
+disabled = true
+level = ExtResource("48_jeewt")
+current_level = 43
+gold_cost = 64
+
+[node name="MenuLevelButton_44" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 4052.0
+offset_top = -1449.0
+offset_right = 4116.0
+offset_bottom = -1385.0
+disabled = true
+level = ExtResource("49_lulrj")
+current_level = 44
+gold_cost = 66
+
+[node name="MenuLevelButton_45" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 3751.0
+offset_top = -1311.0
+offset_right = 3815.0
+offset_bottom = -1247.0
+disabled = true
+level = ExtResource("50_v3dcy")
+current_level = 45
+gold_cost = 68
+
+[node name="MenuLevelButton_46" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 3448.0
+offset_top = -1432.0
+offset_right = 3512.0
+offset_bottom = -1368.0
+disabled = true
+level = ExtResource("51_3abi3")
+current_level = 46
+gold_cost = 70
+
+[node name="MenuLevelButton_47" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 3114.0
+offset_top = -1458.0
+offset_right = 3178.0
+offset_bottom = -1394.0
+disabled = true
+level = ExtResource("52_r1ytn")
+current_level = 47
+gold_cost = 72
+
+[node name="MenuLevelButton_48" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 3028.0
+offset_top = -1751.0
+offset_right = 3092.0
+offset_bottom = -1687.0
+disabled = true
+level = ExtResource("53_6lkj7")
+current_level = 48
+gold_cost = 74
+
+[node name="MenuLevelButton_49" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2651.0
+offset_top = -1889.0
+offset_right = 2715.0
+offset_bottom = -1825.0
+disabled = true
+level = ExtResource("54_dts2o")
+current_level = 49
+gold_cost = 76
+
+[node name="MenuLevelButton_50" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2207.0
+offset_top = -2022.0
+offset_right = 2271.0
+offset_bottom = -1958.0
+disabled = true
+level = ExtResource("55_um8t1")
+current_level = 50
+gold_cost = 78
+
+[node name="MenuLevelButton_51" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2166.0
+offset_top = -1770.0
+offset_right = 2230.0
+offset_bottom = -1706.0
+disabled = true
+level = ExtResource("56_l0m12")
+current_level = 51
+gold_cost = 80
+
+[node name="MenuLevelButton_52" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 2366.0
+offset_top = -1364.0
+offset_right = 2430.0
+offset_bottom = -1300.0
+disabled = true
+level = ExtResource("57_8ql4p")
+current_level = 52
+gold_cost = 82
+
+[node name="MenuLevelButton_53" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1981.0
+offset_top = -1434.0
+offset_right = 2045.0
+offset_bottom = -1370.0
+disabled = true
+level = ExtResource("58_tysel")
+current_level = 53
+gold_cost = 84
+
+[node name="MenuLevelButton_54" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1662.0
+offset_top = -1553.0
+offset_right = 1726.0
+offset_bottom = -1489.0
+disabled = true
+level = ExtResource("59_xb5wx")
+current_level = 54
+gold_cost = 86
+
+[node name="MenuLevelButton_55" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1492.0
+offset_top = -1693.0
+offset_right = 1556.0
+offset_bottom = -1629.0
+disabled = true
+level = ExtResource("60_56624")
+current_level = 55
+gold_cost = 88
+
+[node name="MenuLevelButton_56" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1705.0
+offset_top = -1853.0
+offset_right = 1769.0
+offset_bottom = -1789.0
+disabled = true
+level = ExtResource("61_e06lj")
+current_level = 56
+gold_cost = 90
+
+[node name="MenuLevelButton_57" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1756.0
+offset_top = -2134.0
+offset_right = 1820.0
+offset_bottom = -2070.0
+disabled = true
+level = ExtResource("62_63khb")
+current_level = 57
+gold_cost = 92
+
+[node name="MenuLevelButton_58" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1480.0
+offset_top = -2036.0
+offset_right = 1544.0
+offset_bottom = -1972.0
+disabled = true
+level = ExtResource("63_407s3")
+current_level = 58
+gold_cost = 94
+
+[node name="MenuLevelButton_59" parent="Buttons" instance=ExtResource("6_651t2")]
+offset_left = 1216.0
+offset_top = -2044.0
+offset_right = 1280.0
+offset_bottom = -1980.0
+disabled = true
+level = ExtResource("64_onwj5")
+current_level = 59
+gold_cost = 96
 
 [node name="UIMenuCamera" type="Camera2D" parent="."]
 script = ExtResource("7_tggy7")

@@ -16,8 +16,11 @@ var button_name: String
 
 func _ready():
 	IapManager.product_details_received.connect(_setPrice)
+	IapManager.close_window.connect(_on_close_window)
 	main_menu.popup_gold_pass.connect(_on_popup_gold_pass)
 	
+func _on_close_window():
+	close_popup.emit()
 
 func _on_popup_gold_pass(gold: int, string: String):
 	button_gold = gold

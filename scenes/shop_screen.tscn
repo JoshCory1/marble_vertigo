@@ -59,6 +59,7 @@ grow_vertical = 2
 size_flags_vertical = 4
 script = ExtResource("1_4xgp3")
 product_id = "premium_version"
+product_id_ads = "no_ads"
 
 [node name="Box" type="TextureRect" parent="."]
 layout_mode = 1
@@ -117,7 +118,9 @@ theme = SubResource("Theme_wkkm2")
 layout_mode = 2
 
 [node name="Premium" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("4_jggn5")
 
 [node name="LockPremiumButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium" instance=ExtResource("4_3hwjb")]
@@ -170,6 +173,60 @@ offset_top = -0.0200005
 offset_right = 0.0319824
 offset_bottom = 0.0039978
 text = "Unlocks All Levels"
+
+[node name="NoAds" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("4_jggn5")
+
+[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.312
+anchor_top = 0.219
+anchor_right = 4.203
+anchor_bottom = 1.0
+offset_left = 0.0319977
+offset_top = -0.0160007
+offset_right = 0.00799561
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ad Free Addon"
+label_settings = SubResource("LabelSettings_iceoc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.453
+anchor_top = 0.5
+anchor_right = 9.422
+anchor_bottom = 0.883
+offset_left = 0.00799561
+offset_top = -1.5
+offset_right = -0.00805664
+offset_bottom = -0.012001
+grow_horizontal = 0
+text = "Loading"
+label_settings = SubResource("LabelSettings_wevwm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.047
+anchor_top = 0.43
+anchor_right = 7.844
+anchor_bottom = 0.789
+offset_left = -0.00805664
+offset_top = -0.0200005
+offset_right = -0.0160522
+offset_bottom = 0.0039978
+text = "Removes all ads from the game"
 
 [node name="DefaultButton2" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -524,11 +581,13 @@ text = "Owned"
 label_settings = SubResource("LabelSettings_mxl3r")
 
 [node name="Button" type="Button" parent="Box/Label/ColorRect"]
+visible = false
 layout_mode = 0
 offset_left = -23.0
 offset_top = -79.0
 offset_right = 176.0
 offset_bottom = -7.0
+disabled = true
 text = "reset purchases
 "
 icon = ExtResource("4_jggn5")
@@ -554,6 +613,7 @@ mouse_filter = 1
 color = Color(1, 0, 0, 0.5)
 
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium" to="." method="_on_premium_pressed"]
+[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds" to="." method="_on_no_ads_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2" to="." method="_on_default_button_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton" to="." method="_on_cube_button_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton" to="." method="_on_spin_button_pressed"]
