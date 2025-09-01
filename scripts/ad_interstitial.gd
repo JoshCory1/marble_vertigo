@@ -34,25 +34,25 @@ var full_screen_content_callback := FullScreenContentCallback.new()
 
 
 func _ready():
+	MobileAds.initialize()
 	for button in level_buttons:
 		button.show_ad.connect(_on_load_pressed)
 	interstitial_ad_load_callback.on_ad_failed_to_load = on_interstitial_ad_failed_to_load
 	interstitial_ad_load_callback.on_ad_loaded = on_interstitial_ad_loaded
-
 	full_screen_content_callback.on_ad_clicked = func() -> void:
-		print("on_ad_clicked")
+		GameController.my_log("on_ad_clicked")
 	full_screen_content_callback.on_ad_dismissed_full_screen_content = func() -> void:
-		print("on_ad_dismissed_full_screen_content")
+		GameController.my_log("on_ad_dismissed_full_screen_content")
 		destroy()
 		load_level()
 	full_screen_content_callback.on_ad_failed_to_show_full_screen_content = func(_ad_error : AdError) -> void:
-		print("on_ad_failed_to_show_full_screen_content")
+		GameController.my_log("on_ad_failed_to_show_full_screen_content")
 		load_level()
 	full_screen_content_callback.on_ad_impression = func() -> void:
-		print("on_ad_impression")
+		GameController.my_log("on_ad_impression")
 		load_level()
 	full_screen_content_callback.on_ad_showed_full_screen_content = func() -> void:
-		print("on_ad_showed_full_screen_content")
+		GameController.my_log("on_ad_showed_full_screen_content")
 		load_level()
 
 
@@ -64,18 +64,20 @@ func _on_load_pressed(_string: String):
 		unit_id = "ca-app-pub-3940256099942544/1033173712"
 	if OS.get_name() == "iOS":
 		unit_id = "ca-app-pub-3940256099942544/4411468910"
+		
+	
 	InterstitialAdLoader.new().load(unit_id, AdRequest.new(), interstitial_ad_load_callback)
 
 func on_interstitial_ad_failed_to_load(adError : LoadAdError) -> void:
-	print(adError.message)
+	GameController.my_log(adError.message)
 	
 func on_interstitial_ad_loaded(interstitial_ad : InterstitialAd) -> void:
-	print("interstitial ad loaded" + str(interstitial_ad._uid))
+	GameController.my_log("interstitial ad loaded" + str(interstitial_ad._uid))
+	interstitial_ad = interstitial_ad
 	interstitial_ad.full_screen_content_callback = full_screen_content_callback
-	self.interstitial_ad = interstitial_ad
 	if interstitial_ad:
 		interstitial_ad.show()
-
+		
 func _on_show_pressed():
 	if interstitial_ad:
 		interstitial_ad.show()

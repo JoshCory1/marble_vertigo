@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=4 uid="uid://cvcspdr0ukw7w"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_hfkw5"]
-[ext_resource type="AudioStream" uid="uid://d1g73qr3twcgc" path="res://assets/sfx/music/Chiptune Vol3 Candy Main.ogg" id="2_ta1v8"]
+[ext_resource type="AudioStream" uid="uid://ds4j4qgjuwjpr" path="res://assets/sfx/music/Synthpop The Arcade Main.ogg" id="2_1bb6g"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="3_i0iqp"]
 [ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="4_2a3gb"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="5_3mwf8"]
@@ -618,7 +618,7 @@ size = Vector2(10238, 58.0034)
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_hfkw5")
-music_track = ExtResource("2_ta1v8")
+music_track = ExtResource("2_1bb6g")
 
 [node name="Exit" parent="." instance=ExtResource("3_i0iqp")]
 position = Vector2(18116, -44)

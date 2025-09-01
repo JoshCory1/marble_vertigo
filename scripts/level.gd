@@ -20,5 +20,5 @@ func _ready():
 		coin.coin_pickup.connect(_on_coin_pickup)
 
 func _on_coin_pickup():
-	coins_this_level +=1
+	coins_this_level += 1
 	

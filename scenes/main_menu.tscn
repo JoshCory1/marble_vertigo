@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=97 format=4 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://6jf1ut670fm8" path="res://assets/sfx/music/Wave and Beach Sand Bank Loop.ogg" id="2_f8tgd"]
@@ -76,6 +76,7 @@
 [ext_resource type="PackedScene" uid="uid://5q8hhs0182e7" path="res://scenes/level_57_winter.tscn" id="62_63khb"]
 [ext_resource type="PackedScene" uid="uid://bax5hp6kl0t4x" path="res://scenes/level_58_winter.tscn" id="63_407s3"]
 [ext_resource type="PackedScene" uid="uid://nritg6lx23hu" path="res://scenes/level_59_winter.tscn" id="64_onwj5"]
+[ext_resource type="Texture2D" uid="uid://grxncxrwu2sn" path="res://assets/UI/shopingcart.png" id="74_e0rh6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clwbi"]
 texture_region_size = Vector2i(64, 64)
@@ -604,6 +605,7 @@ region_rect = Rect2(0, 0, 960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
+position = Vector2(80, 54)
 texture = ExtResource("4_8twi8")
 centered = false
 region_enabled = true
@@ -646,20 +648,20 @@ current_level = 4
 free_level = true
 
 [node name="MenuLevelButton_05" parent="Buttons" instance=ExtResource("6_651t2")]
-offset_left = 724.0
-offset_top = -116.0
-offset_right = 788.0
-offset_bottom = -52.0
+offset_left = 703.0
+offset_top = 16.0
+offset_right = 767.0
+offset_bottom = 80.0
 disabled = true
 level = ExtResource("10_qu2g1")
 current_level = 5
 free_level = true
 
 [node name="MenuLevelButton_06" parent="Buttons" instance=ExtResource("6_651t2")]
-offset_left = 1032.0
-offset_top = 44.0
-offset_right = 1096.0
-offset_bottom = 108.0
+offset_left = 670.0
+offset_top = 272.0
+offset_right = 734.0
+offset_bottom = 336.0
 disabled = true
 level = ExtResource("11_8l331")
 current_level = 6
@@ -667,10 +669,10 @@ free_level = true
 gold_cost = 5
 
 [node name="MenuLevelButton_07" parent="Buttons" instance=ExtResource("6_651t2")]
-offset_left = 616.0
-offset_top = 269.0
-offset_right = 680.0
-offset_bottom = 333.0
+offset_left = 907.0
+offset_top = 73.0
+offset_right = 971.0
+offset_bottom = 137.0
 disabled = true
 level = ExtResource("12_50q57")
 current_level = 7
@@ -1277,19 +1279,25 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -137.0
-offset_top = -60.0
-offset_right = 139.0
-offset_bottom = 68.0
+offset_left = -108.0
+offset_top = -103.0
+offset_right = 168.0
+offset_bottom = 329.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.44, 0.280001)
+scale = Vector2(0.345, 0.22)
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("14_da51e")
 stretch_mode = 0
 
+[node name="Shopingcart" type="Sprite2D" parent="CanvasLayer3/ShopButton"]
+position = Vector2(129.546, 242.856)
+scale = Vector2(0.507305, 0.797191)
+texture = ExtResource("74_e0rh6")
+
 [node name="Label" type="Label" parent="CanvasLayer3/ShopButton"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

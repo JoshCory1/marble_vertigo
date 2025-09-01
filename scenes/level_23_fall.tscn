@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=4 uid="uid://dl5in6lwrtjhn"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_1wogg"]
-[ext_resource type="AudioStream" uid="uid://cth360nvlf64v" path="res://assets/sfx/music/Western New Spurs Main.ogg" id="2_rbi07"]
+[ext_resource type="AudioStream" uid="uid://d00a6wlj8uljg" path="res://assets/sfx/music/ElecAmbient Retribution Main.ogg" id="2_g8y4d"]
 [ext_resource type="PackedScene" uid="uid://cv21juxsplkpx" path="res://scenes/environment_fall.tscn" id="3_sfweg"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="4_ct1rd"]
 [ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="5_7bj4d"]
@@ -631,7 +631,7 @@ size = Vector2(1772.76, 50.1858)
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_1wogg")
-music_track = ExtResource("2_rbi07")
+music_track = ExtResource("2_g8y4d")
 
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_sfweg")]
 

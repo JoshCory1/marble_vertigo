@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=4 uid="uid://dek8pr5toc7ky"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_pay2u"]
-[ext_resource type="AudioStream" uid="uid://cth360nvlf64v" path="res://assets/sfx/music/Western New Spurs Main.ogg" id="2_cgjw8"]
+[ext_resource type="AudioStream" uid="uid://dylpc0rf1ckdt" path="res://assets/sfx/music/Electronic Vol4 Coded Main.ogg" id="2_7gdcd"]
 [ext_resource type="PackedScene" uid="uid://cv21juxsplkpx" path="res://scenes/environment_fall.tscn" id="3_jnm2w"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="4_8kbt0"]
 [ext_resource type="Texture2D" uid="uid://d13cv6dglt12l" path="res://assets/tiles/Tilesheet/platformer_ground_tiles-sheet-shee1t_fall.png" id="5_v7g3c"]
@@ -579,7 +579,7 @@ size = Vector2(75.3125, 990)
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_pay2u")
-music_track = ExtResource("2_cgjw8")
+music_track = ExtResource("2_7gdcd")
 
 [node name="EnvironmentFall" parent="." instance=ExtResource("3_jnm2w")]
 

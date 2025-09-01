@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3qxmhyaat00h"]
-
-[ext_resource type="Script" path="res://scripts/ad_full_screen_content_callback.gd" id="1_0utwk"]
-
-[node name="ADFullScreenContentCallback" type="Node2D"]
-script = ExtResource("1_0utwk")

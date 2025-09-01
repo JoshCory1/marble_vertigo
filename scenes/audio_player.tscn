@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bfm2suubv3408" path="res://assets/sfx/soundFx/Bouncy Select.wav" id="12_hmk4a"]
 
 [node name="AudioPlayer" type="Node"]
+process_mode = 3
 script = ExtResource("1_iybdo")
 bounce_sfx_1 = ExtResource("2_lf2q0")
 bounce_sfx_2 = ExtResource("3_oaqpo")

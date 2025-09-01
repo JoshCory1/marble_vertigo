@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://b4x2t0boktqe3"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xyr8r"]
-[ext_resource type="AudioStream" uid="uid://dcufv0c2fkmnm" path="res://assets/sfx/music/Casual Tiki Party Main.ogg" id="2_24ore"]
+[ext_resource type="AudioStream" uid="uid://c1lqatl61pq66" path="res://assets/sfx/music/Western No Gallop Main.ogg" id="2_mbjq4"]
 [ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="3_13bfo"]
 [ext_resource type="Texture2D" uid="uid://d13cv6dglt12l" path="res://assets/tiles/Tilesheet/platformer_ground_tiles-sheet-shee1t_fall.png" id="4_3x86h"]
 [ext_resource type="Texture2D" uid="uid://ovsatvx0hecs" path="res://assets/tiles/dungen_tileset.png" id="5_x3xpt"]
@@ -573,7 +573,7 @@ sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_xyr8r")
-music_track = ExtResource("2_24ore")
+music_track = ExtResource("2_mbjq4")
 
 [node name="Environment" parent="." instance=ExtResource("3_13bfo")]
 

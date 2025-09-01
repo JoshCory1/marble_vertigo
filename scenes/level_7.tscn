@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=4 uid="uid://5r0aor4wsqe7"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_jrj44"]
-[ext_resource type="AudioStream" uid="uid://l10v8mttn538" path="res://assets/sfx/music/Chiptune Vol3 Ricochet Cut 30.ogg" id="2_ucd3o"]
+[ext_resource type="AudioStream" uid="uid://bo1s1nawpf1er" path="res://assets/sfx/music/Electronic Vol4 Clutch Kick Main.ogg" id="2_7ymyr"]
 [ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="3_eqstr"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="3_wlbm5"]
 [ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="4_kbp58"]
@@ -616,7 +616,7 @@ sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_jrj44")
-music_track = ExtResource("2_ucd3o")
+music_track = ExtResource("2_7ymyr")
 
 [node name="Exit" parent="." instance=ExtResource("3_wlbm5")]
 position = Vector2(7773, -314)

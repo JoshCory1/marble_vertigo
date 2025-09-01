@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://d3uvt5umhyfrj"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bvmn6"]
-[ext_resource type="AudioStream" uid="uid://dxi4ddoyjcvy3" path="res://assets/sfx/music/Casual Field Day Main.ogg" id="2_atwwd"]
+[ext_resource type="AudioStream" uid="uid://cth360nvlf64v" path="res://assets/sfx/music/Western New Spurs Main.ogg" id="2_hgsoy"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="3_qn61j"]
 [ext_resource type="PackedScene" uid="uid://oy3kwcnphhxo" path="res://scenes/environment.tscn" id="3_xe2ps"]
 [ext_resource type="Texture2D" uid="uid://d13cv6dglt12l" path="res://assets/tiles/Tilesheet/platformer_ground_tiles-sheet-shee1t_fall.png" id="5_4mgkh"]
@@ -573,7 +573,7 @@ sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_bvmn6")
-music_track = ExtResource("2_atwwd")
+music_track = ExtResource("2_hgsoy")
 
 [node name="Environment" parent="." instance=ExtResource("3_xe2ps")]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=4 uid="uid://25gplpydn7qi"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xslxq"]
-[ext_resource type="AudioStream" uid="uid://xb54dlqro758" path="res://assets/sfx/music/Chiptune Vol3 Summer Main.ogg" id="2_yqg7e"]
+[ext_resource type="AudioStream" uid="uid://diysuvodphefk" path="res://assets/sfx/music/Synthpop Twinkle Main.ogg" id="2_tf6ja"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="3_87sm6"]
 [ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="4_obn4c"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="5_ep3va"]
@@ -616,7 +616,7 @@ sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_xslxq")
-music_track = ExtResource("2_yqg7e")
+music_track = ExtResource("2_tf6ja")
 
 [node name="Exit" parent="." instance=ExtResource("3_87sm6")]
 position = Vector2(11557, 2019)

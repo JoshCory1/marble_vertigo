@@ -16,7 +16,7 @@ signal product_details_received(product_id: String, price: String)
 signal product_details_received_no_ads(product_id: String, price: String)
 signal premium_purchase_successful()
 signal no_ads_purchase_succssful()
-signal purchase_failed(product_id: String, error: Dictionary)
+#signal purchase_failed(product_id: String, error: Dictionary)
 
 
 # https://developer.android.com/reference/com/android/billingclient/api/Purchase.PurchaseState

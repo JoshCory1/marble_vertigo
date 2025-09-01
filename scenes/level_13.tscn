@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=4 uid="uid://cyblvmqq1jruk"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_kmk1a"]
-[ext_resource type="AudioStream" uid="uid://hvhadxxlg4f1" path="res://assets/sfx/music/Chiptune Vol3 Cherries Main.ogg" id="2_jqymb"]
+[ext_resource type="AudioStream" uid="uid://duiyildbwm708" path="res://assets/sfx/music/Electronic Vol4 Gone Clubbin Main.ogg" id="2_vwbme"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="3_hfnka"]
 [ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="4_1061v"]
 [ext_resource type="PackedScene" uid="uid://0lnnh34odpf6" path="res://scenes/player.tscn" id="5_6twax"]
@@ -615,7 +615,7 @@ sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_kmk1a")
-music_track = ExtResource("2_jqymb")
+music_track = ExtResource("2_vwbme")
 
 [node name="Exit" parent="." instance=ExtResource("3_hfnka")]
 position = Vector2(24894.1, 4200.4)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=4 uid="uid://bj2bln0uoe522"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_vfc2u"]
-[ext_resource type="AudioStream" uid="uid://ehqfnsbeseib" path="res://assets/sfx/music/Chiptune Vol3 Hero Complex Main.ogg" id="2_u74y0"]
+[ext_resource type="AudioStream" uid="uid://bx5epe4xfkuf6" path="res://assets/sfx/music/Industrial Cyberbreak Main.ogg" id="2_233vf"]
 [ext_resource type="PackedScene" uid="uid://cn83qoegqjt8x" path="res://scenes/exit.tscn" id="3_dxkcg"]
 [ext_resource type="Texture2D" uid="uid://ct5834f0xvj0k" path="res://assets/tiles/bar_marble_vertigo-sheet.png" id="4_qyrt4"]
 [ext_resource type="Texture2D" uid="uid://d13cv6dglt12l" path="res://assets/tiles/Tilesheet/platformer_ground_tiles-sheet-shee1t_fall.png" id="5_djy81"]
@@ -616,7 +616,7 @@ sources/1 = SubResource("TileSetAtlasSource_dnpps")
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource("1_vfc2u")
-music_track = ExtResource("2_u74y0")
+music_track = ExtResource("2_233vf")
 
 [node name="Exit" parent="." instance=ExtResource("3_dxkcg")]
 position = Vector2(-175, 1829)
