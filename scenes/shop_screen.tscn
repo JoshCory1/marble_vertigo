@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://bfcy0hnl86squ"]
+[gd_scene load_steps=23 format=3 uid="uid://bfcy0hnl86squ"]
 
 [ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_4xgp3"]
 [ext_resource type="Texture2D" uid="uid://6cnj04ds7j82" path="res://assets/shop/ShopBox.png" id="2_gh6sk"]
 [ext_resource type="PackedScene" uid="uid://dtxikyw3nal8l" path="res://scenes/close_button.tscn" id="3_js1kb"]
-[ext_resource type="PackedScene" uid="uid://bvbtb0g7fcr6o" path="res://scenes/lock_premium_button.tscn" id="4_3hwjb"]
 [ext_resource type="Texture2D" uid="uid://cqh402wxwmiq4" path="res://assets/ball/ball_blue_large_alt.png" id="4_jggn5"]
 [ext_resource type="Texture2D" uid="uid://cxwrbuxn06n3u" path="res://assets/ball/marble_v3.png" id="4_quguk"]
 [ext_resource type="Texture2D" uid="uid://d5g4r4ijimkk" path="res://assets/ball/marble_v19.png" id="5_oeu3k"]
@@ -34,10 +33,6 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_h1ov4")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_dwxbe")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_sblpy")
 
-[sub_resource type="LabelSettings" id="LabelSettings_iceoc"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_wevwm"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_6ypck"]
 font_color = Color(0.14902, 1, 0, 1)
 
@@ -58,8 +53,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 script = ExtResource("1_4xgp3")
-product_id = "premium_version"
-product_id_ads = "no_ads"
 
 [node name="Box" type="TextureRect" parent="."]
 layout_mode = 1
@@ -116,117 +109,6 @@ theme = SubResource("Theme_wkkm2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/Label/ColorRect/ScrollContainer"]
 layout_mode = 2
-
-[node name="Premium" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-disabled = true
-texture_normal = ExtResource("4_jggn5")
-
-[node name="LockPremiumButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium" instance=ExtResource("4_3hwjb")]
-position = Vector2(34, 32.5)
-
-[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.312
-anchor_top = 0.219
-anchor_right = 4.203
-anchor_bottom = 1.0
-offset_left = 0.0319977
-offset_top = -0.0160007
-offset_right = 0.00799561
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Premium"
-label_settings = SubResource("LabelSettings_iceoc")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 8.453
-anchor_top = 0.5
-anchor_right = 9.422
-anchor_bottom = 0.883
-offset_left = 0.00799561
-offset_top = -1.5
-offset_right = -0.00805664
-offset_bottom = -0.012001
-grow_horizontal = 0
-text = "Loading"
-label_settings = SubResource("LabelSettings_wevwm")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 4.547
-anchor_top = 0.43
-anchor_right = 6.687
-anchor_bottom = 0.789
-offset_left = -0.00802612
-offset_top = -0.0200005
-offset_right = 0.0319824
-offset_bottom = 0.0039978
-text = "Unlocks All Levels"
-
-[node name="NoAds" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-disabled = true
-texture_normal = ExtResource("4_jggn5")
-
-[node name="LabelPayment" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.312
-anchor_top = 0.219
-anchor_right = 4.203
-anchor_bottom = 1.0
-offset_left = 0.0319977
-offset_top = -0.0160007
-offset_right = 0.00799561
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Ad Free Addon"
-label_settings = SubResource("LabelSettings_iceoc")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 8.453
-anchor_top = 0.5
-anchor_right = 9.422
-anchor_bottom = 0.883
-offset_left = 0.00799561
-offset_top = -1.5
-offset_right = -0.00805664
-offset_bottom = -0.012001
-grow_horizontal = 0
-text = "Loading"
-label_settings = SubResource("LabelSettings_wevwm")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 4.047
-anchor_top = 0.43
-anchor_right = 7.844
-anchor_bottom = 0.789
-offset_left = -0.00805664
-offset_top = -0.0200005
-offset_right = -0.0160522
-offset_bottom = 0.0039978
-text = "Removes all ads from the game"
 
 [node name="DefaultButton2" type="TextureButton" parent="Box/Label/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -580,23 +462,6 @@ offset_bottom = 30.0
 text = "Owned"
 label_settings = SubResource("LabelSettings_mxl3r")
 
-[node name="Button" type="Button" parent="Box/Label/ColorRect"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.353
-anchor_top = 1.033
-anchor_right = 0.666
-anchor_bottom = 1.308
-offset_left = 0.138992
-offset_top = -0.113007
-offset_right = -0.242004
-offset_bottom = 0.111969
-disabled = true
-text = "reset purchases
-"
-icon = ExtResource("4_jggn5")
-
 [node name="CloseButton" parent="Box" instance=ExtResource("3_js1kb")]
 layout_mode = 0
 offset_left = 738.0
@@ -617,8 +482,6 @@ size_flags_horizontal = 4
 mouse_filter = 1
 color = Color(1, 0, 0, 0.5)
 
-[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium" to="." method="_on_premium_pressed"]
-[connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds" to="." method="_on_no_ads_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2" to="." method="_on_default_button_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton" to="." method="_on_cube_button_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/SpinButton" to="." method="_on_spin_button_pressed"]
@@ -628,5 +491,4 @@ color = Color(1, 0, 0, 0.5)
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Star" to="." method="_on_star_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Crystel" to="." method="_on_crystel_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards" to="." method="_on_billiards_pressed"]
-[connection signal="pressed" from="Box/Label/ColorRect/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Box/CloseButton" to="." method="_on_close_button_pressed"]

@@ -26,11 +26,11 @@ signal next_level
 @onready  var coin_count = $CanvasLayer2/CoinSprite/Label
 @onready var heart = $CanvasLayer2/HeartSprite
 @onready var heart_text = $CanvasLayer2/HeartSprite/Label
-@onready var premium_popup_screen = $CanvasLayer2/PremiumPopupScreen
+#@onready var premium_popup_screen = $CanvasLayer2/PremiumPopupScreen
 @onready var close_shop_button = $CanvasLayer3/ShopButton
 @onready var settings_button = $CanvasLayer3/SettingsButton
 @onready var settings = $CanvasLayer2/Settings
-@onready var interstitial = $AdInterstitial
+#@onready var interstitial = $AdInterstitial
 
 #current play throue not used
 var current_button_array_number = 0
@@ -43,14 +43,14 @@ func _ready():
 	set_shop_size_scale()
 	settings.visible = false
 	shop.visible = false
-	premium_popup_screen.visible = false
-	for button in button_array:
-		button.show_popup.connect(_on_show_popup)
-		button.show_ad.connect(_on_show_ad)
-	interstitial.load_next_level.connect(_on_end_of_ad)
+	#premium_popup_screen.visible = false
+	#for button in button_array:
+		#button.show_popup.connect(_on_show_popup)
+		#button.show_ad.connect(_on_show_ad)
+	#interstitial.load_next_level.connect(_on_end_of_ad)
 	shop.close_shop.connect(_on_close_shop)
 	settings.close_settings.connect(_on_close_settings)
-	premium_popup_screen.close_popup.connect(_on_close_popup)
+	#premium_popup_screen.close_popup.connect(_on_close_popup)
 	coin_count.text = str(GameController.coins)
 	for number_of_buttons in button_array:
 		if number_of_buttons.current_active == true:
@@ -115,11 +115,11 @@ func _on_shop_button_pressed():
 		button.visible = false
 	freeze_camera.emit()
 	close_shop_button.visible = false
-	premium_popup_screen.visible = false
+	#premium_popup_screen.visible = false
 	settings_button.visible = false
 
 func _on_show_popup(gold: int, string: String):
-	premium_popup_screen.visible = true
+	#premium_popup_screen.visible = true
 	for button in button_array:
 		button.visible = false
 	freeze_camera.emit()
@@ -128,7 +128,7 @@ func _on_show_popup(gold: int, string: String):
 	popup_gold_pass.emit(gold, string)
 
 func  _on_close_popup():
-	premium_popup_screen.visible = false
+	#premium_popup_screen.visible = false
 	for button in button_array:
 		button.visible = true
 	unfreeze_camera.emit()
@@ -150,21 +150,3 @@ func _on_close_settings():
 	unfreeze_camera.emit()
 	close_shop_button.visible = true
 	settings_button.visible = true
-
-func _on_show_ad(string: String):
-	AudioPlayer.m_player.stop()
-	name_of_next_level = string
-	black_can.visible = true
-	var tween = create_tween()
-	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	tween.tween_property(black_rect,"modulate:a", 1.0, fade_duration)
-	await tween.finished
-	wheel.visible = true
-	wheel.animation_start()
-	await get_tree().create_timer(8.0).timeout
-	_on_end_of_ad()
-
-func _on_end_of_ad():
-	black_can.visible = false
-	wheel.animation_stop()
-	next_level.emit(name_of_next_level)

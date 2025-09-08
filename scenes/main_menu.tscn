@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=4 uid="uid://baqelgx82272q"]
+[gd_scene load_steps=94 format=4 uid="uid://baqelgx82272q"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_egfi4"]
 [ext_resource type="AudioStream" uid="uid://6jf1ut670fm8" path="res://assets/sfx/music/Wave and Beach Sand Bank Loop.ogg" id="2_f8tgd"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://wgsudtqymav1" path="res://scenes/level_4.tscn" id="9_74naj"]
 [ext_resource type="PackedScene" uid="uid://bbymuv1obodtd" path="res://scenes/level_5.tscn" id="10_qu2g1"]
 [ext_resource type="PackedScene" uid="uid://cu36smmnc7bty" path="res://scenes/level_6.tscn" id="11_8l331"]
-[ext_resource type="PackedScene" uid="uid://cm4yvhgeehtmb" path="res://scenes/premium_popup_screen.tscn" id="12_38ve0"]
 [ext_resource type="PackedScene" uid="uid://5r0aor4wsqe7" path="res://scenes/level_7.tscn" id="12_50q57"]
 [ext_resource type="PackedScene" uid="uid://5lnt60tn5fv8" path="res://scenes/debug.tscn" id="12_gh0hx"]
 [ext_resource type="PackedScene" uid="uid://bfcy0hnl86squ" path="res://scenes/shop_screen.tscn" id="13_47q5w"]
@@ -23,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://lweu12r6uhlr" path="res://scenes/settings.tscn" id="16_7767t"]
 [ext_resource type="PackedScene" uid="uid://cvcspdr0ukw7w" path="res://scenes/level_11.tscn" id="16_cx25i"]
 [ext_resource type="PackedScene" uid="uid://bx3nsmuk7a74i" path="res://scenes/level_12.tscn" id="17_auye1"]
-[ext_resource type="PackedScene" uid="uid://2kxbgbevh4sq" path="res://scenes/iap_manager.tscn" id="17_dbfbd"]
 [ext_resource type="PackedScene" uid="uid://tbucgx8txtjl" path="res://scenes/portal_wheel_of.tscn" id="17_ycsef"]
 [ext_resource type="Texture2D" uid="uid://c2sk681gyyx1h" path="res://assets/UI/Settings_gear.png" id="18_f4855"]
 [ext_resource type="PackedScene" uid="uid://cyblvmqq1jruk" path="res://scenes/level_13.tscn" id="18_j71n4"]
@@ -35,7 +33,6 @@
 [ext_resource type="PackedScene" uid="uid://bc5orhqpvy5vo" path="res://scenes/level_19.tscn" id="24_o08vl"]
 [ext_resource type="PackedScene" uid="uid://dh015pgtpx26y" path="res://scenes/level_20.tscn" id="25_7ylia"]
 [ext_resource type="PackedScene" uid="uid://yn8v4q16klw3" path="res://scenes/level_21_fall.tscn" id="26_awjm0"]
-[ext_resource type="PackedScene" uid="uid://cwe0fn31ert48" path="res://scenes/ad_interstitial.tscn" id="26_s5naw"]
 [ext_resource type="PackedScene" uid="uid://dc1p42y3j4ygx" path="res://scenes/level_22_fall.tscn" id="27_pgj78"]
 [ext_resource type="PackedScene" uid="uid://dl5in6lwrtjhn" path="res://scenes/level_23_fall.tscn" id="28_xbvyr"]
 [ext_resource type="PackedScene" uid="uid://c1uw41xb7fy0g" path="res://scenes/level_24_fall.tscn" id="29_uj0wc"]
@@ -605,7 +602,6 @@ region_rect = Rect2(0, 0, 960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(80, 54)
 texture = ExtResource("4_8twi8")
 centered = false
 region_enabled = true
@@ -1265,9 +1261,6 @@ scale = Vector2(0.17, 0.17)
 text = "9"
 label_settings = SubResource("LabelSettings_rp1uo")
 
-[node name="PremiumPopupScreen" parent="CanvasLayer2" instance=ExtResource("12_38ve0")]
-visible = false
-
 [node name="Settings" parent="CanvasLayer2" instance=ExtResource("16_7767t")]
 visible = false
 
@@ -1326,10 +1319,6 @@ size_flags_horizontal = 8
 icon = ExtResource("18_f4855")
 flat = true
 metadata/_edit_use_anchors_ = true
-
-[node name="IAPManager" parent="." instance=ExtResource("17_dbfbd")]
-
-[node name="AdInterstitial" parent="." instance=ExtResource("26_s5naw")]
 
 [connection signal="pressed" from="CanvasLayer3/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="CanvasLayer3/SettingsButton" to="." method="_on_button_pressed"]

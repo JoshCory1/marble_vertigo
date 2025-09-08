@@ -11,27 +11,22 @@ signal close_shop
 ##value of item
 @export var item_value: int
 ##string that describs product ptrmium
-@export var product_id: String
-##string that describs product ad free
-@export var product_id_ads: String
-##loading string for when product id in not avalaible
-@export var price: String = "Loading..."
-@export var price_ads: String = "Loading..."
+#@export var product_id: String
+###string that describs product ad free
+#@export var product_id_ads: String
 #onready vars
-@onready var premium_button_val = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium/Label
-@onready var premium_button = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium
-@onready var no_ads_button_val = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds/Label
-@onready var no_ads_button = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds
+#@onready var premium_button_val = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium/Label
+#@onready var premium_button = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Premium
+#@onready var no_ads_button_val = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds/Label
+#@onready var no_ads_button = $Box/Label/ColorRect/ScrollContainer/VBoxContainer/NoAds
 
 
 func _ready():
-	premium_button_val.text = price
-	no_ads_button_val.text = price_ads
-	IapManager.product_details_received.connect(_setPrice)
-	IapManager.product_details_received_no_ads.connect(_setPrice_ads)
-	IapManager.no_ads_purchase_succssful.connect(_on_no_ads_purchase_succssful)
-	IapManager.premium_purchase_successful.connect(_on_premium_purchase_successful)
-	IapManager.close_window.connect(_on_close_window)
+	#IapManager.product_details_received.connect(_setPrice)
+	#IapManager.product_details_received_no_ads.connect(_setPrice_ads)
+	#IapManager.no_ads_purchase_succssful.connect(_on_no_ads_purchase_succssful)
+	#IapManager.premium_purchase_successful.connect(_on_premium_purchase_successful)
+	#IapManager.close_window.connect(_on_close_window)
 	if GameController.skins_unlocked[1] == true:
 		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton/CoinSprite,$Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton/LabelOwned)
 	if GameController.skins_unlocked[2] == true:
@@ -49,23 +44,23 @@ func _ready():
 	if GameController.skins_unlocked[8] == true:
 		show_owned($Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards/CoinSprite, $Box/Label/ColorRect/ScrollContainer/VBoxContainer/Billiards/LabelOwned)
 
-func _on_premium_purchase_successful():
-	premium_button.visible = false
-	premium_button.disabled = true
+#func _on_premium_purchase_successful():
+	#premium_button.visible = false
+	#premium_button.disabled = true
 
-func _on_no_ads_purchase_succssful():
-	no_ads_button.visible = false
-	no_ads_button.disabled = true
+#func _on_no_ads_purchase_succssful():
+	#no_ads_button.visible = false
+	#no_ads_button.disabled = true
 
-func _setPrice(_product_id: String, _price: String):
-	if _product_id == product_id:
-		GameController.my_log("premium = : " + str(_price))
-		premium_button_val.text = _price # Update the displayed price
-		
-func _setPrice_ads(_product_id: String, _price: String):
-	if _product_id == product_id_ads:
-		GameController.my_log("no ads = : " + str(_price))
-		no_ads_button_val.text = _price # Update the displayed price
+#func _setPrice(_product_id: String, _price: String):
+	#if _product_id == product_id:
+		#GameController.my_log("premium = : " + str(_price))
+		#premium_button_val.text = _price # Update the displayed price
+		#
+#func _setPrice_ads(_product_id: String, _price: String):
+	#if _product_id == product_id_ads:
+		#GameController.my_log("no ads = : " + str(_price))
+		#no_ads_button_val.text = _price # Update the displayed price
 
 func screen_flash():
 	var flash_rect = $Box/RedFlash
@@ -92,14 +87,14 @@ func _on_close_button_pressed():
 func _on_close_window():
 	close_shop.emit()
 
-func _on_premium_pressed():
-	IapManager.do_purchase(product_id)
+#func _on_premium_pressed():
+	#IapManager.do_purchase(product_id)
+#
+#func _on_no_ads_pressed() -> void:
+	#IapManager.do_purchase(product_id_ads)
 
-func _on_no_ads_pressed() -> void:
-	IapManager.do_purchase(product_id_ads)
-
-func _on_button_pressed() -> void:
-	IapManager.reset_purchases()
+#func _on_button_pressed() -> void:
+	#IapManager.reset_purchases()
 	
 func _on_default_button_pressed():
 	AudioPlayer.play_sfx("bounce_sfx_1")

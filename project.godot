@@ -11,31 +11,29 @@ config_version=5
 [application]
 
 config/name="Marble Vertigo"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/start.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://assets/Logo/logo.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://assets/ball/ball_blue_large_alt.png"
+config/windows_native_icon="res://assets/ball/ball_blue_large_icon.ico"
 
 [autoload]
 
 AudioPlayer="*res://scenes/audio_player.tscn"
 GameController="*res://scenes/game_controller.tscn"
-IapManager="*res://scenes/iap_manager.tscn"
+IapManager="res://scenes/iap_manager.tscn"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 window/vsync/vsync_mode=0
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/admob/plugin.cfg", "res://addons/android_IAPP/plugin.cfg")
 
 [input]
 
@@ -98,7 +96,6 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
-renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
 driver/depth_prepass/enable=false
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

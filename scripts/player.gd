@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+signal change_level
+
 ##var that contoles speed
 @export var speed_var: float = 6000
 ##var that contoles gravity
@@ -166,15 +169,18 @@ func _on_area_2d_body_entered(_body):
 			bounce_down(300,450)
 
 func die():
+	preload("res://scenes/main_menu.tscn")
 	if !debug:
-		get_tree().paused = true
+		stop_velocity = true
 		AudioPlayer.play_sfx("shatter_sfx")
 		death_particles.emitting = true
 		sprite.visible = false
-		GameController.my_log("Died!!")
-		await get_tree().create_timer(0.2).timeout
-		get_tree().paused = false
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		await get_tree().create_timer(0.5).timeout
+		call_deferred("change_to_main_level")
+		queue_free()
+
+func change_to_main_level():
+	change_level.emit()
 
 	# Skins
 

@@ -41,8 +41,8 @@ func die():
 		death_particles.emitting = true
 		sprite.visible = false
 		GameController.my_log("Died!!")
-		await get_tree().create_timer(0.5).timeout
-		get_tree().paused = false
+		await get_tree().create_timer(0.05).timeout
+		#get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/start.tscn")
 
 func _on_area_2d_body_entered(_body):
@@ -91,9 +91,3 @@ func use_spin_skin():
 
 	if sprite:
 		sprite.texture = preload("res://assets/ball/marble_v19.png")
-
-
-
-
-
-

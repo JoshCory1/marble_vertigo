@@ -82,7 +82,7 @@ var billiards_8_skin_use: bool = false
 
 
 func _ready():
-	IapManager.premium_purchase_successful.connect(_on_premium_purchase_successful)
+	#IapManager.premium_purchase_successful.connect(_on_premium_purchase_successful)
 	if premium:
 		my_log("premium is: " + str(premium))
 		purchased_premium.emit()

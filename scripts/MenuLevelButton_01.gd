@@ -1,7 +1,7 @@
 extends TextureButton
 
 signal show_popup
-signal show_ad
+#signal show_ad
 
 
 ##duration of screen fade effect
@@ -22,8 +22,8 @@ signal show_ad
 @onready var canvas = $"../../BlackCanvasLayer"
 @onready var lock = $Lock
 @onready var premium_button_sprite = $"Premium Button Sprite"
-@onready var popup_screen = $"../../CanvasLayer2/PremiumPopupScreen"
-@onready var interstitial = $"../../AdInterstitial"
+#@onready var popup_screen = $"../../CanvasLayer2/PremiumPopupScreen"
+#@onready var interstitial = $"../../AdInterstitial"
 @onready var main = $"../.."
 
 signal camera_scroll_off
@@ -37,14 +37,15 @@ var save_file_path: String
 
 
 func _ready():
+	get_tree().create_timer(0.2).timeout
 	name_of_level = self.name
 	save_file_path = "user://" + name_of_level + ".save"
 	load_button()
 	main.next_level.connect(load_level)
-	popup_screen.perchase_button.connect(_on_perchase_button)
+	#popup_screen.perchase_button.connect(_on_perchase_button)
 	disabled = true
-	GameController.purchased_premium.connect(_on_purchase_premium_successful)
-	IapManager.no_ads_purchase_succssful.connect(_on_no_ads_purchase_succssful)
+	#GameController.purchased_premium.connect(_on_purchase_premium_successful)
+	#IapManager.no_ads_purchase_succssful.connect(_on_no_ads_purchase_succssful)
 	if free_level:
 		button_ready_up(true)
 	elif level_for_gold_unlock:
@@ -105,10 +106,7 @@ func button_ready_up(flag: bool):
 
 func _on_pressed():
 	if unlock:
-		if !no_ads:
-			show_ad.emit(name_of_level)
-		else:
-			load_level(name_of_level)
+		load_level(name_of_level)
 	else:
 		show_popup.emit(gold_cost, name_of_level)
 	

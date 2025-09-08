@@ -12,3 +12,6 @@ func animation_start():
 	
 func animation_stop():
 	animation_player.play("RESET")
+
+func full_marble():
+	animation_player.play("full")

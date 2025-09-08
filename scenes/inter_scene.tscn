@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://do4dshybbybtn"]
+
+[ext_resource type="Script" path="res://scripts/inter_scene.gd" id="1_6k3ku"]
+[ext_resource type="PackedScene" uid="uid://tbucgx8txtjl" path="res://scenes/portal_wheel_of.tscn" id="1_mhroc"]
+[ext_resource type="Script" path="res://scripts/inter_scene_loader.gd" id="2_ddvq5"]
+
+[node name="InterScene" type="Node2D"]
+script = ExtResource("1_6k3ku")
+
+[node name="InterSceneLoader" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_ddvq5")
+
+[node name="PortalWheelOf" parent="InterSceneLoader" instance=ExtResource("1_mhroc")]
+
+[node name="ProgressBar" type="ProgressBar" parent="InterSceneLoader"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 495.0
+offset_top = 495.0
+offset_right = 499.0
+offset_bottom = 522.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8

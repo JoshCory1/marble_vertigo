@@ -15,8 +15,8 @@ var button_gold: int = 0
 var button_name: String
 
 func _ready():
-	IapManager.product_details_received.connect(_setPrice)
-	IapManager.close_window.connect(_on_close_window)
+	#IapManager.product_details_received.connect(_setPrice)
+	#IapManager.close_window.connect(_on_close_window)
 	main_menu.popup_gold_pass.connect(_on_popup_gold_pass)
 	
 func _on_close_window():
@@ -53,4 +53,5 @@ func _setPrice(_product_id: String, _price: String):
 
 
 func _on_premium_buy_button_pressed() -> void:
-	IapManager.do_purchase(product_id)
+	pass
+	#IapManager.do_purchase(product_id)
