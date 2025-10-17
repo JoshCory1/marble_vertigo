@@ -3,7 +3,9 @@ extends CharacterBody2D
 signal change_level
 
 ##var that contoles speed
-@export var speed_var: float = 6000
+@export var speed_var: float = 60
+##Speed clamp
+@export var speed_clamp := 8000.0
 ##var that contoles gravity
 @export var gravity: float = 8.0
 ##the max speed for gravity var
@@ -81,13 +83,18 @@ func _physics_process(delta):
 				if !stop_contorls:
 					var direction = Input.get_axis("move_left", "move_right")
 					if direction > 0:
-						speed = speed_var
-						velocity.x = speed * delta
+						speed += speed_var
+						velocity.x = speed * delta + 100
 					elif direction < 0:
-						speed = -speed_var
-						velocity.x = speed * delta
-					elif Input.is_action_just_pressed("stop_move"):
-						velocity.x = 0
+						speed -= speed_var
+						velocity.x = speed * delta - 100
+					if speed >= speed_clamp:
+						speed = speed_clamp
+					elif speed <= -speed_clamp:
+						speed = - speed_clamp
+					print("speed var is :" + str(speed))
+					#elif Input.is_action_just_pressed("stop_move"):
+						#velocity.x = 0
 			if !pause_y:
 				velocity.y += gravity
 				if velocity.y > max_fall_velocity:
@@ -95,13 +102,13 @@ func _physics_process(delta):
 		else:
 			velocity = Vector2(0,0)
 			if Input.is_action_pressed("move_up"):
-				velocity.y -= speed_var * 10 * delta
+				velocity.y -= speed_var * 1000 * delta
 			if Input.is_action_pressed("move_down"):
-				velocity.y += speed_var * 10 * delta
+				velocity.y += speed_var * 1000 * delta
 			if Input.is_action_pressed("move_left"):
-				velocity.x -= speed_var * 10 * delta
+				velocity.x -= speed_var * 1000 * delta
 			if Input.is_action_pressed("move_right"):
-				velocity.x += speed_var * 10 * delta
+				velocity.x += speed_var * 1000 * delta
 		camera_zoom()
 		move_and_slide()
 	

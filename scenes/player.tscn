@@ -32,6 +32,7 @@ shape = SubResource("CircleShape2D_ia64i")
 [node name="PlayerParticles2D" parent="." instance=ExtResource("3_hd5ym")]
 
 [node name="PlayerCamera2D" type="Camera2D" parent="." groups=["PlayerCamera"]]
+zoom = Vector2(0.6, 0.6)
 limit_smoothed = true
 drag_vertical_enabled = true
 drag_top_margin = 0.4

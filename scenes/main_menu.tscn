@@ -1197,6 +1197,8 @@ current_level = 59
 gold_cost = 96
 
 [node name="UIMenuCamera" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
 script = ExtResource("7_tggy7")
 movetospeed = 800
 
@@ -1272,13 +1274,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -108.0
-offset_top = -103.0
-offset_right = 168.0
-offset_bottom = 329.0
+offset_left = -53.9999
+offset_top = -53.0
+offset_right = 222.0
+offset_bottom = 379.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.345, 0.22)
+scale = Vector2(0.15, 0.096)
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("14_da51e")
@@ -1314,7 +1316,7 @@ anchor_bottom = 0.124074
 offset_right = 258.4
 offset_bottom = 268.0
 grow_horizontal = 0
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 size_flags_horizontal = 8
 icon = ExtResource("18_f4855")
 flat = true
