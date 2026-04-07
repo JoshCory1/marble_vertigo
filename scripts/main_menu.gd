@@ -91,4 +91,3 @@ func _on_shop_button_pressed():
 	$CanvasLayer3/ShopButton.visible = false
 	
 	
-
