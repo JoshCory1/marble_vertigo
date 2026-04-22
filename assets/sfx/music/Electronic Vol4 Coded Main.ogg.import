@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dylpc0rf1ckdt"
+path="res://.godot/imported/Electronic Vol4 Coded Main.ogg-133f5a1e973dec3ffdf4856a577b9485.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Electronic Vol4 Coded Main.ogg"
+dest_files=["res://.godot/imported/Electronic Vol4 Coded Main.ogg-133f5a1e973dec3ffdf4856a577b9485.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

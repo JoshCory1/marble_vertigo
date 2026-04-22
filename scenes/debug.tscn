@@ -1,19 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://5lnt60tn5fv8"]
+[gd_scene format=3 uid="uid://5lnt60tn5fv8"]
 
-[ext_resource type="Script" path="res://scripts/debug.gd" id="1_7q3rp"]
+[ext_resource type="Script" uid="uid://brh1cosvakg75" path="res://scripts/debug.gd" id="1_7q3rp"]
 [ext_resource type="PackedScene" uid="uid://cs2pl0fvgcnin" path="res://scenes/ui_buttons.tscn" id="1_qerh4"]
-[ext_resource type="Script" path="res://scripts/ScrollContainer.gd" id="2_upwck"]
+[ext_resource type="Script" uid="uid://7kfqmwp473d" path="res://scripts/ScrollContainer.gd" id="2_upwck"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wxi5x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_epwfb"]
 
-[node name="DebugScreen" type="CanvasLayer"]
+[node name="DebugScreen" type="CanvasLayer" unique_id=369282354]
 process_mode = 3
 layer = 128
 script = ExtResource("1_7q3rp")
 
-[node name="Debug" type="Control" parent="."]
+[node name="Debug" type="Control" parent="." unique_id=2078852393]
 clip_children = 1
 z_index = 4096
 layout_mode = 3
@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ConsoleLog" type="Control" parent="Debug" groups=["debug_console"]]
+[node name="ConsoleLog" type="Control" parent="Debug" unique_id=703370704 groups=["debug_console"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Debug/ConsoleLog"]
+[node name="ColorRect" type="ColorRect" parent="Debug/ConsoleLog" unique_id=1393872610]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -44,7 +44,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.666667)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Debug/ConsoleLog"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Debug/ConsoleLog" unique_id=1513762814]
 process_mode = 3
 layout_mode = 1
 anchors_preset = 8
@@ -61,20 +61,20 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("2_upwck")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Debug/ConsoleLog/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Debug/ConsoleLog/ScrollContainer" unique_id=1346809707]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 alignment = 2
 
-[node name="LogLabel" type="Label" parent="Debug/ConsoleLog/ScrollContainer/VBoxContainer"]
+[node name="LogLabel" type="Label" parent="Debug/ConsoleLog/ScrollContainer/VBoxContainer" unique_id=68152641]
 layout_mode = 2
 size_flags_vertical = 3
 label_settings = SubResource("LabelSettings_wxi5x")
 autowrap_mode = 3
 
-[node name="ColorRect" type="ColorRect" parent="Debug/ConsoleLog/ScrollContainer/VBoxContainer/LogLabel"]
+[node name="ColorRect" type="ColorRect" parent="Debug/ConsoleLog/ScrollContainer/VBoxContainer/LogLabel" unique_id=940022643]
 visible = false
 show_behind_parent = true
 layout_mode = 1
@@ -86,7 +86,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.403922)
 
-[node name="ToggleConsole" type="TextureButton" parent="Debug"]
+[node name="ToggleConsole" type="TextureButton" parent="Debug" unique_id=207404939]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -98,11 +98,11 @@ offset_bottom = -33.0
 grow_vertical = 0
 scale = Vector2(1.6, 1.6)
 
-[node name="UIButtons" parent="Debug/ToggleConsole" instance=ExtResource("1_qerh4")]
+[node name="UIButtons" parent="Debug/ToggleConsole" unique_id=381481451 instance=ExtResource("1_qerh4")]
 scale = Vector2(2.5, 2.5)
 centered = false
 
-[node name="BuildNumber" type="Label" parent="Debug"]
+[node name="BuildNumber" type="Label" parent="Debug" unique_id=365476248]
 z_index = 1001
 layout_mode = 1
 anchors_preset = 5
@@ -114,7 +114,7 @@ offset_right = 54.0001
 offset_bottom = 46.0
 grow_horizontal = 2
 scale = Vector2(0.928644, 0.837728)
-text = "Build 1.0.1"
+text = "Build 1.0.3"
 label_settings = SubResource("LabelSettings_epwfb")
 horizontal_alignment = 1
 vertical_alignment = 1

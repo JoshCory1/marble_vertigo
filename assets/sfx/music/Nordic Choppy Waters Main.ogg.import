@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c6pk42epr2mjw"
+path="res://.godot/imported/Nordic Choppy Waters Main.ogg-9adb842be960a2064518c4ea785a51ee.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Nordic Choppy Waters Main.ogg"
+dest_files=["res://.godot/imported/Nordic Choppy Waters Main.ogg-9adb842be960a2064518c4ea785a51ee.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

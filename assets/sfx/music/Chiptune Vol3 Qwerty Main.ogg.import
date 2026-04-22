@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c6xro3bbuuaa6"
+path="res://.godot/imported/Chiptune Vol3 Qwerty Main.ogg-a85428c7a34c0d224b2d52480ca5ebff.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Chiptune Vol3 Qwerty Main.ogg"
+dest_files=["res://.godot/imported/Chiptune Vol3 Qwerty Main.ogg-a85428c7a34c0d224b2d52480ca5ebff.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

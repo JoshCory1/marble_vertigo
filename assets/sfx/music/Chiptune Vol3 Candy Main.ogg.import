@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1g73qr3twcgc"
+path="res://.godot/imported/Chiptune Vol3 Candy Main.ogg-7a3262c6485d9098f437477bb6bdf521.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Chiptune Vol3 Candy Main.ogg"
+dest_files=["res://.godot/imported/Chiptune Vol3 Candy Main.ogg-7a3262c6485d9098f437477bb6bdf521.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

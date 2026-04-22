@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dg2em0r5fvxxg"
+path="res://.godot/imported/Chiptune Vol3 Castle Main.ogg-6c6a3b48f2f521a6109eb8bc314553e9.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Chiptune Vol3 Castle Main.ogg"
+dest_files=["res://.godot/imported/Chiptune Vol3 Castle Main.ogg-6c6a3b48f2f521a6109eb8bc314553e9.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

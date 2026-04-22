@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dk31oiyk3s4j6"
+path="res://.godot/imported/SynFantasy Wicked Main.ogg-55a8557b09ff6a817af6f60c20d35d0d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/SynFantasy Wicked Main.ogg"
+dest_files=["res://.godot/imported/SynFantasy Wicked Main.ogg-55a8557b09ff6a817af6f60c20d35d0d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

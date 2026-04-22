@@ -48,8 +48,8 @@ func _on_close_button_pressed():
 	AudioPlayer.play_sfx("shatter_sfx")
 	close_shop.emit()
 
-func _on_premium_pressed():
-	GameController.premium = true
+#func _on_premium_pressed():
+	#GameController.premium = true
 	
 func _on_default_button_pressed():
 	AudioPlayer.play_sfx("bounce_sfx_1")

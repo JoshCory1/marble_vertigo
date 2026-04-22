@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dr20w4uuy6mwg"
+path="res://.godot/imported/Western Warm Lead Main.ogg-d5ffa9427733c712c98b15e3d22ff636.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Western Warm Lead Main.ogg"
+dest_files=["res://.godot/imported/Western Warm Lead Main.ogg-d5ffa9427733c712c98b15e3d22ff636.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

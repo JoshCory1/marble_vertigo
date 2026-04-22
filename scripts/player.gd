@@ -1,6 +1,6 @@
 extends CharacterBody2D
 ##var that contoles speed
-@export var speed_var: float = 6000
+@export var speed_var: float = 100
 ##var that contoles gravity
 @export var gravity: float = 8.0
 #the max speed for gravity var
@@ -78,10 +78,10 @@ func _physics_process(delta):
 					var direction = Input.get_axis("move_left", "move_right")
 					if direction > 0:
 						speed = speed_var
-						velocity.x = speed * delta
+						velocity.x = speed
 					elif direction < 0:
 						speed = -speed_var
-						velocity.x = speed * delta
+						velocity.x = speed
 					elif Input.is_action_just_pressed("stop_move"):
 						velocity.x = 0
 			if !pause_y:

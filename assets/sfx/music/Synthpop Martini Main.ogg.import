@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dlew3738i0nmv"
+path="res://.godot/imported/Synthpop Martini Main.ogg-95f6a214c1297f79b5205978f7c441db.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Synthpop Martini Main.ogg"
+dest_files=["res://.godot/imported/Synthpop Martini Main.ogg-95f6a214c1297f79b5205978f7c441db.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

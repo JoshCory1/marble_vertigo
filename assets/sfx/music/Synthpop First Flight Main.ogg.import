@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqlj83nkqjokw"
+path="res://.godot/imported/Synthpop First Flight Main.ogg-72ea192e0500001b167c7e06684348cf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Synthpop First Flight Main.ogg"
+dest_files=["res://.godot/imported/Synthpop First Flight Main.ogg-72ea192e0500001b167c7e06684348cf.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

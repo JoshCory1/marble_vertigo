@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ds4j4qgjuwjpr"
+path="res://.godot/imported/Synthpop The Arcade Main.ogg-7b842d4d1901c11a757eabb745a5097c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/music/Synthpop The Arcade Main.ogg"
+dest_files=["res://.godot/imported/Synthpop The Arcade Main.ogg-7b842d4d1901c11a757eabb745a5097c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

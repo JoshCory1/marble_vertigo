@@ -56,10 +56,10 @@ func _process(_delta):
 func get_parallax_sprite_scale(parallax_sprite: Sprite2D):
 	var parallax_texure = parallax_sprite.get_texture()
 	var paralax_texture_height = parallax_texure.get_height()
-	var paralax_texture_width = parallax_texure.get_width()
+	var paralax_texture_width = parallax_texure.get_width() 
 	var viewport_size = get_viewport_rect().size
-	var _scale_y = viewport_size.y / paralax_texture_height
-	var _scale_x = viewport_size.x / paralax_texture_width
+	var _scale_y = viewport_size.y  / paralax_texture_height
+	var _scale_x = viewport_size.x  / paralax_texture_width
 	var result = Vector2(_scale_x,_scale_y)
 	return result
 
@@ -71,6 +71,7 @@ func  setup_parallax_layer(parallax_layer: ParallaxLayer):
 		parallax_sprite.scale.y = get_viewport_rect().size.y / 540
 		var mx = parallax_sprite.scale.x * parallax_sprite.get_texture().get_width()
 		parallax_layer.motion_mirroring.x = mx
+		
 	
 	
 func set_shop_size_scale():
