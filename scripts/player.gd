@@ -91,13 +91,13 @@ func _physics_process(delta):
 		else:
 			velocity = Vector2(0,0)
 			if Input.is_action_pressed("move_up"):
-				velocity.y -= speed_var * 10 * delta
+				velocity.y -= speed_var * 10
 			if Input.is_action_pressed("move_down"):
-				velocity.y += speed_var * 10 * delta
+				velocity.y += speed_var * 10
 			if Input.is_action_pressed("move_left"):
-				velocity.x -= speed_var * 10 * delta
+				velocity.x -= speed_var * 10
 			if Input.is_action_pressed("move_right"):
-				velocity.x += speed_var * 10 * delta
+				velocity.x += speed_var * 10
 		camera_zoom()
 		move_and_slide()
 

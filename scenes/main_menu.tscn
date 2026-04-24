@@ -79,28 +79,22 @@
 [ext_resource type="PackedScene" uid="uid://nritg6lx23hu" path="res://scenes/level_59_winter.tscn" id="68_s5nxe"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_laml6"]
-seed = 2
-frequency = 0.0022
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_txsih"]
-width = 960
-height = 540
 noise = SubResource("FastNoiseLite_laml6")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_txsih"]
-frequency = 0.0079
+frequency = 0.0047
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_063o2"]
-width = 960
-height = 540
 noise = SubResource("FastNoiseLite_txsih")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n0y1u"]
 shader = ExtResource("5_laml6")
 shader_parameter/noise_1 = SubResource("NoiseTexture2D_txsih")
 shader_parameter/noise_2 = SubResource("NoiseTexture2D_063o2")
-shader_parameter/distortipn_strength = 0.1300000536749999
-shader_parameter/offset_1 = Vector2(0.2, 0.2)
+shader_parameter/distortipn_strength = 0.030000048925000078
+shader_parameter/offset_1 = Vector2(0.05, 0.1)
 shader_parameter/offset_2 = Vector2(0.2, 0.2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0hso"]
@@ -204,11 +198,12 @@ region_rect = Rect2(0, 0, 960, 540)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1384920595]
 process_mode = 3
+z_index = 1
 material = SubResource("ShaderMaterial_n0y1u")
 texture = ExtResource("4_2rw6r")
 centered = false
 region_enabled = true
-region_rect = Rect2(-742.68445, -364.62802, 1784.8251, 994.94507)
+region_rect = Rect2(0, 0, 960, 540)
 region_filter_clip_enabled = true
 
 [node name="Buttons" type="Node" parent="." unique_id=919664452]
