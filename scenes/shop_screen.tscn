@@ -42,6 +42,8 @@ font_size = 45
 [sub_resource type="LabelSettings" id="LabelSettings_mxl3r"]
 font_color = Color(0.14902, 1, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_k0rlb"]
+
 [node name="ShopScreen" type="Control" unique_id=1666847313]
 layout_mode = 3
 anchors_preset = 8
@@ -481,6 +483,15 @@ grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
 color = Color(1, 0, 0, 0.5)
+
+[node name="Label2" type="Label" parent="Box" unique_id=2081917431]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 441.0
+offset_right = 743.0
+offset_bottom = 464.0
+text = "For Attributions and licenses see: https://github.com/JoshCory1/Marble-Vertigo-Attribution"
+label_settings = SubResource("LabelSettings_k0rlb")
 
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/DefaultButton2" to="." method="_on_default_button_pressed"]
 [connection signal="pressed" from="Box/Label/ColorRect/ScrollContainer/VBoxContainer/CubeButton" to="." method="_on_cube_button_pressed"]

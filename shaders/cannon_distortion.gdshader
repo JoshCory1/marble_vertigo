@@ -10,8 +10,8 @@ uniform vec2 offset_2 = vec2(0.2);
 void fragment()
 {
 	vec4 orignel_tex = texture(TEXTURE, UV);
-	vec4 noise_color_1 = texture(noise_1, UV + offset_1 * TIME);
-	vec4 noise_color_2 = texture(noise_2, UV + offset_2 * TIME);
+	vec4 noise_color_1 = texture(noise_1, fract(UV + offset_1 * TIME));
+	vec4 noise_color_2 = texture(noise_2, fract(UV + offset_2 * TIME));
 	
 	float final_noise = noise_color_1.r * noise_color_2.r;
 	vec4 finel_color = texture(screen_tex,

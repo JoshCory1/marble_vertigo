@@ -17,6 +17,7 @@ extends CharacterBody2D
 @onready var animation_player = $PlayerAnimationPlayer
 @onready var boosts = get_tree().get_nodes_in_group("boost_x")
 @onready var camera = $PlayerCamera2D
+@onready var distortion_bg: Sprite2D = %DistortionBG
 #bounce vars
 var no_bounce_x: int = 0
 var no_bounce_y: int = 0

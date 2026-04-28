@@ -14,6 +14,7 @@ extends Node2D
 @onready  var coin_count = $CanvasLayer2/CoinSprite/Label
 @onready var heart = $CanvasLayer2/HeartSprite
 @onready var heart_text = $CanvasLayer2/HeartSprite/Label
+@onready var distortion_bg: Sprite2D = %DistortionBG
 
 # current play throue not used
 var current_button_array_number = 0
@@ -22,6 +23,7 @@ signal freeze_camera
 signal unfreeze_camera
 
 func _ready():
+	apply_distortion()
 	black_can.visible = true
 	setup_parallax_layer($ParallaxBackground/ParallaxLayer)
 	set_shop_size_scale()
@@ -46,6 +48,7 @@ func _ready():
 		get_tree().paused = false
 	black_can.visible = false
 func _process(_delta):
+	apply_distortion()
 	coin_count.text = str(GameController.coins)
 #	if GameController.premium == true: # not used
 #		heart.visible = false
@@ -91,4 +94,8 @@ func _on_shop_button_pressed():
 	freeze_camera.emit()
 	$CanvasLayer3/ShopButton.visible = false
 	
-	
+func apply_distortion() -> void:
+	distortion_bg.position = get_viewport_rect().size / 2
+	var vp_size = get_viewport().get_visible_rect().size
+	distortion_bg.region_enabled = true
+	distortion_bg.region_rect = Rect2(0,0, vp_size.x,vp_size.y)

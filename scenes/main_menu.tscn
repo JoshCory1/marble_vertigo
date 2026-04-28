@@ -82,18 +82,20 @@
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_txsih"]
 noise = SubResource("FastNoiseLite_laml6")
+seamless = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_txsih"]
 frequency = 0.0047
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_063o2"]
 noise = SubResource("FastNoiseLite_txsih")
+seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n0y1u"]
 shader = ExtResource("5_laml6")
 shader_parameter/noise_1 = SubResource("NoiseTexture2D_txsih")
 shader_parameter/noise_2 = SubResource("NoiseTexture2D_063o2")
-shader_parameter/distortipn_strength = 0.030000048925000078
+shader_parameter/distortipn_strength = 0.03000004892500007
 shader_parameter/offset_1 = Vector2(0.05, 0.1)
 shader_parameter/offset_2 = Vector2(0.2, 0.2)
 
@@ -174,6 +176,25 @@ animations = [{
 font_size = 36
 font_color = Color(0.694118, 1, 0.682353, 1)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m8gp1"]
+frequency = 0.0049
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_laml6"]
+noise = SubResource("FastNoiseLite_m8gp1")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_063o2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n0y1u"]
+noise = SubResource("FastNoiseLite_063o2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oh7mv"]
+shader = ExtResource("5_laml6")
+shader_parameter/noise_1 = SubResource("NoiseTexture2D_laml6")
+shader_parameter/noise_2 = SubResource("NoiseTexture2D_n0y1u")
+shader_parameter/distortipn_strength = 0.30000006175000005
+shader_parameter/offset_1 = Vector2(0.5, 0.1)
+shader_parameter/offset_2 = Vector2(0.2, 0.2)
+
 [node name="MainMenu" type="Node2D" unique_id=119804586]
 process_mode = 3
 script = ExtResource("1_egfi4")
@@ -196,12 +217,11 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1384920595]
+[node name="DistortionBG" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1384920595]
+unique_name_in_owner = true
 process_mode = 3
-z_index = 1
 material = SubResource("ShaderMaterial_n0y1u")
 texture = ExtResource("4_2rw6r")
-centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 960, 540)
 region_filter_clip_enabled = true
@@ -1984,6 +2004,17 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Shop"
 label_settings = SubResource("LabelSettings_v52m2")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="." unique_id=1427107959]
+layer = -2
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2" unique_id=2112152944]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground2/ParallaxLayer" unique_id=2122553639]
+visible = false
+material = SubResource("ShaderMaterial_oh7mv")
+offset_right = 960.0
+offset_bottom = 540.0
 
 [connection signal="pressed" from="Buttons/MenuLevelButton_01" to="Buttons/MenuLevelButton_01" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/MenuLevelButton_08" to="Buttons/MenuLevelButton_08" method="_on_pressed"]
